@@ -55,15 +55,13 @@ exports.addPayment = async (req, res) => {
         res.json({
           statusCode: 200,
           statusMessage: "success",
-          executed: sqlTransaction,
-          result: "Abono agregado correctamente",
+          result: { message: "Abono agregado correctamente", sqlTransaction },
         });
       } else if (!sqlTransaction) {
         res.json({
           statusCode: 500,
           statusMessage: "error",
-          executed: sqlTransaction,
-          result: "Error al agregar abono",
+          result: { message: "Error al agregar abono", sqlTransaction },
         });
       }
     })

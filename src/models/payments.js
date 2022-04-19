@@ -73,7 +73,7 @@ module.exports = {
   ) {
     let executed = false;
     const client = await connexion.connect();
-    let result = {};
+    let sqlResult = null;
     try {
       await client.query("BEGIN");
       //get Remaining Payment if not search result, throw error
@@ -134,7 +134,7 @@ module.exports = {
                 updated_at, gps_location, comments
               )
             VALUES
-              (3,$1, $2, now(), $3, $4, null, $5, $6);
+              (3,$1, $2, now(), $3, $4, null, $5, $6) returning id_abono, created_at;
           `,
           queryValuesInsertPayment = [
             idInvoice,
@@ -156,6 +156,7 @@ module.exports = {
               console.log("Transaction ROLLBACK called");
             } else {
               executed = true;
+              sqlResult = result.rows[0];
               client.query("COMMIT");
               console.log("client.query() COMMIT row count:", result.rowCount);
             }
@@ -173,13 +174,13 @@ module.exports = {
     } finally {
       client.release;
     }
-    return executed;
+    return { executed, sqlResult };
   },
   async getPaymentsByRoute(idRoute) {
     const result = await connexion.query(
       `
       select 
-        p.id_abono, p.created_at, p.total_payment
+        p.id_abono, p.created_at, p.total_payment, p.id_invoice
       from 
         payments p
       inner join 
