@@ -81,7 +81,7 @@ module.exports = {
       //get Remaining Payment if not search result, throw error
       const queryTextGetInvoiceId = `
       SELECT 
-        remaining_paymentg 
+        remaining_payment 
       FROM 
         invoices 
       WHERE 
@@ -93,9 +93,9 @@ module.exports = {
         queryValuesGetInvoiceId
       );
       //validar que la factura exista antes de hacer el insert
-      if (getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg) {
+      if (getRemaningPaymentByInvoiceId.rows[0].remaining_payment) {
         const finalTR =
-          getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg - amount;
+          getRemaningPaymentByInvoiceId.rows[0].remaining_payment - amount;
         if (finalTR === 0) {
           // actualizar e status de la factura cuando este sea igual a 0 el pago restanteheroku loginheroku login
           const queryUpdataStatusInvoice = `
@@ -124,7 +124,7 @@ module.exports = {
           UPDATE 
             public.invoices
           SET 
-            remaining_paymentg=$2
+            remaining_payment=$2
           WHERE 
             id_invoice =$1;
           `,

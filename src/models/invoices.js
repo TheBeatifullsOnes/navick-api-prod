@@ -6,7 +6,7 @@ module.exports = {
     const result = await connexion.query(
       `
       SELECT 
-        id_invoice, id_type_serial, id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_paymentg, discount
+        id_invoice, id_type_serial, id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
 	    FROM 
         public.invoices
       WHERE 
@@ -19,7 +19,7 @@ module.exports = {
   async getInvoice(idInvoice) {
     const result = await connexion.query(
       `SELECT 
-        id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_paymentg, discount
+        id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
     	FROM 
         public.invoices
       WHERE 
@@ -44,7 +44,7 @@ module.exports = {
         (
           id_type_serial, id_client, type_payment, 
           status, created_at, expiration_date, 
-          total_amount, remaining_paymentg, discount
+          total_amount, remaining_payment, discount
         )
       VALUES 
         (1, $1, $2, $3, now(), $4, $5, $6, $7) returning id_invoice`,
@@ -142,7 +142,7 @@ module.exports = {
     const result = await connexion.query(
       `
       SELECT 
-        remaining_paymentg 
+        remaining_payment 
       FROM 
         invoices 
       WHERE 
@@ -158,7 +158,7 @@ module.exports = {
       UPDATE 
         public.invoices
 	    SET 
-        remaining_paymentg=$2
+        remaining_payment=$2
 	    WHERE 
         id_invoice =$1;
       `,
@@ -188,7 +188,7 @@ module.exports = {
           (
             id_type_serial, id_client, type_payment,
             status, created_at, expiration_date,
-            total_amount, remaining_paymentg, discount
+            total_amount, remaining_payment, discount
           )
         VALUES
           (1, $1, $2, $3, now(), $4, $5, $6, $7) returning id_invoice`;
