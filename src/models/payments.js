@@ -69,11 +69,13 @@ module.exports = {
     amount,
     state,
     locationGPS,
-    comments
+    comments,
+    timestamp
   ) {
-    let executed = false;
-    const client = await connexion.connect();
     let sqlResult = null;
+    let executed = false;
+    let invoiceZero = false;
+    const client = await connexion.connect();
     try {
       await client.query("BEGIN");
       //get Remaining Payment if not search result, throw error
@@ -90,10 +92,33 @@ module.exports = {
         queryTextGetInvoiceId,
         queryValuesGetInvoiceId
       );
-      console.log(
-        await getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg
-      );
+      //validar que la factura exista antes de hacer el insert
       if (getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg) {
+        const finalTR =
+          getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg - amount;
+        if (finalTR === 0) {
+          // actualizar e status de la factura cuando este sea igual a 0 el pago restanteheroku loginheroku login
+          const queryUpdataStatusInvoice = `
+          UPDATE 
+            public.invoices
+          SET 
+            status = 0
+          WHERE 
+            id_invoice =$1;
+          `;
+          await client.query(
+            queryUpdataStatusInvoice,
+            [idInvoice],
+            (err, result) => {
+              if (err) {
+                client.query("ROLLBACK");
+              } else {
+                invoiceZero = true;
+                client.query("COMMIT");
+              }
+            }
+          );
+        }
         //update for the remaining_payment
         const queryTextUpdateInvoiceRP = `
           UPDATE 
@@ -103,24 +128,21 @@ module.exports = {
           WHERE 
             id_invoice =$1;
           `,
-          queryValuesUpdateRP = [
-            idInvoice,
-            getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg - amount,
-          ];
+          queryValuesUpdateRP = [idInvoice, finalTR];
         await client.query(
           queryTextUpdateInvoiceRP,
           queryValuesUpdateRP,
           (err, result) => {
             if (err) {
               executed = false;
-              console.log("\nclient.query():", err);
+              // console.log("\nclient.query():", err);
               // Rollback before executing another transaction
               client.query("ROLLBACK");
-              console.log("Transaction ROLLBACK called");
+              // console.log("Transaction ROLLBACK called");
             } else {
               executed = true;
               client.query("COMMIT");
-              console.log("client.query() COMMIT row count:", result.rowCount);
+              // console.log("client.query() COMMIT row count:", result.rowCount);
             }
           }
         );
@@ -134,11 +156,12 @@ module.exports = {
                 updated_at, gps_location, comments
               )
             VALUES
-              (3,$1, $2, now(), $3, $4, null, $5, $6) returning id_abono, created_at;
+              (3,$1, $2, $3, $4, $5, null, $6, $7) returning id_abono, created_at at time zone 'utc';
           `,
           queryValuesInsertPayment = [
             idInvoice,
             idUser,
+            timestamp,
             amount,
             state,
             locationGPS,
@@ -150,18 +173,19 @@ module.exports = {
           (err, result) => {
             if (err) {
               executed = false;
-              console.log("\nclient.query():", err);
+              // console.log("\nclient.query():", err);
               // Rollback before executing another transaction
               client.query("ROLLBACK");
-              console.log("Transaction ROLLBACK called");
+              // console.log("Transaction ROLLBACK called");
             } else {
-              executed = true;
               sqlResult = result.rows[0];
+              executed = true;
               client.query("COMMIT");
-              console.log("client.query() COMMIT row count:", result.rowCount);
+              // console.log("client.query() COMMIT row count:", result.rowCount);
             }
           }
         );
+
         await client.query("COMMIT");
       } else {
         client.query("ROLLBACK");
@@ -174,25 +198,30 @@ module.exports = {
     } finally {
       client.release;
     }
-    return { executed, sqlResult };
+    return { executed, sqlResult, invoiceZero };
   },
   async getPaymentsByRoute(idRoute) {
     const result = await connexion.query(
       `
-      select 
-        p.id_abono, p.created_at, p.total_payment, p.id_invoice
-      from 
+      SELECT 
+        p.id_abono, p.created_at at time zone 'utc', p.total_payment, p.id_invoice
+      FROM 
         payments p
-      inner join 
+      INNER JOIN 
         users u
-      on 
+      ON 
         p.id_user=u.id_user
-      inner join 
+      INNER JOIN  
         invoices i
-      on 
+      ON 
         i.id_invoice = p.id_invoice
-      where
-        u.id_route = $1 and i.status = 1`,
+      WHERE
+        u.id_route = $1 
+      AND 
+        i.status = 1 
+      ORDER BY 
+        p.created_at 
+      DESC`,
       [idRoute]
     );
     return result.rows;

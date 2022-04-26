@@ -64,7 +64,7 @@ module.exports = {
   async getInvoicesByRoute(idRoute) {
     const invoicesByRoute = await connexion.query(
       `
-       SELECT 
+      SELECT 
         i.* 
       FROM
         invoices as i
@@ -73,7 +73,10 @@ module.exports = {
       ON 
         i.id_client=c.id_client
       WHERE
-        c.id_route=$1`,
+        c.id_route=$1 
+      ORDER BY 
+        i.created_at 
+      ASC`,
       [idRoute]
     );
     return invoicesByRoute.rows;

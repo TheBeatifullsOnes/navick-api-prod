@@ -25,7 +25,7 @@ exports.login = async (req, res) => {
         } else {
           res.status(500).json({
             statusCode: 500,
-            statusMessage: "error",
+            statusMessag: "error",
             result: "wrong password",
           });
         }

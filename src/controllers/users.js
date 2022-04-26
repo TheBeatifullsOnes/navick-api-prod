@@ -1,7 +1,8 @@
 const usuariosModel = require("../models/users");
 const bcrypt = require("bcryptjs");
 
-exports.listaUsuarios = function (req, res) {
+exports.listaUsuarios = (req, res) => {
+  console.log("test");
   usuariosModel
     .obtenerUsuarios()
     .then((response) => {
@@ -46,7 +47,7 @@ exports.listaUsuario = (req, res) => {
     });
 };
 
-exports.insertaUsuario = async function (req, res) {
+exports.insertaUsuario = async (req, res) => {
   const { username, name, idUserType, password, idRoute } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
   usuariosModel
@@ -107,7 +108,7 @@ exports.actualizaUsuario = async (req, res) => {
     });
 };
 
-exports.eliminaUsuario = (req, res) => {
+exports.eliminaUsuario = async (req, res) => {
   const { idUser } = req.params;
   usuariosModel
     .eliminarUsuario(idUser)
@@ -128,5 +129,32 @@ exports.eliminaUsuario = (req, res) => {
     })
     .catch((error) => {
       res.status(500).json(error);
+    });
+};
+
+exports.getUsersType = async (req, res) => {
+  usuariosModel
+    .getUsersType()
+    .then((sqlResult) => {
+      if (sqlResult) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: sqlResult,
+        });
+      } else {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "error",
+          result: "error al obtener los tipos de usuarios",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
     });
 };

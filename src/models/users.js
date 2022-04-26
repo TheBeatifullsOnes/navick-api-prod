@@ -22,12 +22,12 @@ module.exports = {
   async insertarUsuario(username, name, idUserType, password, idRoute) {
     const existRegister = connexion.query(
       `
-      SELECT 1 
-      FROM
-        public.users
-      WHERE
-        username=$1
-    `,
+        SELECT 1 
+        FROM
+          public.users
+        WHERE
+          username=$1
+      `,
       [username]
     );
     if ((await existRegister).rows.length > 0) {
@@ -37,10 +37,11 @@ module.exports = {
     } else {
       const resultados = await connexion.query(
         `
-      INSERT INTO 
-        public.users(username, name, id_user_type, password, created_at, id_route, date_deleted, status)
-      VALUES 
-        ($1, $2, $3, $4, now(), $5, null, 1)`,
+        INSERT INTO 
+          public.users(username, name, id_user_type, password, created_at, id_route, date_deleted, status)
+        VALUES 
+          ($1, $2, $3, $4, now(), $5, null, 1)
+        `,
         [username, name, idUserType, password, idRoute]
       );
       return resultados;
@@ -67,7 +68,7 @@ module.exports = {
     return result;
   },
   async eliminarUsuario(idUser) {
-    const result = connexion.query(
+    const result = await connexion.query(
       `
       DELETE FROM
         public.users
@@ -77,5 +78,16 @@ module.exports = {
       [idUser]
     );
     return result;
+  },
+  async getUsersType() {
+    const result = await connexion.query(
+      `
+      SELECT 
+        * 
+      FROM 
+        tipousuarios
+     `
+    );
+    return result.rows;
   },
 };
