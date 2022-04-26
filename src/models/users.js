@@ -55,12 +55,21 @@ module.exports = {
     status,
     idRoute
   ) {
+    console.log(
+      username,
+      name,
+      idUserType,
+      hashPassword,
+      status,
+      idRoute,
+      "-------> desde el modelo"
+    );
     const result = connexion.query(
       `
       UPDATE 
         public.users
       SET 
-        name=$2, id_user_type=$3, password=$4, date_deleted=now(), status=$5, idRoute=$6
+        name=$2, id_user_type=$3, password=$4, date_deleted=now(), status=$5, id_route=$6
       WHERE username=$1
       `,
       [username, name, idUserType, hashPassword, status, idRoute]

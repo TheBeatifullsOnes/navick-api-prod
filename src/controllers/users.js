@@ -75,6 +75,7 @@ exports.insertaUsuario = async (req, res) => {
 };
 
 exports.actualizaUsuario = async (req, res) => {
+  console.log("desde el controller");
   const { username, name, idUserType, password, status, idRoute } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
   usuariosModel
@@ -103,7 +104,7 @@ exports.actualizaUsuario = async (req, res) => {
     })
     .catch((error) => {
       res
-        .statusCode(500)
+        .status(500)
         .json({ statusCode: 500, statusMessage: "error", result: error });
     });
 };
