@@ -10,9 +10,7 @@ module.exports = {
 	    FROM 
         public.invoices
       WHERE 
-        total_amount is not null
-      AND
-        status = 1`
+        total_amount is not null`
     );
     return result.rows;
   },
