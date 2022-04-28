@@ -28,41 +28,6 @@ module.exports = {
     );
     return results.rows;
   },
-  async addPayment(
-    idInvoice,
-    idUser,
-    date,
-    amount,
-    state,
-    dateUpdate,
-    idUserModify,
-    locationGPS,
-    notes
-  ) {
-    const result = await connexion.query(
-      `
-      INSERT INTO 
-        public.abonos(
-	        id_factura, id_asesor, fecha, 
-          monto, estado, fecha_modifica, 
-          id_usuario_modifica, ubicacion_gps, observaciones)
-	    VALUES 
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9);
-    `,
-      [
-        idInvoice,
-        idUser,
-        date,
-        amount,
-        state,
-        dateUpdate,
-        idUserModify,
-        locationGPS,
-        notes,
-      ]
-    );
-    return result;
-  },
   async addPaymentUpdateRemainingPayment(
     idInvoice,
     idUser,

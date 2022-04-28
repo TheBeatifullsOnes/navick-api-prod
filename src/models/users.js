@@ -55,15 +55,6 @@ module.exports = {
     status,
     idRoute
   ) {
-    console.log(
-      username,
-      name,
-      idUserType,
-      hashPassword,
-      status,
-      idRoute,
-      "-------> desde el modelo"
-    );
     const result = connexion.query(
       `
       UPDATE 
@@ -98,5 +89,18 @@ module.exports = {
      `
     );
     return result.rows;
+  },
+  async updateUserStatus(idUser, status) {
+    const result = await connexion.query(
+      `
+    UPDATE 
+      users 
+    SET 
+      status=$2, date_deleted=now()
+    WHERE 
+      id_user=$1`,
+      [idUser, status]
+    );
+    return result;
   },
 };

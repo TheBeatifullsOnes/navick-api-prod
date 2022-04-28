@@ -23,6 +23,35 @@ exports.listaUsuarios = (req, res) => {
     .catch((error) => res.statusCode(500).json(error));
 };
 
+exports.updateUserStatus = (req, res) => {
+  const { idUser, status } = req.body;
+  console.log("aca es el req.body", req.body);
+  usuariosModel
+    .updateUserStatus(idUser, status)
+    .then((sqlResult) => {
+      if (sqlResult.rowCount > 0) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: "Status del usuario actualizado correctamente",
+        });
+      } else {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "success",
+          result: "Error al actualizar",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    });
+};
+
 exports.listaUsuario = (req, res) => {
   const { idUser } = req.params;
   usuariosModel
