@@ -6,20 +6,18 @@ module.exports = {
     const result = await connexion.query(
       `
       SELECT 
-        id_invoice, id_type_serial, id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_paymentg, discount
+        id_invoice, id_type_serial, id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
 	    FROM 
         public.invoices
       WHERE 
-        total_amount is not null
-      AND
-        status = 1`
+        total_amount is not null`
     );
     return result.rows;
   },
   async getInvoice(idInvoice) {
     const result = await connexion.query(
       `SELECT 
-        id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_paymentg, discount
+        id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
     	FROM 
         public.invoices
       WHERE 
@@ -44,7 +42,7 @@ module.exports = {
         (
           id_type_serial, id_client, type_payment, 
           status, created_at, expiration_date, 
-          total_amount, remaining_paymentg, discount
+          total_amount, remaining_payment, discount
         )
       VALUES 
         (1, $1, $2, $3, now(), $4, $5, $6, $7) returning id_invoice`,
@@ -64,7 +62,7 @@ module.exports = {
   async getInvoicesByRoute(idRoute) {
     const invoicesByRoute = await connexion.query(
       `
-       SELECT 
+      SELECT 
         i.* 
       FROM
         invoices as i
@@ -73,7 +71,10 @@ module.exports = {
       ON 
         i.id_client=c.id_client
       WHERE
-        c.id_route=$1`,
+        c.id_route=$1 
+      ORDER BY 
+        i.created_at 
+      ASC`,
       [idRoute]
     );
     return invoicesByRoute.rows;
@@ -139,7 +140,7 @@ module.exports = {
     const result = await connexion.query(
       `
       SELECT 
-        remaining_paymentg 
+        remaining_payment 
       FROM 
         invoices 
       WHERE 
@@ -155,7 +156,7 @@ module.exports = {
       UPDATE 
         public.invoices
 	    SET 
-        remaining_paymentg=$2
+        remaining_payment=$2
 	    WHERE 
         id_invoice =$1;
       `,
@@ -185,7 +186,7 @@ module.exports = {
           (
             id_type_serial, id_client, type_payment,
             status, created_at, expiration_date,
-            total_amount, remaining_paymentg, discount
+            total_amount, remaining_payment, discount
           )
         VALUES
           (1, $1, $2, $3, now(), $4, $5, $6, $7) returning id_invoice`;

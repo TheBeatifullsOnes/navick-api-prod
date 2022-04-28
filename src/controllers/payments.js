@@ -39,8 +39,10 @@ exports.getPaymentsByIdInvoice = (req, res) => {
     });
 };
 
-exports.addPayment = async (req, res) => {
+exports.addPaymentUpdateRemainingPayment = async (req, res) => {
   const { idInvoice, idUser, amount, state, locationGPS, comments } = req.body;
+  const moment = req.timestamp;
+  const timestamp = moment.tz("America/Mexico_City").format();
   paymentsModel
     .addPaymentUpdateRemainingPayment(
       idInvoice,
@@ -48,7 +50,8 @@ exports.addPayment = async (req, res) => {
       amount,
       state,
       locationGPS,
-      comments
+      comments,
+      timestamp
     )
     .then((sqlTransaction) => {
       console.log(sqlTransaction);
@@ -62,6 +65,7 @@ exports.addPayment = async (req, res) => {
         res.json({
           statusCode: 500,
           statusMessage: "error",
+          executed: sqlTransaction,
           result: { message: "Error al agregar abono", sqlTransaction },
         });
       }

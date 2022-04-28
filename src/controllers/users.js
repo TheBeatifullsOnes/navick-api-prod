@@ -1,7 +1,8 @@
 const usuariosModel = require("../models/users");
 const bcrypt = require("bcryptjs");
 
-exports.listaUsuarios = function (req, res) {
+exports.listaUsuarios = (req, res) => {
+  console.log("test");
   usuariosModel
     .obtenerUsuarios()
     .then((response) => {
@@ -20,6 +21,35 @@ exports.listaUsuarios = function (req, res) {
       }
     })
     .catch((error) => res.statusCode(500).json(error));
+};
+
+exports.updateUserStatus = (req, res) => {
+  const { idUser, status } = req.body;
+  console.log("aca es el req.body", req.body);
+  usuariosModel
+    .updateUserStatus(idUser, status)
+    .then((sqlResult) => {
+      if (sqlResult.rowCount > 0) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: "Status del usuario actualizado correctamente",
+        });
+      } else {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "success",
+          result: "Error al actualizar",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    });
 };
 
 exports.listaUsuario = (req, res) => {
@@ -46,7 +76,7 @@ exports.listaUsuario = (req, res) => {
     });
 };
 
-exports.insertaUsuario = async function (req, res) {
+exports.insertaUsuario = async (req, res) => {
   const { username, name, idUserType, password, idRoute } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
   usuariosModel
@@ -74,6 +104,7 @@ exports.insertaUsuario = async function (req, res) {
 };
 
 exports.actualizaUsuario = async (req, res) => {
+  console.log("desde el controller");
   const { username, name, idUserType, password, status, idRoute } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
   usuariosModel
@@ -102,12 +133,12 @@ exports.actualizaUsuario = async (req, res) => {
     })
     .catch((error) => {
       res
-        .statusCode(500)
+        .status(500)
         .json({ statusCode: 500, statusMessage: "error", result: error });
     });
 };
 
-exports.eliminaUsuario = (req, res) => {
+exports.eliminaUsuario = async (req, res) => {
   const { idUser } = req.params;
   usuariosModel
     .eliminarUsuario(idUser)
@@ -128,5 +159,32 @@ exports.eliminaUsuario = (req, res) => {
     })
     .catch((error) => {
       res.status(500).json(error);
+    });
+};
+
+exports.getUsersType = async (req, res) => {
+  usuariosModel
+    .getUsersType()
+    .then((sqlResult) => {
+      if (sqlResult) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: sqlResult,
+        });
+      } else {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "error",
+          result: "error al obtener los tipos de usuarios",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
     });
 };

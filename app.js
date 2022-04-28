@@ -4,6 +4,7 @@ var path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
+var time = require("express-timestamp");
 
 const usuariosRoutes = require("./src/routes/users");
 const rutasRoutes = require("./src/routes/routes");
@@ -29,6 +30,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(time.init);
+
 // API Routes
 app.use("/api/v1/rutas", rutasRoutes);
 app.use("/api/v1/clientes", clientesRoutes);
@@ -39,6 +42,11 @@ app.use("/api/v1/invoices", invoiceRoutes);
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/categories", categoryRoutes);
 app.use("/api/v1/payments", paymentsRoutes);
+
+app.get("/test", (req, res) => {
+  console.log(req);
+  res.json("ok");
+});
 
 // Auth Routes
 app.use("/", authRoutes);
