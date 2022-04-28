@@ -9,7 +9,8 @@ exports.login = async (req, res) => {
         password,
         resultado.rows[0].password
       );
-      const { username, name, id_route, id_user } = resultado.rows[0];
+      const { username, name, id_route, id_user, id_user_type, status } =
+        resultado.rows[0];
       validPassword.then((value) => {
         if (value) {
           res.status(200).json({
@@ -20,6 +21,8 @@ exports.login = async (req, res) => {
               nombre: name,
               idRuta: id_route,
               idUsuario: id_user,
+              idUserType: id_user_type,
+              status: status,
             },
           });
         } else {

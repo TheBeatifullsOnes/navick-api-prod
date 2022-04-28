@@ -51,6 +51,7 @@ exports.addPayment = async (req, res) => {
       comments
     )
     .then((sqlTransaction) => {
+      console.log(sqlTransaction);
       if (sqlTransaction) {
         res.json({
           statusCode: 200,

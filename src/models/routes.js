@@ -27,7 +27,11 @@ module.exports = {
     }
   },
   async listaRutas() {
-    const resultados = await connexion.query("select * from routes");
+    const resultados = await connexion.query(`
+          SELECT r.id_route, r.description, r.state, r.created_at, r.updated_at, count(id_client) as clientsCount 
+            FROM routes as r
+          LEFT JOIN clients as c on c.id_route=r.id_route
+          GROUP BY r.id_route;`);
     return resultados.rows;
   },
   async actualizaRuta(idRoute, description, state) {

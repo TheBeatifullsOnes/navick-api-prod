@@ -5,7 +5,7 @@ module.exports = {
     const resultado = connexion.query(
       `
         SELECT 
-          username, name, id_route, id_user, password 
+          username, name, id_route, id_user,id_user_type, status, password
         FROM 
           users 
         WHERE 

@@ -71,10 +71,13 @@ module.exports = {
     locationGPS,
     comments
   ) {
+    console.log("inicio de la transaccion");
     let executed = false;
     const client = await connexion.connect();
     let sqlResult = null;
     try {
+      console.log("inicio try");
+
       await client.query("BEGIN");
       //get Remaining Payment if not search result, throw error
       const queryTextGetInvoiceId = `
@@ -90,9 +93,8 @@ module.exports = {
         queryTextGetInvoiceId,
         queryValuesGetInvoiceId
       );
-      console.log(
-        await getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg
-      );
+      console.log("tengo algo del remaining paiment");
+      console.log(getRemaningPaymentByInvoiceId.rows);
       if (getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg) {
         //update for the remaining_payment
         const queryTextUpdateInvoiceRP = `
