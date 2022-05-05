@@ -26,46 +26,11 @@ module.exports = {
     );
     return results.rows;
   },
-  async addPayment(
-    idInvoice,
-    idUser,
-    date,
-    amount,
-    state,
-    dateUpdate,
-    idUserModify,
-    locationGPS,
-    notes
-  ) {
-    const result = await connexion.query(
-      `
-      INSERT INTO 
-        public.abonos(
-	        id_factura, id_asesor, fecha, 
-          monto, estado, fecha_modifica, 
-          id_usuario_modifica, ubicacion_gps, observaciones)
-	    VALUES 
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9);
-    `,
-      [
-        idInvoice,
-        idUser,
-        date,
-        amount,
-        state,
-        dateUpdate,
-        idUserModify,
-        locationGPS,
-        notes,
-      ]
-    );
-    return result;
-  },
+
   async addPaymentUpdateRemainingPayment(
     idInvoice,
     idUser,
     amount,
-    state,
     locationGPS,
     comments
   ) {
@@ -77,7 +42,7 @@ module.exports = {
       //get Remaining Payment if not search result, throw error
       const queryTextGetInvoiceId = `
       SELECT 
-        remaining_paymentg 
+        remaining_payment
       FROM 
         invoices 
       WHERE 
@@ -88,33 +53,38 @@ module.exports = {
         queryTextGetInvoiceId,
         queryValuesGetInvoiceId
       );
-      if (getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg) {
+
+      if (getRemaningPaymentByInvoiceId.rows[0].remaining_payment) {
         //update for the remaining_payment
         const queryTextUpdateInvoiceRP = `
           UPDATE 
             public.invoices
           SET 
-            remaining_paymentg=$2
+            remaining_payment=$2
           WHERE 
             id_invoice =$1;
           `,
           queryValuesUpdateRP = [
             idInvoice,
-            getRemaningPaymentByInvoiceId.rows[0].remaining_paymentg - amount,
+            getRemaningPaymentByInvoiceId.rows[0].remaining_payment - amount,
           ];
         await client.query(
           queryTextUpdateInvoiceRP,
           queryValuesUpdateRP,
           (err, result) => {
+            // done();
             if (err) {
               executed = false;
               console.log("\nclient.query():", err);
               // Rollback before executing another transaction
               client.query("ROLLBACK");
+              client.end();
+
               console.log("Transaction ROLLBACK called");
             } else {
               executed = true;
               client.query("COMMIT");
+
               console.log("client.query() COMMIT row count:", result.rowCount);
             }
           }
@@ -129,13 +99,12 @@ module.exports = {
                 updated_at, gps_location, comments
               )
             VALUES
-              (3,$1, $2, now(), $3, $4, null, $5, $6) returning id_abono, created_at;
+              (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at;
           `,
           queryValuesInsertPayment = [
             idInvoice,
             idUser,
             amount,
-            state,
             locationGPS,
             comments,
           ];
@@ -161,8 +130,16 @@ module.exports = {
       }
 
       await client.query("COMMIT");
+      client
+        .end()
+        .then(() => console.log("client has disconnected"))
+        .catch((err) => console.error("error during disconnection", err.stack));
     } catch (e) {
       await client.query("ROLLBACK");
+      client
+        .end()
+        .then(() => console.log("client has disconnected"))
+        .catch((err) => console.error("error during disconnection", err.stack));
       throw e;
     } finally {
       client.release;
