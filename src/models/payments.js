@@ -8,24 +8,32 @@ const queryTextGetInvoiceId = `
       WHERE 
         id_invoice = $1`;
 const queryTextUpdateInvoiceRP = `
-          UPDATE 
-            public.invoices
-          SET 
-            remaining_payment=$2
-          WHERE 
-            id_invoice =$1;
-          `;
+      UPDATE 
+        public.invoices
+      SET 
+        remaining_payment=$2
+      WHERE 
+        id_invoice =$1
+      `;
 const queryTextInsertPayment = `
-            INSERT INTO
-              public.payments
-              (
-                type_serial, id_invoice, id_user,
-                created_at, total_payment, status,
-                updated_at, gps_location, comments
-              )
-            VALUES
-              (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at;
-          `;
+      INSERT INTO
+        public.payments
+        (
+          type_serial, id_invoice, id_user,
+          created_at, total_payment, status,
+          updated_at, gps_location, comments
+        )
+      VALUES
+        (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at;
+    `;
+
+const queryTextUpdateInvoiceStatus = `
+      UPDATE 
+        public.invoices
+      SET 
+        status=0
+      WHERE 
+        id_invoice =$1`;
 
 module.exports = {
   async getAbonos() {
@@ -64,6 +72,7 @@ module.exports = {
 
     let executed = false;
     let sqlResult = null;
+    let status = false;
 
     try {
       // Transaction start
@@ -75,9 +84,20 @@ module.exports = {
         queryTextGetInvoiceId,
         [idInvoice]
       );
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
       if (getRemaningPaymentByInvoiceId.rows[0].remaining_payment) {
-        console.log("if exist Remaining Payment: ", getRemaningPaymentByInvoiceId.rows[0].remaining_payment)
-
+        console.log("if exist Remaining Payment: ", remaining_payment)
+        if (remaining_payment - amount <= 0) {
+          await client.query(queryTextUpdateInvoiceStatus, [idInvoice], (err, result) => {
+            if (err) {
+              executed = false
+              console.log("\nclient.query():", err);
+              // Rollback before executing another transaction
+              client.query("ROLLBACK");
+            }
+            console.log("client.query() COMMIT row count on update:", result.rowCount);
+          })
+        }
         //insert payment row
         await client.query(
           queryTextInsertPayment,
@@ -94,19 +114,14 @@ module.exports = {
               console.log("\nclient.query():", err);
               // Rollback before executing another transaction
               client.query("ROLLBACK");
-
             }
             executed = true;
             sqlResult = result.rows[0];
-            // client.query("COMMIT");
             console.log("client.query() COMMIT row count on insert:", result.rowCount);
-
           }
         )
-
         // Update the remaining payment
-        await client.query(queryTextUpdateInvoiceRP, [idInvoice,
-          getRemaningPaymentByInvoiceId.rows[0].remaining_payment - amount,],
+        await client.query(queryTextUpdateInvoiceRP, [idInvoice, remaining_payment - amount],
           (err, result) => {
             if (err) {
               executed = false;
@@ -116,16 +131,16 @@ module.exports = {
               console.log("Transaction ROLLBACK called");
             }
             executed = true;
-            // client.query("COMMIT");
             console.log("client.query() COMMIT row count on update:", result.rowCount);
-
           }
         );
       }
       await client.query("COMMIT")
+      await client.end()
 
     } catch (error) {
       await client.query("ROLLBACK")
+      await client.end()
       throw error
     } finally {
       await client.release

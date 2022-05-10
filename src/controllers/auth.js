@@ -10,7 +10,7 @@ exports.login = async (req, res) => {
         password,
         resultado.rows[0].password
       );
-      const { username, name, id_route, id_user, id_user_type, status } =
+      const { username, name, id_route, id_user, id_user_type, status, description } =
         resultado.rows[0];
       validPassword.then((value) => {
         if (value) {
@@ -20,10 +20,11 @@ exports.login = async (req, res) => {
             result: {
               username: username,
               nombre: name,
-              idRuta: id_route,
               idUsuario: id_user,
               idUserType: id_user_type,
               status: status,
+              idRuta: id_route,
+              description, description,
               token: jwtService.createToken(username, name, id_route, id_user, id_user_type, status),
             },
           });

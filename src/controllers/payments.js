@@ -54,7 +54,6 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
       timestamp
     )
     .then((sqlTransaction) => {
-      console.log(sqlTransaction, "desde el controller");
       if (sqlTransaction) {
         res.json({
           statusCode: 200,
