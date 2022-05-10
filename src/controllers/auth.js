@@ -1,4 +1,5 @@
 const authModel = require("../models/auth");
+const jwtService = require("../services/auth")
 const bcrypt = require("bcryptjs");
 
 exports.login = async (req, res) => {
@@ -23,6 +24,7 @@ exports.login = async (req, res) => {
               idUsuario: id_user,
               idUserType: id_user_type,
               status: status,
+              token: jwtService.createToken(username, name, id_route, id_user, id_user_type, status),
             },
           });
         } else {
