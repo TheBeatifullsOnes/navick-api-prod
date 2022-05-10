@@ -24,7 +24,7 @@ const queryTextInsertPayment = `
           updated_at, gps_location, comments
         )
       VALUES
-        (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at;
+        (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at, type_serial;
     `;
 
 const queryTextUpdateInvoiceStatus = `
@@ -76,38 +76,39 @@ module.exports = {
 
     try {
       // Transaction start
-      await client.query("BEGIN")
-      console.log("Begin transaction")
+      await client.query("BEGIN");
+      console.log("Begin transaction");
       // Getting remainingPayment from invoice
-      console.log(`Getting remainingPayment from InvoiceId: ${idInvoice}`)
+      console.log(`Getting remainingPayment from InvoiceId: ${idInvoice}`);
       const getRemaningPaymentByInvoiceId = await client.query(
         queryTextGetInvoiceId,
         [idInvoice]
       );
-      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
       if (getRemaningPaymentByInvoiceId.rows[0].remaining_payment) {
-        console.log("if exist Remaining Payment: ", remaining_payment)
+        console.log("if exist Remaining Payment: ", remaining_payment);
         if (remaining_payment - amount <= 0) {
-          await client.query(queryTextUpdateInvoiceStatus, [idInvoice], (err, result) => {
-            if (err) {
-              executed = false
-              console.log("\nclient.query():", err);
-              // Rollback before executing another transaction
-              client.query("ROLLBACK");
+          await client.query(
+            queryTextUpdateInvoiceStatus,
+            [idInvoice],
+            (err, result) => {
+              if (err) {
+                executed = false;
+                console.log("\nclient.query():", err);
+                // Rollback before executing another transaction
+                client.query("ROLLBACK");
+              }
+              console.log(
+                "client.query() COMMIT row count on update:",
+                result.rowCount
+              );
             }
-            console.log("client.query() COMMIT row count on update:", result.rowCount);
-          })
+          );
         }
         //insert payment row
         await client.query(
           queryTextInsertPayment,
-          [
-            idInvoice,
-            idUser,
-            amount,
-            locationGPS,
-            comments,
-          ],
+          [idInvoice, idUser, amount, locationGPS, comments],
           (err, result) => {
             if (err) {
               executed = false;
@@ -117,11 +118,16 @@ module.exports = {
             }
             executed = true;
             sqlResult = result.rows[0];
-            console.log("client.query() COMMIT row count on insert:", result.rowCount);
+            console.log(
+              "client.query() COMMIT row count on insert:",
+              result.rowCount
+            );
           }
-        )
+        );
         // Update the remaining payment
-        await client.query(queryTextUpdateInvoiceRP, [idInvoice, remaining_payment - amount],
+        await client.query(
+          queryTextUpdateInvoiceRP,
+          [idInvoice, remaining_payment - amount],
           (err, result) => {
             if (err) {
               executed = false;
@@ -131,28 +137,30 @@ module.exports = {
               console.log("Transaction ROLLBACK called");
             }
             executed = true;
-            console.log("client.query() COMMIT row count on update:", result.rowCount);
+            console.log(
+              "client.query() COMMIT row count on update:",
+              result.rowCount
+            );
           }
         );
       }
-      await client.query("COMMIT")
-      await client.end()
-
+      await client.query("COMMIT");
+      await client.end();
     } catch (error) {
-      await client.query("ROLLBACK")
-      await client.end()
-      throw error
+      await client.query("ROLLBACK");
+      await client.end();
+      throw error;
     } finally {
-      await client.release
+      await client.release;
     }
 
-    return { executed, sqlResult }
+    return { executed, sqlResult };
   },
   async getPaymentsByRoute(idRoute) {
     const result = await connexion.query(
       `
       select 
-        p.id_abono, p.created_at, p.total_payment, p.id_invoice
+        p.id_abono, p.created_at, p.total_payment, p.id_invoice, ts.id_type_serial,ts.name as id_type_serial_name
       from 
         payments p
       inner join 
@@ -163,6 +171,10 @@ module.exports = {
         invoices i
       on 
         i.id_invoice = p.id_invoice
+      inner join 
+        type_serial ts
+      on 
+        ts.id_type_serial= p.type_serial
       where
         u.id_route = $1 and i.status = 1`,
       [idRoute]

@@ -63,15 +63,19 @@ module.exports = {
     const invoicesByRoute = await connexion.query(
       `
       SELECT 
-        i.* 
+        i.id_invoice, i.id_type_serial, ts.name as id_type_serial_name, i.id_client, i.type_payment, i.status, i.created_at, i.expiration_date, i.total_amount, i.remaining_payment, i.discount
       FROM
         invoices as i
       INNER JOIN 
         clients as c 
       ON 
         i.id_client=c.id_client
+      INNER JOIN 
+        type_serial as ts
+      ON 
+        ts.id_type_serial= i.id_type_serial
       WHERE
-        c.id_route=$1 
+        c.id_route=$1
       ORDER BY 
         i.created_at 
       ASC`,
