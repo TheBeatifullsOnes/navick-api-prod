@@ -14,7 +14,7 @@ exports.getPayments = (req, res) => {
       res.json({
         statusCode: 500,
         statusMessage: "error",
-        reult: error,
+        result: error,
       });
     });
 };
@@ -34,7 +34,7 @@ exports.getPaymentsByIdInvoice = (req, res) => {
       res.json({
         statusCode: 500,
         statusMessage: "error",
-        reult: error,
+        result: error,
       });
     });
 };
@@ -53,7 +53,6 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
       timestamp
     )
     .then((sqlTransaction) => {
-      console.log(sqlTransaction);
       if (sqlTransaction) {
         res.json({
           statusCode: 200,
@@ -73,7 +72,7 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
       res.json({
         statusCode: 500,
         statusMessage: "error",
-        reult: error,
+        result: error,
       });
     });
 };
@@ -93,7 +92,7 @@ exports.getPaymentsByRoute = (req, res) => {
       res.json({
         statusCode: 500,
         statusMessage: "error",
-        reult: error,
+        result: error,
       });
     });
 };
