@@ -16,7 +16,10 @@
     "express-timestamp": "^0.1.4",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.3",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.16",
     "pg": "^8.7.3",
     "pg-promise": "^10.11.1",
     "uuid": "^8.3.2"
