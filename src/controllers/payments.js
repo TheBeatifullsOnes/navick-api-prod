@@ -40,7 +40,7 @@ exports.getPaymentsByIdInvoice = (req, res) => {
 };
 
 exports.addPaymentUpdateRemainingPayment = async (req, res) => {
-  const { idInvoice, idUser, amount, state, locationGPS, comments } = req.body;
+  const { idInvoice, idUser, amount, locationGPS, comments } = req.body;
   const moment = req.timestamp;
   const timestamp = moment.tz("America/Mexico_City").format();
   paymentsModel
@@ -48,7 +48,6 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
       idInvoice,
       idUser,
       amount,
-      state,
       locationGPS,
       comments,
       timestamp
