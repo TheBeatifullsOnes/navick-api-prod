@@ -75,7 +75,7 @@ module.exports = {
       ON 
         ts.id_type_serial= i.id_type_serial
       WHERE
-        c.id_route=$1
+        c.id_route=$1 and i.status = 1
       ORDER BY 
         i.created_at 
       ASC`,

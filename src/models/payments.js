@@ -34,6 +34,21 @@ const queryTextUpdateInvoiceStatus = `
         status=0
       WHERE 
         id_invoice =$1`;
+const queryStringPaymentsByRoute = `
+      select 
+        p.id_abono, p.created_at, p.total_payment, p.id_invoice
+      from 
+        payments p
+      inner join 
+        users u
+      on 
+        p.id_user=u.id_user
+      inner join 
+        invoices i
+      on 
+        i.id_invoice = p.id_invoice
+      where
+        u.id_route = $1 and i.status = 1`;
 
 module.exports = {
   async getAbonos() {
@@ -158,25 +173,7 @@ module.exports = {
   },
   async getPaymentsByRoute(idRoute) {
     const result = await connexion.query(
-      `
-      select 
-        p.id_abono, p.created_at, p.total_payment, p.id_invoice, ts.id_type_serial,ts.name as id_type_serial_name
-      from 
-        payments p
-      inner join 
-        users u
-      on 
-        p.id_user=u.id_user
-      inner join 
-        invoices i
-      on 
-        i.id_invoice = p.id_invoice
-      inner join 
-        type_serial ts
-      on 
-        ts.id_type_serial= p.type_serial
-      where
-        u.id_route = $1 and i.status = 1`,
+      queryStringPaymentsByRoute,
       [idRoute]
     );
     return result.rows;
