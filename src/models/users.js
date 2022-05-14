@@ -3,13 +3,23 @@ const connexion = require("../config/bdConnexion");
 
 module.exports = {
   async obtenerUsuarios() {
-    const resultados = await connexion.query("select * from users");
+    const resultados = await connexion.query(`
+      SELECT 
+	      u.id_user, u.username, u.name, u.id_user_type, u.password, u.created_at, u.id_route, r.description as id_route_name, u.date_deleted, u.status
+      FROM 
+	      users u
+      INNER JOIN
+	      routes r
+      ON 
+        u.id_route = r.id_route `
+    );
     return resultados.rows;
   },
   async obtenerUsuario(idUser) {
     const result = connexion.query(
       `
-      SELECT *
+      SELECT 
+        *
       FROM
         public.users
       WHERE
@@ -93,12 +103,12 @@ module.exports = {
   async updateUserStatus(idUser, status) {
     const result = await connexion.query(
       `
-    UPDATE 
-      users 
-    SET 
-      status=$2, date_deleted=now()
-    WHERE 
-      id_user=$1`,
+      UPDATE 
+        users 
+      SET 
+        status=$2, date_deleted=now()
+      WHERE 
+        id_user=$1`,
       [idUser, status]
     );
     return result;
