@@ -1,4 +1,3 @@
-const { query } = require("express");
 const connexion = require("../config/bdConnexion");
 
 module.exports = {
@@ -102,15 +101,13 @@ module.exports = {
     idCliente,
     idTipoPedido,
     estado,
-    fechaEmision,
     fechaVencimiento,
     importe,
     saldo,
     descuento,
-    idUsuario
   ) {
     const existRegister = connexion.query(
-      `SELECT * FROM facturas where id_factura = $1`,
+      `SELECT * FROM invoices where id_invoice = $1`,
       [idFactura]
     );
     if ((await existRegister).rows.length == 0) {
@@ -118,23 +115,22 @@ module.exports = {
     } else {
       const result = await connexion.query(
         `
-          UPDATE facturas 
-          SET 
-            id_cliente=$2,id_tipopedido=$3,
-            estado=$4,fecha_emision=$5,fecha_vencimiento=$6,
-            importe=$7,saldo=$8,descuento=$9,id_usuario=$10
-          WHERE id_factura=$1`,
+          UPDATE 
+            public.invoices
+        	SET 
+            id_client=$2, type_payment=$3, status=$4, 
+            expiration_date=$5, total_amount=$6, remaining_payment=$7, 
+            discount=$8
+	        WHERE id_invoice=$1`,
         [
           idFactura,
           idCliente,
           idTipoPedido,
           estado,
-          fechaEmision,
           fechaVencimiento,
           importe,
           saldo,
           descuento,
-          idUsuario,
         ]
       );
       return result;
@@ -239,10 +235,11 @@ module.exports = {
               // Rollback before executing another transaction
               client.query("ROLLBACK");
               console.log("Transaction ROLLBACK called");
-            } else {
-              client.query("COMMIT");
-              console.log("client.query() COMMIT row count:", result.rowCount);
             }
+            // else {
+            //   client.query("COMMIT");
+            //   console.log("client.query() COMMIT row count:", result.rowCount);
+            // }
           }
         );
         executed = true;
@@ -256,4 +253,21 @@ module.exports = {
     }
     return executed;
   },
+  async getInvoicesByCurrentDay(idInvoice) {
+    const queryTextGetIvoicesByCurrentDay = `
+      SELECT 
+        i.* 
+      FROM 
+        invoices as i
+      INNER JOIN
+        clients c
+      ON 
+        i.id_client =c.id_client
+      WHERE 
+        date_trunc('day', i.created_at)::date = current_date
+      AND 
+        c.id_route = $1`
+    const result = await connexion.query(queryTextGetIvoicesByCurrentDay, [idInvoice])
+    return result.rows
+  }
 };
