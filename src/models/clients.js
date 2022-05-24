@@ -153,13 +153,19 @@ module.exports = {
     let resultados = await connexion.query(
       `
       SELECT 
-	      c.*
+        c.*,i.status
       FROM
         users as u
       INNER JOIN 
         clients as c on u.id_route = c.id_route 
+      INNER JOIN 
+        invoices as i on i.id_client = c.id_client
       WHERE 
-        u.id_route = $1 and c.status=1;
+        u.id_route=$1
+      AND 
+        c.status=1
+      AND 
+        i.status=1;
       `,
       [idRuta]
     );
