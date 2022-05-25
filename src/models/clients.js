@@ -152,8 +152,8 @@ module.exports = {
   async getClientByRoute(idRuta) {
     let resultados = await connexion.query(
       `
-      SELECT 
-        distinct, c.*,i.status as status_invoice
+      SELECT DISTINCT 
+        c.*,i.status as status_invoice
       FROM
         users as u
       INNER JOIN 
