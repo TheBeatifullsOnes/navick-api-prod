@@ -87,8 +87,7 @@ module.exports = {
 
     let executed = false;
     let sqlResult = null;
-    let status = false;
-
+    console.log(client.getMaxListeners())
     try {
       // Transaction start
       await client.query("BEGIN")
@@ -151,15 +150,19 @@ module.exports = {
         );
       }
       await client.query("COMMIT")
-      await client.end()
+      await client.release(true)
 
     } catch (error) {
       await client.query("ROLLBACK")
-      await client.end()
+      await client.release(true)
+
+      // await client.end()
       throw error
-    } finally {
-      await client.release
     }
+    // finally {
+    //   await client.release(true)
+    // }
+    // await client.end()
 
     return { executed, sqlResult }
   },
