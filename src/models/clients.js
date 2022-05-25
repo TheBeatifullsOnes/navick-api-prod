@@ -153,7 +153,7 @@ module.exports = {
     let resultados = await connexion.query(
       `
       SELECT 
-        c.*,i.status as status_invoice
+        distinct, c.*,i.status as status_invoice
       FROM
         users as u
       INNER JOIN 
