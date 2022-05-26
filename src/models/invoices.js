@@ -5,11 +5,32 @@ module.exports = {
     const result = await connexion.query(
       `
       SELECT 
-        id_invoice, id_type_serial, id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
-	    FROM 
-        public.invoices
+        ts.name as id_type_serial,
+        i.id_invoice, 
+        c.name as name_client,
+        tp.descripcion as type_payment,
+        i.status, 
+        i.created_at, 
+        i.expiration_date, 
+        i.total_amount, 
+        i.remaining_payment, 
+        i.discount
+      FROM 
+        public.invoices i
+      INNER JOIN
+        public.type_serial ts
+      ON
+        ts.id_type_serial=i.id_type_serial
+      INNER JOIN
+        public.clients c
+      ON 
+        i.id_client= c.id_client
+      INNER JOIN
+        public.tipopedido tp
+      ON 
+        tp.id_tipopedido = i.type_payment
       WHERE 
-        total_amount is not null`
+        i.total_amount is not null`
     );
     return result.rows;
   },
@@ -234,18 +255,18 @@ module.exports = {
             }
             // else {
             //   client.query("COMMIT");
-            //   console.log("client.query() COMMIT row count:", result.rowCount);
+            console.log("client.query() COMMIT row count:", result.rowCount);
             // }
           }
         );
         executed = true;
       });
       await client.query("COMMIT");
-    } catch (e) {
+      client.release(true);
+    } catch (error) {
       await client.query("ROLLBACK");
-      throw e;
-    } finally {
-      client.release;
+      client.release(true);
+      throw error;
     }
     return executed;
   },
