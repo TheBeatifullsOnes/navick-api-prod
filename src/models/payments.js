@@ -21,10 +21,11 @@ const queryTextInsertPayment = `
         (
           type_serial, id_invoice, id_user,
           created_at, total_payment, status,
-          updated_at, gps_location, comments
+          updated_at, gps_location, comments,
+          text_ticket, printed_ticket
         )
       VALUES
-        (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at;
+        (3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_abono, created_at;
     `;
 
 const queryTextUpdateInvoiceStatus = `
@@ -81,13 +82,16 @@ module.exports = {
     idUser,
     amount,
     locationGPS,
-    comments
+    comments,
+    timestamp,
+    textTicket,
+    printedTicket
   ) {
     const client = await connexion.connect();
-
     let executed = false;
     let sqlResult = null;
-    console.log(client.getMaxListeners())
+    console.log(timestamp)
+
     try {
       // Transaction start
       await client.query("BEGIN")
@@ -99,7 +103,7 @@ module.exports = {
         [idInvoice]
       );
       const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
-      if (getRemaningPaymentByInvoiceId.rows[0].remaining_payment) {
+      if (remaining_payment) {
         console.log("if exist Remaining Payment: ", remaining_payment)
         if (remaining_payment - amount <= 0) {
           await client.query(queryTextUpdateInvoiceStatus, [idInvoice], (err, result) => {
@@ -121,6 +125,9 @@ module.exports = {
             amount,
             locationGPS,
             comments,
+            timestamp,
+            textTicket,
+            printedTicket
           ],
           (err, result) => {
             if (err) {
@@ -134,6 +141,7 @@ module.exports = {
             console.log("client.query() COMMIT row count on insert:", result.rowCount);
           }
         )
+
         // Update the remaining payment
         await client.query(queryTextUpdateInvoiceRP, [idInvoice, remaining_payment - amount],
           (err, result) => {
@@ -155,15 +163,8 @@ module.exports = {
     } catch (error) {
       await client.query("ROLLBACK")
       await client.release(true)
-
-      // await client.end()
       throw error
     }
-    // finally {
-    //   await client.release(true)
-    // }
-    // await client.end()
-
     return { executed, sqlResult }
   },
   async getPaymentsByRoute(idRoute) {

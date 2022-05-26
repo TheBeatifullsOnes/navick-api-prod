@@ -8,5 +8,6 @@ router.get("/:idInvoice", invoiceController.getInvoice);
 router.post("/", invoiceController.addInvoice);
 router.put("/", invoiceController.updateInvoice);
 router.get("/only/:idRoute", invoiceController.getInvoicesByRoute);
+router.post("/cancel", invoiceController.cancelInvoices)
 
 module.exports = router;

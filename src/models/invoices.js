@@ -8,6 +8,7 @@ module.exports = {
         ts.name as id_type_serial,
         i.id_invoice, 
         c.name as name_client,
+        i.id_client,
         tp.descripcion as type_payment,
         i.status, 
         i.created_at, 
@@ -121,7 +122,7 @@ module.exports = {
     fechaVencimiento,
     importe,
     saldo,
-    descuento,
+    descuento
   ) {
     const existRegister = connexion.query(
       `SELECT * FROM invoices where id_invoice = $1`,
@@ -255,7 +256,11 @@ module.exports = {
             }
             // else {
             //   client.query("COMMIT");
-            console.log("client.query() COMMIT row count:", result.rowCount);
+            console.log(
+              "client.query() COMMIT row count:",
+              result.rowCount,
+              result
+            );
             // }
           }
         );
@@ -283,8 +288,149 @@ module.exports = {
       WHERE 
         date_trunc('day', i.created_at)::date = current_date
       AND 
-        c.id_route = $1`
-    const result = await connexion.query(queryTextGetIvoicesByCurrentDay, [idInvoice])
-    return result.rows
-  }
+        c.id_route = $1`;
+    const result = await connexion.query(queryTextGetIvoicesByCurrentDay, [
+      idInvoice,
+    ]);
+    return result.rows;
+  },
+  async cancelInvoices(
+    idInvoice,
+    idUser,
+    amount,
+    locationGPS,
+    comments,
+    textTicket,
+    printedTicket
+  ) {
+    console.log(
+      idInvoice,
+      idUser,
+      amount,
+      locationGPS,
+      comments,
+      textTicket,
+      printedTicket
+    );
+    const client = await connexion.connect();
+
+    let executed = false;
+    let queryInvoice = null;
+    let queryPayment = null;
+    try {
+      await client.query("BEGIN");
+      console.log("Begin transaction");
+      // validando que la factura exista
+      const queryTextInvoice = `
+      SELECT 
+        remaining_payment, status
+      FROM 
+        invoices 
+      WHERE 
+        id_invoice = $1`;
+
+      const queryTextUpdateInvoiceStatus = `
+        UPDATE 
+          public.invoices
+        SET 
+          status=2,
+          remaining_payment=$2
+        WHERE 
+          id_invoice =$1`;
+
+      const queryTextInsertPayment = `
+        INSERT INTO
+          public.payments
+          (
+            type_serial, id_invoice, id_user,
+            created_at, total_payment, status,
+            updated_at, gps_location, comments,
+            text_ticket, printed_ticket
+          )
+        VALUES
+          (3,$1, $2, now(), $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at;
+      `;
+
+      const result = await client.query(queryTextInvoice, [idInvoice]);
+      const { remaining_payment, status } = result.rows[0];
+      console.log(
+        `Valido que si hay un pago restante existe la factura ${idInvoice} ${remaining_payment}`
+      );
+      // if remaining_payment the invoice exist
+      if (remaining_payment) {
+        // if an ammount exist create a payment
+        if (status === 2) {
+          client.query("ROLLBACK");
+          queryInvoice = { error: "la factura ya se encuentra cancelada" }
+          queryPayment = { error: "No se inserto nada por que la factura ya esta cancelada" };
+        } else {
+          // updating the invoice
+          await client.query(
+            queryTextUpdateInvoiceStatus,
+            [idInvoice, remaining_payment - amount],
+            (err, result) => {
+              if (err) {
+                executed = false;
+                console.log("\nclient.query():", err);
+                // Rollback before executing another transaction
+                client.query("ROLLBACK");
+              }
+              executed = true;
+              queryInvoice = {
+                command: result.command,
+                rowCount: result.rowCount,
+              };
+
+              console.log(
+                "client.query() COMMIT row count on update:",
+                queryInvoice
+              );
+            }
+          );
+          if (amount !== 0) {
+            console.log(
+              `El amount es mayor que 0 y hago una insercion de un abono: ${amount} status:${status}`
+            );
+            await client.query(
+              queryTextInsertPayment,
+              [
+                idInvoice,
+                idUser,
+                amount,
+                locationGPS,
+                comments,
+                textTicket,
+                printedTicket,
+              ],
+              (err, result) => {
+                if (err) {
+                  executed = false;
+                  console.log("\nclient.query():", err);
+                  // Rollback before executing another transaction
+                  client.query("ROLLBACK");
+                }
+                executed = true;
+                queryPayment = {
+                  command: result.command,
+                  rowCount: result.rowCount,
+                };
+                console.log(
+                  "client.query() COMMIT row count on insert:",
+                  result.rowCount
+                );
+              }
+            );
+          }
+          queryPayment = { message: "no se hizo ningun abono" }
+        }
+      }
+      await client.query("COMMIT");
+      await client.release(true);
+    } catch (error) {
+      await client.query("ROLLBACK");
+      await client.release(true);
+    }
+
+    return { executed, sqlResult: { queryInvoice, queryPayment } };
+  },
 };
