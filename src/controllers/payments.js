@@ -107,3 +107,25 @@ exports.getPaymentsByRoute = (req, res) => {
       });
     });
 };
+
+exports.updateTicket = (req, res) => {
+  const { idPayment, textTicket, printedTicket } = req.body;
+  paymentsModel.updateTicket(idPayment, textTicket, printedTicket).then(
+    sqlResults => {
+      // if (sqlResults) {
+      res.json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: sqlResults,
+      });
+      // }
+    }
+  )
+    .catch(error => {
+      res.json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    })
+};

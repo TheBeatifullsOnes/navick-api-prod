@@ -37,7 +37,7 @@ const queryTextUpdateInvoiceStatus = `
         id_invoice =$1`;
 const queryStringPaymentsByRoute = `
       select 
-        p.id_abono, p.created_at, p.total_payment, p.id_invoice
+        p.id_abono, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
       from 
         payments p
       inner join 
@@ -174,4 +174,19 @@ module.exports = {
     );
     return result.rows;
   },
+  async updateTicket(idPayment, textTicket, printedTicket) {
+    const queryTextUpdatePayment = `
+    UPDATE 
+      PUBLIC.payments
+    SET 
+      text_ticket=$2, printed_ticket=$3
+    WHERE 
+      id_abono=$1`
+    const result = await connexion.query(
+      queryTextUpdatePayment, [idPayment, textTicket, printedTicket])
+    return {
+      command: result.command,
+      rowCount: result.rowCount
+    }
+  }
 };
