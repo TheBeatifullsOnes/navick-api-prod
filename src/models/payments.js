@@ -41,15 +41,15 @@ const queryStringPaymentsByRoute = `
       from 
         payments p
       inner join 
-        users u
-      on 
-        p.id_user=u.id_user
-      inner join 
         invoices i
       on 
         i.id_invoice = p.id_invoice
+	inner join 
+        clients c
+      on 
+       c.id_client=i.id_client
       where
-        u.id_route = $1 and i.status = 1`;
+        c.id_route = $1 and i.status = 1`;
 
 module.exports = {
   async getAbonos() {
