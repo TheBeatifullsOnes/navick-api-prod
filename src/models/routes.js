@@ -51,11 +51,11 @@ module.exports = {
     } else {
       let resultados = await connexion.query(
         `
-    UPDATE 
-      public.routes
-	  SET  
-      description=$2, status=$3, updated_at=now()
-	  WHERE id_route = $1`,
+      UPDATE 
+        public.routes
+      SET  
+        description=$2, status=$3, updated_at=now()
+      WHERE id_route = $1`,
         [idRoute, description, status]
       );
       return resultados;
