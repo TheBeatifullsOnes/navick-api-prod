@@ -1,4 +1,3 @@
-const res = require("express/lib/response");
 const connexion = require("../config/bdConnexion");
 
 module.exports = {

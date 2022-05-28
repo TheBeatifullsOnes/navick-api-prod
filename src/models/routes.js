@@ -9,6 +9,7 @@ module.exports = {
         public.routes
       WHERE
         description=$1
+      ORDER BY id_route desc
     `,
       [description]
     );
@@ -19,7 +20,7 @@ module.exports = {
         `
       INSERT
       INTO 
-        public.routes(description, state, created_at, updated_at)
+        public.routes(description, status, created_at, updated_at)
 	    VALUES ($1, 1, now(), null)`,
         [description]
       );
@@ -28,13 +29,13 @@ module.exports = {
   },
   async listaRutas() {
     const resultados = await connexion.query(`
-          SELECT r.id_route, r.description, r.state, r.created_at, r.updated_at, count(id_client) as clientsCount 
+          SELECT r.id_route, r.description, r.status, r.created_at, r.updated_at, count(id_client) as clientsCount 
             FROM routes as r
           LEFT JOIN clients as c on c.id_route=r.id_route
           GROUP BY r.id_route;`);
     return resultados.rows;
   },
-  async actualizaRuta(idRoute, description, state) {
+  async actualizaRuta(idRoute, description, status) {
     const existRegister = connexion.query(
       `
       SELECT 1 
@@ -53,9 +54,9 @@ module.exports = {
     UPDATE 
       public.routes
 	  SET  
-      description=$2, state=$3, updated_at=now()
+      description=$2, status=$3, updated_at=now()
 	  WHERE id_route = $1`,
-        [idRoute, description, state]
+        [idRoute, description, status]
       );
       return resultados;
     }

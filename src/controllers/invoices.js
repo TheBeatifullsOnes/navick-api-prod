@@ -4,6 +4,7 @@ exports.getInvoices = (req, res) => {
   invoiceModel
     .getInvoices()
     .then((response) => {
+      console.log(response);
       if (response.length > 0) {
         res.status(200).json({
           statusCode: 200,
@@ -133,7 +134,7 @@ exports.updateInvoice = (req, res) => {
       fechaVencimiento,
       importe,
       saldo,
-      descuento,
+      descuento
     )
     .then((response) => {
       if (response.rowCount > 0) {
@@ -160,27 +161,71 @@ exports.updateInvoice = (req, res) => {
 };
 
 exports.getInvoicesByCurrentDay = (req, res) => {
-  const { idRoute } = req.params
-  invoiceModel.getInvoicesByCurrentDay(idRoute)
-    .then(sqlResult => {
+  const { idRoute } = req.params;
+  invoiceModel
+    .getInvoicesByCurrentDay(idRoute)
+    .then((sqlResult) => {
       if (!sqlResult) {
         res.status(500).json({
           statusCode: 500,
           statusMessage: "error",
           result: "algo salio mal en la consulta",
-        })
+        });
       }
       res.status(200).json({
         statusCode: 200,
         statusMessage: "success",
         result: sqlResult,
       });
-    }).catch(error => {
+    })
+    .catch((error) => {
       res.status(500).json({
         statusCode: 500,
         statusMessage: "Error en el servico del lado del servidor",
         result: error,
       });
-    })
+    });
+};
 
-}
+exports.cancelInvoices = async (req, res) => {
+  const {
+    idInvoice,
+    idUser,
+    amount,
+    locationGPS,
+    comments,
+    textTicket,
+    printedTicket,
+  } = req.body;
+  invoiceModel
+    .cancelInvoices(
+      idInvoice,
+      idUser,
+      amount,
+      locationGPS,
+      comments,
+      textTicket,
+      printedTicket
+    )
+    .then((sqlResult) => {
+      if (!sqlResult) {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "error",
+          result: "algo salio mal en la consulta",
+        });
+      }
+      res.status(200).json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: sqlResult,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "Error en el servico del lado del servidor",
+        result: error,
+      });
+    });
+};
