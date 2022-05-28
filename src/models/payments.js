@@ -188,5 +188,15 @@ module.exports = {
       command: result.command,
       rowCount: result.rowCount
     }
+  },
+  async getPaymentsByDay() {
+    const queryTextGetPaymentsByDay = `
+    SELECT * 
+    FROM 
+      PAYMENTS 
+    WHERE 
+      date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`
+    const result = await connexion.query(queryTextGetPaymentsByDay)
+    return result.rows
   }
 };

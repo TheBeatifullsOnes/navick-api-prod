@@ -129,3 +129,21 @@ exports.updateTicket = (req, res) => {
       });
     })
 };
+
+exports.getPaymentsByDay = (req, res) => {
+  paymentsModel.getPaymentsByDay()
+    .then(sqlResults => {
+      res.json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: sqlResults,
+      });
+    })
+    .catch(error => {
+      res.json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    })
+}
