@@ -40,7 +40,15 @@ exports.getPaymentsByIdInvoice = (req, res) => {
 };
 
 exports.addPaymentUpdateRemainingPayment = async (req, res) => {
-  const { idInvoice, idUser, amount, locationGPS, comments } = req.body;
+  const {
+    idInvoice,
+    idUser,
+    amount,
+    locationGPS,
+    comments,
+    textTicket,
+    printedTicket,
+  } = req.body;
   const moment = req.timestamp;
   const timestamp = moment.tz("America/Mexico_City").format();
   paymentsModel
@@ -50,9 +58,12 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
       amount,
       locationGPS,
       comments,
-      timestamp
+      timestamp,
+      textTicket,
+      printedTicket
     )
     .then((sqlTransaction) => {
+      console.log(sqlTransaction);
       if (sqlTransaction) {
         res.json({
           statusCode: 200,
@@ -96,3 +107,43 @@ exports.getPaymentsByRoute = (req, res) => {
       });
     });
 };
+
+exports.updateTicket = (req, res) => {
+  const { idPayment, textTicket, printedTicket } = req.body;
+  paymentsModel.updateTicket(idPayment, textTicket, printedTicket).then(
+    sqlResults => {
+      // if (sqlResults) {
+      res.json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: sqlResults,
+      });
+      // }
+    }
+  )
+    .catch(error => {
+      res.json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    })
+};
+
+exports.getPaymentsByDay = (req, res) => {
+  paymentsModel.getPaymentsByDay()
+    .then(sqlResults => {
+      res.json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: sqlResults,
+      });
+    })
+    .catch(error => {
+      res.json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    })
+}

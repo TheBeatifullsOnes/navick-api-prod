@@ -21,10 +21,11 @@ const queryTextInsertPayment = `
         (
           type_serial, id_invoice, id_user,
           created_at, total_payment, status,
-          updated_at, gps_location, comments
+          updated_at, gps_location, comments,
+          text_ticket, printed_ticket
         )
       VALUES
-        (3,$1, $2, now(), $3, 1, null, $4, $5) returning id_abono, created_at, type_serial;
+        (3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_abono, created_at;
     `;
 
 const queryTextUpdateInvoiceStatus = `
@@ -36,7 +37,7 @@ const queryTextUpdateInvoiceStatus = `
         id_invoice =$1`;
 const queryStringPaymentsByRoute = `
       select 
-        p.id_abono, p.created_at, p.total_payment, p.id_invoice
+        p.id_abono, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
       from 
         payments p
       inner join 
@@ -81,13 +82,15 @@ module.exports = {
     idUser,
     amount,
     locationGPS,
-    comments
+    comments,
+    timestamp,
+    textTicket,
+    printedTicket
   ) {
     const client = await connexion.connect();
-
     let executed = false;
     let sqlResult = null;
-    let status = false;
+    console.log(timestamp)
 
     try {
       // Transaction start
@@ -99,9 +102,9 @@ module.exports = {
         queryTextGetInvoiceId,
         [idInvoice]
       );
-      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
-      if (getRemaningPaymentByInvoiceId.rows[0].remaining_payment) {
-        console.log("if exist Remaining Payment: ", remaining_payment);
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
+      if (remaining_payment) {
+        console.log("if exist Remaining Payment: ", remaining_payment)
         if (remaining_payment - amount <= 0) {
           await client.query(
             queryTextUpdateInvoiceStatus,
@@ -123,7 +126,16 @@ module.exports = {
         //insert payment row
         await client.query(
           queryTextInsertPayment,
-          [idInvoice, idUser, amount, locationGPS, comments],
+          [
+            idInvoice,
+            idUser,
+            amount,
+            locationGPS,
+            comments,
+            timestamp,
+            textTicket,
+            printedTicket
+          ],
           (err, result) => {
             if (err) {
               executed = false;
@@ -138,7 +150,8 @@ module.exports = {
               result.rowCount
             );
           }
-        );
+        )
+
         // Update the remaining payment
         await client.query(
           queryTextUpdateInvoiceRP,
@@ -159,17 +172,15 @@ module.exports = {
           }
         );
       }
-      await client.query("COMMIT");
-      await client.end();
-    } catch (error) {
-      await client.query("ROLLBACK");
-      await client.end();
-      throw error;
-    } finally {
-      await client.release;
-    }
+      await client.query("COMMIT")
+      await client.release(true)
 
-    return { executed, sqlResult };
+    } catch (error) {
+      await client.query("ROLLBACK")
+      await client.release(true)
+      throw error
+    }
+    return { executed, sqlResult }
   },
   async getPaymentsByRoute(idRoute) {
     const result = await connexion.query(
@@ -178,4 +189,29 @@ module.exports = {
     );
     return result.rows;
   },
+  async updateTicket(idPayment, textTicket, printedTicket) {
+    const queryTextUpdatePayment = `
+    UPDATE 
+      PUBLIC.payments
+    SET 
+      text_ticket=$2, printed_ticket=$3
+    WHERE 
+      id_abono=$1`
+    const result = await connexion.query(
+      queryTextUpdatePayment, [idPayment, textTicket, printedTicket])
+    return {
+      command: result.command,
+      rowCount: result.rowCount
+    }
+  },
+  async getPaymentsByDay() {
+    const queryTextGetPaymentsByDay = `
+    SELECT * 
+    FROM 
+      PAYMENTS 
+    WHERE 
+      date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`
+    const result = await connexion.query(queryTextGetPaymentsByDay)
+    return result.rows
+  }
 };
