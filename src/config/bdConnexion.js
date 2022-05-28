@@ -6,7 +6,7 @@ const pool = new Pool({
   database: "Navick_old",
   password: "navick2022",
   port: 5432,
-  max: 20,
+  max: 5,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
 });
