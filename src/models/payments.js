@@ -32,7 +32,7 @@ const queryTextUpdateInvoiceStatus = `
       UPDATE 
         public.invoices
       SET 
-        status=0
+        status=2
       WHERE 
         id_invoice =$1`;
 const queryStringPaymentsByRoute = `
@@ -49,7 +49,12 @@ const queryStringPaymentsByRoute = `
       ON
         i.id_invoice = p.id_invoice
       WHERE
-        u.id_route = $1 and i.status = 1`;
+        u.id_route = $1 and i.status = 1
+      OR
+        p.printed_ticket = false 
+	    ORDER BY 
+        p.created_at 
+      DESC`;
 
 module.exports = {
   async getAbonos() {
@@ -104,7 +109,7 @@ module.exports = {
       const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
       if (remaining_payment) {
         console.log("if exist Remaining Payment: ", remaining_payment)
-        if (remaining_payment - amount <= 0) {
+        if (remaining_payment - amount === 0) {
           await client.query(queryTextUpdateInvoiceStatus, [idInvoice], (err, result) => {
             if (err) {
               executed = false
@@ -194,11 +199,11 @@ module.exports = {
       date = `DATE '${selectedDate}'`
     }
     const queryTextGetPaymentsByDay = `
-    SELECT * 
-    FROM 
-      PAYMENTS 
-    WHERE 
-      date_trunc('day', created_at)::date = ${date}`
+      SELECT * 
+      FROM 
+        PAYMENTS 
+      WHERE 
+        date_trunc('day', created_at)::date = ${date}`
     const result = await connexion.query(queryTextGetPaymentsByDay)
     return result.rows
   }

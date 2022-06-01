@@ -92,7 +92,9 @@ module.exports = {
       ON 
         i.id_client=c.id_client
       WHERE
-        c.id_route=$1 and i.status = 1
+        c.id_route=$1 and i.status = 1 
+      OR 
+        (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false
       ORDER BY 
         i.created_at 
       ASC`,
@@ -333,7 +335,7 @@ module.exports = {
         UPDATE 
           public.invoices
         SET 
-          status=2,
+          status=3,
           remaining_payment=$2
         WHERE 
           id_invoice =$1`;
