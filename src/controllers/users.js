@@ -2,7 +2,6 @@ const usuariosModel = require("../models/users");
 const bcrypt = require("bcryptjs");
 
 exports.listaUsuarios = (req, res) => {
-  console.log("test");
   usuariosModel
     .obtenerUsuarios()
     .then((response) => {
@@ -25,7 +24,6 @@ exports.listaUsuarios = (req, res) => {
 
 exports.updateUserStatus = (req, res) => {
   const { idUser, status } = req.body;
-  console.log("aca es el req.body", req.body);
   usuariosModel
     .updateUserStatus(idUser, status)
     .then((sqlResult) => {
@@ -105,7 +103,7 @@ exports.insertaUsuario = async (req, res) => {
 
 exports.actualizaUsuario = async (req, res) => {
   const { username, name, idUserType, password, status, idRoute } = req.body;
-  let hashPassword = ""
+  let hashPassword = "";
   if (password !== "") {
     hashPassword = await bcrypt.hash(password, 10);
   }

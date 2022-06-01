@@ -15,6 +15,7 @@ const invoiceRoutes = require("./src/routes/invoices");
 const productRoutes = require("./src/routes/product");
 const categoryRoutes = require("./src/routes/category");
 const paymentsRoutes = require("./src/routes/payments");
+const visitsRoutes = require("./src/routes/visits");
 
 const detailsInvoicesRoutes = require("./src/routes/detailsInvoices");
 
@@ -42,6 +43,7 @@ app.use("/api/v1/invoices", invoiceRoutes);
 app.use("/api/v1/products", productRoutes);
 app.use("/api/v1/categories", categoryRoutes);
 app.use("/api/v1/payments", paymentsRoutes);
+app.use("/api/v1/visits", visitsRoutes);
 
 app.get("/test", (req, res) => {
   console.log(req);

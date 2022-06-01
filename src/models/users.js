@@ -10,8 +10,7 @@ module.exports = {
       INNER JOIN
 	      routes r
       ON 
-        u.id_route = r.id_route `
-    );
+        u.id_route = r.id_route `);
     return resultados.rows;
   },
   async obtenerUsuario(idUser) {
@@ -31,11 +30,12 @@ module.exports = {
   async insertarUsuario(username, name, idUserType, password, idRoute) {
     const existRegister = connexion.query(
       `
-        SELECT 1 
-        FROM
-          public.users
-        WHERE
-          username=$1
+      SELECT 
+        1 
+      FROM
+        public.users
+      WHERE
+        username=$1
       `,
       [username]
     );
@@ -64,7 +64,7 @@ module.exports = {
     status,
     idRoute
   ) {
-    let result
+    let result;
     if (hashPassword !== "") {
       result = await connexion.query(
         `
