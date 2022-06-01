@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 const queryTextGetInvoiceId = `
       SELECT 
@@ -98,27 +99,34 @@ module.exports = {
     let sqlResult = null;
     try {
       // Transaction start
-      await client.query("BEGIN")
-      console.log("Begin transaction")
+      await client.query("BEGIN");
+      console.log("Begin transaction");
       // Getting remainingPayment FROM invoice
-      console.log(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`)
+      console.log(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
       const getRemaningPaymentByInvoiceId = await client.query(
         queryTextGetInvoiceId,
         [idInvoice]
       );
-      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
       if (remaining_payment) {
-        console.log("if exist Remaining Payment: ", remaining_payment)
+        console.log("if exist Remaining Payment: ", remaining_payment);
         if (remaining_payment - amount === 0) {
-          await client.query(queryTextUpdateInvoiceStatus, [idInvoice], (err, result) => {
-            if (err) {
-              executed = false
-              console.log("\nclient.query():", err);
-              // Rollback before executing another transaction
-              client.query("ROLLBACK");
+          await client.query(
+            queryTextUpdateInvoiceStatus,
+            [idInvoice],
+            (err, result) => {
+              if (err) {
+                executed = false;
+                console.log("\nclient.query():", err);
+                // Rollback before executing another transaction
+                client.query("ROLLBACK");
+              }
+              console.log(
+                "client.query() COMMIT row count on update:",
+                result.rowCount
+              );
             }
-            console.log("client.query() COMMIT row count on update:", result.rowCount);
-          })
+          );
         }
         //insert payment row
         await client.query(
@@ -131,7 +139,7 @@ module.exports = {
             comments,
             timestamp,
             textTicket,
-            printedTicket
+            printedTicket,
           ],
           (err, result) => {
             if (err) {
@@ -142,12 +150,17 @@ module.exports = {
             }
             executed = true;
             sqlResult = result.rows[0];
-            console.log("client.query() COMMIT row count on insert:", result.rowCount);
+            console.log(
+              "client.query() COMMIT row count on insert:",
+              result.rowCount
+            );
           }
-        )
+        );
 
         // Update the remaining payment
-        await client.query(queryTextUpdateInvoiceRP, [idInvoice, remaining_payment - amount],
+        await client.query(
+          queryTextUpdateInvoiceRP,
+          [idInvoice, remaining_payment - amount],
           (err, result) => {
             if (err) {
               executed = false;
@@ -157,25 +170,24 @@ module.exports = {
               console.log("Transaction ROLLBACK called");
             }
             executed = true;
-            console.log("client.query() COMMIT row count on update:", result.rowCount);
+            console.log(
+              "client.query() COMMIT row count on update:",
+              result.rowCount
+            );
           }
         );
       }
-      await client.query("COMMIT")
-      await client.release(true)
-
+      await client.query("COMMIT");
+      await client.release(true);
     } catch (error) {
-      await client.query("ROLLBACK")
-      await client.release(true)
-      throw error
+      await client.query("ROLLBACK");
+      await client.release(true);
+      throw error;
     }
-    return { executed, sqlResult }
+    return { executed, sqlResult };
   },
   async getPaymentsByRoute(idRoute) {
-    const result = await connexion.query(
-      queryStringPaymentsByRoute,
-      [idRoute]
-    );
+    const result = await connexion.query(queryStringPaymentsByRoute, [idRoute]);
     return result.rows;
   },
   async updateTicket(idPayment, textTicket, printedTicket) {
@@ -185,26 +197,29 @@ module.exports = {
     SET 
       text_ticket=$2, printed_ticket=$3
     WHERE 
-      id_abono=$1`
-    const result = await connexion.query(
-      queryTextUpdatePayment, [idPayment, textTicket, printedTicket])
+      id_abono=$1`;
+    const result = await connexion.query(queryTextUpdatePayment, [
+      idPayment,
+      textTicket,
+      printedTicket,
+    ]);
     return {
       command: result.command,
-      rowCount: result.rowCount
-    }
+      rowCount: result.rowCount,
+    };
   },
   async getPaymentsByDay(selectedDate) {
-    let date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)"
+    let date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)";
     if (selectedDate !== "") {
-      date = `DATE '${selectedDate}'`
+      date = `DATE '${selectedDate}'`;
     }
     const queryTextGetPaymentsByDay = `
       SELECT * 
       FROM 
         PAYMENTS 
       WHERE 
-        date_trunc('day', created_at)::date = ${date}`
-    const result = await connexion.query(queryTextGetPaymentsByDay)
-    return result.rows
-  }
+        date_trunc('day', created_at)::date = ${date}`;
+    const result = await connexion.query(queryTextGetPaymentsByDay);
+    return result.rows;
+  },
 };

@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 module.exports = {
   async getInvoices() {
@@ -361,8 +362,10 @@ module.exports = {
         // if an ammount exist create a payment
         if (status === 2) {
           client.query("ROLLBACK");
-          queryInvoice = { error: "la factura ya se encuentra cancelada" }
-          queryPayment = { error: "No se inserto nada por que la factura ya esta cancelada" };
+          queryInvoice = { error: "la factura ya se encuentra cancelada" };
+          queryPayment = {
+            error: "No se inserto nada por que la factura ya esta cancelada",
+          };
         } else {
           // updating the invoice
           await client.query(
@@ -421,7 +424,7 @@ module.exports = {
               }
             );
           }
-          queryPayment = { message: "no se hizo ningun abono" }
+          queryPayment = { message: "no se hizo ningun abono" };
         }
       }
       await client.query("COMMIT");

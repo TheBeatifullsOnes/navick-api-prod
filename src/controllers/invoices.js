@@ -1,4 +1,5 @@
 const invoiceModel = require("../models/invoices");
+const logger = require("../utils/logger");
 
 exports.getInvoices = (req, res) => {
   invoiceModel

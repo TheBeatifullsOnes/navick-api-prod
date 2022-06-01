@@ -1,4 +1,5 @@
 const advisorModel = require("../models/advisor");
+const logger = require("../utils/logger");
 
 exports.getAdvisors = function (req, res) {
   advisorModel

@@ -1,9 +1,10 @@
 const visitsModel = require("../models/visits");
-
+const logger = require("../utils/logger");
 exports.getVisits = (req, res) => {
   visitsModel
     .getVisits()
     .then((sqlResult) => {
+      logger.info("Solicitando las visitas en la BD");
       if (sqlResult.length === 0) {
         res.status(500).json({
           statusCode: 500,
