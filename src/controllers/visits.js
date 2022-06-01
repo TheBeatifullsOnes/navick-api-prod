@@ -4,7 +4,7 @@ exports.getVisits = (req, res) => {
   visitsModel
     .getVisits()
     .then((sqlResult) => {
-      if (!sqlResult) {
+      if (sqlResult.length === 0) {
         res.status(500).json({
           statusCode: 500,
           statusMessage: "error",
