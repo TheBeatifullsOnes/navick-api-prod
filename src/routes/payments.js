@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const paymentsController = require("../controllers/payments");
 
-router.get("/byDay", paymentsController.getPaymentsByDay)
+router.post("/byDay", paymentsController.getPaymentsByDay);
 router.get("/", paymentsController.getPayments);
 router.get("/:idInvoice", paymentsController.getPaymentsByIdInvoice);
 router.post("/", paymentsController.addPaymentUpdateRemainingPayment);
