@@ -1,0 +1,110 @@
+2022-06-01 01:06:50:650 info: GET /api/v1/visits 200 552.564 ms - 54
+2022-06-01 01:06:59:659 info: GET /api/v1/visits 200 98.564 ms - 54
+2022-06-01 01:07:19:719 info: GET /api/v1/visits 200 100.357 ms - 54
+2022-06-01 01:07:27:727 info: GET /api/v1/payments 200 3288.504 ms - 2279090
+2022-06-01 01:08:49:849 info: Solicitando las visitas en la BD
+2022-06-01 01:08:49:849 info: GET /api/v1/visits 200 674.183 ms - 174
+2022-06-01 01:11:31:1131 info: Listening on port 8000
+2022-06-01 01:13:05:135 info: App started,listening on port 8000
+2022-06-01 01:16:05:165 info: App started,listening on port 8000
+2022-06-01 01:17:39:1739 info: Se establecio la conexion a la base de datos function listeners(type) {
+  return _listeners(this, type, true);
+}
+2022-06-01 01:17:39:1739 info: App started,listening on port 8000
+2022-06-01 01:17:46:1746 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:17:46:1746 info: App started,listening on port 8000
+2022-06-01 01:17:54:1754 info: Se establecio la conexion a la base de datos [object Object]
+2022-06-01 01:17:54:1754 info: App started,listening on port 8000
+2022-06-01 01:18:25:1825 info: Se establecio la conexion a la base de datos 0
+2022-06-01 01:18:25:1825 info: App started,listening on port 8000
+2022-06-01 01:18:41:1841 info: Se establecio la conexion a la base de datos 0
+2022-06-01 01:18:41:1841 info: App started,listening on port 8000
+2022-06-01 01:19:19:1919 info: Se establecio la conexion a la base de datos function addListener(type, listener) {
+  return _addListener(this, type, listener, false);
+}
+2022-06-01 01:19:19:1919 info: App started,listening on port 8000
+2022-06-01 01:20:13:2013 info: Se establecio la conexion a la base de datos function eventNames() {
+  return this._eventsCount > 0 ? ReflectOwnKeys(this._events) : [];
+}
+2022-06-01 01:20:13:2013 info: App started,listening on port 8000
+2022-06-01 01:20:18:2018 info: Se establecio la conexion a la base de datos function eventNames() {
+  return this._eventsCount > 0 ? ReflectOwnKeys(this._events) : [];
+}
+2022-06-01 01:20:18:2018 info: App started,listening on port 8000
+2022-06-01 01:20:25:2025 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:20:25:2025 info: App started,listening on port 8000
+2022-06-01 01:20:38:2038 info: Se establecio la conexion a la base de datos [object Object]
+2022-06-01 01:20:38:2038 info: App started,listening on port 8000
+2022-06-01 01:20:46:2046 info: Se establecio la conexion a la base de datos 0
+2022-06-01 01:20:47:2047 info: App started,listening on port 8000
+2022-06-01 01:20:56:2056 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:20:56:2056 info: App started,listening on port 8000
+2022-06-01 01:21:58:2158 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:21:58:2158 info: App started,listening on port 8000
+2022-06-01 01:22:19:2219 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:22:19:2219 info: App started,listening on port 8000
+2022-06-01 01:23:28:2328 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:23:29:2329 info: App started,listening on port 8000
+2022-06-01 01:23:32:2332 info: Solicitando las visitas en la BD
+2022-06-01 01:23:32:2332 info: GET /api/v1/visits 200 552.050 ms - 174
+2022-06-01 01:23:48:2348 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:23:48:2348 info: App started,listening on port 8000
+2022-06-01 01:23:51:2351 info: GET /api/v1/visits 200 949.650 ms - 54
+2022-06-01 01:24:06:246 info: GET /api/v1/visits 200 96.690 ms - 54
+2022-06-01 01:24:22:2422 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:24:22:2422 info: App started,listening on port 8000
+2022-06-01 01:24:24:2424 info: Visits Model getting a list of the data from the visits table [object Object]
+2022-06-01 01:24:24:2424 info: Solicitando las visitas en la BD
+2022-06-01 01:24:24:2424 info: GET /api/v1/visits 200 666.801 ms - 174
+2022-06-01 01:25:20:2520 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:25:20:2520 info: App started,listening on port 8000
+2022-06-01 01:25:23:2523 info: Visits Model getting a list of the data query
+2022-06-01 01:25:23:2523 info: Solicitando las visitas en la BD
+2022-06-01 01:25:23:2523 info: GET /api/v1/visits 200 541.078 ms - 174
+2022-06-01 01:25:51:2551 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:25:51:2551 info: App started,listening on port 8000
+2022-06-01 01:25:54:2554 warn: Visits Model getting a list of the data query
+2022-06-01 01:25:54:2554 info: Solicitando las visitas en la BD
+2022-06-01 01:25:54:2554 info: GET /api/v1/visits 200 550.610 ms - 174
+2022-06-01 01:27:20:2720 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:27:20:2720 info: App started,listening on port 8000
+2022-06-01 01:27:24:2724 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:27:24:2724 info: App started,listening on port 8000
+2022-06-01 01:27:30:2730 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:27:30:2730 info: App started,listening on port 8000
+2022-06-01 01:27:38:2738 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:27:39:2739 info: App started,listening on port 8000
+2022-06-01 01:27:50:2750 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:27:50:2750 info: App started,listening on port 8000
+2022-06-01 01:27:55:2755 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:27:55:2755 info: App started,listening on port 8000
+2022-06-01 01:28:00:280 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:00:280 info: App started,listening on port 8000
+2022-06-01 01:28:06:286 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:07:287 info: App started,listening on port 8000
+2022-06-01 01:28:11:2811 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:11:2811 info: App started,listening on port 8000
+2022-06-01 01:28:21:2821 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:21:2821 info: App started,listening on port 8000
+2022-06-01 01:28:26:2826 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:26:2826 info: App started,listening on port 8000
+2022-06-01 01:28:32:2832 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:32:2832 info: App started,listening on port 8000
+2022-06-01 01:28:36:2836 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:36:2836 info: App started,listening on port 8000
+2022-06-01 01:28:42:2842 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:42:2842 info: App started,listening on port 8000
+2022-06-01 01:28:48:2848 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:48:2848 info: App started,listening on port 8000
+2022-06-01 01:28:56:2856 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:28:57:2857 info: App started,listening on port 8000
+2022-06-01 01:29:01:291 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:29:01:291 info: App started,listening on port 8000
+2022-06-01 01:29:10:2910 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:29:10:2910 info: App started,listening on port 8000
+2022-06-01 01:29:14:2914 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:29:14:2914 info: App started,listening on port 8000
+2022-06-01 01:29:18:2918 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:29:18:2918 info: App started,listening on port 8000
+2022-06-01 01:29:23:2923 info: Se establecio la conexion a la base de datos 
+2022-06-01 01:29:23:2923 info: App started,listening on port 8000

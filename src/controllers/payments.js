@@ -1,4 +1,5 @@
 const paymentsModel = require("../models/payments");
+const logger = require("../utils/logger");
 
 exports.getPayments = (req, res) => {
   paymentsModel

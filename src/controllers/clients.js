@@ -1,6 +1,7 @@
 const clientModel = require("../models/clients");
 const invoicesModel = require("../models/invoices");
 const invoiceDetailsModel = require("../models/detailsInvoices");
+const logger = require("../utils/logger");
 
 exports.obtenerClientes = (req, res) => {
   clientModel

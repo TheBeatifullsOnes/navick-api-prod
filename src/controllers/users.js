@@ -1,5 +1,6 @@
 const usuariosModel = require("../models/users");
 const bcrypt = require("bcryptjs");
+const logger = require("../utils/logger");
 
 exports.listaUsuarios = (req, res) => {
   usuariosModel

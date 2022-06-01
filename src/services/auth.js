@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const moment = require("moment");
 const config = require("../config/config");
+const logger = require("../utils/logger");
 
 exports.createToken = (
   username,

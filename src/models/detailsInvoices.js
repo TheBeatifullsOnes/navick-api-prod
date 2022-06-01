@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 module.exports = {
   async getdetailsInvoicesById(idFactura) {
