@@ -92,12 +92,10 @@ module.exports = {
       ON 
         i.id_client=c.id_client
       WHERE
-        c.id_route=$1 and i.status = 1 
-      OR 
-        (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false
+        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
       ORDER BY 
-        i.created_at 
-      ASC`,
+        i.id_invoice 
+      DESC`,
       [idRoute]
     );
     return invoicesByRoute.rows;
