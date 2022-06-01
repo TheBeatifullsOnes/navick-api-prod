@@ -10,12 +10,13 @@ exports.getVisits = (req, res) => {
           statusMessage: "error",
           result: "no hay registros de visitas",
         });
+      } else {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: sqlResult,
+        });
       }
-      res.status(200).json({
-        statusCode: 200,
-        statusMessage: "success",
-        result: sqlResult,
-      });
     })
     .catch((error) => {
       res.json({
