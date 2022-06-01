@@ -64,16 +64,31 @@ module.exports = {
     status,
     idRoute
   ) {
-    const result = connexion.query(
-      `
+    let result
+    if (hashPassword !== "") {
+      result = await connexion.query(
+        `
       UPDATE 
         public.users
       SET 
         name=$2, id_user_type=$3, password=$4, date_deleted=now(), status=$5, id_route=$6
       WHERE username=$1
       `,
-      [username, name, idUserType, hashPassword, status, idRoute]
-    );
+        [username, name, idUserType, hashPassword, status, idRoute]
+      );
+    } else {
+      result = await connexion.query(
+        `
+      UPDATE 
+        public.users
+      SET 
+        name=$2, id_user_type=$3, date_deleted=now(), status=$4, id_route=$5
+      WHERE username=$1
+      `,
+        [username, name, idUserType, status, idRoute]
+      );
+    }
+
     return result;
   },
   async eliminarUsuario(idUser) {

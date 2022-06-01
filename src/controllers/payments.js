@@ -131,7 +131,8 @@ exports.updateTicket = (req, res) => {
 };
 
 exports.getPaymentsByDay = (req, res) => {
-  paymentsModel.getPaymentsByDay()
+  const { selectedDate } = req.body
+  paymentsModel.getPaymentsByDay(selectedDate)
     .then(sqlResults => {
       res.json({
         statusCode: 200,

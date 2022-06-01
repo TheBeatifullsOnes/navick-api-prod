@@ -104,9 +104,11 @@ exports.insertaUsuario = async (req, res) => {
 };
 
 exports.actualizaUsuario = async (req, res) => {
-  console.log("desde el controller");
   const { username, name, idUserType, password, status, idRoute } = req.body;
-  const hashPassword = await bcrypt.hash(password, 10);
+  let hashPassword = ""
+  if (password !== "") {
+    hashPassword = await bcrypt.hash(password, 10);
+  }
   usuariosModel
     .actualizarUsuario(
       username,

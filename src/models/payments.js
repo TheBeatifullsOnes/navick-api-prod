@@ -36,19 +36,19 @@ const queryTextUpdateInvoiceStatus = `
       WHERE 
         id_invoice =$1`;
 const queryStringPaymentsByRoute = `
-      select 
+      SELECT 
         p.id_abono, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
-      from 
+      FROM 
         payments p
-      inner join 
+      INNER JOIN 
         users u
-      on 
+      ON
         p.id_user=u.id_user
-      inner join 
+      INNER JOIN 
         invoices i
-      on 
+      ON
         i.id_invoice = p.id_invoice
-      where
+      WHERE
         u.id_route = $1 and i.status = 1`;
 
 module.exports = {
@@ -56,10 +56,11 @@ module.exports = {
     const results = await connexion.query(
       `
       SELECT 
-          *
+        *
       FROM 
-          public.payments
-        `
+        public.payments 
+      ORDER BY 
+        id_abono`
     );
     return results.rows;
   },
@@ -90,14 +91,12 @@ module.exports = {
     const client = await connexion.connect();
     let executed = false;
     let sqlResult = null;
-    console.log(timestamp)
-
     try {
       // Transaction start
       await client.query("BEGIN")
       console.log("Begin transaction")
-      // Getting remainingPayment from invoice
-      console.log(`Getting remainingPayment from InvoiceId: ${idInvoice}`)
+      // Getting remainingPayment FROM invoice
+      console.log(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`)
       const getRemaningPaymentByInvoiceId = await client.query(
         queryTextGetInvoiceId,
         [idInvoice]
@@ -189,13 +188,17 @@ module.exports = {
       rowCount: result.rowCount
     }
   },
-  async getPaymentsByDay() {
+  async getPaymentsByDay(selectedDate) {
+    let date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)"
+    if (selectedDate !== "") {
+      date = `DATE '${selectedDate}'`
+    }
     const queryTextGetPaymentsByDay = `
     SELECT * 
     FROM 
       PAYMENTS 
     WHERE 
-      date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`
+      date_trunc('day', created_at)::date = ${date}`
     const result = await connexion.query(queryTextGetPaymentsByDay)
     return result.rows
   }
