@@ -32,34 +32,40 @@ const queryTextUpdateInvoiceStatus = `
       UPDATE 
         public.invoices
       SET 
-        status=0
+        status=2
       WHERE 
         id_invoice =$1`;
 const queryStringPaymentsByRoute = `
-      select 
+      SELECT 
         p.id_abono, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
-      from 
+      FROM 
         payments p
-      inner join 
+      INNER JOIN 
+        users u
+      ON
+        p.id_user=u.id_user
+      INNER JOIN 
         invoices i
-      on 
+      ON
         i.id_invoice = p.id_invoice
-	inner join 
-        clients c
-      on 
-       c.id_client=i.id_client
-      where
-        c.id_route = $1 and i.status = 1`;
+      WHERE
+        u.id_route = $1 and i.status = 1
+      OR
+        p.printed_ticket = false 
+	    ORDER BY 
+        p.created_at 
+      DESC`;
 
 module.exports = {
   async getAbonos() {
     const results = await connexion.query(
       `
       SELECT 
-          *
+        *
       FROM 
-          public.payments
-        `
+        public.payments 
+      ORDER BY 
+        id_abono`
     );
     return results.rows;
   },
@@ -90,22 +96,20 @@ module.exports = {
     const client = await connexion.connect();
     let executed = false;
     let sqlResult = null;
-    console.log(timestamp)
-
     try {
       // Transaction start
       await client.query("BEGIN");
       console.log("Begin transaction");
-      // Getting remainingPayment from invoice
-      console.log(`Getting remainingPayment from InvoiceId: ${idInvoice}`);
+      // Getting remainingPayment FROM invoice
+      console.log(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
       const getRemaningPaymentByInvoiceId = await client.query(
         queryTextGetInvoiceId,
         [idInvoice]
       );
-      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0]
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
       if (remaining_payment) {
-        console.log("if exist Remaining Payment: ", remaining_payment)
-        if (remaining_payment - amount <= 0) {
+        console.log("if exist Remaining Payment: ", remaining_payment);
+        if (remaining_payment - amount === 0) {
           await client.query(
             queryTextUpdateInvoiceStatus,
             [idInvoice],
@@ -134,7 +138,7 @@ module.exports = {
             comments,
             timestamp,
             textTicket,
-            printedTicket
+            printedTicket,
           ],
           (err, result) => {
             if (err) {
@@ -150,7 +154,7 @@ module.exports = {
               result.rowCount
             );
           }
-        )
+        );
 
         // Update the remaining payment
         await client.query(
@@ -172,21 +176,17 @@ module.exports = {
           }
         );
       }
-      await client.query("COMMIT")
-      await client.release(true)
-
+      await client.query("COMMIT");
+      await client.release(true);
     } catch (error) {
-      await client.query("ROLLBACK")
-      await client.release(true)
-      throw error
+      await client.query("ROLLBACK");
+      await client.release(true);
+      throw error;
     }
-    return { executed, sqlResult }
+    return { executed, sqlResult };
   },
   async getPaymentsByRoute(idRoute) {
-    const result = await connexion.query(
-      queryStringPaymentsByRoute,
-      [idRoute]
-    );
+    const result = await connexion.query(queryStringPaymentsByRoute, [idRoute]);
     return result.rows;
   },
   async updateTicket(idPayment, textTicket, printedTicket) {
@@ -196,22 +196,29 @@ module.exports = {
     SET 
       text_ticket=$2, printed_ticket=$3
     WHERE 
-      id_abono=$1`
-    const result = await connexion.query(
-      queryTextUpdatePayment, [idPayment, textTicket, printedTicket])
+      id_abono=$1`;
+    const result = await connexion.query(queryTextUpdatePayment, [
+      idPayment,
+      textTicket,
+      printedTicket,
+    ]);
     return {
       command: result.command,
-      rowCount: result.rowCount
-    }
+      rowCount: result.rowCount,
+    };
   },
-  async getPaymentsByDay() {
+  async getPaymentsByDay(selectedDate) {
+    let date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)";
+    if (selectedDate !== "") {
+      date = `DATE '${selectedDate}'`;
+    }
     const queryTextGetPaymentsByDay = `
-    SELECT * 
-    FROM 
-      PAYMENTS 
-    WHERE 
-      date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`
-    const result = await connexion.query(queryTextGetPaymentsByDay)
-    return result.rows
-  }
+      SELECT * 
+      FROM 
+        PAYMENTS 
+      WHERE 
+        date_trunc('day', created_at)::date = ${date}`;
+    const result = await connexion.query(queryTextGetPaymentsByDay);
+    return result.rows;
+  },
 };

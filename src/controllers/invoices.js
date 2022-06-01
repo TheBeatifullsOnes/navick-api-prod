@@ -4,7 +4,6 @@ exports.getInvoices = (req, res) => {
   invoiceModel
     .getInvoices()
     .then((response) => {
-      console.log(response);
       if (response.length > 0) {
         res.status(200).json({
           statusCode: 200,

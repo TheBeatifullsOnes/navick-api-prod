@@ -63,7 +63,6 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
       printedTicket
     )
     .then((sqlTransaction) => {
-      console.log(sqlTransaction);
       if (sqlTransaction) {
         res.json({
           statusCode: 200,
@@ -110,8 +109,9 @@ exports.getPaymentsByRoute = (req, res) => {
 
 exports.updateTicket = (req, res) => {
   const { idPayment, textTicket, printedTicket } = req.body;
-  paymentsModel.updateTicket(idPayment, textTicket, printedTicket).then(
-    sqlResults => {
+  paymentsModel
+    .updateTicket(idPayment, textTicket, printedTicket)
+    .then((sqlResults) => {
       // if (sqlResults) {
       res.json({
         statusCode: 200,
@@ -119,31 +119,32 @@ exports.updateTicket = (req, res) => {
         result: sqlResults,
       });
       // }
-    }
-  )
-    .catch(error => {
+    })
+    .catch((error) => {
       res.json({
         statusCode: 500,
         statusMessage: "error",
         result: error,
       });
-    })
+    });
 };
 
 exports.getPaymentsByDay = (req, res) => {
-  paymentsModel.getPaymentsByDay()
-    .then(sqlResults => {
+  const { selectedDate } = req.body;
+  paymentsModel
+    .getPaymentsByDay(selectedDate)
+    .then((sqlResults) => {
       res.json({
         statusCode: 200,
         statusMessage: "success",
         result: sqlResults,
       });
     })
-    .catch(error => {
+    .catch((error) => {
       res.json({
         statusCode: 500,
         statusMessage: "error",
         result: error,
       });
-    })
-}
+    });
+};
