@@ -209,9 +209,10 @@ module.exports = {
     };
   },
   async getPaymentsByDay(selectedDate) {
-    let date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)";
-    if (selectedDate !== "") {
-      date = `CAST( '${selectedDate}' as DATE) `;
+    console.log(selectedDate);
+    let date = `CAST( '${selectedDate}' as DATE) `;
+    if (selectedDate === "") {
+      date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)";
     }
     const queryTextGetPaymentsByDay = `
       SELECT * 
