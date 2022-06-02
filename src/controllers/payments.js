@@ -131,7 +131,7 @@ exports.updateTicket = (req, res) => {
 };
 
 exports.getPaymentsByDay = (req, res) => {
-  const { selectedDate } = req.body;
+  const { selectedDate } = req.params;
   paymentsModel
     .getPaymentsByDay(selectedDate)
     .then((sqlResults) => {

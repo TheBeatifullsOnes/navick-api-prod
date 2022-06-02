@@ -209,18 +209,24 @@ module.exports = {
     };
   },
   async getPaymentsByDay(selectedDate) {
-    console.log(selectedDate);
-    let date = `CAST( '${selectedDate}' as DATE) `;
-    if (selectedDate === "") {
-      date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)";
-    }
-    const queryTextGetPaymentsByDay = `
-      SELECT * 
+    console.log(selectedDate, "SOY EL DATE");
+    let result;
+    if (selectedDate === undefined) {
+      const queryTextGetPaymentsByDay = `SELECT * 
       FROM 
         PAYMENTS 
       WHERE 
-        date_trunc('day', created_at)::date = ${date}`;
-    const result = await connexion.query(queryTextGetPaymentsByDay);
+        date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`;
+      result = await connexion.query(queryTextGetPaymentsByDay);
+    } else if (selectedDate) {
+      const queryTextGetPaymentsByDay = `SELECT * 
+      FROM 
+        PAYMENTS 
+      WHERE 
+        date_trunc('day', created_at)::date = CAST($1 as Date) `;
+      result = await connexion.query(queryTextGetPaymentsByDay, [selectedDate]);
+    }
+
     return result.rows;
   },
 };
