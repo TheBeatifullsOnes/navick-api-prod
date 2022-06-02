@@ -209,9 +209,8 @@ module.exports = {
     };
   },
   async getPaymentsByDay(selectedDate) {
-    console.log(selectedDate, "SOY EL DATE");
     let result;
-    if (selectedDate === undefined) {
+    if (selectedDate === "0") {
       const queryTextGetPaymentsByDay = `SELECT * 
       FROM 
         PAYMENTS 
