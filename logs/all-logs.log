@@ -197,3 +197,5 @@
 2022-06-05 14:23:27:2327 info: GET /api/v1/clientes/2201 200 589.655 ms - 3120
 2022-06-05 14:23:41:2341 info: POST /api/v1/clientes 201 101.668 ms - 87
 2022-06-05 14:23:47:2347 info: PUT /api/v1/clientes/ 500 68.120 ms - 84
+2022-06-05 14:32:42:3242 info: Se establecio la conexion a la base de datos 
+2022-06-05 14:32:42:3242 info: App started,listening on port 8000
