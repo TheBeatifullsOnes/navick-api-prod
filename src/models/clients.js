@@ -172,4 +172,10 @@ module.exports = {
     );
     return resultados.rows;
   },
+  async getClientRemainingPayment() {
+    const resultados = await connexion.query(
+      "SELECT * FROM REMAINING_PAYMENT_DETAILS"
+    );
+    return resultados.rows;
+  },
 };

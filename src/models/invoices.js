@@ -194,7 +194,7 @@ module.exports = {
     let executed = false;
     let totalAmount = 0;
     await detailInvoice.forEach((element) => {
-      totalAmount += element.price;
+      totalAmount += (element.price * element.quantity);
     });
     const client = await connexion.connect();
     try {
