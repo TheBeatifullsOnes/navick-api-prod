@@ -361,7 +361,7 @@ module.exports = {
       // if remaining_payment the invoice exist
       if (remaining_payment) {
         // if an ammount exist create a payment
-        if (status === 2) {
+        if (status === 3) {
           client.query("ROLLBACK");
           queryInvoice = { error: "la factura ya se encuentra cancelada" };
           queryPayment = {
