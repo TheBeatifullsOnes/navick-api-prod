@@ -194,7 +194,7 @@ module.exports = {
     let executed = false;
     let totalAmount = 0;
     await detailInvoice.forEach((element) => {
-      totalAmount += (element.price * element.quantity);
+      totalAmount += element.price * element.quantity;
     });
     const client = await connexion.connect();
     try {
@@ -244,6 +244,7 @@ module.exports = {
           price,
           idWarehouse,
         ];
+
         await client.query(
           queryInsertDetailsInvoices,
           queryValues,
@@ -414,8 +415,7 @@ module.exports = {
                 }
                 executed = true;
                 queryPayment = {
-                  command: result.command,
-                  rowCount: result.rowCount,
+                  result: result.rows[0],
                 };
                 console.log(
                   "client.query() COMMIT row count on insert:",
