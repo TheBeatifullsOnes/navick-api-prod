@@ -1,4 +1,5 @@
 const detailsInvoicesModel = require("../models/detailsInvoices");
+const logger = require("../utils/logger");
 
 exports.getInvoicesDetailsById = (req, res) => {
   const { idFactura } = req.body;

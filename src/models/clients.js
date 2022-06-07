@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 module.exports = {
   async obtenerClientes() {
@@ -168,6 +169,12 @@ module.exports = {
         i.status=1;
       `,
       [idRuta]
+    );
+    return resultados.rows;
+  },
+  async getClientRemainingPayment() {
+    const resultados = await connexion.query(
+      "SELECT * FROM REMAINING_PAYMENT_DETAILS"
     );
     return resultados.rows;
   },

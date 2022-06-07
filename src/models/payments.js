@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 const queryTextGetInvoiceId = `
       SELECT 
@@ -208,17 +209,23 @@ module.exports = {
     };
   },
   async getPaymentsByDay(selectedDate) {
-    let date = "CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)";
-    if (selectedDate !== "") {
-      date = `DATE '${selectedDate}'`;
-    }
-    const queryTextGetPaymentsByDay = `
-      SELECT * 
+    let result;
+    if (selectedDate === "0") {
+      const queryTextGetPaymentsByDay = `SELECT * 
       FROM 
         PAYMENTS 
       WHERE 
-        date_trunc('day', created_at)::date = ${date}`;
-    const result = await connexion.query(queryTextGetPaymentsByDay);
+        date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`;
+      result = await connexion.query(queryTextGetPaymentsByDay);
+    } else if (selectedDate) {
+      const queryTextGetPaymentsByDay = `SELECT * 
+      FROM 
+        PAYMENTS 
+      WHERE 
+        date_trunc('day', created_at)::date = CAST($1 as Date) `;
+      result = await connexion.query(queryTextGetPaymentsByDay, [selectedDate]);
+    }
+
     return result.rows;
   },
 };

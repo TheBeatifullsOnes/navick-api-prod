@@ -2,9 +2,12 @@ const createError = require("http-errors");
 const express = require("express");
 var path = require("path");
 const cookieParser = require("cookie-parser");
-const logger = require("morgan");
+// const logger = require("morgan");
 const cors = require("cors");
 var time = require("express-timestamp");
+
+const httpLogger = require("./src/middlewares/httpLogger");
+// const { logger } = require("./src/utils/logs");
 
 const usuariosRoutes = require("./src/routes/users");
 const rutasRoutes = require("./src/routes/routes");
@@ -25,8 +28,8 @@ app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "jade");
 
 app.use(cors());
-
-app.use(logger("dev"));
+app.use(httpLogger);
+// app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

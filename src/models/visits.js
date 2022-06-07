@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 module.exports = {
   async getVisits() {
@@ -19,6 +20,7 @@ module.exports = {
       DESC;
         `
     );
+    logger.warn(`Visits Model getting a list of the data query`);
     return resultados.rows;
   },
   async insertVisits(idClient, idUser, idInvoice, comments, textTicket) {

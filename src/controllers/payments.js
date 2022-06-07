@@ -1,4 +1,5 @@
 const paymentsModel = require("../models/payments");
+const logger = require("../utils/logger");
 
 exports.getPayments = (req, res) => {
   paymentsModel
@@ -130,7 +131,7 @@ exports.updateTicket = (req, res) => {
 };
 
 exports.getPaymentsByDay = (req, res) => {
-  const { selectedDate } = req.body;
+  const { selectedDate } = req.params;
   paymentsModel
     .getPaymentsByDay(selectedDate)
     .then((sqlResults) => {

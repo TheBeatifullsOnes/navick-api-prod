@@ -1,6 +1,7 @@
 const clientModel = require("../models/clients");
 const invoicesModel = require("../models/invoices");
 const invoiceDetailsModel = require("../models/detailsInvoices");
+const logger = require("../utils/logger");
 
 exports.obtenerClientes = (req, res) => {
   clientModel
@@ -315,6 +316,35 @@ exports.updateClientStatus = (req, res) => {
       res.status(500).json({
         statusCode: 500,
         statusMessage: "error",
+        result: error,
+      });
+    });
+};
+
+exports.getClientCreditInformation = (req, res) => {
+  clientModel
+    .getClientRemainingPayment()
+    .then((response) => {
+      if (response.length > 0) {
+        console.log(response)
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: response,
+        });
+      } else {
+        console.log(response)
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "error",
+          result: "No hay datos de los clientes",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error fatal",
         result: error,
       });
     });
