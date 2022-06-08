@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 module.exports = {
   async getProducts() {
@@ -7,11 +8,11 @@ module.exports = {
   },
   async getProduct(idProduct) {
     const result = await connexion.query(
-        `SELECT * FROM 
+      `SELECT * FROM 
             articulos 
         WHERE 
             id_articulo = $1`,
-        [idProduct]
+      [idProduct]
     );
     return result.rows;
   },
@@ -61,7 +62,7 @@ module.exports = {
     status
   ) {
     const result = await connexion.query(
-        `UPDATE 
+      `UPDATE 
             articulos
         SET  descripcion=$2, id_categoria=$3, 
                 precio_compra=$4, fecha_catalogo=$5, fecha_movimiento=$6, 
@@ -83,7 +84,7 @@ module.exports = {
   },
   async deleteProduct(idProduct) {
     const result = await connexion.query(
-        `DELETE FROM 
+      `DELETE FROM 
             articulos
         WHERE
             id_articulo=$1;`,

@@ -1,4 +1,5 @@
 const connexion = require("../config/bdConnexion");
+const logger = require("../utils/logger");
 
 module.exports = {
   async getInvoices() {
@@ -197,7 +198,7 @@ module.exports = {
     let executed = false;
     let totalAmount = 0;
     await detailInvoice.forEach((element) => {
-      totalAmount += element.price;
+      totalAmount += element.price * element.quantity;
     });
     const client = await connexion.connect();
     try {
@@ -247,6 +248,7 @@ module.exports = {
           price,
           idWarehouse,
         ];
+
         await client.query(
           queryInsertDetailsInvoices,
           queryValues,
@@ -363,10 +365,12 @@ module.exports = {
       // if remaining_payment the invoice exist
       if (remaining_payment) {
         // if an ammount exist create a payment
-        if (status === 2) {
+        if (status === 3) {
           client.query("ROLLBACK");
-          queryInvoice = { error: "la factura ya se encuentra cancelada" }
-          queryPayment = { error: "No se inserto nada por que la factura ya esta cancelada" };
+          queryInvoice = { error: "la factura ya se encuentra cancelada" };
+          queryPayment = {
+            error: "No se inserto nada por que la factura ya esta cancelada",
+          };
         } else {
           // updating the invoice
           await client.query(
@@ -415,8 +419,7 @@ module.exports = {
                 }
                 executed = true;
                 queryPayment = {
-                  command: result.command,
-                  rowCount: result.rowCount,
+                  result: result.rows[0],
                 };
                 console.log(
                   "client.query() COMMIT row count on insert:",
@@ -425,7 +428,7 @@ module.exports = {
               }
             );
           }
-          queryPayment = { message: "no se hizo ningun abono" }
+          queryPayment = { message: "no se hizo ningun abono" };
         }
       }
       await client.query("COMMIT");

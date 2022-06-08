@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config/config");
+const logger = require("../utils/logger");
 
 exports.ensureAuthenticated = (req, res, next) => {
   if (!req.headers.token) {

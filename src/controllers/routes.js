@@ -1,4 +1,5 @@
 const rutasModel = require("../models/routes");
+const logger = require("../utils/logger");
 
 exports.listaRutas = function (req, res) {
   rutasModel
