@@ -44,7 +44,7 @@ exports.getOnlyClientsByRoute = (req, res) => {
       } else {
         res.status(200).json({
           statusCode: 200,
-          statusMessage: "error not clients found",
+          statusMessage: "error clients not found",
           result: response,
         });
       }
