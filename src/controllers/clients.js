@@ -43,9 +43,9 @@ exports.getOnlyClientsByRoute = (req, res) => {
         });
       } else {
         res.status(500).json({
-          statusCode: 500,
+          statusCode: 200,
           statusMessage: "error",
-          result: "no hay clientes por mostrar",
+          result: response,
         });
       }
     })
@@ -326,14 +326,14 @@ exports.getClientCreditInformation = (req, res) => {
     .getClientRemainingPayment()
     .then((response) => {
       if (response.length > 0) {
-        console.log(response)
+        console.log(response);
         res.status(200).json({
           statusCode: 200,
           statusMessage: "success",
           result: response,
         });
       } else {
-        console.log(response)
+        console.log(response);
         res.status(500).json({
           statusCode: 500,
           statusMessage: "error",

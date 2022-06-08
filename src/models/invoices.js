@@ -309,15 +309,6 @@ module.exports = {
     textTicket,
     printedTicket
   ) {
-    console.log(
-      idInvoice,
-      idUser,
-      amount,
-      locationGPS,
-      comments,
-      textTicket,
-      printedTicket
-    );
     const client = await connexion.connect();
 
     let executed = false;

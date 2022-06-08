@@ -199,3 +199,11 @@
 2022-06-05 14:23:47:2347 info: PUT /api/v1/clientes/ 500 68.120 ms - 84
 2022-06-05 14:32:42:3242 info: Se establecio la conexion a la base de datos 
 2022-06-05 14:32:42:3242 info: App started,listening on port 8000
+2022-06-08 13:09:04:94 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:09:04:94 info: App started,listening on port 8000
+2022-06-08 13:09:09:99 info: GET /api/v1/clientes/only/33 500 373.590 ms - 168
+2022-06-08 13:09:29:929 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:09:29:929 info: App started,listening on port 8000
+2022-06-08 13:09:32:932 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:09:32:932 info: App started,listening on port 8000
+2022-06-08 13:09:35:935 info: GET /api/v1/clientes/only/33 500 464.870 ms - 54
