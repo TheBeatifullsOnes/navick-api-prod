@@ -29,9 +29,17 @@ exports.getVisits = (req, res) => {
 };
 
 exports.insertVisits = (req, res) => {
-  const { idClient, idUser, idInvoice, comments, textTicket } = req.body;
+  const { idClient, idUser, idInvoice, comments, textTicket, gpsLocation } =
+    req.body;
   visitsModel
-    .insertVisits(idClient, idUser, idInvoice, comments, textTicket)
+    .insertVisits(
+      idClient,
+      idUser,
+      idInvoice,
+      comments,
+      textTicket,
+      gpsLocation
+    )
     .then((sqlResult) => {
       if (!sqlResult) {
         res.status(500).json({
