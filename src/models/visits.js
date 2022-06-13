@@ -13,7 +13,8 @@ module.exports = {
         comments, 
         text_ticket, 
         printed_ticket,
-        gps_location
+        gps_location, 
+        created_at
 	    FROM 
         public.visits
       ORDER BY 
@@ -30,7 +31,8 @@ module.exports = {
     idInvoice,
     comments,
     textTicket,
-    gpsLocation
+    gpsLocation,
+    timestamp
   ) {
     const resultados = await connexion.query(
       `
@@ -41,11 +43,20 @@ module.exports = {
           id_invoice,
           comments, 
           text_ticket,
-          gps_location)
+          gps_location, 
+          created_at)
 	    VALUES 
-        ($1, $2, $3, $4, $5, $6);
+        ($1, $2, $3, $4, $5, $6, $7);
         `,
-      [idClient, idUser, idInvoice, comments, textTicket, gpsLocation]
+      [
+        idClient,
+        idUser,
+        idInvoice,
+        comments,
+        textTicket,
+        gpsLocation,
+        timestamp,
+      ]
     );
     return resultados;
   },

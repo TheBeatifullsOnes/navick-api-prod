@@ -31,6 +31,8 @@ exports.getVisits = (req, res) => {
 exports.insertVisits = (req, res) => {
   const { idClient, idUser, idInvoice, comments, textTicket, gpsLocation } =
     req.body;
+  const moment = req.timestamp;
+  const timestamp = moment.tz("America/Mexico_City").format();
   visitsModel
     .insertVisits(
       idClient,
@@ -38,7 +40,8 @@ exports.insertVisits = (req, res) => {
       idInvoice,
       comments,
       textTicket,
-      gpsLocation
+      gpsLocation,
+      timestamp
     )
     .then((sqlResult) => {
       if (!sqlResult) {
