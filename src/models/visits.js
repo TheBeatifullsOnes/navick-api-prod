@@ -14,7 +14,7 @@ module.exports = {
         text_ticket, 
         printed_ticket,
         gps_location, 
-        created_at
+        created_at at time zone 'UTC' as created_at
 	    FROM 
         public.visits
       ORDER BY 

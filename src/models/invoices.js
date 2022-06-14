@@ -342,7 +342,7 @@ module.exports = {
             text_ticket, printed_ticket
           )
         VALUES
-          (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, CAST(created_at::TIMESTAMP - '5 hr'::INTERVAl AS DATE);
+          (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at at time zone 'UTC' as created_at;
       `;
 
       const result = await client.query(queryTextInvoice, [idInvoice]);
