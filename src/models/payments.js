@@ -26,7 +26,7 @@ const queryTextInsertPayment = `
           text_ticket, printed_ticket
         )
       VALUES
-        (3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_abono, created_at;
+        (3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_abono, created_at at time zone 'UTC' as created_at;
     `;
 
 const queryTextUpdateInvoiceStatus = `

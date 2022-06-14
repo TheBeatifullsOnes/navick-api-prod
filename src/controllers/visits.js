@@ -29,9 +29,23 @@ exports.getVisits = (req, res) => {
 };
 
 exports.insertVisits = (req, res) => {
-  const { idClient, idUser, idInvoice, comments, textTicket } = req.body;
+  const { idClient, idUser, idInvoice, comments, textTicket, gpsLocation } =
+    req.body;
+  const moment = req.timestamp;
+  const timestamp = moment
+    .tz("America/Mexico_City")
+    .format("YYYY-MM-DD HH:mm:ss");
+  console.log(timestamp, "soy la insercion del tmstp");
   visitsModel
-    .insertVisits(idClient, idUser, idInvoice, comments, textTicket)
+    .insertVisits(
+      idClient,
+      idUser,
+      idInvoice,
+      comments,
+      textTicket,
+      gpsLocation,
+      timestamp
+    )
     .then((sqlResult) => {
       if (!sqlResult) {
         res.status(500).json({

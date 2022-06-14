@@ -307,17 +307,9 @@ module.exports = {
     locationGPS,
     comments,
     textTicket,
-    printedTicket
+    printedTicket,
+    timestamp
   ) {
-    console.log(
-      idInvoice,
-      idUser,
-      amount,
-      locationGPS,
-      comments,
-      textTicket,
-      printedTicket
-    );
     const client = await connexion.connect();
 
     let executed = false;
@@ -354,7 +346,7 @@ module.exports = {
             text_ticket, printed_ticket
           )
         VALUES
-          (3,$1, $2, now(), $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at;
+          (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at at time zone 'UTC' as created_at;
       `;
 
       const result = await client.query(queryTextInvoice, [idInvoice]);
@@ -409,6 +401,7 @@ module.exports = {
                 comments,
                 textTicket,
                 printedTicket,
+                timestamp,
               ],
               (err, result) => {
                 if (err) {

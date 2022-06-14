@@ -51,7 +51,9 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
     printedTicket,
   } = req.body;
   const moment = req.timestamp;
-  const timestamp = moment.tz("America/Mexico_City").format();
+  const timestamp = moment
+    .tz("America/Mexico_City")
+    .format("YYYY-MM-DD HH:mm:ss");
   paymentsModel
     .addPaymentUpdateRemainingPayment(
       idInvoice,
