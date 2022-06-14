@@ -12,7 +12,9 @@ module.exports = {
         id_invoice,
         comments, 
         text_ticket, 
-        printed_ticket
+        printed_ticket,
+        gps_location, 
+        created_at at time zone 'UTC' as created_at
 	    FROM 
         public.visits
       ORDER BY 
@@ -23,7 +25,15 @@ module.exports = {
     logger.warn(`Visits Model getting a list of the data query`);
     return resultados.rows;
   },
-  async insertVisits(idClient, idUser, idInvoice, comments, textTicket) {
+  async insertVisits(
+    idClient,
+    idUser,
+    idInvoice,
+    comments,
+    textTicket,
+    gpsLocation,
+    timestamp
+  ) {
     const resultados = await connexion.query(
       `
       INSERT INTO 
@@ -32,11 +42,21 @@ module.exports = {
           id_user,
           id_invoice,
           comments, 
-          text_ticket)
+          text_ticket,
+          gps_location, 
+          created_at)
 	    VALUES 
-        ($1, $2, $3, $4, $5);
+        ($1, $2, $3, $4, $5, $6, $7);
         `,
-      [idClient, idUser, idInvoice, comments, textTicket]
+      [
+        idClient,
+        idUser,
+        idInvoice,
+        comments,
+        textTicket,
+        gpsLocation,
+        timestamp,
+      ]
     );
     return resultados;
   },
