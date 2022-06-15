@@ -211,14 +211,16 @@ module.exports = {
   async getPaymentsByDay(selectedDate) {
     let result;
     if (selectedDate === "0") {
-      const queryTextGetPaymentsByDay = `SELECT * 
+      const queryTextGetPaymentsByDay = `
+      SELECT * 
       FROM 
         PAYMENTS 
       WHERE 
         date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`;
       result = await connexion.query(queryTextGetPaymentsByDay);
     } else if (selectedDate) {
-      const queryTextGetPaymentsByDay = `SELECT * 
+      const queryTextGetPaymentsByDay = `
+      SELECT * 
       FROM 
         PAYMENTS 
       WHERE 
@@ -226,6 +228,24 @@ module.exports = {
       result = await connexion.query(queryTextGetPaymentsByDay, [selectedDate]);
     }
 
+    return result.rows;
+  },
+
+  async getPaymentsByWeek(startDate, endDate) {
+    const queryString = `
+    SELECT
+      sum(total_payment), count(total_payment) , u.id_route
+    FROM
+        public.payments p
+    inner join 
+      public.users u
+    ON 
+      p.id_user= u.id_user
+    WHERE
+          p.created_at >= $1
+      AND p.created_at <  $2
+    group by u.id_route;`;
+    const result = await connexion.query(queryString, [startDate, endDate]);
     return result.rows;
   },
 };
