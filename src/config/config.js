@@ -6,7 +6,7 @@ module.exports = {
   TOKEN_SECRET: process.env.TOKEN_SECRET || "password",
   DB_NAME: process.env.DB_NAME || "Navick_Dev",
   HOST: process.env.HOST || "74.208.212.240",
-  USER: process.env.USER,
+  USER_DB: process.env.USER_DB,
   PASSWORD: process.env.PASSWORD,
   PORT_DB: process.env.PORT_DB,
 };

@@ -10,6 +10,6 @@ router.post("/", clientController.insertaCliente);
 router.put("/", clientController.actualizaCliente);
 router.post("/:idCliente", clientController.updateClientStatus);
 router.get("/", clientController.obtenerClientes);
-
+router.delete("/:idClient", clientController.deleteClient);
 
 module.exports = router;

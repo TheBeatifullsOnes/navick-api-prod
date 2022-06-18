@@ -199,3 +199,521 @@
 2022-06-05 14:23:47:2347 info: PUT /api/v1/clientes/ 500 68.120 ms - 84
 2022-06-05 14:32:42:3242 info: Se establecio la conexion a la base de datos 
 2022-06-05 14:32:42:3242 info: App started,listening on port 8000
+2022-06-08 13:11:12:1112 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:11:12:1112 info: App started,listening on port 8000
+2022-06-08 13:11:52:1152 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:11:52:1152 info: App started,listening on port 8000
+2022-06-08 13:12:06:126 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:12:06:126 info: App started,listening on port 8000
+2022-06-08 13:12:08:128 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:12:08:128 info: App started,listening on port 8000
+2022-06-08 13:12:11:1211 info: GET /api/v1/clientes/only/33 200 462.100 ms - 72
+2022-06-08 13:14:03:143 info: Se establecio la conexion a la base de datos 
+2022-06-08 13:14:03:143 info: App started,listening on port 8000
+2022-06-09 17:33:39:3339 info: Se establecio la conexion a la base de datos 
+2022-06-09 17:33:39:3339 info: App started,listening on port 8000
+2022-06-09 17:34:31:3431 warn: Visits Model getting a list of the data query
+2022-06-09 17:34:31:3431 info: Solicitando las visitas en la BD
+2022-06-09 17:34:31:3431 info: GET /api/v1/visits 200 465.539 ms - 4390
+2022-06-09 17:35:47:3547 info: Se establecio la conexion a la base de datos 
+2022-06-09 17:35:47:3547 info: App started,listening on port 8000
+2022-06-09 17:36:13:3613 info: Se establecio la conexion a la base de datos 
+2022-06-09 17:36:13:3613 info: App started,listening on port 8000
+2022-06-09 17:36:31:3631 info: POST /api/v1/visits 200 478.551 ms - 87
+2022-06-09 17:36:37:3637 warn: Visits Model getting a list of the data query
+2022-06-09 17:36:37:3637 info: Solicitando las visitas en la BD
+2022-06-09 17:36:37:3637 info: GET /api/v1/visits 200 84.093 ms - 4575
+2022-06-13 18:41:12:4112 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:41:12:4112 info: App started,listening on port 8000
+2022-06-13 18:41:19:4119 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:41:19:4119 info: App started,listening on port 8000
+2022-06-13 18:42:07:427 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:42:07:427 info: App started,listening on port 8000
+2022-06-13 18:42:35:4235 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:42:35:4235 info: App started,listening on port 8000
+2022-06-13 18:43:17:4317 warn: Visits Model getting a list of the data query
+2022-06-13 18:43:17:4317 info: Solicitando las visitas en la BD
+2022-06-13 18:43:17:4317 info: GET /api/v1/visits 200 470.708 ms - 13418
+2022-06-13 18:43:31:4331 info: POST /api/v1/visits 500 132.531 ms - 1503
+2022-06-13 18:43:59:4359 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:43:59:4359 info: App started,listening on port 8000
+2022-06-13 18:44:02:442 info: POST /api/v1/visits 200 459.178 ms - 87
+2022-06-13 18:44:08:448 warn: Visits Model getting a list of the data query
+2022-06-13 18:44:08:448 info: Solicitando las visitas en la BD
+2022-06-13 18:44:08:448 info: GET /api/v1/visits 200 84.818 ms - 13643
+2022-06-13 18:46:18:4618 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:46:19:4619 info: App started,listening on port 8000
+2022-06-13 18:47:10:4710 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:47:10:4710 info: App started,listening on port 8000
+2022-06-13 18:49:24:4924 info: POST /api/v1/invoices/cancel 500 19.199 ms - 90
+2022-06-13 18:50:23:5023 info: POST /api/v1/invoices/cancel 500 2.349 ms - 90
+2022-06-13 18:50:36:5036 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:50:36:5036 info: App started,listening on port 8000
+2022-06-13 18:51:19:5119 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:51:19:5119 info: App started,listening on port 8000
+2022-06-13 18:51:24:5124 info: POST /api/v1/invoices/cancel 200 795.784 ms - 220
+2022-06-13 18:54:11:5411 info: Se establecio la conexion a la base de datos 
+2022-06-13 18:54:11:5411 info: App started,listening on port 8000
+2022-06-13 18:54:36:5436 info: POST /api/v1/invoices/cancel 200 802.679 ms - 214
+2022-06-13 19:52:20:5220 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:52:20:5220 info: App started,listening on port 8000
+2022-06-13 19:52:29:5229 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:52:29:5229 info: App started,listening on port 8000
+2022-06-13 19:53:09:539 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:53:09:539 info: App started,listening on port 8000
+2022-06-13 19:54:09:549 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:54:09:549 info: App started,listening on port 8000
+2022-06-13 19:54:17:5417 info: POST /api/v1/visits 200 453.589 ms - 287
+2022-06-13 19:54:58:5458 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:54:58:5458 info: App started,listening on port 8000
+2022-06-13 19:55:00:550 info: POST /api/v1/visits 200 463.976 ms - 87
+2022-06-13 19:55:09:559 warn: Visits Model getting a list of the data query
+2022-06-13 19:55:09:559 info: Solicitando las visitas en la BD
+2022-06-13 19:55:09:559 info: GET /api/v1/visits 200 86.343 ms - 14966
+2022-06-13 19:56:23:5623 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:56:23:5623 info: App started,listening on port 8000
+2022-06-13 19:56:25:5625 warn: Visits Model getting a list of the data query
+2022-06-13 19:56:25:5625 info: Solicitando las visitas en la BD
+2022-06-13 19:56:25:5625 info: GET /api/v1/visits 200 449.367 ms - 14684
+2022-06-13 19:58:51:5851 info: POST /api/v1/visits 200 479.446 ms - 87
+2022-06-13 19:58:58:5858 warn: Visits Model getting a list of the data query
+2022-06-13 19:58:58:5858 info: Solicitando las visitas en la BD
+2022-06-13 19:58:58:5858 info: GET /api/v1/visits 200 84.981 ms - 14793
+2022-06-13 19:59:17:5917 info: Se establecio la conexion a la base de datos 
+2022-06-13 19:59:17:5917 info: App started,listening on port 8000
+2022-06-13 19:59:19:5919 warn: Visits Model getting a list of the data query
+2022-06-13 19:59:19:5919 info: Solicitando las visitas en la BD
+2022-06-13 19:59:19:5919 info: GET /api/v1/visits 200 468.360 ms - 15081
+2022-06-13 20:01:25:125 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:01:26:126 info: App started,listening on port 8000
+2022-06-13 20:01:28:128 warn: Visits Model getting a list of the data query
+2022-06-13 20:01:28:128 info: Solicitando las visitas en la BD
+2022-06-13 20:01:28:128 info: GET /api/v1/visits 200 477.637 ms - 14793
+2022-06-13 20:07:29:729 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:07:29:729 info: App started,listening on port 8000
+2022-06-13 20:07:34:734 warn: Visits Model getting a list of the data query
+2022-06-13 20:07:34:734 info: Solicitando las visitas en la BD
+2022-06-13 20:07:34:734 info: GET /api/v1/visits 200 510.870 ms - 14985
+2022-06-13 20:08:22:822 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:08:22:822 info: App started,listening on port 8000
+2022-06-13 20:08:26:826 warn: Visits Model getting a list of the data query
+2022-06-13 20:08:26:826 info: Solicitando las visitas en la BD
+2022-06-13 20:08:26:826 info: GET /api/v1/visits 200 512.085 ms - 15081
+2022-06-13 20:09:58:958 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:09:58:958 info: App started,listening on port 8000
+2022-06-13 20:11:19:1119 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:11:19:1119 info: App started,listening on port 8000
+2022-06-13 20:12:11:1211 info: POST /api/v1/invoices/cancel 200 780.003 ms - 220
+2022-06-13 20:14:01:141 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:14:01:141 info: App started,listening on port 8000
+2022-06-13 20:14:57:1457 info: Se establecio la conexion a la base de datos 
+2022-06-13 20:14:57:1457 info: App started,listening on port 8000
+2022-06-13 20:15:43:1543 info: POST /api/v1/payments 200 760.583 ms - 203
+2022-06-14 21:17:09:179 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:17:09:179 info: App started,listening on port 8000
+2022-06-14 21:17:18:1718 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:17:18:1718 info: App started,listening on port 8000
+2022-06-14 21:19:08:198 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:19:08:198 info: App started,listening on port 8000
+2022-06-14 21:19:10:1910 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:19:10:1910 info: App started,listening on port 8000
+2022-06-14 21:19:47:1947 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:19:47:1947 info: App started,listening on port 8000
+2022-06-14 21:20:08:208 info: GET /api/v1/payments/byWeek 500 118.533 ms - 1522
+2022-06-14 21:20:34:2034 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:20:34:2034 info: App started,listening on port 8000
+2022-06-14 21:20:36:2036 info: GET /api/v1/payments/byWeek 500 111.162 ms - 1522
+2022-06-14 21:21:14:2114 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:21:14:2114 info: App started,listening on port 8000
+2022-06-14 21:21:17:2117 info: GET /api/v1/payments/byWeek 200 428.001 ms - 446
+2022-06-14 21:28:33:2833 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:28:33:2833 info: App started,listening on port 8000
+2022-06-14 21:28:42:2842 info: GET /api/v1/payments/byWeek 500 444.035 ms - 215
+2022-06-14 21:28:53:2853 info: Se establecio la conexion a la base de datos 
+2022-06-14 21:28:53:2853 info: App started,listening on port 8000
+2022-06-14 21:28:57:2857 info: GET /api/v1/payments/byWeek 200 439.602 ms - 100
+2022-06-15 11:01:01:11 info: Se establecio la conexion a la base de datos 
+2022-06-15 11:01:02:12 info: App started,listening on port 8000
+2022-06-15 11:01:55:155 info: GET /api/v1/payments/byWeek 200 482.510 ms - 56
+2022-06-15 11:02:40:240 info: POST /login 400 121.196 ms - 1064
+2022-06-15 11:03:03:33 info: Se establecio la conexion a la base de datos 
+2022-06-15 11:03:03:33 info: App started,listening on port 8000
+2022-06-15 11:03:15:315 info: POST /login 500 455.153 ms - 66
+2022-06-15 11:03:37:337 info: Se establecio la conexion a la base de datos 
+2022-06-15 11:03:37:337 info: App started,listening on port 8000
+2022-06-15 11:03:40:340 info: POST /login 401 456.563 ms - 66
+2022-06-15 11:30:45:3045 info: Se establecio la conexion a la base de datos 
+2022-06-15 11:30:45:3045 info: App started,listening on port 8000
+2022-06-15 11:30:58:3058 info: POST /login 500 477.015 ms - 66
+2022-06-17 12:59:54:5954 info: Se establecio la conexion a la base de datos 
+2022-06-17 12:59:54:5954 info: App started,listening on port 8000
+2022-06-17 12:59:59:5959 info: GET /api/v1/payments/byDay/2022-05-30 200 608.910 ms - 89577
+2022-06-17 13:13:20:1320 info: GET /api/v1/clientes 200 851.629 ms - 1155208
+2022-06-17 13:16:44:1644 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:16:44:1644 info: App started,listening on port 8000
+2022-06-17 13:17:21:1721 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:17:22:1722 info: App started,listening on port 8000
+2022-06-17 13:17:25:1725 info: GET /api/v1/clientes 200 880.355 ms - 1155208
+2022-06-17 13:19:34:1934 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:19:34:1934 info: App started,listening on port 8000
+2022-06-17 13:21:41:2141 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:21:41:2141 info: App started,listening on port 8000
+2022-06-17 13:22:19:2219 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:22:19:2219 info: App started,listening on port 8000
+2022-06-17 13:24:07:247 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:24:07:247 info: App started,listening on port 8000
+2022-06-17 13:24:26:2426 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:24:26:2426 info: App started,listening on port 8000
+2022-06-17 13:35:14:3514 info: POST /api/v1/clientes 201 477.592 ms - 87
+2022-06-17 13:35:18:3518 info: GET /api/v1/clientes/2201 200 632.651 ms - 3120
+2022-06-17 13:35:27:3527 info: GET /api/v1/clientes 200 511.185 ms - 1155739
+2022-06-17 13:36:32:3632 info: POST /api/v1/invoices 200 730.111 ms - 114
+2022-06-17 13:36:33:3633 info: POST /api/v1/invoices 200 714.464 ms - 114
+2022-06-17 13:38:05:385 info: POST /api/v1/payments 200 787.400 ms - 203
+2022-06-17 13:44:32:4432 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:44:32:4432 info: App started,listening on port 8000
+2022-06-17 13:45:28:4528 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:45:28:4528 info: App started,listening on port 8000
+2022-06-17 13:49:04:494 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:49:04:494 info: App started,listening on port 8000
+2022-06-17 13:49:25:4925 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:49:25:4925 info: App started,listening on port 8000
+2022-06-17 13:50:15:5015 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:50:15:5015 info: App started,listening on port 8000
+2022-06-17 13:50:27:5027 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:50:27:5027 info: App started,listening on port 8000
+2022-06-17 13:51:28:5128 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:51:28:5128 info: App started,listening on port 8000
+2022-06-17 13:52:06:526 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:52:06:526 info: DELETE /api/v1/clientes/2213 500 6.194 ms - 54
+2022-06-17 13:52:39:5239 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:52:39:5239 info: DELETE /api/v1/clientes/2213 500 1.922 ms - 54
+2022-06-17 13:53:20:5320 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:53:20:5320 info: App started,listening on port 8000
+2022-06-17 13:53:27:5327 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:53:27:5327 info: DELETE /api/v1/clientes/2213 500 5.843 ms - 54
+2022-06-17 13:53:59:5359 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:54:00:540 info: App started,listening on port 8000
+2022-06-17 13:54:02:542 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:54:02:542 info: DELETE /api/v1/clientes/2213 500 7.674 ms - 54
+2022-06-17 13:54:27:5427 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:54:27:5427 info: App started,listening on port 8000
+2022-06-17 13:54:30:5430 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:54:30:5430 info: DELETE /api/v1/clientes/2213 500 6.701 ms - 54
+2022-06-17 13:56:34:5634 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:56:34:5634 info: App started,listening on port 8000
+2022-06-17 13:56:56:5656 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:56:56:5656 info: DELETE /api/v1/clientes/2213 500 7.197 ms - 54
+2022-06-17 13:56:58:5658 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:56:58:5658 info: DELETE /api/v1/clientes/2213 500 2.129 ms - 54
+2022-06-17 13:57:18:5718 info: Se establecio la conexion a la base de datos 
+2022-06-17 13:57:18:5718 info: App started,listening on port 8000
+2022-06-17 13:57:20:5720 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:57:20:5720 info: DELETE /api/v1/clientes/2213 500 5.540 ms - 54
+2022-06-17 13:57:23:5723 info: controller: getting the id_client: 2213 from params
+2022-06-17 13:57:23:5723 info: DELETE /api/v1/clientes/2213 500 2.163 ms - 54
+2022-06-17 17:54:48:5448 info: Se establecio la conexion a la base de datos 
+2022-06-17 17:54:48:5448 info: App started,listening on port 8000
+2022-06-17 17:54:55:5455 info: controller: getting the id_client: 2213 from params
+2022-06-17 17:54:55:5455 info: DELETE /api/v1/clientes/2213 500 7.842 ms - 54
+2022-06-17 17:54:58:5458 info: controller: getting the id_client: 2213 from params
+2022-06-17 17:54:58:5458 info: DELETE /api/v1/clientes/2213 500 2.316 ms - 54
+2022-06-17 17:55:01:551 info: controller: getting the id_client: 2213 from params
+2022-06-17 17:55:01:551 info: DELETE /api/v1/clientes/2213 500 1.233 ms - 54
+2022-06-17 17:55:53:5553 info: Se establecio la conexion a la base de datos 
+2022-06-17 17:55:53:5553 info: App started,listening on port 8000
+2022-06-17 17:55:55:5555 info: controller: getting the id_client: 2213 from params
+2022-06-17 17:55:55:5555 info: DELETE /api/v1/clientes/2213 500 2.852 ms - 54
+2022-06-17 17:56:10:5610 info: Se establecio la conexion a la base de datos 
+2022-06-17 17:56:10:5610 info: App started,listening on port 8000
+2022-06-17 17:56:12:5612 info: controller: getting the id_client: 2213 from params
+2022-06-17 17:56:13:5613 info: entro al Model
+2022-06-17 17:56:13:5613 info: DELETE /api/v1/clientes/2213 500 517.267 ms - 54
+2022-06-17 17:57:11:5711 info: Se establecio la conexion a la base de datos 
+2022-06-17 17:57:11:5711 info: App started,listening on port 8000
+2022-06-17 17:57:38:5738 info: Se establecio la conexion a la base de datos 
+2022-06-17 17:57:38:5738 info: App started,listening on port 8000
+2022-06-17 17:57:41:5741 info: controller: getting the id_client: 2213 from params
+2022-06-17 17:57:41:5741 info: entro al Model
+2022-06-17 17:57:41:5741 info: DELETE /api/v1/clientes/2213 500 503.406 ms - 54
+2022-06-17 18:02:40:240 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:02:40:240 info: App started,listening on port 8000
+2022-06-17 18:02:42:242 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:02:43:243 info: entro al Model
+2022-06-17 18:02:43:243 info: DELETE /api/v1/clientes/2213 500 502.256 ms - 54
+2022-06-17 18:03:23:323 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:03:23:323 info: App started,listening on port 8000
+2022-06-17 18:03:25:325 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:03:25:325 info: entro al Model
+2022-06-17 18:03:26:326 info: DELETE /api/v1/clientes/2213 500 522.968 ms - 54
+2022-06-17 18:04:45:445 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:04:45:445 info: App started,listening on port 8000
+2022-06-17 18:04:48:448 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:04:48:448 info: entro al Model
+2022-06-17 18:04:48:448 info: DELETE /api/v1/clientes/2213 500 499.247 ms - 54
+2022-06-17 18:05:35:535 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:05:35:535 info: App started,listening on port 8000
+2022-06-17 18:05:37:537 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:05:37:537 info: entro al Model
+2022-06-17 18:05:38:538 info: DELETE /api/v1/clientes/2213 500 528.546 ms - 54
+2022-06-17 18:05:49:549 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:05:49:549 info: App started,listening on port 8000
+2022-06-17 18:05:52:552 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:05:52:552 info: entro al Model
+2022-06-17 18:05:52:552 info: DELETE /api/v1/clientes/2213 500 504.669 ms - 54
+2022-06-17 18:06:20:620 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:06:20:620 info: App started,listening on port 8000
+2022-06-17 18:06:21:621 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:06:22:622 info: DELETE /api/v1/clientes/2213 500 527.749 ms - 54
+2022-06-17 18:07:26:726 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:07:26:726 info: App started,listening on port 8000
+2022-06-17 18:07:30:730 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:07:30:730 info: App started,listening on port 8000
+2022-06-17 18:07:32:732 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:07:33:733 info: DELETE /api/v1/clientes/2213 500 570.758 ms - 54
+2022-06-17 18:08:30:830 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:08:30:830 info: App started,listening on port 8000
+2022-06-17 18:08:32:832 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:08:32:832 info: DELETE /api/v1/clientes/2213 500 540.791 ms - 54
+2022-06-17 18:09:07:97 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:09:08:98 info: App started,listening on port 8000
+2022-06-17 18:09:10:910 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:09:10:910 info: DELETE /api/v1/clientes/2213 500 531.718 ms - 54
+2022-06-17 18:10:08:108 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:10:08:108 info: App started,listening on port 8000
+2022-06-17 18:10:11:1011 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:10:12:1012 info: DELETE /api/v1/clientes/2213 500 526.276 ms - 54
+2022-06-17 18:10:44:1044 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:10:44:1044 info: App started,listening on port 8000
+2022-06-17 18:11:21:1121 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:11:21:1121 info: App started,listening on port 8000
+2022-06-17 18:11:29:1129 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:11:29:1129 info: App started,listening on port 8000
+2022-06-17 18:11:32:1132 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:11:32:1132 info: DELETE /api/v1/clientes/2213 500 578.048 ms - 196
+2022-06-17 18:11:57:1157 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:11:57:1157 info: App started,listening on port 8000
+2022-06-17 18:11:59:1159 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:12:00:120 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:12:00:120 info: status from the query [object Object]
+2022-06-17 18:12:00:120 info: DELETE /api/v1/clientes/2213 500 607.953 ms - 54
+2022-06-17 18:12:37:1237 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:12:37:1237 info: App started,listening on port 8000
+2022-06-17 18:12:40:1240 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:12:41:1241 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:12:41:1241 info: status from the query [object Object]
+2022-06-17 18:12:41:1241 info: DELETE /api/v1/clientes/2213 500 633.374 ms - 54
+2022-06-17 18:13:48:1348 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:13:48:1348 info: App started,listening on port 8000
+2022-06-17 18:13:52:1352 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:13:53:1353 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:13:53:1353 info: status from the query [object Object]
+2022-06-17 18:13:53:1353 info: DELETE /api/v1/clientes/2213 500 615.168 ms - 54
+2022-06-17 18:14:01:141 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:14:01:141 info: App started,listening on port 8000
+2022-06-17 18:14:02:142 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:14:03:143 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:14:03:143 info: status from the query [object Object]
+2022-06-17 18:14:03:143 info: DELETE /api/v1/clientes/2213 500 612.376 ms - 54
+2022-06-17 18:14:21:1421 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:14:21:1421 info: App started,listening on port 8000
+2022-06-17 18:14:23:1423 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:14:23:1423 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:14:23:1423 info: status from the query [object Object]
+2022-06-17 18:14:23:1423 info: DELETE /api/v1/clientes/2213 500 581.657 ms - 54
+2022-06-17 18:17:39:1739 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:17:39:1739 info: App started,listening on port 8000
+2022-06-17 18:17:43:1743 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:17:43:1743 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:17:43:1743 info: status from the query [object Object]
+2022-06-17 18:17:43:1743 info: DELETE /api/v1/clientes/2213 500 642.736 ms - 54
+2022-06-17 18:18:09:189 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:18:09:189 info: App started,listening on port 8000
+2022-06-17 18:18:16:1816 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:18:17:1817 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:18:17:1817 info: status from the query [object Object]
+2022-06-17 18:18:17:1817 info: DELETE /api/v1/clientes/2213 200 586.618 ms - 17
+2022-06-17 18:18:26:1826 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:18:26:1826 info: App started,listening on port 8000
+2022-06-17 18:18:27:1827 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:18:28:1828 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:18:28:1828 info: status from the query [object Object]
+2022-06-17 18:18:28:1828 info: DELETE /api/v1/clientes/2213 200 599.547 ms - 110
+2022-06-17 18:19:33:1933 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:19:33:1933 info: App started,listening on port 8000
+2022-06-17 18:19:35:1935 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:19:35:1935 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:19:35:1935 info: status from the query [object Object]
+2022-06-17 18:19:35:1935 info: controller: response from the model : undefined
+2022-06-17 18:19:35:1935 info: DELETE /api/v1/clientes/2213 200 622.705 ms - 110
+2022-06-17 18:19:55:1955 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:19:55:1955 info: App started,listening on port 8000
+2022-06-17 18:19:58:1958 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:19:58:1958 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:19:59:1959 info: status from the query [object Object]
+2022-06-17 18:19:59:1959 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 18:19:59:1959 info: DELETE /api/v1/clientes/2213 200 606.806 ms - 110
+2022-06-17 18:20:57:2057 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:20:57:2057 info: App started,listening on port 8000
+2022-06-17 18:21:05:215 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:21:06:216 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:21:06:216 info: status from the query [object Object]
+2022-06-17 18:21:06:216 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 18:21:06:216 info: DELETE /api/v1/clientes/2213 200 581.499 ms - 18
+2022-06-17 18:21:19:2119 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:21:19:2119 info: App started,listening on port 8000
+2022-06-17 18:21:21:2121 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:21:21:2121 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:21:21:2121 info: status from the query [object Object]
+2022-06-17 18:21:21:2121 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 18:21:21:2121 info: DELETE /api/v1/clientes/2213 200 611.139 ms - 102
+2022-06-17 18:22:35:2235 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:22:35:2235 info: App started,listening on port 8000
+2022-06-17 18:23:42:2342 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:23:42:2342 info: App started,listening on port 8000
+2022-06-17 18:24:29:2429 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:24:29:2429 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:24:29:2429 info: status from the query [object Object]
+2022-06-17 18:24:30:2430 info: controller: response from the model : Usuario eliminado de la base de datos
+2022-06-17 18:24:30:2430 info: DELETE /api/v1/clientes/2213 200 666.667 ms - 74
+2022-06-17 18:25:14:2514 info: POST /api/v1/clientes 201 451.305 ms - 87
+2022-06-17 18:25:28:2528 info: GET /api/v1/clientes 200 504.939 ms - 1156219
+2022-06-17 18:25:43:2543 info: POST /api/v1/invoices 200 388.737 ms - 114
+2022-06-17 18:25:44:2544 info: POST /api/v1/invoices 200 739.839 ms - 114
+2022-06-17 18:25:45:2545 info: POST /api/v1/invoices 200 732.527 ms - 114
+2022-06-17 18:27:10:2710 info: controller: getting the id_client: 2215 from params
+2022-06-17 18:27:11:2711 info: model: verificating that the client 2215 get pending invoices
+2022-06-17 18:27:11:2711 info: status from the query [object Object]
+2022-06-17 18:27:11:2711 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 18:27:11:2711 info: DELETE /api/v1/clientes/2215 200 558.465 ms - 102
+2022-06-17 18:27:39:2739 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:27:39:2739 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:27:39:2739 info: status from the query [object Object]
+2022-06-17 18:27:39:2739 info: controller: response from the model : Usuario eliminado de la base de datos
+2022-06-17 18:27:39:2739 info: DELETE /api/v1/clientes/2213 200 657.360 ms - 74
+2022-06-17 18:28:09:289 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:28:09:289 info: App started,listening on port 8000
+2022-06-17 18:28:11:2811 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:28:12:2812 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:28:12:2812 info: status from the query [object Object]
+2022-06-17 18:28:12:2812 info: controller: response from the model : Usuario eliminado de la base de datos
+2022-06-17 18:28:12:2812 info: DELETE /api/v1/clientes/2213 200 654.874 ms - 74
+2022-06-17 18:28:51:2851 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:28:51:2851 info: App started,listening on port 8000
+2022-06-17 18:29:44:2944 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:29:44:2944 info: App started,listening on port 8000
+2022-06-17 18:30:03:303 info: Se establecio la conexion a la base de datos 
+2022-06-17 18:30:03:303 info: App started,listening on port 8000
+2022-06-17 18:30:05:305 info: controller: getting the id_client: 2213 from params
+2022-06-17 18:30:05:305 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 18:30:05:305 info: status from the query [object Object]
+2022-06-17 18:30:06:306 info: controller: response from the model : El usuario que intentas elimiar no existe
+2022-06-17 18:30:06:306 info: DELETE /api/v1/clientes/2213 200 687.208 ms - 78
+2022-06-17 22:29:24:2924 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:29:25:2925 info: App started,listening on port 8000
+2022-06-17 22:30:30:3030 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:30:30:3030 info: App started,listening on port 8000
+2022-06-17 22:31:32:3132 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:31:32:3132 info: App started,listening on port 8000
+2022-06-17 22:31:34:3134 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:31:34:3134 info: App started,listening on port 8000
+2022-06-17 22:32:00:320 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:32:00:320 info: App started,listening on port 8000
+2022-06-17 22:32:30:3230 info: controller: getting the id_client: 2213 from params
+2022-06-17 22:32:30:3230 info: model: verificating that the client 2213 get pending invoices
+2022-06-17 22:32:30:3230 info: 
+client.query():
+2022-06-17 22:32:30:3230 info: Transaction executed correctly
+2022-06-17 22:33:42:3342 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:33:42:3342 info: App started,listening on port 8000
+2022-06-17 22:33:45:3345 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:33:45:3345 info: App started,listening on port 8000
+2022-06-17 22:33:46:3346 info: controller: getting the id_client: 2215 from params
+2022-06-17 22:33:47:3347 info: model: verificating that the client 2215 get pending invoices
+2022-06-17 22:33:47:3347 info: Transaction executed correctly
+2022-06-17 22:33:47:3347 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 22:33:47:3347 info: DELETE /api/v1/clientes/2215 200 589.911 ms - 102
+2022-06-17 22:34:13:3413 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:34:13:3413 info: App started,listening on port 8000
+2022-06-17 22:34:44:3444 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:34:44:3444 info: App started,listening on port 8000
+2022-06-17 22:34:48:3448 info: controller: getting the id_client: 2215 from params
+2022-06-17 22:34:49:3449 info: model: verificating that the client 2215 get pending invoices
+2022-06-17 22:34:49:3449 info: Transaction executed correctly
+2022-06-17 22:34:49:3449 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 22:34:49:3449 info: DELETE /api/v1/clientes/2215 200 609.020 ms - 102
+2022-06-17 22:35:42:3542 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:35:42:3542 info: App started,listening on port 8000
+2022-06-17 22:35:44:3544 info: controller: getting the id_client: 2215 from params
+2022-06-17 22:35:44:3544 info: model: verificating that the client 2215 get pending invoices
+2022-06-17 22:35:44:3544 info: Transaction executed correctly
+2022-06-17 22:35:44:3544 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 22:35:44:3544 info: DELETE /api/v1/clientes/2215 200 609.315 ms - 96
+2022-06-17 22:36:07:367 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:36:07:367 info: App started,listening on port 8000
+2022-06-17 22:36:44:3644 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:36:44:3644 info: App started,listening on port 8000
+2022-06-17 22:36:47:3647 info: controller: getting the id_client: 2215 from params
+2022-06-17 22:36:48:3648 info: model: verificating that the client 2215 get pending invoices
+2022-06-17 22:36:48:3648 info: Transaction executed correctly
+2022-06-17 22:36:48:3648 info: controller: response from the model : Este usurio cuentra con facturas por lo cual no se puede eliminar
+2022-06-17 22:36:48:3648 info: DELETE /api/v1/clientes/2215 200 633.964 ms - 96
+2022-06-17 22:38:28:3828 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:38:28:3828 info: App started,listening on port 8000
+2022-06-17 22:39:02:392 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:39:02:392 info: App started,listening on port 8000
+2022-06-17 22:40:39:4039 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:40:39:4039 info: App started,listening on port 8000
+2022-06-17 22:41:47:4147 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:41:47:4147 info: App started,listening on port 8000
+2022-06-17 22:41:57:4157 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:41:57:4157 info: App started,listening on port 8000
+2022-06-17 22:53:31:5331 info: GET /api/v1/clientes 500 386.579 ms - 168
+2022-06-17 22:53:38:5338 info: GET /api/v1/clientes 500 366.699 ms - 168
+2022-06-17 22:55:12:5512 info: Se establecio la conexion a la base de datos 
+2022-06-17 22:55:12:5512 info: App started,listening on port 8000
+2022-06-17 22:55:17:5517 info: GET /api/v1/clientes 500 370.151 ms - 168
+2022-06-17 22:57:00:570 info: GET /api/v1/clientes 500 374.214 ms - 168
+2022-06-17 22:59:39:5939 info: GET /api/v1/clientes 500 353.232 ms - 168
+2022-06-17 22:59:52:5952 info: GET /api/v1/clientes/ruta/6 500 343.315 ms - 168
+2022-06-17 23:02:59:259 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:02:59:259 info: App started,listening on port 8000
+2022-06-17 23:03:04:34 info: GET /api/v1/invoices/ 500 354.250 ms - 116
+2022-06-17 23:03:26:326 info: POST /api/v1/payments 200 379.267 ms - 168
+2022-06-17 23:04:36:436 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:04:36:436 info: App started,listening on port 8000
+2022-06-17 23:04:57:457 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:04:57:457 info: App started,listening on port 8000
+2022-06-17 23:05:11:511 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:05:11:511 info: App started,listening on port 8000
+2022-06-17 23:05:22:522 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:05:22:522 info: App started,listening on port 8000
+2022-06-17 23:05:36:536 info: GET /api/v1/clientes 200 898.700 ms - 1156219
+2022-06-17 23:12:29:1229 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:12:29:1229 info: App started,listening on port 8000
+2022-06-17 23:12:37:1237 info: GET /api/v1/clientes 200 890.181 ms - 1156219
+2022-06-17 23:12:53:1253 info: GET /api/v1/payments/byDay/2022-05-30 500 81.418 ms - 179
+2022-06-17 23:14:05:145 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:14:05:145 info: App started,listening on port 8000
+2022-06-17 23:14:10:1410 info: GET /api/v1/payments/byDay/2022-05-30 200 684.272 ms - 174151
+2022-06-17 23:14:47:1447 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:14:47:1447 info: App started,listening on port 8000
+2022-06-17 23:14:51:1451 info: GET /api/v1/payments/byDay/2022-05-30 200 686.966 ms - 174151
+2022-06-17 23:15:01:151 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:15:01:151 info: App started,listening on port 8000
+2022-06-17 23:15:04:154 info: GET /api/v1/payments/byDay/2022-05-30 200 600.547 ms - 94983
+2022-06-17 23:24:21:2421 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:24:21:2421 info: App started,listening on port 8000
+2022-06-17 23:24:42:2442 info: GET /api/v1/payments/byWeek 200 474.756 ms - 252
+2022-06-17 23:26:48:2648 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:26:48:2648 info: App started,listening on port 8000
+2022-06-17 23:26:52:2652 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:26:52:2652 info: App started,listening on port 8000
+2022-06-17 23:27:04:274 info: GET /api/v1/payments/byDay/2022-05-30 200 613.839 ms - 94983
+2022-06-17 23:28:36:2836 info: GET /api/v1/payments/byDay/2022-06-16 200 444.338 ms - 56
+2022-06-17 23:28:45:2845 info: GET /api/v1/payments/byDay/2022-06-15 200 80.442 ms - 56
+2022-06-17 23:28:49:2849 info: GET /api/v1/payments/byDay/2022-06-14 200 81.779 ms - 56
+2022-06-17 23:28:54:2854 info: GET /api/v1/payments/byDay/2022-06-13 200 82.661 ms - 3329
+2022-06-17 23:32:51:3251 info: Se establecio la conexion a la base de datos 
+2022-06-17 23:32:51:3251 info: App started,listening on port 8000
+2022-06-17 23:32:54:3254 info: GET /api/v1/payments/byDay/2022-06-13 200 443.321 ms - 3595

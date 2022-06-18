@@ -1,9 +1,19 @@
+const { cli } = require("winston/lib/winston/config");
 const connexion = require("../config/bdConnexion");
 const logger = require("../utils/logger");
 
 module.exports = {
   async obtenerClientes() {
-    const resultados = await connexion.query("SELECT * FROM clients");
+    const resultados = await connexion.query(
+      `
+      SELECT 
+        * 
+      FROM 
+        clients 
+      ORDER BY
+        id_client 
+      DESC`
+    );
     return resultados.rows;
   },
   async getClient(idCliente) {
@@ -149,6 +159,75 @@ module.exports = {
       [idCliente, status]
     );
     return resultado;
+  },
+  async deleteClient(idClient) {
+    const clientGotInvoices = `
+      SELECT
+        i.*
+      FROM 
+        clients c
+      INNER JOIN
+        invoices i
+      ON 
+        c.id_client = i.id_client
+      WHERE 
+        c.id_client = $1`;
+    const deleteClient = `
+      DELETE FROM 
+        public.clients
+      WHERE 
+        id_client = $1
+    `;
+    const client = await connexion.connect();
+    let executed = false;
+    let sqlResult = null;
+    try {
+      await client.query("BEGIN");
+      logger.info(
+        `model: verificating that the client ${idClient} get pending invoices`
+      );
+      // verify if the client get invoice active
+      const existInvoices = await client.query(clientGotInvoices, [idClient]);
+      if (existInvoices.rowCount <= 0) {
+        //procedemos a eliminar el cliente
+        await client.query(deleteClient, [idClient], (err, result) => {
+          if (err) {
+            executed = false;
+            console.log("\nclient.query():", err);
+            // Rollback before executing another transaction
+            client.query("ROLLBACK");
+            logger.info("Transaction ROLLBACK called");
+          }
+          if (result.rowCount !== 0) {
+            executed = true;
+            sqlResult = {
+              message: "Usuario eliminado de la base de datos",
+            };
+          } else {
+            executed = false;
+            client.query("ROLLBACK");
+            logger.info("Transaction ROLLBACK called");
+            // Rollback before executing another transaction
+            sqlResult = {
+              message: "El usuario que intentas eliminar no existe",
+            };
+          }
+        });
+      } else {
+        sqlResult = {
+          message:
+            "Este usurio cuentra con facturas por lo cual no se puede eliminar",
+        };
+      }
+      await client.query("COMMIT");
+      await client.release(true);
+      logger.info(`Transaction executed correctly`);
+    } catch (error) {
+      await client.query("ROLLBACK");
+      await client.release(true);
+      throw error;
+    }
+    return { executed, sqlResult };
   },
   async getClientByRoute(idRuta) {
     let resultados = await connexion.query(

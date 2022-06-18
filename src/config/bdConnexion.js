@@ -3,7 +3,7 @@ const VARIABLES = require("../config/config");
 const logger = require("../utils/logger");
 
 const pool = new Pool({
-  user: "navick", //VARIABLES.USER,
+  user: VARIABLES.USER_DB,
   host: VARIABLES.HOST,
   database: VARIABLES.DB_NAME,
   password: VARIABLES.PASSWORD,

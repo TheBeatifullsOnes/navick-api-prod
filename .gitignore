@@ -1,2 +1,3 @@
 # library folder ignore
 /node_modules
+logs/all-logs.log

@@ -7,6 +7,7 @@ exports.obtenerClientes = (req, res) => {
   clientModel
     .obtenerClientes()
     .then((response) => {
+      console.log(response);
       if (response.length > 0) {
         res.status(200).json({
           statusCode: 200,
@@ -345,6 +346,36 @@ exports.getClientCreditInformation = (req, res) => {
       res.status(500).json({
         statusCode: 500,
         statusMessage: "error fatal",
+        result: error,
+      });
+    });
+};
+
+exports.deleteClient = (req, res) => {
+  const { idClient } = req.params;
+  logger.info(`controller: getting the id_client: ${idClient} from params`);
+  clientModel
+    .deleteClient(idClient)
+    .then((sqlResponse) => {
+      logger.info(
+        `controller: response from the model : ${sqlResponse.sqlResult.message}`
+      );
+      if (!sqlResponse) {
+        res.status(404).json({
+          statusCode: 404,
+          statusMessage: "error",
+          result: "Not found",
+        });
+      }
+      res.status(200).json({
+        statusCode: 200,
+        message: sqlResponse.sqlResult.message,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
         result: error,
       });
     });
