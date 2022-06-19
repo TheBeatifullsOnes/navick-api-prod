@@ -248,7 +248,6 @@ module.exports = {
 
     return result.rows;
   },
-
   async getPaymentsByWeek(startDate, endDate) {
     const queryString = `
     SELECT

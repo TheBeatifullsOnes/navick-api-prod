@@ -3,6 +3,7 @@ const router = express.Router();
 const clientController = require("../controllers/clients");
 
 router.get("/remainingPayment", clientController.getClientCreditInformation);
+router.post("/massiveUpdate", clientController.massiveUpdateRouteClients);
 router.get("/only/:idRoute", clientController.getOnlyClientsByRoute);
 router.get("/:idCliente", clientController.obtenerCliente);
 router.get("/ruta/:idRoute", clientController.getClientsByRoute);

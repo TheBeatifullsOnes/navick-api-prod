@@ -236,18 +236,16 @@ module.exports = {
       detailInvoice.forEach(async (element) => {
         const { idArticle, quantity, price, idWarehouse } = element;
         line += 1;
-        const queryValues = [
-          insertInvoice.rows[0].id_invoice,
-          line,
-          idArticle,
-          quantity,
-          price,
-          idWarehouse,
-        ];
-
         await client.query(
           queryInsertDetailsInvoices,
-          queryValues,
+          [
+            insertInvoice.rows[0].id_invoice,
+            line,
+            idArticle,
+            quantity,
+            price,
+            idWarehouse,
+          ],
           (err, result) => {
             if (err) {
               executed = false;
@@ -256,14 +254,12 @@ module.exports = {
               client.query("ROLLBACK");
               console.log("Transaction ROLLBACK called");
             }
-            // else {
-            //   client.query("COMMIT");
+
             console.log(
               "client.query() COMMIT row count:",
               result.rowCount,
               result
             );
-            // }
           }
         );
         executed = true;

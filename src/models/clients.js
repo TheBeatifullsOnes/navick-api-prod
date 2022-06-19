@@ -257,4 +257,48 @@ module.exports = {
     );
     return resultados.rows;
   },
+  async massiveUpdateClientsRoutes(clients) {
+    const queryUpdateClientsRoute = `
+      UPDATE 
+        public.clients
+	    SET 
+        id_route=$1
+	    WHERE 
+        id_client=$2;
+    `;
+    let executed = false;
+    let sqlResult = null;
+    let contador = 0;
+    const client = await connexion.connect();
+    try {
+      // Transaction start
+      await client.query("BEGIN");
+      clients.forEach(async (cli) => {
+        const { idClient, idRoute } = cli;
+        const data = await client.query(queryUpdateClientsRoute, [
+          idRoute,
+          idClient,
+        ]);
+        contador += data.rowCount;
+        if (contador === clients.length) {
+          executed = true;
+          sqlResult = {
+            message: `you have updated ${contador} registers of clients`,
+          };
+        } else {
+          executed = false;
+          sqlResult = {
+            message: "something went wrong",
+          };
+        }
+      });
+      await client.query("COMMIT");
+      await client.release(true);
+    } catch (error) {
+      await client.query("ROLLBACK");
+      await client.release(true);
+      throw error;
+    }
+    return { executed, sqlResult };
+  },
 };

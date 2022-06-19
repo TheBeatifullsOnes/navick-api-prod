@@ -717,3 +717,625 @@ client.query():
 2022-06-17 23:32:51:3251 info: Se establecio la conexion a la base de datos 
 2022-06-17 23:32:51:3251 info: App started,listening on port 8000
 2022-06-17 23:32:54:3254 info: GET /api/v1/payments/byDay/2022-06-13 200 443.321 ms - 3595
+2022-06-18 11:13:21:1321 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:13:21:1321 info: App started,listening on port 8000
+2022-06-18 11:19:30:1930 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:19:30:1930 info: App started,listening on port 8000
+2022-06-18 11:19:43:1943 info: GET /api/v1/clientes/massiveUpdate 500 468.270 ms - 211
+2022-06-18 11:20:00:200 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:20:00:200 info: App started,listening on port 8000
+2022-06-18 11:20:06:206 info: GET /api/v1/clientes/massiveUpdate 500 468.741 ms - 211
+2022-06-18 11:20:44:2044 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:20:44:2044 info: App started,listening on port 8000
+2022-06-18 11:20:50:2050 info: GET /api/v1/clientes/massiveUpdate 500 478.249 ms - 211
+2022-06-18 11:21:12:2112 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 11:25:18:2518 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:25:18:2518 info: App started,listening on port 8000
+2022-06-18 11:25:49:2549 info: POST /api/v1/clientes/massiveUpdate 500 141.186 ms - 1528
+2022-06-18 11:26:04:264 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:26:04:264 info: App started,listening on port 8000
+2022-06-18 11:26:26:2626 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:26:27:2627 info: App started,listening on port 8000
+2022-06-18 11:30:01:301 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:30:01:301 info: App started,listening on port 8000
+2022-06-18 11:30:27:3027 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:30:27:3027 info: App started,listening on port 8000
+2022-06-18 11:31:04:314 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:31:04:314 info: App started,listening on port 8000
+2022-06-18 11:34:54:3454 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:34:54:3454 info: App started,listening on port 8000
+2022-06-18 11:35:50:3550 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:35:50:3550 info: App started,listening on port 8000
+2022-06-18 11:36:01:361 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:36:01:361 info: App started,listening on port 8000
+2022-06-18 11:36:41:3641 info: GET /api/v1/clientes 200 923.538 ms - 1156219
+2022-06-18 11:39:12:3912 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:39:12:3912 info: App started,listening on port 8000
+2022-06-18 11:39:22:3922 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:39:22:3922 info: App started,listening on port 8000
+2022-06-18 11:39:31:3931 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 11:40:07:407 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:40:07:407 info: App started,listening on port 8000
+2022-06-18 11:41:34:4134 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:41:34:4134 info: App started,listening on port 8000
+2022-06-18 11:41:54:4154 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:41:54:4154 info: App started,listening on port 8000
+2022-06-18 11:42:30:4230 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:42:30:4230 info: App started,listening on port 8000
+2022-06-18 11:42:38:4238 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:42:38:4238 info: App started,listening on port 8000
+2022-06-18 11:43:42:4342 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:43:42:4342 info: App started,listening on port 8000
+2022-06-18 11:44:19:4419 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:44:19:4419 info: App started,listening on port 8000
+2022-06-18 11:44:22:4422 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:44:22:4422 info: App started,listening on port 8000
+2022-06-18 11:45:11:4511 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:45:11:4511 info: App started,listening on port 8000
+2022-06-18 11:45:19:4519 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:45:19:4519 info: App started,listening on port 8000
+2022-06-18 11:45:38:4538 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:45:38:4538 info: App started,listening on port 8000
+2022-06-18 11:45:56:4556 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:45:56:4556 info: App started,listening on port 8000
+2022-06-18 11:46:03:463 info: POST /api/v1/clientes/massiveUpdate 200 393.214 ms - 91
+2022-06-18 11:48:59:4859 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:48:59:4859 info: App started,listening on port 8000
+2022-06-18 11:49:03:493 info: POST /api/v1/clientes/massiveUpdate 500 402.257 ms - 73
+2022-06-18 11:49:34:4934 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:49:34:4934 info: App started,listening on port 8000
+2022-06-18 11:49:41:4941 info: POST /api/v1/clientes/massiveUpdate 500 392.701 ms - 73
+2022-06-18 11:50:09:509 info: GET /api/v1/clientes 200 892.000 ms - 1156218
+2022-06-18 11:50:49:5049 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:50:49:5049 info: App started,listening on port 8000
+2022-06-18 11:50:51:5051 info: POST /api/v1/clientes/massiveUpdate 500 384.878 ms - 73
+2022-06-18 11:51:47:5147 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:51:47:5147 info: App started,listening on port 8000
+2022-06-18 11:52:40:5240 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:52:40:5240 info: App started,listening on port 8000
+2022-06-18 11:52:51:5251 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:52:51:5251 info: App started,listening on port 8000
+2022-06-18 11:52:59:5259 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:52:59:5259 info: App started,listening on port 8000
+2022-06-18 11:53:01:531 info: POST /api/v1/clientes/massiveUpdate 500 386.545 ms - 73
+2022-06-18 11:54:04:544 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:54:04:544 info: App started,listening on port 8000
+2022-06-18 11:54:09:549 info: POST /api/v1/clientes/massiveUpdate 500 392.568 ms - 73
+2022-06-18 11:54:27:5427 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:54:27:5427 info: App started,listening on port 8000
+2022-06-18 11:54:30:5430 info: POST /api/v1/clientes/massiveUpdate 500 387.071 ms - 73
+2022-06-18 11:54:43:5443 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:54:43:5443 info: App started,listening on port 8000
+2022-06-18 11:54:44:5444 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:54:44:5444 info: App started,listening on port 8000
+2022-06-18 11:54:46:5446 info: POST /api/v1/clientes/massiveUpdate 500 378.443 ms - 73
+2022-06-18 11:55:15:5515 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:55:15:5515 info: App started,listening on port 8000
+2022-06-18 11:55:18:5518 info: POST /api/v1/clientes/massiveUpdate 500 385.377 ms - 73
+2022-06-18 11:55:57:5557 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:55:57:5557 info: App started,listening on port 8000
+2022-06-18 11:56:28:5628 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:56:28:5628 info: App started,listening on port 8000
+2022-06-18 11:56:35:5635 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:56:35:5635 info: App started,listening on port 8000
+2022-06-18 11:56:38:5638 info: POST /api/v1/clientes/massiveUpdate 500 387.737 ms - 73
+2022-06-18 11:57:14:5714 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:57:14:5714 info: App started,listening on port 8000
+2022-06-18 11:57:17:5717 info: POST /api/v1/clientes/massiveUpdate 500 390.673 ms - 73
+2022-06-18 11:58:03:583 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:58:03:583 info: App started,listening on port 8000
+2022-06-18 11:58:05:585 info: POST /api/v1/clientes/massiveUpdate 500 388.765 ms - 54
+2022-06-18 11:58:21:5821 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:58:21:5821 info: App started,listening on port 8000
+2022-06-18 11:58:23:5823 info: POST /api/v1/clientes/massiveUpdate 500 392.540 ms - 42
+2022-06-18 11:58:55:5855 info: Se establecio la conexion a la base de datos 
+2022-06-18 11:58:55:5855 info: App started,listening on port 8000
+2022-06-18 12:00:37:037 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:00:37:037 info: App started,listening on port 8000
+2022-06-18 12:00:44:044 info: POST /api/v1/clientes/massiveUpdate 500 382.612 ms - 42
+2022-06-18 12:01:11:111 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:01:11:111 info: App started,listening on port 8000
+2022-06-18 12:01:14:114 info: POST /api/v1/clientes/massiveUpdate 500 383.657 ms - 42
+2022-06-18 12:01:59:159 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:01:59:159 info: App started,listening on port 8000
+2022-06-18 12:02:03:23 info: POST /api/v1/clientes/massiveUpdate 200 389.645 ms - 91
+2022-06-18 12:04:22:422 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:04:22:422 info: App started,listening on port 8000
+2022-06-18 12:04:59:459 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:04:59:459 info: App started,listening on port 8000
+2022-06-18 12:05:18:518 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:05:18:518 info: App started,listening on port 8000
+2022-06-18 12:05:22:522 info: POST /api/v1/clientes/massiveUpdate 200 397.469 ms - 91
+2022-06-18 12:05:58:558 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:05:58:558 info: App started,listening on port 8000
+2022-06-18 12:06:01:61 info: POST /api/v1/clientes/massiveUpdate 200 339.596 ms - 91
+2022-06-18 12:06:29:629 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:06:29:629 info: App started,listening on port 8000
+2022-06-18 12:06:34:634 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:06:34:634 info: App started,listening on port 8000
+2022-06-18 12:06:36:636 info: POST /api/v1/clientes/massiveUpdate 200 378.253 ms - 91
+2022-06-18 12:07:15:715 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:07:15:715 info: App started,listening on port 8000
+2022-06-18 12:07:31:731 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:07:31:731 info: App started,listening on port 8000
+2022-06-18 12:07:51:751 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:07:51:751 info: App started,listening on port 8000
+2022-06-18 12:07:54:754 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:07:54:754 info: App started,listening on port 8000
+2022-06-18 12:08:07:87 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:08:07:87 info: App started,listening on port 8000
+2022-06-18 12:08:19:819 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:08:19:819 info: App started,listening on port 8000
+2022-06-18 12:08:26:826 info: POST /api/v1/clientes/massiveUpdate 500 368.191 ms - 42
+2022-06-18 12:08:54:854 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:08:54:854 info: App started,listening on port 8000
+2022-06-18 12:08:56:856 info: POST /api/v1/clientes/massiveUpdate 500 375.106 ms - 42
+2022-06-18 12:09:17:917 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:09:17:917 info: App started,listening on port 8000
+2022-06-18 12:09:19:919 info: POST /api/v1/clientes/massiveUpdate 500 389.592 ms - 42
+2022-06-18 12:09:59:959 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:09:59:959 info: App started,listening on port 8000
+2022-06-18 12:10:01:101 info: POST /api/v1/clientes/massiveUpdate 500 369.616 ms - 42
+2022-06-18 12:10:18:1018 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:10:18:1018 info: App started,listening on port 8000
+2022-06-18 12:10:21:1021 info: POST /api/v1/clientes/massiveUpdate 500 380.384 ms - 42
+2022-06-18 12:10:51:1051 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:10:51:1051 info: App started,listening on port 8000
+2022-06-18 12:10:53:1053 info: POST /api/v1/clientes/massiveUpdate 500 376.873 ms - 42
+2022-06-18 12:11:31:1131 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:11:31:1131 info: App started,listening on port 8000
+2022-06-18 12:11:33:1133 info: POST /api/v1/clientes/massiveUpdate 500 396.601 ms - 42
+2022-06-18 12:11:48:1148 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:11:48:1148 info: App started,listening on port 8000
+2022-06-18 12:11:50:1150 info: POST /api/v1/clientes/massiveUpdate 500 379.190 ms - 42
+2022-06-18 12:12:03:123 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:12:03:123 info: App started,listening on port 8000
+2022-06-18 12:12:05:125 info: POST /api/v1/clientes/massiveUpdate 500 380.266 ms - 42
+2022-06-18 12:13:23:1323 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:13:23:1323 info: App started,listening on port 8000
+2022-06-18 12:13:37:1337 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:13:37:1337 info: App started,listening on port 8000
+2022-06-18 12:14:02:142 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:14:02:142 info: App started,listening on port 8000
+2022-06-18 12:14:04:144 info: POST /api/v1/clientes/massiveUpdate 500 376.247 ms - 42
+2022-06-18 12:14:35:1435 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:14:35:1435 info: App started,listening on port 8000
+2022-06-18 12:14:37:1437 info: POST /api/v1/clientes/massiveUpdate 500 396.584 ms - 42
+2022-06-18 12:15:36:1536 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:15:37:1537 info: App started,listening on port 8000
+2022-06-18 12:15:39:1539 info: POST /api/v1/clientes/massiveUpdate 200 379.343 ms - 91
+2022-06-18 12:16:10:1610 info: POST /api/v1/clientes/massiveUpdate 200 365.326 ms - 91
+2022-06-18 12:16:16:1616 info: GET /api/v1/clientes 200 869.614 ms - 1156218
+2022-06-18 12:17:07:177 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:17:07:177 info: App started,listening on port 8000
+2022-06-18 12:17:12:1712 info: POST /api/v1/clientes/massiveUpdate 500 493.313 ms - 42
+2022-06-18 12:17:29:1729 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:17:29:1729 info: App started,listening on port 8000
+2022-06-18 12:17:31:1731 info: POST /api/v1/clientes/massiveUpdate 200 446.329 ms - 91
+2022-06-18 12:18:25:1825 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:18:25:1825 info: App started,listening on port 8000
+2022-06-18 12:18:27:1827 info: POST /api/v1/clientes/massiveUpdate 200 484.944 ms - 91
+2022-06-18 12:18:42:1842 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:18:42:1842 info: App started,listening on port 8000
+2022-06-18 12:18:45:1845 info: POST /api/v1/clientes/massiveUpdate 200 449.435 ms - 91
+2022-06-18 12:19:03:193 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:19:03:193 info: App started,listening on port 8000
+2022-06-18 12:19:05:195 info: POST /api/v1/clientes/massiveUpdate 200 469.233 ms - 91
+2022-06-18 12:19:53:1953 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:19:53:1953 info: App started,listening on port 8000
+2022-06-18 12:19:56:1956 info: POST /api/v1/clientes/massiveUpdate 200 469.235 ms - 91
+2022-06-18 12:20:08:208 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:20:08:208 info: App started,listening on port 8000
+2022-06-18 12:20:11:2011 info: POST /api/v1/clientes/massiveUpdate 200 462.692 ms - 91
+2022-06-18 12:20:25:2025 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:20:25:2025 info: App started,listening on port 8000
+2022-06-18 12:20:28:2028 info: POST /api/v1/clientes/massiveUpdate 200 449.119 ms - 91
+2022-06-18 12:20:43:2043 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:20:43:2043 info: App started,listening on port 8000
+2022-06-18 12:20:53:2053 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:20:53:2053 info: App started,listening on port 8000
+2022-06-18 12:20:56:2056 info: POST /api/v1/clientes/massiveUpdate 200 474.409 ms - 91
+2022-06-18 12:21:10:2110 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:21:10:2110 info: App started,listening on port 8000
+2022-06-18 12:21:16:2116 info: POST /api/v1/clientes/massiveUpdate 200 442.045 ms - 91
+2022-06-18 12:21:57:2157 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:21:57:2157 info: App started,listening on port 8000
+2022-06-18 12:22:00:220 info: POST /api/v1/clientes/massiveUpdate 200 456.735 ms - 91
+2022-06-18 12:22:08:228 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:22:09:229 info: App started,listening on port 8000
+2022-06-18 12:22:12:2212 info: POST /api/v1/clientes/massiveUpdate 200 486.107 ms - 91
+2022-06-18 12:22:59:2259 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:22:59:2259 info: App started,listening on port 8000
+2022-06-18 12:23:03:233 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:23:03:233 info: App started,listening on port 8000
+2022-06-18 12:24:49:2449 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:24:49:2449 info: App started,listening on port 8000
+2022-06-18 12:24:59:2459 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:24:59:2459 info: App started,listening on port 8000
+2022-06-18 12:25:03:253 info: POST /api/v1/clientes/massiveUpdate 500 450.197 ms - 42
+2022-06-18 12:25:26:2526 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:25:26:2526 info: App started,listening on port 8000
+2022-06-18 12:25:28:2528 info: POST /api/v1/clientes/massiveUpdate 200 464.166 ms - 91
+2022-06-18 12:26:19:2619 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:26:19:2619 info: App started,listening on port 8000
+2022-06-18 12:26:22:2622 info: POST /api/v1/clientes/massiveUpdate 200 467.370 ms - 91
+2022-06-18 12:26:47:2647 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:26:47:2647 info: App started,listening on port 8000
+2022-06-18 12:26:49:2649 info: POST /api/v1/clientes/massiveUpdate 200 467.845 ms - 91
+2022-06-18 12:28:02:282 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:28:02:282 info: App started,listening on port 8000
+2022-06-18 12:28:04:284 info: POST /api/v1/clientes/massiveUpdate 200 459.937 ms - 101
+2022-06-18 12:28:13:2813 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:28:13:2813 info: App started,listening on port 8000
+2022-06-18 12:28:15:2815 info: POST /api/v1/clientes/massiveUpdate 200 450.755 ms - 101
+2022-06-18 12:29:02:292 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:29:03:293 info: App started,listening on port 8000
+2022-06-18 12:29:06:296 info: POST /api/v1/clientes/massiveUpdate 200 484.006 ms - 101
+2022-06-18 12:29:14:2914 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:29:14:2914 info: App started,listening on port 8000
+2022-06-18 12:29:17:2917 info: POST /api/v1/clientes/massiveUpdate 200 473.950 ms - 101
+2022-06-18 12:29:19:2919 info: POST /api/v1/clientes/massiveUpdate 200 442.610 ms - 101
+2022-06-18 12:29:43:2943 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:29:43:2943 info: App started,listening on port 8000
+2022-06-18 12:29:46:2946 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:29:46:2946 info: App started,listening on port 8000
+2022-06-18 12:29:48:2948 info: POST /api/v1/clientes/massiveUpdate 200 479.963 ms - 101
+2022-06-18 12:35:29:3529 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:35:29:3529 info: App started,listening on port 8000
+2022-06-18 12:35:48:3548 info: POST /api/v1/clientes/massiveUpdate 500 451.669 ms - 42
+2022-06-18 12:36:14:3614 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:36:14:3614 info: App started,listening on port 8000
+2022-06-18 12:36:17:3617 info: POST /api/v1/clientes/massiveUpdate 200 448.796 ms - 101
+2022-06-18 12:36:40:3640 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:36:40:3640 info: App started,listening on port 8000
+2022-06-18 12:36:42:3642 info: POST /api/v1/clientes/massiveUpdate 200 461.087 ms - 101
+2022-06-18 12:37:30:3730 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:37:30:3730 info: App started,listening on port 8000
+2022-06-18 12:37:33:3733 info: POST /api/v1/clientes/massiveUpdate 200 469.510 ms - 101
+2022-06-18 12:38:05:385 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:38:05:385 info: App started,listening on port 8000
+2022-06-18 12:38:07:387 info: POST /api/v1/clientes/massiveUpdate 200 466.607 ms - 101
+2022-06-18 12:41:06:416 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:41:06:416 info: App started,listening on port 8000
+2022-06-18 12:41:37:4137 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:41:37:4137 info: App started,listening on port 8000
+2022-06-18 12:41:39:4139 info: POST /api/v1/clientes/massiveUpdate 200 578.810 ms - 101
+2022-06-18 12:42:13:4213 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:42:13:4213 info: App started,listening on port 8000
+2022-06-18 12:42:15:4215 info: POST /api/v1/clientes/massiveUpdate 200 452.668 ms - 101
+2022-06-18 12:42:23:4223 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:42:23:4223 info: App started,listening on port 8000
+2022-06-18 12:42:26:4226 info: POST /api/v1/clientes/massiveUpdate 200 464.105 ms - 101
+2022-06-18 12:43:02:432 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:43:02:432 info: App started,listening on port 8000
+2022-06-18 12:43:04:434 info: POST /api/v1/clientes/massiveUpdate 200 466.802 ms - 101
+2022-06-18 12:43:07:437 info: POST /api/v1/clientes/massiveUpdate 200 446.356 ms - 101
+2022-06-18 12:43:24:4324 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:43:24:4324 info: App started,listening on port 8000
+2022-06-18 12:43:26:4326 info: POST /api/v1/clientes/massiveUpdate 200 454.955 ms - 101
+2022-06-18 12:43:47:4347 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:43:47:4347 info: App started,listening on port 8000
+2022-06-18 12:43:49:4349 info: POST /api/v1/clientes/massiveUpdate 200 477.235 ms - 101
+2022-06-18 12:44:15:4415 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:44:15:4415 info: App started,listening on port 8000
+2022-06-18 12:44:18:4418 info: POST /api/v1/clientes/massiveUpdate 200 476.273 ms - 101
+2022-06-18 12:44:28:4428 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:44:28:4428 info: App started,listening on port 8000
+2022-06-18 12:44:29:4429 info: POST /api/v1/clientes/massiveUpdate 200 455.933 ms - 101
+2022-06-18 12:44:39:4439 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:44:39:4439 info: App started,listening on port 8000
+2022-06-18 12:44:40:4440 info: POST /api/v1/clientes/massiveUpdate 200 455.772 ms - 101
+2022-06-18 12:45:20:4520 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:45:20:4520 info: App started,listening on port 8000
+2022-06-18 12:45:23:4523 info: POST /api/v1/clientes/massiveUpdate 200 449.447 ms - 101
+2022-06-18 12:45:28:4528 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:45:28:4528 info: App started,listening on port 8000
+2022-06-18 12:45:49:4549 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:45:49:4549 info: App started,listening on port 8000
+2022-06-18 12:46:00:460 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:46:00:460 info: App started,listening on port 8000
+2022-06-18 12:46:13:4613 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:46:13:4613 info: App started,listening on port 8000
+2022-06-18 12:46:40:4640 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:46:40:4640 info: App started,listening on port 8000
+2022-06-18 12:46:44:4644 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:46:44:4644 info: App started,listening on port 8000
+2022-06-18 12:46:51:4651 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:46:51:4651 info: App started,listening on port 8000
+2022-06-18 12:46:54:4654 info: POST /api/v1/clientes/massiveUpdate 200 476.134 ms - 101
+2022-06-18 12:47:07:477 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:47:07:477 info: App started,listening on port 8000
+2022-06-18 12:47:11:4711 info: POST /api/v1/clientes/massiveUpdate 200 466.721 ms - 101
+2022-06-18 12:47:36:4736 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:47:36:4736 info: App started,listening on port 8000
+2022-06-18 12:47:38:4738 info: POST /api/v1/clientes/massiveUpdate 200 463.345 ms - 101
+2022-06-18 12:47:58:4758 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:47:58:4758 info: App started,listening on port 8000
+2022-06-18 12:48:00:480 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:48:00:480 info: App started,listening on port 8000
+2022-06-18 12:48:03:483 info: POST /api/v1/clientes/massiveUpdate 200 470.974 ms - 101
+2022-06-18 12:49:04:494 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:49:04:494 info: App started,listening on port 8000
+2022-06-18 12:49:10:4910 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:49:10:4910 info: App started,listening on port 8000
+2022-06-18 12:49:27:4927 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:49:27:4927 info: App started,listening on port 8000
+2022-06-18 12:49:43:4943 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 12:50:29:5029 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:50:29:5029 info: App started,listening on port 8000
+2022-06-18 12:51:20:5120 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:51:20:5120 info: App started,listening on port 8000
+2022-06-18 12:51:22:5122 info: POST /api/v1/clientes/massiveUpdate 500 446.673 ms - 42
+2022-06-18 12:51:48:5148 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:51:48:5148 info: App started,listening on port 8000
+2022-06-18 12:51:52:5152 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:51:52:5152 info: App started,listening on port 8000
+2022-06-18 12:51:54:5154 info: POST /api/v1/clientes/massiveUpdate 500 441.906 ms - 42
+2022-06-18 12:52:05:525 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:52:05:525 info: App started,listening on port 8000
+2022-06-18 12:52:13:5213 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:52:13:5213 info: App started,listening on port 8000
+2022-06-18 12:52:41:5241 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:52:41:5241 info: App started,listening on port 8000
+2022-06-18 12:52:45:5245 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 12:52:56:5256 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:52:56:5256 info: App started,listening on port 8000
+2022-06-18 12:53:20:5320 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:53:20:5320 info: App started,listening on port 8000
+2022-06-18 12:53:45:5345 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:53:45:5345 info: App started,listening on port 8000
+2022-06-18 12:54:50:5450 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:54:50:5450 info: App started,listening on port 8000
+2022-06-18 12:56:19:5619 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:56:19:5619 info: App started,listening on port 8000
+2022-06-18 12:56:22:5622 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:56:22:5622 info: App started,listening on port 8000
+2022-06-18 12:57:27:5727 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:57:27:5727 info: App started,listening on port 8000
+2022-06-18 12:58:37:5837 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:58:37:5837 info: App started,listening on port 8000
+2022-06-18 12:58:43:5843 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 12:59:39:5939 info: Se establecio la conexion a la base de datos 
+2022-06-18 12:59:39:5939 info: App started,listening on port 8000
+2022-06-18 12:59:44:5944 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:00:47:047 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:00:47:047 info: App started,listening on port 8000
+2022-06-18 13:01:17:117 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:01:17:117 info: App started,listening on port 8000
+2022-06-18 13:01:28:128 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:01:28:128 info: App started,listening on port 8000
+2022-06-18 13:01:47:147 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:01:47:147 info: App started,listening on port 8000
+2022-06-18 13:01:51:151 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:05:26:526 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:05:26:526 info: App started,listening on port 8000
+2022-06-18 13:05:29:529 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:05:29:529 info: App started,listening on port 8000
+2022-06-18 13:05:29:529 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:05:29:529 info: App started,listening on port 8000
+2022-06-18 13:05:56:556 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:05:56:556 info: App started,listening on port 8000
+2022-06-18 13:07:13:713 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:07:13:713 info: App started,listening on port 8000
+2022-06-18 13:07:23:723 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:07:23:723 info: App started,listening on port 8000
+2022-06-18 13:07:58:758 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:07:58:758 info: App started,listening on port 8000
+2022-06-18 13:09:39:939 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:10:22:1022 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:10:23:1023 info: App started,listening on port 8000
+2022-06-18 13:10:24:1024 info: POST /api/v1/clientes/massiveUpdate 200 557.988 ms - 90
+2022-06-18 13:12:14:1214 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:12:14:1214 info: App started,listening on port 8000
+2022-06-18 13:12:30:1230 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:12:30:1230 info: App started,listening on port 8000
+2022-06-18 13:12:49:1249 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:13:24:1324 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:13:24:1324 info: App started,listening on port 8000
+2022-06-18 13:13:53:1353 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:13:53:1353 info: App started,listening on port 8000
+2022-06-18 13:14:52:1452 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:14:52:1452 info: App started,listening on port 8000
+2022-06-18 13:14:57:1457 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:15:31:1531 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:15:31:1531 info: App started,listening on port 8000
+2022-06-18 13:16:23:1623 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:16:23:1623 info: App started,listening on port 8000
+2022-06-18 13:17:04:174 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:17:04:174 info: App started,listening on port 8000
+2022-06-18 13:17:05:175 info: POST /api/v1/clientes/massiveUpdate 200 465.422 ms - 91
+2022-06-18 13:17:43:1743 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:17:44:1744 info: App started,listening on port 8000
+2022-06-18 13:17:46:1746 info: POST /api/v1/clientes/massiveUpdate 200 456.249 ms - 91
+2022-06-18 13:18:03:183 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:18:03:183 info: App started,listening on port 8000
+2022-06-18 13:18:08:188 info: POST /api/v1/clientes/massiveUpdate 200 446.303 ms - 91
+2022-06-18 13:18:20:1820 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:18:20:1820 info: App started,listening on port 8000
+2022-06-18 13:18:22:1822 info: POST /api/v1/clientes/massiveUpdate 200 456.886 ms - 91
+2022-06-18 13:18:35:1835 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:18:35:1835 info: App started,listening on port 8000
+2022-06-18 13:19:02:192 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:19:02:192 info: App started,listening on port 8000
+2022-06-18 13:30:27:3027 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:32:14:3214 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:32:14:3214 info: App started,listening on port 8000
+2022-06-18 13:32:16:3216 info: POST /api/v1/clientes/massiveUpdate 200 543.342 ms - 90
+2022-06-18 13:33:15:3315 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:33:15:3315 info: App started,listening on port 8000
+2022-06-18 13:33:23:3323 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:33:23:3323 info: App started,listening on port 8000
+2022-06-18 13:33:34:3334 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:33:34:3334 info: App started,listening on port 8000
+2022-06-18 13:33:43:3343 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:34:07:347 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:34:07:347 info: App started,listening on port 8000
+2022-06-18 13:34:10:3410 info: GET /api/v1/clientes/massiveUpdate 500 180.229 ms - 42
+2022-06-18 13:34:18:3418 info: GET /api/v1/clientes/massiveUpdate 500 159.873 ms - 42
+2022-06-18 13:34:19:3419 info: GET /api/v1/clientes/massiveUpdate 500 191.710 ms - 42
+2022-06-18 13:34:34:3434 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:34:34:3434 info: App started,listening on port 8000
+2022-06-18 13:34:36:3436 info: PUT /api/v1/clientes/massiveUpdate 500 180.667 ms - 42
+2022-06-18 13:34:56:3456 info: PUT /api/v1/clientes/massiveUpdate 500 159.020 ms - 42
+2022-06-18 13:35:38:3538 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:35:38:3538 info: App started,listening on port 8000
+2022-06-18 13:35:40:3540 info: PUT /api/v1/clientes/massiveUpdate 500 172.582 ms - 42
+2022-06-18 13:36:17:3617 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:36:17:3617 info: App started,listening on port 8000
+2022-06-18 13:36:18:3618 info: PUT /api/v1/clientes/massiveUpdate 500 180.489 ms - 42
+2022-06-18 13:36:27:3627 info: PUT /api/v1/clientes/massiveUpdate 500 158.778 ms - 42
+2022-06-18 13:36:46:3646 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:36:46:3646 info: App started,listening on port 8000
+2022-06-18 13:36:48:3648 info: POST /api/v1/clientes/massiveUpdate 500 185.706 ms - 42
+2022-06-18 13:36:49:3649 info: POST /api/v1/clientes/massiveUpdate 500 153.175 ms - 42
+2022-06-18 13:36:50:3650 info: POST /api/v1/clientes/massiveUpdate 500 162.315 ms - 42
+2022-06-18 13:36:51:3651 info: POST /api/v1/clientes/massiveUpdate 500 152.651 ms - 42
+2022-06-18 13:36:51:3651 info: POST /api/v1/clientes/massiveUpdate 500 160.639 ms - 42
+2022-06-18 13:37:08:378 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:37:08:378 info: App started,listening on port 8000
+2022-06-18 13:37:14:3714 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:37:14:3714 info: App started,listening on port 8000
+2022-06-18 13:37:20:3720 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:37:20:3720 info: App started,listening on port 8000
+2022-06-18 13:37:22:3722 info: POST /api/v1/clientes/massiveUpdate 500 179.210 ms - 42
+2022-06-18 13:37:42:3742 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:37:42:3742 info: App started,listening on port 8000
+2022-06-18 13:37:43:3743 info: POST /api/v1/clientes/massiveUpdate 500 171.713 ms - 42
+2022-06-18 13:37:45:3745 info: POST /api/v1/clientes/massiveUpdate 500 159.926 ms - 42
+2022-06-18 13:37:46:3746 info: POST /api/v1/clientes/massiveUpdate 500 157.000 ms - 42
+2022-06-18 13:38:15:3815 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:38:15:3815 info: App started,listening on port 8000
+2022-06-18 13:38:16:3816 info: POST /api/v1/clientes/massiveUpdate 500 169.347 ms - 42
+2022-06-18 13:38:35:3835 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:38:35:3835 info: App started,listening on port 8000
+2022-06-18 13:38:44:3844 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:38:44:3844 info: App started,listening on port 8000
+2022-06-18 13:38:46:3846 info: POST /api/v1/clientes/massiveUpdate 500 178.754 ms - 42
+2022-06-18 13:38:57:3857 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:38:57:3857 info: App started,listening on port 8000
+2022-06-18 13:38:59:3859 info: POST /api/v1/clientes/massiveUpdate 500 181.354 ms - 42
+2022-06-18 13:39:19:3919 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:39:19:3919 info: App started,listening on port 8000
+2022-06-18 13:39:21:3921 info: POST /api/v1/clientes/massiveUpdate 500 182.002 ms - 42
+2022-06-18 13:39:22:3922 info: POST /api/v1/clientes/massiveUpdate 500 159.198 ms - 42
+2022-06-18 13:39:23:3923 info: POST /api/v1/clientes/massiveUpdate 500 149.890 ms - 42
+2022-06-18 13:39:39:3939 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:39:39:3939 info: App started,listening on port 8000
+2022-06-18 13:39:41:3941 info: POST /api/v1/clientes/massiveUpdate 500 183.097 ms - 42
+2022-06-18 13:40:09:409 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:40:09:409 info: App started,listening on port 8000
+2022-06-18 13:40:32:4032 info: POST /api/v1/clientes/massiveUpdate 500 375.897 ms - 42
+2022-06-18 13:41:07:417 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:41:07:417 info: App started,listening on port 8000
+2022-06-18 13:41:14:4114 info: POST /api/v1/clientes/massiveUpdate - - ms - -
+2022-06-18 13:41:43:4143 info: POST /api/v1/clientes/massiveUpdate 500 157.462 ms - 42
+2022-06-18 13:41:51:4151 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:41:51:4151 info: App started,listening on port 8000
+2022-06-18 13:41:53:4153 info: POST /api/v1/clientes/massiveUpdate 500 181.166 ms - 42
+2022-06-18 13:43:03:433 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:43:03:433 info: App started,listening on port 8000
+2022-06-18 13:43:06:436 info: POST /api/v1/clientes/massiveUpdate 500 181.675 ms - 42
+2022-06-18 13:43:18:4318 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:43:18:4318 info: App started,listening on port 8000
+2022-06-18 13:43:20:4320 info: POST /api/v1/clientes/massiveUpdate 500 183.278 ms - 42
+2022-06-18 13:43:21:4321 info: POST /api/v1/clientes/massiveUpdate 500 153.406 ms - 42
+2022-06-18 13:43:22:4322 info: POST /api/v1/clientes/massiveUpdate 500 152.013 ms - 42
+2022-06-18 13:43:22:4322 info: POST /api/v1/clientes/massiveUpdate 500 153.170 ms - 42
+2022-06-18 13:43:57:4357 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:43:57:4357 info: App started,listening on port 8000
+2022-06-18 13:43:59:4359 info: POST /api/v1/clientes/massiveUpdate 500 172.780 ms - 42
+2022-06-18 13:44:05:445 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:44:05:445 info: App started,listening on port 8000
+2022-06-18 13:44:07:447 info: POST /api/v1/clientes/massiveUpdate 500 193.163 ms - 42
+2022-06-18 13:44:08:448 info: POST /api/v1/clientes/massiveUpdate 500 158.033 ms - 42
+2022-06-18 13:44:09:449 info: POST /api/v1/clientes/massiveUpdate 500 158.025 ms - 42
+2022-06-18 13:44:10:4410 info: POST /api/v1/clientes/massiveUpdate 500 157.894 ms - 42
+2022-06-18 13:44:10:4410 info: POST /api/v1/clientes/massiveUpdate 500 165.900 ms - 42
+2022-06-18 13:44:10:4410 info: POST /api/v1/clientes/massiveUpdate 500 161.482 ms - 42
+2022-06-18 13:44:11:4411 info: POST /api/v1/clientes/massiveUpdate 500 162.293 ms - 42
+2022-06-18 13:44:20:4420 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:44:20:4420 info: App started,listening on port 8000
+2022-06-18 13:44:22:4422 info: POST /api/v1/clientes/massiveUpdate 500 179.516 ms - 42
+2022-06-18 13:44:23:4423 info: POST /api/v1/clientes/massiveUpdate 500 153.660 ms - 42
+2022-06-18 13:44:26:4426 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:44:26:4426 info: App started,listening on port 8000
+2022-06-18 13:44:28:4428 info: POST /api/v1/clientes/massiveUpdate 500 18.735 ms - 42
+2022-06-18 13:44:53:4453 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:44:53:4453 info: App started,listening on port 8000
+2022-06-18 13:45:04:454 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:45:04:454 info: App started,listening on port 8000
+2022-06-18 13:45:06:456 info: POST /api/v1/clientes/massiveUpdate 500 183.118 ms - 42
+2022-06-18 13:45:26:4526 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:45:26:4526 info: App started,listening on port 8000
+2022-06-18 13:45:31:4531 info: POST /api/v1/clientes/massiveUpdate 500 179.587 ms - 42
+2022-06-18 13:48:45:4845 info: GET /api/v1/clientes/only/6 500 162.572 ms - 167
+2022-06-18 13:48:50:4850 info: GET /api/v1/clientes/only/6 500 150.637 ms - 167
+2022-06-18 13:48:59:4859 info: GET /api/v1/clientes/2201 500 158.939 ms - 167
+2022-06-18 13:50:01:501 info: Se establecio la conexion a la base de datos 
+2022-06-18 13:50:01:501 info: App started,listening on port 8000
+2022-06-18 13:50:18:5018 info: GET /api/v1/clientes/2201 500 172.758 ms - 167
+2022-06-18 13:51:04:514 info: POST /api/v1/clientes/massiveUpdate 500 181.856 ms - 42
+2022-06-18 14:01:22:122 info: Se establecio la conexion a la base de datos 
+2022-06-18 14:01:22:122 info: App started,listening on port 8000
+2022-06-18 14:02:22:222 info: POST /api/v1/clientes/massiveUpdate 500 172.627 ms - 42
+2022-06-18 14:02:30:230 info: Se establecio la conexion a la base de datos 
+2022-06-18 14:02:30:230 info: App started,listening on port 8000
+2022-06-18 14:02:36:236 info: GET /api/v1/clientes/only/6 200 915.288 ms - 181829
+2022-06-18 22:22:09:229 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:22:09:229 info: App started,listening on port 8000
+2022-06-18 22:22:17:2217 info: POST /api/v1/clientes/massiveUpdate 200 1719.784 ms - 90
+2022-06-18 22:23:26:2326 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:23:26:2326 info: App started,listening on port 8000
+2022-06-18 22:23:55:2355 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:23:55:2355 info: App started,listening on port 8000
+2022-06-18 22:24:14:2414 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:24:14:2414 info: App started,listening on port 8000
+2022-06-18 22:24:15:2415 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:24:15:2415 info: App started,listening on port 8000
+2022-06-18 22:24:29:2429 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:24:29:2429 info: App started,listening on port 8000
+2022-06-18 22:24:46:2446 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:24:46:2446 info: App started,listening on port 8000
+2022-06-18 22:25:09:259 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:25:09:259 info: App started,listening on port 8000
+2022-06-18 22:25:18:2518 info: POST /api/v1/clientes/massiveUpdate 200 630.514 ms - 90
+2022-06-18 22:25:46:2546 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:25:46:2546 info: App started,listening on port 8000
+2022-06-18 22:25:49:2549 info: POST /api/v1/clientes/massiveUpdate 200 660.088 ms - 90
+2022-06-18 22:26:06:266 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:26:06:266 info: App started,listening on port 8000
+2022-06-18 22:26:12:2612 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:26:12:2612 info: App started,listening on port 8000
+2022-06-18 22:26:16:2616 info: POST /api/v1/clientes/massiveUpdate 200 664.160 ms - 90
+2022-06-18 22:26:57:2657 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:26:57:2657 info: App started,listening on port 8000
+2022-06-18 22:26:59:2659 info: POST /api/v1/clientes/massiveUpdate 200 698.207 ms - 90
+2022-06-18 22:27:37:2737 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:27:37:2737 info: App started,listening on port 8000
+2022-06-18 22:27:40:2740 info: POST /api/v1/clientes/massiveUpdate 200 668.992 ms - 90
+2022-06-18 22:29:56:2956 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:29:56:2956 info: App started,listening on port 8000
+2022-06-18 22:29:59:2959 info: POST /api/v1/clientes/massiveUpdate 200 705.822 ms - 91
+2022-06-18 22:30:55:3055 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:30:55:3055 info: App started,listening on port 8000
+2022-06-18 22:31:04:314 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:31:04:314 info: App started,listening on port 8000
+2022-06-18 22:31:25:3125 info: POST /api/v1/clientes/massiveUpdate 200 690.944 ms - 90
+2022-06-18 22:32:37:3237 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:32:37:3237 info: App started,listening on port 8000
+2022-06-18 22:33:13:3313 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:33:13:3313 info: App started,listening on port 8000
+2022-06-18 22:33:15:3315 info: POST /api/v1/clientes/massiveUpdate 200 697.360 ms - 139
+2022-06-18 22:33:30:3330 info: POST /api/v1/clientes/massiveUpdate 200 642.802 ms - 139
+2022-06-18 22:33:57:3357 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:33:57:3357 info: App started,listening on port 8000
+2022-06-18 22:34:02:342 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:34:02:342 info: App started,listening on port 8000
+2022-06-18 22:34:05:345 info: POST /api/v1/clientes/massiveUpdate 200 693.867 ms - 139
+2022-06-18 22:34:23:3423 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:34:23:3423 info: App started,listening on port 8000
+2022-06-18 22:34:26:3426 info: POST /api/v1/clientes/massiveUpdate 200 700.043 ms - 139
+2022-06-18 22:35:54:3554 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:35:54:3554 info: App started,listening on port 8000
+2022-06-18 22:36:20:3620 info: Se establecio la conexion a la base de datos 
+2022-06-18 22:36:20:3620 info: App started,listening on port 8000

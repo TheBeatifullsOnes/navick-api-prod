@@ -7,7 +7,6 @@ exports.obtenerClientes = (req, res) => {
   clientModel
     .obtenerClientes()
     .then((response) => {
-      console.log(response);
       if (response.length > 0) {
         res.status(200).json({
           statusCode: 200,
@@ -377,6 +376,33 @@ exports.deleteClient = (req, res) => {
         statusCode: 500,
         statusMessage: "error",
         result: error,
+      });
+    });
+};
+
+exports.massiveUpdateRouteClients = (req, res) => {
+  const { clients } = req.body;
+  clientModel
+    .massiveUpdateClientsRoutes(clients)
+    .then((sqlResult) => {
+      if (!sqlResult) {
+        res.json({
+          statusCode: 404,
+          statusMessage: "error",
+          result: "something broken",
+        });
+      }
+      res.status(200).json({
+        statusCode: 200,
+        statusMessage: "succefull",
+        result: sqlResult,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: err.response,
       });
     });
 };
