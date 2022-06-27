@@ -202,15 +202,15 @@ exports.insertaCliente = (req, res) => {
       comments
     )
     .then((response) => {
-      if (response.rowCount > 0) {
+      if (response.executed) {
         res.status(201).json({
           statusCode: 201,
           statusMessage: "success",
           result: "cliente insertado correctamente",
         });
-      } else if (response.error) {
-        res.status(500).json({
-          statusCode: 500,
+      } else {
+        res.status(404).json({
+          statusCode: 404,
           statusMessage: "error",
           result: response,
         });
@@ -326,14 +326,12 @@ exports.getClientCreditInformation = (req, res) => {
     .getClientRemainingPayment()
     .then((response) => {
       if (response.length > 0) {
-        console.log(response);
         res.status(200).json({
           statusCode: 200,
           statusMessage: "success",
           result: response,
         });
       } else {
-        console.log(response);
         res.status(500).json({
           statusCode: 500,
           statusMessage: "error",

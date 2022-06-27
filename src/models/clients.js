@@ -53,41 +53,84 @@ module.exports = {
     longitude,
     comments
   ) {
-    const resultados = await connexion.query(
-      `
-      INSERT INTO 
-        public.clients(
-	       name, id_route, street, 
-         external_number, internal_number, neighborhood, 
-         city, state, zip_code, 
-         personal_phonenumber, home_phonenumber, email, 
-         id_price_list, created_at, updated_at, 
-         status, pay_days, latitude, 
-         longitude, comments)
-	      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, now(), null, $14, $15, $16, $17, $18); 
+    const client = await connexion.connect();
+    let executed = false;
+    let sqlResult = null;
+    try {
+      await client.query("BEGIN");
+
+      // name to upperCase
+
+      nameToUppercase = upperCaseAndTrimString(name);
+      const existClient = await client.query(
+        `
+        with clients_name as (
+          SELECT 
+            c.name ,c.zip_code 
+          FROM clients c
+        )
+        SELECT 
+          * 
+        FROM
+          clients_name 
+        WHERE 
+          UPPER(REPLACE(name,' ','')) LIKE '%JUANITOPEREZRAMIREZ%'
+        AND 
+          zip_code=$1
       `,
-      [
-        name,
-        idRoute,
-        street,
-        externalNumber,
-        internalNumber,
-        neighborhood,
-        city,
-        state,
-        zipCode,
-        personalPhoneNumber,
-        homePhoneNumber,
-        email,
-        idPriceList,
-        status,
-        payDays,
-        latitude,
-        longitude,
-        comments,
-      ]
-    );
-    return resultados;
+        [zipCode]
+      );
+
+      if (existClient.rowCount === 0) {
+        const resultados = await connexion.query(
+          `
+          INSERT INTO
+            public.clients(
+              name, id_route, street,
+              external_number, internal_number, neighborhood,
+              city, state, zip_code,
+              personal_phonenumber, home_phonenumber, email,
+              id_price_list, created_at, updated_at,
+              status, pay_days, latitude,
+              longitude, comments
+            )
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, now(), null, $14, $15, $16, $17, $18);
+        `,
+          [
+            name,
+            idRoute,
+            street,
+            externalNumber,
+            internalNumber,
+            neighborhood,
+            city,
+            state,
+            zipCode,
+            personalPhoneNumber,
+            homePhoneNumber,
+            email,
+            idPriceList,
+            status,
+            payDays,
+            latitude,
+            longitude,
+            comments,
+          ]
+        );
+        executed = true;
+        sqlResult = { resultados };
+      } else {
+        executed = false;
+        sqlResult = { message: "el usuario ya esxiste intenta nuevamente" };
+      }
+      // return resultados;
+      await client.query("COMMIT");
+      await client.release(true);
+    } catch (error) {
+      await client.query("ROLLBACK");
+      await client.release(true);
+    }
+    return { executed, sqlResult };
   },
   async actualizarCliente(
     idClient,
@@ -302,3 +345,7 @@ module.exports = {
     return { executed, sqlResult };
   },
 };
+
+function upperCaseAndTrimString(str) {
+  return str.toUpperCase().replace(" ", "").replace("  ", "").replace(" ", "");
+}
