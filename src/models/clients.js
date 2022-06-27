@@ -74,7 +74,7 @@ module.exports = {
         FROM
           clients_name 
         WHERE 
-          UPPER(REPLACE(name,' ','')) LIKE '%JUANITOPEREZRAMIREZ%'
+          UPPER(REPLACE(name,' ','')) LIKE '%${nameToUppercase}%'
         AND 
           zip_code=$1
       `,
