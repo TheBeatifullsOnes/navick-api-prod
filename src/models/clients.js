@@ -16,6 +16,20 @@ module.exports = {
     );
     return resultados.rows;
   },
+
+  async getAuditReportsByRoute(idRoute) {
+    const resultados = await connexion.query(
+      `
+      SELECT 
+        * 
+      FROM  
+        fn_auditoria(${idRoute})
+      `
+    );
+    console.log("Resultados: ", resultados);
+    return resultados.rows;
+  },
+
   async getClient(idCliente) {
     const resultados = await connexion.query(
       `

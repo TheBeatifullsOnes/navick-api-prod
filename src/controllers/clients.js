@@ -30,6 +30,34 @@ exports.obtenerClientes = (req, res) => {
     });
 };
 
+exports.getAuditReportByRoute = (req, res) => {
+  const { idRoute } = req.params;
+  clientModel
+    .getAuditReportsByRoute(idRoute)
+    .then((response) => {
+      if (response.length > 0) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: response,
+        });
+      } else {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "error",
+          result: "no hay datos en esta ruta",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    });
+};
+
 exports.getOnlyClientsByRoute = (req, res) => {
   const { idRoute } = req.params;
   clientModel

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const clientController = require("../controllers/clients");
 
+router.get("/auditReports/:idRoute", clientController.getAuditReportByRoute);
 router.get("/remainingPayment", clientController.getClientCreditInformation);
 router.post("/massiveUpdate", clientController.massiveUpdateRouteClients);
 router.get("/only/:idRoute", clientController.getOnlyClientsByRoute);
