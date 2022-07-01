@@ -137,16 +137,44 @@ exports.getPaymentsByDay = (req, res) => {
   paymentsModel
     .getPaymentsByDay(selectedDate)
     .then((sqlResults) => {
-      res.json({
+      res.status(200).json({
         statusCode: 200,
         statusMessage: "success",
         result: sqlResults,
       });
     })
     .catch((error) => {
-      res.json({
+      res.status(500).json({
         statusCode: 500,
         statusMessage: "error",
+        result: error,
+      });
+    });
+};
+
+exports.getPaymentsByWeek = (req, res) => {
+  const { startDate, endDate } = req.body;
+  console.log(startDate, endDate);
+  paymentsModel
+    .getPaymentsByWeek(startDate, endDate)
+    .then((sqlResult) => {
+      if (!sqlResult) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "error",
+          result: "algo salio mal en la consulta",
+        });
+      }
+      res.status(200).json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: sqlResult,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "Error en el servico del lado del servidor",
         result: error,
       });
     });

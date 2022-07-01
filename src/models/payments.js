@@ -100,16 +100,16 @@ module.exports = {
     try {
       // Transaction start
       await client.query("BEGIN");
-      console.log("Begin transaction");
+      logger.info("Begin transaction");
       // Getting remainingPayment FROM invoice
-      console.log(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
+      logger.info(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
       const getRemaningPaymentByInvoiceId = await client.query(
         queryTextGetInvoiceId,
         [idInvoice]
       );
       const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
       if (remaining_payment) {
-        console.log("if exist Remaining Payment: ", remaining_payment);
+        logger.info("if exist Remaining Payment: ", remaining_payment);
         if (remaining_payment - amount === 0) {
           await client.query(
             queryTextUpdateInvoiceStatus,
@@ -117,11 +117,11 @@ module.exports = {
             (err, result) => {
               if (err) {
                 executed = false;
-                console.log("\nclient.query():", err);
+                logger.info("\nclient.query():", err);
                 // Rollback before executing another transaction
                 client.query("ROLLBACK");
               }
-              console.log(
+              logger.info(
                 "client.query() COMMIT row count on update:",
                 result.rowCount
               );
@@ -144,13 +144,13 @@ module.exports = {
           (err, result) => {
             if (err) {
               executed = false;
-              console.log("\nclient.query():", err);
+              logger.info("\nclient.query():", err);
               // Rollback before executing another transaction
               client.query("ROLLBACK");
             }
             executed = true;
             sqlResult = result.rows[0];
-            console.log(
+            logger.info(
               "client.query() COMMIT row count on insert:",
               result.rowCount
             );
@@ -211,21 +211,59 @@ module.exports = {
   async getPaymentsByDay(selectedDate) {
     let result;
     if (selectedDate === "0") {
-      const queryTextGetPaymentsByDay = `SELECT * 
+      const queryTextGetPaymentsByDay = `
+      SELECT 
+        p.* , c.name
       FROM 
-        PAYMENTS 
+        payments p
+      INNER JOIN
+        invoices i
+      ON
+        p.id_invoice=i.id_invoice
+      INNER JOIN
+        clients c
+      ON 
+        i.id_client=c.id_client
       WHERE 
-        date_trunc('day', created_at)::date = CAST(now()::TIMESTAMP - '5 hr'::INTERVAl AS DATE)`;
+        CAST(p.created_at at time zone 'UTC' AS DATE)  = CAST(now() AS DATE);`;
       result = await connexion.query(queryTextGetPaymentsByDay);
     } else if (selectedDate) {
-      const queryTextGetPaymentsByDay = `SELECT * 
+      const queryTextGetPaymentsByDay = `
+      SELECT 
+        p.* , c.name as client_name, c.latitude, c.longitude
       FROM 
-        PAYMENTS 
+        payments p
+      INNER JOIN
+        invoices i
+      ON
+        p.id_invoice=i.id_invoice
+      left JOIN
+        clients c
+      ON 
+        i.id_client=c.id_client
       WHERE 
-        date_trunc('day', created_at)::date = CAST($1 as Date) `;
+        CAST(p.created_at at time zone 'UTC' AS DATE)  = CAST($1 AS DATE);`;
       result = await connexion.query(queryTextGetPaymentsByDay, [selectedDate]);
     }
 
+    return result.rows;
+  },
+  async getPaymentsByWeek(startDate, endDate) {
+    const queryString = `
+    SELECT
+      u.name, u.id_route, sum(total_payment), count (total_payment)
+    FROM
+      public.payments p
+    inner join
+      public.users u
+    ON
+      p.id_user= u.id_user
+    WHERE
+      p.created_at >= $1
+    AND 
+      p.created_at < $2
+    group by u.id_route, u.name;`;
+    const result = await connexion.query(queryString, [startDate, endDate]);
     return result.rows;
   },
 };

@@ -30,6 +30,34 @@ exports.obtenerClientes = (req, res) => {
     });
 };
 
+exports.getAuditReportByRoute = (req, res) => {
+  const { idRoute } = req.params;
+  clientModel
+    .getAuditReportsByRoute(idRoute)
+    .then((response) => {
+      if (response.length > 0) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: response,
+        });
+      } else {
+        res.status(500).json({
+          statusCode: 500,
+          statusMessage: "error",
+          result: "no hay datos en esta ruta",
+        });
+      }
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    });
+};
+
 exports.getOnlyClientsByRoute = (req, res) => {
   const { idRoute } = req.params;
   clientModel
@@ -202,15 +230,15 @@ exports.insertaCliente = (req, res) => {
       comments
     )
     .then((response) => {
-      if (response.rowCount > 0) {
+      if (response.executed) {
         res.status(201).json({
           statusCode: 201,
           statusMessage: "success",
           result: "cliente insertado correctamente",
         });
-      } else if (response.error) {
-        res.status(500).json({
-          statusCode: 500,
+      } else {
+        res.status(404).json({
+          statusCode: 404,
           statusMessage: "error",
           result: response,
         });
@@ -326,14 +354,12 @@ exports.getClientCreditInformation = (req, res) => {
     .getClientRemainingPayment()
     .then((response) => {
       if (response.length > 0) {
-        console.log(response);
         res.status(200).json({
           statusCode: 200,
           statusMessage: "success",
           result: response,
         });
       } else {
-        console.log(response);
         res.status(500).json({
           statusCode: 500,
           statusMessage: "error",
@@ -346,6 +372,63 @@ exports.getClientCreditInformation = (req, res) => {
         statusCode: 500,
         statusMessage: "error fatal",
         result: error,
+      });
+    });
+};
+
+exports.deleteClient = (req, res) => {
+  const { idClient } = req.params;
+  logger.info(`controller: getting the id_client: ${idClient} from params`);
+  clientModel
+    .deleteClient(idClient)
+    .then((sqlResponse) => {
+      logger.info(
+        `controller: response from the model : ${sqlResponse.sqlResult.message}`
+      );
+      if (!sqlResponse) {
+        res.status(404).json({
+          statusCode: 404,
+          statusMessage: "error",
+          result: "Not found",
+        });
+      }
+      res.status(200).json({
+        statusCode: 200,
+        message: sqlResponse.sqlResult.message,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: error,
+      });
+    });
+};
+
+exports.massiveUpdateRouteClients = (req, res) => {
+  const { clients } = req.body;
+  clientModel
+    .massiveUpdateClientsRoutes(clients)
+    .then((sqlResult) => {
+      if (!sqlResult) {
+        res.json({
+          statusCode: 404,
+          statusMessage: "error",
+          result: "something broken",
+        });
+      }
+      res.status(200).json({
+        statusCode: 200,
+        statusMessage: "succefull",
+        result: sqlResult,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: err.response,
       });
     });
 };
