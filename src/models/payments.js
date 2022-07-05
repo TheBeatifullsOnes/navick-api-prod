@@ -250,19 +250,27 @@ module.exports = {
   },
   async getPaymentsByWeek(startDate, endDate) {
     const queryString = `
-    SELECT
-      u.name, u.id_route, sum(total_payment), count (total_payment)
-    FROM
-      public.payments p
-    inner join
-      public.users u
-    ON
-      p.id_user= u.id_user
-    WHERE
-      p.created_at >= $1
-    AND 
-      p.created_at < $2
-    group by u.id_route, u.name;`;
+    SELECT TRIM(CASE
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date),'d') = '1' THEN 'DOMINGO'
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date), 'd') = '2' THEN 'LUNES'
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date), 'd') = '3' THEN 'MARTES'
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date), 'd') = '4' THEN 'MIERCOLES'
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date), 'd') = '5' THEN 'JUEVES'
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date), 'd') = '6' THEN 'VIERNES'
+        WHEN TO_CHAR(CAST(P.CREATED_AT AS date), 'd') = '7' THEN 'SABADO'
+      END) as day_of_week,
+      CAST(P.CREATED_AT AS date),
+      U.NAME,
+      U.ID_ROUTE,
+      SUM(TOTAL_PAYMENT) as total_payments,
+      COUNT (TOTAL_PAYMENT) total_bills
+    FROM PUBLIC.PAYMENTS P
+    INNER JOIN PUBLIC.USERS U ON P.ID_USER = U.ID_USER
+    WHERE CAST(P.CREATED_AT AS date) >= $1
+      AND CAST(P.CREATED_AT AS date) <= $2
+    GROUP BY U.ID_ROUTE,
+      U.NAME,
+      CAST(P.CREATED_AT AS date);`;
     const result = await connexion.query(queryString, [startDate, endDate]);
     return result.rows;
   },
