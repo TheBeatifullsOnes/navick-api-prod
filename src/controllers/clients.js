@@ -43,7 +43,7 @@ exports.getAuditReportByRoute = (req, res) => {
         });
       } else {
         res.status(500).json({
-          statusCode: 500,
+          statusCode: 200,
           statusMessage: "error",
           result: "no hay datos en esta ruta",
         });
