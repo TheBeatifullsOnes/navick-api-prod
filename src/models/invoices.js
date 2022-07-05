@@ -240,18 +240,16 @@ module.exports = {
       detailInvoice.forEach(async (element) => {
         const { idArticle, quantity, price, idWarehouse } = element;
         line += 1;
-        const queryValues = [
-          insertInvoice.rows[0].id_invoice,
-          line,
-          idArticle,
-          quantity,
-          price,
-          idWarehouse,
-        ];
-
         await client.query(
           queryInsertDetailsInvoices,
-          queryValues,
+          [
+            insertInvoice.rows[0].id_invoice,
+            line,
+            idArticle,
+            quantity,
+            price,
+            idWarehouse,
+          ],
           (err, result) => {
             if (err) {
               executed = false;
@@ -260,14 +258,12 @@ module.exports = {
               client.query("ROLLBACK");
               console.log("Transaction ROLLBACK called");
             }
-            // else {
-            //   client.query("COMMIT");
+
             console.log(
               "client.query() COMMIT row count:",
               result.rowCount,
               result
             );
-            // }
           }
         );
         executed = true;
@@ -307,7 +303,8 @@ module.exports = {
     locationGPS,
     comments,
     textTicket,
-    printedTicket
+    printedTicket,
+    timestamp
   ) {
     const client = await connexion.connect();
 
@@ -345,7 +342,7 @@ module.exports = {
             text_ticket, printed_ticket
           )
         VALUES
-          (3,$1, $2, now(), $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at;
+          (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at at time zone 'UTC' as created_at;
       `;
 
       const result = await client.query(queryTextInvoice, [idInvoice]);
@@ -400,6 +397,7 @@ module.exports = {
                 comments,
                 textTicket,
                 printedTicket,
+                timestamp,
               ],
               (err, result) => {
                 if (err) {

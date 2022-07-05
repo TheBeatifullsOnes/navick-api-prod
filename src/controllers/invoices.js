@@ -197,6 +197,10 @@ exports.cancelInvoices = async (req, res) => {
     textTicket,
     printedTicket,
   } = req.body;
+  const moment = req.timestamp;
+  const timestamp = moment
+    .tz("America/Mexico_City")
+    .format("YYYY-MM-DD HH:mm:ss");
   invoiceModel
     .cancelInvoices(
       idInvoice,
@@ -205,7 +209,8 @@ exports.cancelInvoices = async (req, res) => {
       locationGPS,
       comments,
       textTicket,
-      printedTicket
+      printedTicket,
+      timestamp
     )
     .then((sqlResult) => {
       if (!sqlResult) {
