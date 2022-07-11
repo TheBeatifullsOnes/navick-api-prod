@@ -1,51 +1,19 @@
-const { cli } = require("winston/lib/winston/config");
 const connexion = require("../config/bdConnexion");
 const logger = require("../utils/logger");
+const qrys = require("./queries/clients");
 
 module.exports = {
-  async obtenerClientes() {
-    const resultados = await connexion.query(
-      `
-      SELECT 
-        * 
-      FROM 
-        clients 
-      ORDER BY
-        id_client 
-      DESC`
-    );
+  async getClients() {
+    const resultados = await connexion.query(qrys.getClients);
     return resultados.rows;
   },
-
   async getAuditReportsByRoute(idRoute) {
-    const resultados = await connexion.query(
-      `
-      SELECT 
-        * 
-      FROM  
-        fn_auditoria(${idRoute})
-      `
-    );
-    console.log("Resultados: ", resultados);
+    const resultados = await connexion.query(qrys.fnAudit, [idRoute]);
     return resultados.rows;
   },
-
   async getClient(idCliente) {
-    const resultados = await connexion.query(
-      `
-      SELECT 
-        * 
-      FROM
-        clients 
-      WHERE 
-        id_client=$1`,
-      [idCliente]
-    );
-
-    const data = {
-      usuario: (await resultados).rows,
-    };
-    return data;
+    const resultados = await connexion.query(qrys.getClient, [idCliente]);
+    return { usuario: resultados.rows };
   },
   async addClient(
     name,
@@ -72,65 +40,34 @@ module.exports = {
     let sqlResult = null;
     try {
       await client.query("BEGIN");
-
       // name to upperCase
-
       nameToUppercase = upperCaseAndTrimString(name);
       const existClient = await client.query(
-        `
-        with clients_name as (
-          SELECT 
-            c.name ,c.zip_code 
-          FROM clients c
-        )
-        SELECT 
-          * 
-        FROM
-          clients_name 
-        WHERE 
-          UPPER(REPLACE(name,' ','')) LIKE '%${nameToUppercase}%'
-        AND 
-          zip_code=$1
-      `,
+        qrys.searchClientByNameAndZipcode(nameToUppercase),
         [zipCode]
       );
 
       if (existClient.rowCount === 0) {
-        const resultados = await connexion.query(
-          `
-          INSERT INTO
-            public.clients(
-              name, id_route, street,
-              external_number, internal_number, neighborhood,
-              city, state, zip_code,
-              personal_phonenumber, home_phonenumber, email,
-              id_price_list, created_at, updated_at,
-              status, pay_days, latitude,
-              longitude, comments
-            )
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, now(), null, $14, $15, $16, $17, $18);
-        `,
-          [
-            name,
-            idRoute,
-            street,
-            externalNumber,
-            internalNumber,
-            neighborhood,
-            city,
-            state,
-            zipCode,
-            personalPhoneNumber,
-            homePhoneNumber,
-            email,
-            idPriceList,
-            status,
-            payDays,
-            latitude,
-            longitude,
-            comments,
-          ]
-        );
+        const resultados = await connexion.query(qrys.insertClient, [
+          name,
+          idRoute,
+          street,
+          externalNumber,
+          internalNumber,
+          neighborhood,
+          city,
+          state,
+          zipCode,
+          personalPhoneNumber,
+          homePhoneNumber,
+          email,
+          idPriceList,
+          status,
+          payDays,
+          latitude,
+          longitude,
+          comments,
+        ]);
         executed = true;
         sqlResult = { resultados };
       } else {
@@ -167,74 +104,37 @@ module.exports = {
     longitude,
     comments
   ) {
-    let resultados = connexion.query(
-      `
-      UPDATE 
-        public.clients
-	    SET
-        name=$2, id_route=$3, street=$4, external_number=$5, 
-        internal_number=$6, neighborhood=$7, city=$8, 
-        state=$9, zip_code=$10, personal_phonenumber=$11, 
-        home_phonenumber=$12, email=$13, id_price_list=$14, 
-        updated_at=now(), status=$15, 
-        pay_days=$16, latitude=$17, longitude=$18, comments=$19
-	    WHERE 
-        id_client=$1`,
-      [
-        idClient,
-        name,
-        idRoute,
-        street,
-        externalNumber,
-        internalNumber,
-        neighborhood,
-        city,
-        state,
-        zipCode,
-        personalPhoneNumber,
-        homePhoneNumber,
-        email,
-        idPriceList,
-        status,
-        payDays,
-        latitude,
-        longitude,
-        comments,
-      ]
-    );
+    let resultados = connexion.query(qrys.updateClient, [
+      idClient,
+      name,
+      idRoute,
+      street,
+      externalNumber,
+      internalNumber,
+      neighborhood,
+      city,
+      state,
+      zipCode,
+      personalPhoneNumber,
+      homePhoneNumber,
+      email,
+      idPriceList,
+      status,
+      payDays,
+      latitude,
+      longitude,
+      comments,
+    ]);
     return resultados;
   },
   async updateClientStatus(idCliente, status) {
-    let resultado = await connexion.query(
-      `
-      UPDATE
-        clients 
-      SET 
-        status = $2
-      WHERE 
-      id_client = $1`,
-      [idCliente, status]
-    );
+    let resultado = await connexion.query(qrys.updateClientStatus, [
+      idCliente,
+      status,
+    ]);
     return resultado;
   },
   async deleteClient(idClient) {
-    const clientGotInvoices = `
-      SELECT
-        i.*
-      FROM 
-        clients c
-      INNER JOIN
-        invoices i
-      ON 
-        c.id_client = i.id_client
-      WHERE 
-        c.id_client = $1`;
-    const deleteClient = `
-      DELETE FROM 
-        public.clients
-      WHERE 
-        id_client = $1
-    `;
     const client = await connexion.connect();
     let executed = false;
     let sqlResult = null;
@@ -244,10 +144,12 @@ module.exports = {
         `model: verificating that the client ${idClient} get pending invoices`
       );
       // verify if the client get invoice active
-      const existInvoices = await client.query(clientGotInvoices, [idClient]);
+      const existInvoices = await client.query(qrys.getClientByInvoice, [
+        idClient,
+      ]);
       if (existInvoices.rowCount <= 0) {
         //procedemos a eliminar el cliente
-        await client.query(deleteClient, [idClient], (err, result) => {
+        await client.query(qrys.deleteClient, [idClient], (err, result) => {
           if (err) {
             executed = false;
             console.log("\nclient.query():", err);
@@ -287,42 +189,14 @@ module.exports = {
     return { executed, sqlResult };
   },
   async getClientByRoute(idRuta) {
-    let resultados = await connexion.query(
-      `
-      SELECT DISTINCT 
-        c.*,i.status as status_invoice
-      FROM
-        users as u
-      INNER JOIN 
-        clients as c on u.id_route = c.id_route 
-      INNER JOIN 
-        invoices as i on i.id_client = c.id_client
-      WHERE 
-        u.id_route=$1
-      AND 
-        c.status=1
-      AND 
-        i.status=1;
-      `,
-      [idRuta]
-    );
+    let resultados = await connexion.query(qrys.getClientByRoute, [idRuta]);
     return resultados.rows;
   },
   async getClientRemainingPayment() {
-    const resultados = await connexion.query(
-      "SELECT * FROM REMAINING_PAYMENT_DETAILS"
-    );
+    const resultados = await connexion.query(qrys.getClientsRemainingPayment);
     return resultados.rows;
   },
   async massiveUpdateClientsRoutes(clients) {
-    const queryUpdateClientsRoute = `
-      UPDATE 
-        public.clients
-	    SET 
-        id_route=$1
-	    WHERE 
-        id_client=$2;
-    `;
     let executed = false;
     let sqlResult = null;
     let contador = 0;
@@ -332,7 +206,7 @@ module.exports = {
       await client.query("BEGIN");
       clients.forEach(async (cli) => {
         const { idClient, idRoute } = cli;
-        const data = await client.query(queryUpdateClientsRoute, [
+        const data = await client.query(qrys.queryUpdateClientsRoute, [
           idRoute,
           idClient,
         ]);

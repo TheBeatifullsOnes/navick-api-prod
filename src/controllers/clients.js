@@ -5,7 +5,7 @@ const logger = require("../utils/logger");
 
 exports.obtenerClientes = (req, res) => {
   clientModel
-    .obtenerClientes()
+    .getClients()
     .then((response) => {
       if (response.length > 0) {
         res.status(200).json({
