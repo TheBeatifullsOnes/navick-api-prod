@@ -1717,3 +1717,130 @@ client.query():
 2022-07-11 13:13:37:1337 info: App started,listening on port 8000
 2022-07-11 13:13:44:1344 info: Se establecio la conexion a la base de datos 
 2022-07-11 13:13:44:1344 info: App started,listening on port 8000
+2022-07-12 13:42:33:4233 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:42:33:4233 info: App started,listening on port 8000
+2022-07-12 13:42:37:4237 info: POST /api/v1/invoices 200 540.562 ms - 82
+2022-07-12 13:42:54:4254 info: POST /api/v1/invoices 200 522.003 ms - 82
+2022-07-12 13:44:22:4422 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:44:23:4423 info: App started,listening on port 8000
+2022-07-12 13:44:26:4426 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:44:26:4426 info: App started,listening on port 8000
+2022-07-12 13:44:29:4429 info: POST /api/v1/invoices 200 549.687 ms - 82
+2022-07-12 13:45:11:4511 info: POST /api/v1/invoices 200 529.147 ms - 82
+2022-07-12 13:46:48:4648 info: GET /api/v1/payments/byDay/2022-06-09 200 455.705 ms - 6871
+2022-07-12 13:47:00:470 info: GET /api/v1/clientes/auditReports/5 200 648.230 ms - 72462
+2022-07-12 13:48:02:482 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:48:02:482 info: App started,listening on port 8000
+2022-07-12 13:48:06:486 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:48:06:486 info: App started,listening on port 8000
+2022-07-12 13:48:09:489 info: POST /api/v1/invoices 200 759.372 ms - 114
+2022-07-12 13:49:00:490 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:49:00:490 info: App started,listening on port 8000
+2022-07-12 13:49:11:4911 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:49:11:4911 info: App started,listening on port 8000
+2022-07-12 13:49:19:4919 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:49:19:4919 info: App started,listening on port 8000
+2022-07-12 13:49:24:4924 info: client.query() COMMIT row count:
+2022-07-12 13:49:24:4924 info: client.query() COMMIT row count:
+2022-07-12 13:49:24:4924 info: POST /api/v1/invoices 200 774.581 ms - 114
+2022-07-12 13:50:19:5019 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:50:19:5019 info: App started,listening on port 8000
+2022-07-12 13:50:22:5022 info: client.query() COMMIT row count: 1
+2022-07-12 13:50:22:5022 info: client.query() COMMIT row count: 1
+2022-07-12 13:50:22:5022 info: POST /api/v1/invoices 200 780.133 ms - 114
+2022-07-12 13:51:35:5135 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:51:35:5135 info: App started,listening on port 8000
+2022-07-12 13:52:07:527 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:52:07:527 info: App started,listening on port 8000
+2022-07-12 13:53:34:5334 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:53:34:5334 info: App started,listening on port 8000
+2022-07-12 13:53:43:5343 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:53:43:5343 info: App started,listening on port 8000
+2022-07-12 13:54:10:5410 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:54:10:5410 info: App started,listening on port 8000
+2022-07-12 13:54:50:5450 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:54:50:5450 info: App started,listening on port 8000
+2022-07-12 13:55:14:5514 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:55:14:5514 info: App started,listening on port 8000
+2022-07-12 13:55:26:5526 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:55:26:5526 info: App started,listening on port 8000
+2022-07-12 13:55:30:5530 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:55:30:5530 info: App started,listening on port 8000
+2022-07-12 14:39:47:3947 info: GET /api/v1/clientes/auditReports/5 200 1137.725 ms - 72462
+2022-07-12 14:40:39:4039 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:40:39:4039 info: App started,listening on port 8000
+2022-07-12 14:40:57:4057 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:40:57:4057 info: App started,listening on port 8000
+2022-07-12 14:40:59:4059 info: GET /api/v1/clientes/auditReports/5 403 5.214 ms - 53
+2022-07-12 14:42:04:424 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:42:04:424 info: App started,listening on port 8000
+2022-07-12 14:42:29:4229 info: GET /api/v1/clientes/auditReports/5 401 3.962 ms - 34
+2022-07-12 14:42:41:4241 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:42:41:4241 info: App started,listening on port 8000
+2022-07-12 14:42:48:4248 info: POST /login 200 587.182 ms - 461
+2022-07-12 14:43:02:432 info: GET /api/v1/clientes/auditReports/5 200 813.389 ms - 72462
+2022-07-12 14:47:14:4714 info: GET /api/v1/clientes/auditReports/5 403 9.943 ms - 53
+2022-07-12 14:47:20:4720 info: GET /api/v1/clientes/auditReports/5 403 0.807 ms - 53
+2022-07-12 14:47:32:4732 info: GET /api/v1/clientes/auditReports/5 401 7.375 ms - 30
+2022-07-12 14:47:54:4754 info: POST /login 200 571.597 ms - 461
+2022-07-12 14:48:05:485 info: GET /api/v1/clientes/auditReports/5 200 537.785 ms - 72462
+2022-07-12 15:03:00:30 info: GET /api/v1/clientes/auditReports/5 401 9.347 ms - 30
+2022-07-12 15:03:39:339 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:03:39:339 info: App started,listening on port 8000
+2022-07-12 15:04:58:458 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:04:58:458 info: App started,listening on port 8000
+2022-07-12 15:05:20:520 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:05:20:520 info: App started,listening on port 8000
+2022-07-12 15:07:45:745 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:07:45:745 info: App started,listening on port 8000
+2022-07-12 15:09:44:944 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:09:44:944 info: App started,listening on port 8000
+2022-07-12 15:10:02:102 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:10:02:102 info: App started,listening on port 8000
+2022-07-12 15:10:40:1040 info: GET /api/v1/clientes/auditReports/5 401 18.135 ms - 30
+2022-07-12 15:11:20:1120 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:11:20:1120 info: App started,listening on port 8000
+2022-07-12 15:11:33:1133 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:11:33:1133 info: App started,listening on port 8000
+2022-07-12 15:11:35:1135 info: GET /api/v1/clientes/auditReports/5 401 8.160 ms - 30
+2022-07-12 15:11:59:1159 info: GET /api/v1/clientes/auditReports/5 401 2.810 ms - 30
+2022-07-12 15:12:04:124 info: POST /login 200 596.790 ms - 461
+2022-07-12 15:12:21:1221 info: GET /api/v1/clientes/auditReports/5 200 784.350 ms - 72462
+2022-07-12 15:17:25:1725 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:17:25:1725 info: App started,listening on port 8000
+2022-07-12 15:17:41:1741 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:17:41:1741 info: App started,listening on port 8000
+2022-07-12 15:17:51:1751 info: POST /api/v1/usuarios 201 643.872 ms - 86
+2022-07-12 15:18:06:186 info: POST /login 200 192.914 ms - 459
+2022-07-12 15:18:19:1819 info: GET /api/v1/clientes/auditReports/5 401 77.613 ms - 30
+2022-07-12 15:19:19:1919 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:19:19:1919 info: App started,listening on port 8000
+2022-07-12 15:19:24:1924 info: GET /api/v1/clientes/auditReports/5 200 1232.496 ms - 72462
+2022-07-12 15:19:35:1935 info: GET /api/v1/clientes/auditReports/5 200 697.477 ms - 72462
+2022-07-12 15:19:39:1939 info: GET /api/v1/clientes/auditReports/5 401 80.107 ms - 30
+2022-07-12 15:19:50:1950 info: GET /api/v1/usuarios 200 79.030 ms - 3593
+2022-07-12 15:19:58:1958 info: DELETE /api/v1/usuarios/20 200 79.641 ms - 86
+2022-07-12 15:20:09:209 info: GET /api/v1/clientes/auditReports/5 401 76.213 ms - 30
+2022-07-12 15:20:22:2022 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:20:22:2022 info: App started,listening on port 8000
+2022-07-12 15:20:25:2025 info: GET /api/v1/clientes/auditReports/5 401 462.755 ms - 34
+2022-07-12 15:20:35:2035 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:20:35:2035 info: App started,listening on port 8000
+2022-07-12 15:20:44:2044 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:20:44:2044 info: App started,listening on port 8000
+2022-07-12 15:23:27:2327 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:23:27:2327 info: App started,listening on port 8000
+2022-07-12 15:23:51:2351 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:23:51:2351 info: App started,listening on port 8000
+2022-07-12 15:24:07:247 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:07:247 info: App started,listening on port 8000
+2022-07-12 15:24:14:2414 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:14:2414 info: App started,listening on port 8000
+2022-07-12 15:24:25:2425 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:25:2425 info: App started,listening on port 8000
+2022-07-12 15:24:35:2435 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:35:2435 info: App started,listening on port 8000
+2022-07-12 15:24:49:2449 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:49:2449 info: App started,listening on port 8000
+2022-07-12 15:25:02:252 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:25:02:252 info: App started,listening on port 8000

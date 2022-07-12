@@ -77,7 +77,10 @@ exports.addInvoice = (req, res) => {
     discount,
     detailInvoice,
   } = req.body;
-
+  const moment = req.timestamp;
+  const timestamp = moment
+    .tz("America/Mexico_City")
+    .format("YYYY-MM-DD HH:mm:ss");
   invoiceModel
     .insertInvoiceAndDetailTransaction(
       idClient,
@@ -85,7 +88,8 @@ exports.addInvoice = (req, res) => {
       status,
       expirationDate,
       discount,
-      detailInvoice
+      detailInvoice,
+      timestamp
     )
     .then((sqlTransactionResult) => {
       if (sqlTransactionResult) {
