@@ -21,7 +21,7 @@ exports.createToken = (
       status: status,
     },
     iat: Number(moment.unix()),
-    exp: moment().add(30, "minutes").unix(),
+    exp: moment().add(1440, "minutes").unix(),
   };
   return jwt.sign(payload, config.TOKEN_SECRET);
 };
