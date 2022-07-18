@@ -1,35 +1,34 @@
-module.exports = {
-  getPayments: `
+export const getPayments = `
       SELECT 
         *
       FROM 
         public.payments 
       ORDER BY 
-        id_abono`,
-  getPaymentsByInvoiceId: `
+        id_abono`;
+export const getPaymentsByInvoiceId = `
       SELECT 
           *
       FROM 
           public.payments
       WHERE 
           id_invoice =$1
-        `,
-  queryTextGetInvoiceId: `
+        `;
+export const queryTextGetInvoiceId = `
       SELECT 
         remaining_payment
       FROM 
         invoices 
       WHERE 
-        id_invoice = $1`,
-  queryTextUpdateInvoiceRP: `
+        id_invoice = $1`;
+export const queryTextUpdateInvoiceRP = `
       UPDATE 
         public.invoices
       SET 
         remaining_payment=$2
       WHERE 
         id_invoice =$1
-      `,
-  queryTextInsertPayment: `
+      `;
+export const queryTextInsertPayment = `
       INSERT INTO
         public.payments
         (
@@ -40,16 +39,16 @@ module.exports = {
         )
       VALUES
         (3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_abono, created_at at time zone 'UTC' as created_at;
-    `,
+    `;
 
-  queryTextUpdateInvoiceStatus: `
+export const queryTextUpdateInvoiceStatus = `
       UPDATE 
         public.invoices
       SET 
         status=2
       WHERE 
-        id_invoice =$1`,
-  queryStringPaymentsByRoute: `
+        id_invoice =$1`;
+export const queryStringPaymentsByRoute = `
       SELECT 
         p.id_abono, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
       FROM 
@@ -68,8 +67,8 @@ module.exports = {
         p.printed_ticket = false 
 	    ORDER BY 
         p.created_at 
-      DESC`,
-  queryTextGetPaymentsByDay2: `
+      DESC`;
+export const queryTextGetPaymentsByDay2 = `
       SELECT 
         p.* , c.name as client_name, c.latitude, c.longitude
       FROM 
@@ -83,8 +82,8 @@ module.exports = {
       ON 
         i.id_client=c.id_client
       WHERE 
-        CAST(p.created_at at time zone 'UTC' AS DATE)  = CAST($1 AS DATE);`,
-  queryTextGetPaymentsByDay: `
+        CAST(p.created_at at time zone 'UTC' AS DATE)  = CAST($1 AS DATE);`;
+export const queryTextGetPaymentsByDay = `
       SELECT 
         p.* , c.name
       FROM 
@@ -98,17 +97,16 @@ module.exports = {
       ON 
         i.id_client=c.id_client
       WHERE 
-        CAST(p.created_at at time zone 'UTC' AS DATE)  = CAST(now() AS DATE);`,
-  fnGetPaymentsByWeek: `
+        CAST(p.created_at at time zone 'UTC' AS DATE)  = CAST(now() AS DATE);`;
+export const fnGetPaymentsByWeek = `
     SELECT 
       * 
     FROM 
-      public.fn_payments_by_week($1, $2)`,
-  queryTextUpdatePayment: `
+      public.fn_payments_by_week($1, $2)`;
+export const queryTextUpdatePayment = `
     UPDATE 
       PUBLIC.payments
     SET 
       text_ticket=$2, printed_ticket=$3
     WHERE 
-      id_abono=$1`,
-};
+      id_abono=$1`;

@@ -1,10 +1,8 @@
-const connexion = require("../config/bdConnexion");
-const logger = require("../utils/logger");
-const qrys = require("./queries/auth");
+import connexion from "../config/bdConnexion.js";
+// import logger from "../utils/logger.js";
+import * as qrys from "./queries/auth.js";
 
-module.exports = {
-  async login(username) {
-    const resultado = await connexion.query(qrys.login, [username]);
-    return resultado;
-  },
+export const login = async (username) => {
+  const resultado = await connexion.query(qrys.login, [username]);
+  return resultado;
 };

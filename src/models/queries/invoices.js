@@ -1,5 +1,4 @@
-module.exports = {
-  getInvoices: `
+export const getInvoices = `
       SELECT 
         ts.name as id_type_serial,
         i.id_invoice, 
@@ -27,15 +26,15 @@ module.exports = {
       ON 
         tp.id_tipopedido = i.type_payment
       WHERE 
-        i.total_amount is not null`,
-  getInvoiceByIdinvoice: `
+        i.total_amount is not null`;
+export const getInvoiceByIdinvoice = `
     SELECT 
         id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
     FROM 
         public.invoices
     WHERE 
-        id_invoice = $1`,
-  insertInvoice: `
+        id_invoice = $1`;
+export const insertInvoice = `
       INSERT INTO 
         public.invoices
         (
@@ -44,8 +43,8 @@ module.exports = {
           total_amount, remaining_payment, discount
         )
       VALUES 
-        (1, $1, $2, $3, $4, $5, $6, $7, $8) returning id_invoice`,
-  getInvoicesByRoute: `
+        (1, $1, $2, $3, $4, $5, $6, $7, $8) returning id_invoice`;
+export const getInvoicesByRoute = `
       SELECT 
         i.* 
       FROM
@@ -58,15 +57,15 @@ module.exports = {
         c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
       ORDER BY 
         i.id_invoice 
-      DESC`,
-  getInvoiceByClientId: `
+      DESC`;
+export const getInvoiceByClientId = `
     SELECT
         *
     FROM
         public.invoices
     WHERE
-        id_client = $1`,
-  updateInvoiceByIdinvoice: `
+        id_client = $1`;
+export const updateInvoiceByIdinvoice = `
     UPDATE 
         public.invoices
     SET 
@@ -74,32 +73,32 @@ module.exports = {
         expiration_date=$5, total_amount=$6, remaining_payment=$7, 
         discount=$8
     WHERE 
-        id_invoice=$1`,
-  getRemainingPaymentByIdinvoice: `
+        id_invoice=$1`;
+export const getRemainingPaymentByIdinvoice = `
       SELECT 
         remaining_payment 
       FROM 
         invoices 
       WHERE 
         id_invoice = $1
-      `,
-  updateRemainingPaymentByIdinvoice: `
+      `;
+export const updateRemainingPaymentByIdinvoice = `
       UPDATE 
         public.invoices
 	    SET 
         remaining_payment=$2
 	    WHERE 
         id_invoice =$1;
-      `,
-  insertDetailsInvoices: `
+      `;
+export const insertDetailsInvoices = `
         INSERT INTO 
           public.details_invoices
           (
 	          id_invoice, line, id_product,
             quantity, price, id_warehouse
           )
-	      VALUES ($1, $2, $3, $4, $5, $6);`,
-  getIvoicesByCurrentDay: `
+	      VALUES ($1, $2, $3, $4, $5, $6);`;
+export const getIvoicesByCurrentDay = `
       SELECT 
         i.* 
       FROM 
@@ -111,23 +110,23 @@ module.exports = {
       WHERE 
         date_trunc('day', i.created_at)::date = current_date
       AND 
-        c.id_route = $1`,
-  getRemainingPaymentToCancel: `
+        c.id_route = $1`;
+export const getRemainingPaymentToCancel = `
       SELECT 
         remaining_payment, status
       FROM 
         invoices 
       WHERE 
-        id_invoice = $1`,
-  updateInvoiceStatus: `
+        id_invoice = $1`;
+export const updateInvoiceStatus = `
         UPDATE 
           public.invoices
         SET 
           status=3,
           remaining_payment=$2
         WHERE 
-          id_invoice =$1`,
-  insertPaymentInCancel: `
+          id_invoice =$1`;
+export const insertPaymentInCancel = `
         INSERT INTO
           public.payments
           (
@@ -138,5 +137,4 @@ module.exports = {
           )
         VALUES
           (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at at time zone 'UTC' as created_at;
-      `,
-};
+      `;

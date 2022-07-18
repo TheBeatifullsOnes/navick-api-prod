@@ -1,11 +1,11 @@
-const authModel = require("../models/auth");
-const jwtService = require("../services/auth");
-const bcrypt = require("bcryptjs");
-const logger = require("../utils/logger");
+import { login } from "../models/auth.js";
+import { createToken } from "../services/auth.js";
+// import logger from "../utils/logger.js";
+import bcrypt from "bcryptjs";
 
-exports.login = async (req, res) => {
+export const loginController = async (req, res) => {
   const { username, password } = req.body;
-  authModel.login(username).then((resultado) => {
+  login(username).then((resultado) => {
     if (resultado.rowCount > 0) {
       const validPassword = bcrypt.compare(
         password,
@@ -34,7 +34,7 @@ exports.login = async (req, res) => {
               idRuta: id_route,
               description,
               description,
-              token: jwtService.createToken(
+              token: createToken(
                 username,
                 name,
                 id_route,

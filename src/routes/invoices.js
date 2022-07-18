@@ -1,30 +1,31 @@
-const express = require("express");
-const router = express.Router();
-const auth = require("../middlewares/auth");
-const invoiceController = require("../controllers/invoices");
+import express from "express";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+import * as invoiceController from "../controllers/invoices.js";
 
-router.get(
+const routesInvoices = express.Router();
+
+routesInvoices.get(
   "/getInvoicesByCurrentDay/:idRoute",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   invoiceController.getInvoicesByCurrentDay
 );
-router.get("/", auth.ensureAuthenticated, invoiceController.getInvoices);
-router.get(
+routesInvoices.get("/", ensureAuthenticated, invoiceController.getInvoices);
+routesInvoices.get(
   "/:idInvoice",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   invoiceController.getInvoice
 );
-router.post("/", auth.ensureAuthenticated, invoiceController.addInvoice);
-router.put("/", auth.ensureAuthenticated, invoiceController.updateInvoice);
-router.get(
+routesInvoices.post("/", ensureAuthenticated, invoiceController.addInvoice);
+routesInvoices.put("/", ensureAuthenticated, invoiceController.updateInvoice);
+routesInvoices.get(
   "/only/:idRoute",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   invoiceController.getInvoicesByRoute
 );
-router.post(
+routesInvoices.post(
   "/cancel",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   invoiceController.cancelInvoices
 );
 
-module.exports = router;
+export default routesInvoices;

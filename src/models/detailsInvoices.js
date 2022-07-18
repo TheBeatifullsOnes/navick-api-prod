@@ -1,28 +1,29 @@
-const connexion = require("../config/bdConnexion");
-const logger = require("../utils/logger");
-const qrys = require("./queries/detailsInvoices");
+import connexion from "../config/bdConnexion.js";
+// import logger from "../utils/logger.js";
+import {
+  getDetailsInvoicesById,
+  insertDetailsInvoices,
+} from "./queries/detailsInvoices.js";
 
-module.exports = {
-  async getdetailsInvoicesById(idFactura) {
-    const result = connexion.query(qrys.getDetailsInvoicesById, [idFactura]);
-    return (await result).rows;
-  },
-  async insertInvoiceDetails(
+export const getdetailsInvoicesById = async (idFactura) => {
+  const result = connexion.query(getDetailsInvoicesById, [idFactura]);
+  return (await result).rows;
+};
+export const insertInvoiceDetails = async (
+  idInvoice,
+  line,
+  idArticle,
+  quantity,
+  price,
+  idWarehouse
+) => {
+  const result = await connexion.query(insertDetailsInvoices, [
     idInvoice,
     line,
     idArticle,
     quantity,
     price,
-    idWarehouse
-  ) {
-    const result = connexion.query(qrys.insertDetailsInvoices, [
-      idInvoice,
-      line,
-      idArticle,
-      quantity,
-      price,
-      idWarehouse,
-    ]);
-    return await result;
-  },
+    idWarehouse,
+  ]);
+  return result;
 };

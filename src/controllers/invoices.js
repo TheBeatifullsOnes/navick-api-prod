@@ -1,7 +1,7 @@
-const invoiceModel = require("../models/invoices");
-const logger = require("../utils/logger");
+import * as invoiceModel from "../models/invoices.js";
+import logger from "../utils/logger.js";
 
-exports.getInvoices = (req, res) => {
+export const getInvoices = (req, res) => {
   invoiceModel
     .getInvoices()
     .then((response) => {
@@ -24,7 +24,7 @@ exports.getInvoices = (req, res) => {
     });
 };
 
-exports.getInvoice = (req, res) => {
+export const getInvoice = (req, res) => {
   const { idInvoice } = req.params;
   invoiceModel
     .getInvoice(idInvoice)
@@ -48,7 +48,7 @@ exports.getInvoice = (req, res) => {
     });
 };
 
-exports.getInvoicesByRoute = (req, res) => {
+export const getInvoicesByRoute = (req, res) => {
   const { idRoute } = req.params;
   invoiceModel
     .getInvoicesByRoute(idRoute)
@@ -68,7 +68,7 @@ exports.getInvoicesByRoute = (req, res) => {
     });
 };
 
-exports.addInvoice = (req, res) => {
+export const addInvoice = (req, res) => {
   const {
     idClient,
     typePayment,
@@ -117,7 +117,7 @@ exports.addInvoice = (req, res) => {
     });
 };
 
-exports.updateInvoice = (req, res) => {
+export const updateInvoice = (req, res) => {
   const {
     idFactura,
     idCliente,
@@ -164,7 +164,7 @@ exports.updateInvoice = (req, res) => {
     });
 };
 
-exports.getInvoicesByCurrentDay = (req, res) => {
+export const getInvoicesByCurrentDay = (req, res) => {
   const { idRoute } = req.params;
   invoiceModel
     .getInvoicesByCurrentDay(idRoute)
@@ -191,7 +191,7 @@ exports.getInvoicesByCurrentDay = (req, res) => {
     });
 };
 
-exports.cancelInvoices = async (req, res) => {
+export const cancelInvoices = async (req, res) => {
   const {
     idInvoice,
     idUser,

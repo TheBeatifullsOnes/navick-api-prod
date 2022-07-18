@@ -1,9 +1,8 @@
-const productModel = require("../models/product");
-const logger = require("../utils/logger");
+import * as pm from "../models/product.js";
+// import logger from "../utils/logger.js";
 
-exports.getProducts = (req, res) => {
-  productModel
-    .getProducts()
+export const getProducts = (req, res) => {
+  pm.getProducts()
     .then((response) => {
       if (response.length > 0) {
         res.status(200).json({
@@ -28,10 +27,9 @@ exports.getProducts = (req, res) => {
     });
 };
 
-exports.getProduct = (req, res) => {
+export const getProduct = (req, res) => {
   const { idProduct } = req.params;
-  productModel
-    .getProduct(idProduct)
+  pm.getProduct(idProduct)
     .then((response) => {
       if (response.length > 0) {
         res.status(200).json({
@@ -55,7 +53,7 @@ exports.getProduct = (req, res) => {
       });
     });
 };
-exports.insertProduct = (req, res) => {
+export const insertProduct = (req, res) => {
   const {
     idProduct,
     description,
@@ -67,18 +65,17 @@ exports.insertProduct = (req, res) => {
     idUserModification,
     status,
   } = req.body;
-  productModel
-    .insertProduct(
-      idProduct,
-      description,
-      idCategory,
-      purchasePrice,
-      catalogueDate,
-      movementDate,
-      modificationDate,
-      idUserModification,
-      status
-    )
+  pm.insertProduct(
+    idProduct,
+    description,
+    idCategory,
+    purchasePrice,
+    catalogueDate,
+    movementDate,
+    modificationDate,
+    idUserModification,
+    status
+  )
     .then((response) => {
       if (response.rowCount > 0) {
         res.status(200).json({
@@ -103,7 +100,7 @@ exports.insertProduct = (req, res) => {
     });
 };
 
-exports.updateProduct = (req, res) => {
+export const updateProduct = (req, res) => {
   const {
     idProduct,
     description,
@@ -115,18 +112,17 @@ exports.updateProduct = (req, res) => {
     idUserModification,
     status,
   } = req.body;
-  productModel
-    .updateProduct(
-      idProduct,
-      description,
-      idCategory,
-      purchasePrice,
-      catalogueDate,
-      movementDate,
-      modificationDate,
-      idUserModification,
-      status
-    )
+  pm.updateProduct(
+    idProduct,
+    description,
+    idCategory,
+    purchasePrice,
+    catalogueDate,
+    movementDate,
+    modificationDate,
+    idUserModification,
+    status
+  )
     .then((response) => {
       if (response.rowCount > 0) {
         res.status(200).json({
@@ -151,10 +147,9 @@ exports.updateProduct = (req, res) => {
     });
 };
 
-exports.deleteProduct = (req, res) => {
+export const deleteProduct = (req, res) => {
   const { idProduct } = req.params;
-  productModel
-    .deleteProduct(idProduct)
+  pm.deleteProduct(idProduct)
     .then((response) => {
       if (response.rowCount > 0) {
         res.status(200).json({

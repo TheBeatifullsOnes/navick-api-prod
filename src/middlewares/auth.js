@@ -1,10 +1,10 @@
-const jwt = require("jsonwebtoken");
-const config = require("../config/config");
-const authModel = require("../models/auth");
+import jwt from "jsonwebtoken";
+import { TOKEN_SECRET } from "../config/config.js";
+import { login } from "../models/auth.js";
 
-const logger = require("../utils/logger");
+// import logger from "../utils/logger.js";
 
-exports.ensureAuthenticated = (req, res, next) => {
+export const ensureAuthenticated = (req, res, next) => {
   if (!req.headers.token) {
     return res
       .status(403)
@@ -12,10 +12,10 @@ exports.ensureAuthenticated = (req, res, next) => {
   }
   const decodeToken = jwt.decode(req.headers.token);
   const { username } = decodeToken.sub;
-  console.log(username);
-  authModel.login(username).then((sqlResult) => {
+  // agregar el try - catch
+  login(username).then((sqlResult) => {
     if (sqlResult.rowCount > 0) {
-      jwt.verify(req.headers.token, config.TOKEN_SECRET, (err, payload) => {
+      jwt.verify(req.headers.token, TOKEN_SECRET, (err, payload) => {
         if (err) {
           switch (err.name) {
             case "JsonWebTokenError":
@@ -26,7 +26,6 @@ exports.ensureAuthenticated = (req, res, next) => {
               return res.status(401).json(err);
           }
         }
-
         req.data = payload.sub;
         next();
       });

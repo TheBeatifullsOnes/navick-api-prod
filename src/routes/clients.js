@@ -1,50 +1,50 @@
-const express = require("express");
-const router = express.Router();
-const clientController = require("../controllers/clients");
-const auth = require("../middlewares/auth");
+import express from "express";
+import * as clientController from "../controllers/clients.js";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+const routesClients = express.Router();
 
-router.get(
+routesClients.get(
   "/auditReports/:idRoute",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.getAuditReportByRoute
 );
-router.get(
+routesClients.get(
   "/remainingPayment",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.getClientCreditInformation
 );
-router.post(
+routesClients.post(
   "/massiveUpdate",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.massiveUpdateRouteClients
 );
-router.get(
+routesClients.get(
   "/only/:idRoute",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.getOnlyClientsByRoute
 );
-router.get(
+routesClients.get(
   "/:idCliente",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.obtenerCliente
 );
-router.get(
+routesClients.get(
   "/ruta/:idRoute",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.getClientsByRoute
 );
-router.post("/", auth.ensureAuthenticated, clientController.insertaCliente);
-router.put("/", auth.ensureAuthenticated, clientController.actualizaCliente);
-router.post(
+routesClients.post("/", ensureAuthenticated, clientController.insertaCliente);
+routesClients.put("/", ensureAuthenticated, clientController.actualizaCliente);
+routesClients.post(
   "/:idCliente",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.updateClientStatus
 );
-router.get("/", auth.ensureAuthenticated, clientController.obtenerClientes);
-router.delete(
+routesClients.get("/", ensureAuthenticated, clientController.obtenerClientes);
+routesClients.delete(
   "/:idClient",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   clientController.deleteClient
 );
 
-module.exports = router;
+export default routesClients;

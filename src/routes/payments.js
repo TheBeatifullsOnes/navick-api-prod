@@ -1,34 +1,35 @@
-const express = require("express");
-const router = express.Router();
-const auth = require("../middlewares/auth");
-const paymentsController = require("../controllers/payments");
+import express from "express";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+import * as paymentsController from "../controllers/payments.js";
 
-router.get(
+const routesPayments = express.Router();
+
+routesPayments.get(
   "/byWeek",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   paymentsController.getPaymentsByWeek
 );
-router.get(
+routesPayments.get(
   "/byDay/:selectedDate",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   paymentsController.getPaymentsByDay
 );
-router.get(
+routesPayments.get(
   "/paymentsByRoute/:idRoute",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   paymentsController.getPaymentsByRoute
 );
-router.get("/", auth.ensureAuthenticated, paymentsController.getPayments);
-router.get(
+routesPayments.get("/", ensureAuthenticated, paymentsController.getPayments);
+routesPayments.get(
   "/:idInvoice",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   paymentsController.getPaymentsByIdInvoice
 );
-router.post(
+routesPayments.post(
   "/",
-  auth.ensureAuthenticated,
+  ensureAuthenticated,
   paymentsController.addPaymentUpdateRemainingPayment
 );
-router.put("/", auth.ensureAuthenticated, paymentsController.updateTicket);
+routesPayments.put("/", ensureAuthenticated, paymentsController.updateTicket);
 
-module.exports = router;
+export default routesPayments;

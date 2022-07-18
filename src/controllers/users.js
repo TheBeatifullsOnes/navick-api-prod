@@ -1,9 +1,9 @@
-const usuariosModel = require("../models/users");
-const bcrypt = require("bcryptjs");
-const logger = require("../utils/logger");
+import * as model from "../models/users.js";
+import bcrypt from "bcryptjs";
+import logger from "../utils/logger.js";
 
-exports.listaUsuarios = (req, res) => {
-  usuariosModel
+export const listaUsuarios = (req, res) => {
+  model
     .obtenerUsuarios()
     .then((response) => {
       if (response.length > 0) {
@@ -23,9 +23,9 @@ exports.listaUsuarios = (req, res) => {
     .catch((error) => res.statusCode(500).json(error));
 };
 
-exports.updateUserStatus = (req, res) => {
+export const updateUserStatus = (req, res) => {
   const { idUser, status } = req.body;
-  usuariosModel
+  model
     .updateUserStatus(idUser, status)
     .then((sqlResult) => {
       if (sqlResult.rowCount > 0) {
@@ -51,9 +51,9 @@ exports.updateUserStatus = (req, res) => {
     });
 };
 
-exports.listaUsuario = (req, res) => {
+export const listaUsuario = (req, res) => {
   const { idUser } = req.params;
-  usuariosModel
+  model
     .obtenerUsuario(idUser)
     .then((response) => {
       if (response.length > 0) {
@@ -75,10 +75,10 @@ exports.listaUsuario = (req, res) => {
     });
 };
 
-exports.insertaUsuario = async (req, res) => {
+export const insertaUsuario = async (req, res) => {
   const { username, name, idUserType, password, idRoute } = req.body;
   const hashPassword = await bcrypt.hash(password, 10);
-  usuariosModel
+  model
     .insertarUsuario(username, name, idUserType, hashPassword, idRoute)
     .then((response) => {
       if (response.rowCount > 0) {
@@ -102,13 +102,13 @@ exports.insertaUsuario = async (req, res) => {
     });
 };
 
-exports.actualizaUsuario = async (req, res) => {
+export const actualizaUsuario = async (req, res) => {
   const { username, name, idUserType, password, status, idRoute } = req.body;
   let hashPassword = "";
   if (password !== "") {
     hashPassword = await bcrypt.hash(password, 10);
   }
-  usuariosModel
+  model
     .actualizarUsuario(
       username,
       name,
@@ -139,9 +139,9 @@ exports.actualizaUsuario = async (req, res) => {
     });
 };
 
-exports.eliminaUsuario = async (req, res) => {
+export const eliminaUsuario = async (req, res) => {
   const { idUser } = req.params;
-  usuariosModel
+  model
     .eliminarUsuario(idUser)
     .then((response) => {
       if (response.rowCount > 0) {
@@ -163,8 +163,8 @@ exports.eliminaUsuario = async (req, res) => {
     });
 };
 
-exports.getUsersType = async (req, res) => {
-  usuariosModel
+export const getUsersType = async (req, res) => {
+  model
     .getUsersType()
     .then((sqlResult) => {
       if (sqlResult) {

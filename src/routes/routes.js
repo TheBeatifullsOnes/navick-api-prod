@@ -1,15 +1,17 @@
-const express = require("express");
-const router = express.Router();
-const auth = require("../middlewares/auth");
-const rutasController = require("../controllers/routes");
+import express from "express";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+import {
+  listaRutas,
+  insertaRuta,
+  actualizaRuta,
+  eliminaRuta,
+} from "../controllers/routes.js";
 
-router.get("/", auth.ensureAuthenticated, rutasController.listaRutas);
-router.post("/", auth.ensureAuthenticated, rutasController.insertaRuta);
-router.put("/", auth.ensureAuthenticated, rutasController.actualizaRuta);
-router.delete(
-  "/:idRoute",
-  auth.ensureAuthenticated,
-  rutasController.eliminaRuta
-);
+const routesRoutes = express.Router();
 
-module.exports = router;
+routesRoutes.get("/", ensureAuthenticated, listaRutas);
+routesRoutes.post("/", ensureAuthenticated, insertaRuta);
+routesRoutes.put("/", ensureAuthenticated, actualizaRuta);
+routesRoutes.delete("/:idRoute", ensureAuthenticated, eliminaRuta);
+
+export default routesRoutes;

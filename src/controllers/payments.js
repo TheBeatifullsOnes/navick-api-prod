@@ -1,7 +1,7 @@
-const paymentsModel = require("../models/payments");
-const logger = require("../utils/logger");
+import * as paymentsModel from "../models/payments.js";
+// import logger from "../utils/logger.js";
 
-exports.getPayments = (req, res) => {
+export const getPayments = (req, res) => {
   paymentsModel
     .getAbonos()
     .then((sqlResults) => {
@@ -20,7 +20,7 @@ exports.getPayments = (req, res) => {
     });
 };
 
-exports.getPaymentsByIdInvoice = (req, res) => {
+export const getPaymentsByIdInvoice = (req, res) => {
   const { idInvoice } = req.params;
   paymentsModel
     .getPaymentsByInvoice(idInvoice)
@@ -40,7 +40,7 @@ exports.getPaymentsByIdInvoice = (req, res) => {
     });
 };
 
-exports.addPaymentUpdateRemainingPayment = async (req, res) => {
+export const addPaymentUpdateRemainingPayment = async (req, res) => {
   const {
     idInvoice,
     idUser,
@@ -90,7 +90,7 @@ exports.addPaymentUpdateRemainingPayment = async (req, res) => {
     });
 };
 
-exports.getPaymentsByRoute = (req, res) => {
+export const getPaymentsByRoute = (req, res) => {
   const { idRoute } = req.params;
   paymentsModel
     .getPaymentsByRoute(idRoute)
@@ -110,7 +110,7 @@ exports.getPaymentsByRoute = (req, res) => {
     });
 };
 
-exports.updateTicket = (req, res) => {
+export const updateTicket = (req, res) => {
   const { idPayment, textTicket, printedTicket } = req.body;
   paymentsModel
     .updateTicket(idPayment, textTicket, printedTicket)
@@ -132,7 +132,7 @@ exports.updateTicket = (req, res) => {
     });
 };
 
-exports.getPaymentsByDay = (req, res) => {
+export const getPaymentsByDay = (req, res) => {
   const { selectedDate } = req.params;
   paymentsModel
     .getPaymentsByDay(selectedDate)
@@ -152,7 +152,7 @@ exports.getPaymentsByDay = (req, res) => {
     });
 };
 
-exports.getPaymentsByWeek = (req, res) => {
+export const getPaymentsByWeek = (req, res) => {
   const { startDate, endDate } = req.body;
   console.log(startDate, endDate);
   paymentsModel
