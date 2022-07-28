@@ -1,14 +1,24 @@
-const express = require("express");
-const router = express.Router();
-const usuarioController = require("../controllers/users");
+import express from "express";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+import {
+  getUsersType,
+  listaUsuarios,
+  listaUsuario,
+  insertaUsuario,
+  updateUserStatus,
+  actualizaUsuario,
+  eliminaUsuario,
+} from "../controllers/users.js";
+const routesUser = express.Router();
 
 /* GET users listing. */
-router.get("/tipo", usuarioController.getUsersType);
-router.post("/updateStatus", usuarioController.updateUserStatus);
-router.get("/", usuarioController.listaUsuarios);
-router.get("/:idUser", usuarioController.listaUsuario);
-router.post("/", usuarioController.insertaUsuario);
-router.put("/", usuarioController.actualizaUsuario);
-router.delete("/:idUser", usuarioController.eliminaUsuario);
+routesUser.get("/tipo", ensureAuthenticated, getUsersType);
+routesUser.post("/updateStatus", ensureAuthenticated, updateUserStatus);
+routesUser.get("/", ensureAuthenticated, listaUsuarios);
+routesUser.get("/:idUser", ensureAuthenticated, listaUsuario);
+routesUser.post("/", ensureAuthenticated, insertaUsuario);
+routesUser.put("/", ensureAuthenticated, actualizaUsuario);
+routesUser.delete("/:idUser", ensureAuthenticated, eliminaUsuario);
 
-module.exports = router;
+// module.exports = routesUser;
+export default routesUser;

@@ -1,22 +1,26 @@
-const connexion = require("../config/bdConnexion");
-const logger = require("../utils/logger");
-
-module.exports = {
-  async getProducts() {
-    const result = await connexion.query(`SELECT * FROM articulos`);
-    return result.rows;
-  },
-  async getProduct(idProduct) {
-    const result = await connexion.query(
-      `SELECT * FROM 
-            articulos 
-        WHERE 
-            id_articulo = $1`,
-      [idProduct]
-    );
-    return result.rows;
-  },
-  async insertProduct(
+import connexion from "../config/bdConnexion.js";
+import { queries } from "./queries/products.js";
+// import logger from "../utils/logger.js";
+export const getProducts = async () => {
+  const result = await connexion.query(queries.getProducts);
+  return result.rows;
+};
+export const getProduct = async (idProduct) => {
+  const result = await connexion.query(queries.getProductById, [idProduct]);
+  return result.rows;
+};
+export const insertProduct = async (
+  idProduct,
+  description,
+  idCategory,
+  purchasePrice,
+  catalogueDate,
+  movementDate,
+  modificationDate,
+  idUserModification,
+  status
+) => {
+  const result = await connexion.query(queries.insertProducts, [
     idProduct,
     description,
     idCategory,
@@ -25,32 +29,22 @@ module.exports = {
     movementDate,
     modificationDate,
     idUserModification,
-    status
-  ) {
-    const result = await connexion.query(
-      `INSERT INTO 
-        articulos(
-                id_articulo, descripcion, id_categoria, 
-                precio_compra, fecha_catalogo, fecha_movimiento, 
-                fecha_modifica, id_usuario_modifica, estatus
-                )
-        VALUES 
-            ($1, $2, $3, $4, $5, $6, $7, $8, $9);`,
-      [
-        idProduct,
-        description,
-        idCategory,
-        purchasePrice,
-        catalogueDate,
-        movementDate,
-        modificationDate,
-        idUserModification,
-        status,
-      ]
-    );
-    return result;
-  },
-  async updateProduct(
+    status,
+  ]);
+  return result;
+};
+export const updateProduct = async (
+  idProduct,
+  description,
+  idCategory,
+  purchasePrice,
+  catalogueDate,
+  movementDate,
+  modificationDate,
+  idUserModification,
+  status
+) => {
+  const result = await connexion.query(queries.updateProduct, [
     idProduct,
     description,
     idCategory,
@@ -59,37 +53,11 @@ module.exports = {
     movementDate,
     modificationDate,
     idUserModification,
-    status
-  ) {
-    const result = await connexion.query(
-      `UPDATE 
-            articulos
-        SET  descripcion=$2, id_categoria=$3, 
-                precio_compra=$4, fecha_catalogo=$5, fecha_movimiento=$6, 
-                fecha_modifica=$7, id_usuario_modifica=$8, estatus=$9
-        WHERE id_articulo=$1;`,
-      [
-        idProduct,
-        description,
-        idCategory,
-        purchasePrice,
-        catalogueDate,
-        movementDate,
-        modificationDate,
-        idUserModification,
-        status,
-      ]
-    );
-    return result;
-  },
-  async deleteProduct(idProduct) {
-    const result = await connexion.query(
-      `DELETE FROM 
-            articulos
-        WHERE
-            id_articulo=$1;`,
-      [idProduct]
-    );
-    return result;
-  },
+    status,
+  ]);
+  return result;
+};
+export const deleteProduct = async (idProduct) => {
+  const result = await connexion.query(queries.deleteProduct, [idProduct]);
+  return result;
 };

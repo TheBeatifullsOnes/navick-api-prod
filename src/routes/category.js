@@ -1,12 +1,19 @@
-const express = require("express");
-const router = express.Router();
-const categoriesController = require("../controllers/category");
+import express from "express";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+import {
+  getCategories,
+  getCategory,
+  updateCategory,
+  insertCategory,
+  deleteCategory,
+} from "../controllers/category.js";
 
-router.get("/", categoriesController.getCategories);
-router.get("/:idCategory", categoriesController.getCategory);
-router.put("/", categoriesController.updateCategory);
-router.post("/", categoriesController.insertCategory);
-router.delete("/:idCategory", categoriesController.deleteCategory);
+const routesCategories = express.Router();
 
+routesCategories.get("/", ensureAuthenticated, getCategories);
+routesCategories.get("/:idCategory", ensureAuthenticated, getCategory);
+routesCategories.put("/", ensureAuthenticated, updateCategory);
+routesCategories.post("/", ensureAuthenticated, insertCategory);
+routesCategories.delete("/:idCategory", ensureAuthenticated, deleteCategory);
 
-module.exports = router;
+export default routesCategories;

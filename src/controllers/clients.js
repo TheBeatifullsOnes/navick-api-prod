@@ -1,11 +1,11 @@
-const clientModel = require("../models/clients");
-const invoicesModel = require("../models/invoices");
-const invoiceDetailsModel = require("../models/detailsInvoices");
-const logger = require("../utils/logger");
+import * as clientModel from "../models/clients.js";
+import { getInvoiceByClientId } from "../models/invoices.js"; //*as invoicesModel
+import { getdetailsInvoicesById } from "../models/detailsInvoices.js";
+import logger from "../utils/logger.js";
 
-exports.obtenerClientes = (req, res) => {
+export const obtenerClientes = (req, res) => {
   clientModel
-    .obtenerClientes()
+    .getClients()
     .then((response) => {
       if (response.length > 0) {
         res.status(200).json({
@@ -30,7 +30,7 @@ exports.obtenerClientes = (req, res) => {
     });
 };
 
-exports.getAuditReportByRoute = (req, res) => {
+export const getAuditReportByRoute = (req, res) => {
   const { idRoute } = req.params;
   clientModel
     .getAuditReportsByRoute(idRoute)
@@ -58,7 +58,7 @@ exports.getAuditReportByRoute = (req, res) => {
     });
 };
 
-exports.getOnlyClientsByRoute = (req, res) => {
+export const getOnlyClientsByRoute = (req, res) => {
   const { idRoute } = req.params;
   clientModel
     .getClientByRoute(idRoute)
@@ -86,24 +86,24 @@ exports.getOnlyClientsByRoute = (req, res) => {
     });
 };
 
-exports.obtenerCliente = (req, res) => {
+export const obtenerCliente = (req, res) => {
   const { idCliente } = req.params;
   clientModel
     .getClient(idCliente)
     .then((response) => {
-      const invoiceByClient = invoicesModel
-        .getInvoiceByClientId(idCliente)
-        .then((sqlResults) => {
+      const invoiceByClient = getInvoiceByClientId(idCliente).then(
+        (sqlResults) => {
           return sqlResults;
-        });
+        }
+      );
 
       invoiceByClient.then((results) => {
         const arrayInvoiceByClient = results.map((elem) => {
-          const sqlDetailInvoice = invoiceDetailsModel
-            .getdetailsInvoicesById(elem.id_invoice)
-            .then((sqlResults) => {
+          const sqlDetailInvoice = getdetailsInvoicesById(elem.id_invoice).then(
+            (sqlResults) => {
               return { ...elem, detalle: sqlResults };
-            });
+            }
+          );
           return sqlDetailInvoice;
         });
         Promise.all(arrayInvoiceByClient).then((results) => {
@@ -124,7 +124,7 @@ exports.obtenerCliente = (req, res) => {
       });
     });
 };
-exports.getClientsByRoute = (req, res) => {
+export const getClientsByRoute = (req, res) => {
   const { idRoute } = req.params;
   const clientsByRoutes = clientModel
     .getClientByRoute(idRoute)
@@ -150,11 +150,11 @@ exports.getClientsByRoute = (req, res) => {
 
         const sqlClientByInvoice = getClientById.then((usariosResults) => {
           const mapeo = usariosResults.usuario.map((ele) => {
-            const invoiceByClient = invoicesModel
-              .getInvoiceByClientId(ele.id_client)
-              .then((sqlResults) => {
+            const invoiceByClient = getInvoiceByClientId(ele.id_client).then(
+              (sqlResults) => {
                 return sqlResults;
-              });
+              }
+            );
             const sqlInvoiceByClient = invoiceByClient
               .then((results) => {
                 return results;
@@ -187,7 +187,7 @@ exports.getClientsByRoute = (req, res) => {
     });
 };
 
-exports.insertaCliente = (req, res) => {
+export const insertaCliente = (req, res) => {
   const {
     name,
     idRoute,
@@ -253,7 +253,7 @@ exports.insertaCliente = (req, res) => {
     });
 };
 
-exports.actualizaCliente = (req, res) => {
+export const actualizaCliente = (req, res) => {
   const {
     idClient,
     name,
@@ -321,7 +321,7 @@ exports.actualizaCliente = (req, res) => {
     });
 };
 
-exports.updateClientStatus = (req, res) => {
+export const updateClientStatus = (req, res) => {
   const { idCliente, status } = req.body;
   clientModel
     .updateClientStatus(idCliente, status)
@@ -349,7 +349,7 @@ exports.updateClientStatus = (req, res) => {
     });
 };
 
-exports.getClientCreditInformation = (req, res) => {
+export const getClientCreditInformation = (req, res) => {
   clientModel
     .getClientRemainingPayment()
     .then((response) => {
@@ -376,7 +376,7 @@ exports.getClientCreditInformation = (req, res) => {
     });
 };
 
-exports.deleteClient = (req, res) => {
+export const deleteClient = (req, res) => {
   const { idClient } = req.params;
   logger.info(`controller: getting the id_client: ${idClient} from params`);
   clientModel
@@ -406,7 +406,7 @@ exports.deleteClient = (req, res) => {
     });
 };
 
-exports.massiveUpdateRouteClients = (req, res) => {
+export const massiveUpdateRouteClients = (req, res) => {
   const { clients } = req.body;
   clientModel
     .massiveUpdateClientsRoutes(clients)

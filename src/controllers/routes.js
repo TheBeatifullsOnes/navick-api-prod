@@ -1,7 +1,7 @@
-const rutasModel = require("../models/routes");
-const logger = require("../utils/logger");
+import * as rutasModel from "../models/routes.js";
+// import logger from "../utils/logger.js";
 
-exports.listaRutas = function (req, res) {
+export const listaRutas = function (req, res) {
   rutasModel
     .listaRutas()
     .then((response) => {
@@ -24,7 +24,7 @@ exports.listaRutas = function (req, res) {
     });
 };
 
-exports.insertaRuta = function (req, res, next) {
+export const insertaRuta = function (req, res, next) {
   const { description } = req.body;
   rutasModel
     .insertaRuta(description)
@@ -52,7 +52,7 @@ exports.insertaRuta = function (req, res, next) {
     });
 };
 
-exports.actualizaRuta = function (req, res, next) {
+export const actualizaRuta = function (req, res, next) {
   const { idRoute, description, state } = req.body;
   rutasModel
     .actualizaRuta(idRoute, description, state)
@@ -76,7 +76,7 @@ exports.actualizaRuta = function (req, res, next) {
     });
 };
 
-exports.eliminaRuta = function (req, res) {
+export const eliminaRuta = function (req, res) {
   const { idRoute } = req.params;
   rutasModel
     .eliminaRuta(idRoute)
