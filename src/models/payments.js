@@ -121,15 +121,18 @@ export const getPaymentsByRoute = async (idRoute) => {
   return result.rows;
 };
 export const updateTicket = async (idPayment, textTicket, printedTicket) => {
-  const result = await connexion.query(qrys.queryTextUpdatePayment, [
-    idPayment,
-    textTicket,
-    printedTicket,
-  ]);
-  return {
-    command: result.command,
-    rowCount: result.rowCount,
-  };
+  console.log(isNaN(idPayment));
+  if (!isNaN(idPayment)) {
+    const result = await connexion.query(qrys.queryTextUpdatePayment, [
+      idPayment,
+      textTicket,
+      printedTicket,
+    ]);
+    return {
+      command: result.command,
+      rowCount: result.rowCount,
+    };
+  }
 };
 export const getPaymentsByDay = async (selectedDate) => {
   let result;
