@@ -198,15 +198,17 @@ module.exports = {
       text_ticket=$2, printed_ticket=$3
     WHERE 
       id_abono=$1`;
-    const result = await connexion.query(queryTextUpdatePayment, [
-      idPayment,
-      textTicket,
-      printedTicket,
-    ]);
-    return {
-      command: result.command,
-      rowCount: result.rowCount,
-    };
+    if (!isNaN(idPayment)) {
+      const result = await connexion.query(queryTextUpdatePayment, [
+        idPayment,
+        textTicket,
+        printedTicket,
+      ]);
+      return {
+        command: result.command,
+        rowCount: result.rowCount,
+      };
+    }
   },
   async getPaymentsByDay(selectedDate) {
     let result;
