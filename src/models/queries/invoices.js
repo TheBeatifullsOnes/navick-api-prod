@@ -57,7 +57,7 @@ export const getInvoicesByRoute = `
       ON 
         i.id_client=c.id_client
       WHERE
-        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments_test p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
+        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
       ORDER BY 
         i.id_invoice 
       DESC`;
@@ -140,7 +140,7 @@ export const updateInvoiceStatus = `
 
 export const insertPaymentInCancel = `
         INSERT INTO
-          public.payments_test
+          public.payments
           (
             id_payment,
             type_serial, id_invoice, id_user,

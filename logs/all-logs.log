@@ -2451,3 +2451,17 @@ client.query():
 2022-08-12 08:58:18:5818 info: MODEL: validating if the : k676767 exist
 2022-08-12 08:58:18:5818 warn: MODEL: id Parment: k676767 not found
 2022-08-12 08:58:18:5818 info: PUT /api/v1/payments 200 612.495 ms - 121
+2022-08-12 11:16:12:1612 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:12:1612 info: App started,listening on port 8000
+2022-08-12 11:16:15:1615 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:15:1615 info: App started,listening on port 8000
+2022-08-12 11:16:24:1624 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:24:1624 info: App started,listening on port 8000
+2022-08-12 11:16:30:1630 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:30:1630 info: App started,listening on port 8000
+2022-08-12 11:16:41:1641 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:41:1641 info: App started,listening on port 8000
+2022-08-12 11:16:48:1648 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:48:1648 info: App started,listening on port 8000
+2022-08-12 11:16:54:1654 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:54:1654 info: App started,listening on port 8000
