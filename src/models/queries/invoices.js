@@ -27,6 +27,7 @@ export const getInvoices = `
         tp.id_tipopedido = i.type_payment
       WHERE 
         i.total_amount is not null`;
+
 export const getInvoiceByIdinvoice = `
     SELECT 
         id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
@@ -34,6 +35,7 @@ export const getInvoiceByIdinvoice = `
         public.invoices
     WHERE 
         id_invoice = $1`;
+
 export const insertInvoice = `
       INSERT INTO 
         public.invoices
@@ -44,6 +46,7 @@ export const insertInvoice = `
         )
       VALUES 
         (1, $1, $2, $3, $4, $5, $6, $7, $8) returning id_invoice`;
+
 export const getInvoicesByRoute = `
       SELECT 
         i.* 
@@ -54,10 +57,11 @@ export const getInvoicesByRoute = `
       ON 
         i.id_client=c.id_client
       WHERE
-        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
+        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments_test p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
       ORDER BY 
         i.id_invoice 
       DESC`;
+
 export const getInvoiceByClientId = `
     SELECT
         *
@@ -65,6 +69,7 @@ export const getInvoiceByClientId = `
         public.invoices
     WHERE
         id_client = $1`;
+
 export const updateInvoiceByIdinvoice = `
     UPDATE 
         public.invoices
@@ -74,6 +79,7 @@ export const updateInvoiceByIdinvoice = `
         discount=$8
     WHERE 
         id_invoice=$1`;
+
 export const getRemainingPaymentByIdinvoice = `
       SELECT 
         remaining_payment 
@@ -82,6 +88,7 @@ export const getRemainingPaymentByIdinvoice = `
       WHERE 
         id_invoice = $1
       `;
+
 export const updateRemainingPaymentByIdinvoice = `
       UPDATE 
         public.invoices
@@ -90,6 +97,7 @@ export const updateRemainingPaymentByIdinvoice = `
 	    WHERE 
         id_invoice =$1;
       `;
+
 export const insertDetailsInvoices = `
         INSERT INTO 
           public.details_invoices
@@ -98,6 +106,7 @@ export const insertDetailsInvoices = `
             quantity, price, id_warehouse
           )
 	      VALUES ($1, $2, $3, $4, $5, $6);`;
+
 export const getIvoicesByCurrentDay = `
       SELECT 
         i.* 
@@ -111,6 +120,7 @@ export const getIvoicesByCurrentDay = `
         date_trunc('day', i.created_at)::date = current_date
       AND 
         c.id_route = $1`;
+
 export const getRemainingPaymentToCancel = `
       SELECT 
         remaining_payment, status
@@ -118,6 +128,7 @@ export const getRemainingPaymentToCancel = `
         invoices 
       WHERE 
         id_invoice = $1`;
+
 export const updateInvoiceStatus = `
         UPDATE 
           public.invoices
@@ -126,15 +137,17 @@ export const updateInvoiceStatus = `
           remaining_payment=$2
         WHERE 
           id_invoice =$1`;
+
 export const insertPaymentInCancel = `
         INSERT INTO
-          public.payments
+          public.payments_test
           (
+            id_payment,
             type_serial, id_invoice, id_user,
             created_at, total_payment, status,
             updated_at, gps_location, comments,
             text_ticket, printed_ticket
           )
         VALUES
-          (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at at time zone 'UTC' as created_at;
+          ($9 ,3 , $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_payment, created_at at time zone 'UTC' as created_at;
       `;

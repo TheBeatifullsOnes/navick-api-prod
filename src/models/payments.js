@@ -20,7 +20,8 @@ export const addPaymentUpdateRemainingPayment = async (
   comments,
   timestamp,
   textTicket,
-  printedTicket
+  printedTicket,
+  idPayment
 ) => {
   const client = await connexion.connect();
   let executed = false;
@@ -68,6 +69,7 @@ export const addPaymentUpdateRemainingPayment = async (
           timestamp,
           textTicket,
           printedTicket,
+          idPayment,
         ],
         (err, result) => {
           if (err) {
@@ -121,18 +123,29 @@ export const getPaymentsByRoute = async (idRoute) => {
   return result.rows;
 };
 export const updateTicket = async (idPayment, textTicket, printedTicket) => {
-  console.log(isNaN(idPayment));
-  if (!isNaN(idPayment)) {
+  logger.info(`MODEL: validating if the : ${idPayment} exist`);
+  const paymentExist = await connexion.query(qrys.getPaymentsByPaymentId, [
+    idPayment,
+  ]);
+  const { rowCount } = paymentExist;
+  if (rowCount > 0) {
     const result = await connexion.query(qrys.queryTextUpdatePayment, [
       idPayment,
       textTicket,
       printedTicket,
     ]);
+    logger.info(
+      `MODEL: updating printted ticket: ${printedTicket} and text ticket: ${textTicket}`
+    );
     return {
       command: result.command,
       rowCount: result.rowCount,
     };
   }
+  logger.warn(`MODEL: id Parment: ${idPayment} not found`);
+  return {
+    errorMsg: "Error el pago no esta registrado en la base de datos",
+  };
 };
 export const getPaymentsByDay = async (selectedDate) => {
   let result;

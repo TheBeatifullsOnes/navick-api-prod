@@ -2283,3 +2283,171 @@ client.query():
 2022-07-18 09:55:17:5517 info: GET /api/v1/rutas 200 563.453 ms - 1751
 2022-07-18 09:55:24:5524 info: GET /api/v1/products 403 0.880 ms - 53
 2022-07-18 09:55:35:5535 info: GET /api/v1/products 200 179.591 ms - 2768
+2022-08-10 13:44:02:442 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:44:02:442 info: App started,listening on port 8000
+2022-08-10 13:44:22:4422 info: POST /login 500 525.839 ms - 66
+2022-08-10 13:45:24:4524 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:45:24:4524 info: App started,listening on port 8000
+2022-08-10 13:46:20:4620 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:46:20:4620 info: App started,listening on port 8000
+2022-08-10 13:46:26:4626 info: Model: username: ' having 1=1
+2022-08-10 13:46:26:4626 info: POST /login 500 514.678 ms - 66
+2022-08-10 13:46:38:4638 info: Model: username: ' having 1=1--
+2022-08-10 13:46:39:4639 info: POST /login 500 90.880 ms - 66
+2022-08-10 13:48:07:487 info: Model: username: '' having 1=1--
+2022-08-10 13:48:08:488 info: POST /login 500 480.580 ms - 66
+2022-08-10 13:48:42:4842 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:48:42:4842 info: App started,listening on port 8000
+2022-08-10 13:48:46:4846 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:48:46:4846 info: App started,listening on port 8000
+2022-08-10 13:49:04:494 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:49:04:494 info: App started,listening on port 8000
+2022-08-10 13:49:07:497 info: Model: username: '' having 1=1--
+2022-08-10 13:49:08:498 info: POST /login 500 530.958 ms - 66
+2022-08-10 13:49:26:4926 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:49:26:4926 info: App started,listening on port 8000
+2022-08-10 13:49:29:4929 info: Model: username: '' having 1=1--
+2022-08-10 13:49:29:4929 info: POST /login 500 530.835 ms - 66
+2022-08-10 13:52:27:5227 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:52:27:5227 info: App started,listening on port 8000
+2022-08-10 13:52:38:5238 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:52:38:5238 info: App started,listening on port 8000
+2022-08-10 13:52:53:5253 info: Model: username: DEV attempt to login
+2022-08-10 13:52:53:5253 info: POST /login 200 651.088 ms - 461
+2022-08-10 13:55:32:5532 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:55:32:5532 info: App started,listening on port 8000
+2022-08-11 09:15:41:1541 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:15:41:1541 info: App started,listening on port 8000
+2022-08-11 09:15:50:1550 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:15:50:1550 info: App started,listening on port 8000
+2022-08-11 09:15:51:1551 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:15:51:1551 info: App started,listening on port 8000
+2022-08-11 09:22:57:2257 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:22:57:2257 info: App started,listening on port 8000
+2022-08-11 09:23:40:2340 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:23:40:2340 info: App started,listening on port 8000
+2022-08-11 09:24:00:240 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:24:00:240 info: App started,listening on port 8000
+2022-08-11 09:24:27:2427 info: Model: username: DEV attempt to login
+2022-08-11 09:24:28:2428 info: POST /api/v1/payments 401 541.632 ms - 28
+2022-08-11 09:24:33:2433 info: Model: username: DEV attempt to login
+2022-08-11 09:24:33:2433 info: POST /login 200 203.727 ms - 461
+2022-08-11 09:25:15:2515 info: Model: username: DEV attempt to login
+2022-08-11 09:25:16:2516 info: Begin transaction
+2022-08-11 09:25:16:2516 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-11 09:25:16:2516 info: if exist Remaining Payment: 
+2022-08-11 09:25:16:2516 info: client.query() COMMIT row count on insert:
+2022-08-11 09:25:16:2516 info: POST /api/v1/payments 200 952.176 ms - 210
+2022-08-11 09:25:46:2546 info: Model: username: DEV attempt to login
+2022-08-11 09:25:46:2546 info: GET /api/v1/payments/byDay/2022-08-11 200 567.470 ms - 430
+2022-08-11 21:00:20:020 info: Model: username: DEV attempt to login
+2022-08-11 21:00:21:021 info: Begin transaction
+2022-08-11 21:00:21:021 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-11 21:00:21:021 info: if exist Remaining Payment: 
+2022-08-11 21:00:21:021 info: client.query() COMMIT row count on insert:
+2022-08-11 21:00:21:021 info: POST /api/v1/payments 200 988.998 ms - 209
+2022-08-11 21:00:30:030 info: Model: username: DEV attempt to login
+2022-08-11 21:00:31:031 info: GET /api/v1/payments/byDay/2022-08-11 200 582.859 ms - 804
+2022-08-11 21:01:54:154 info: Model: username: DEV attempt to login
+2022-08-11 21:01:54:154 info: GET /api/v1/payments/byWeek 200 576.417 ms - 3379
+2022-08-11 21:03:41:341 info: Model: username: DEV attempt to login
+2022-08-11 21:03:41:341 info: GET /api/v1/payments/byWeek 200 574.433 ms - 3379
+2022-08-11 21:05:42:542 info: Model: username: DEV attempt to login
+2022-08-11 21:05:43:543 info: GET /api/v1/usuarios 200 583.422 ms - 3323
+2022-08-11 21:06:15:615 info: Model: username: DEV attempt to login
+2022-08-11 21:06:15:615 info: GET /api/v1/clientes/auditReports/1 200 562.665 ms - 194
+2022-08-11 21:14:38:1438 info: Model: username: DEV attempt to login
+2022-08-11 21:14:39:1439 info: client.query() COMMIT row count: 1
+2022-08-11 21:14:39:1439 info: client.query() COMMIT row count: 1
+2022-08-11 21:14:39:1439 info: POST /api/v1/invoices 200 1008.141 ms - 114
+2022-08-11 21:18:07:187 info: POST /api/v1/invoices/cancel 403 18.494 ms - 53
+2022-08-11 21:18:35:1835 info: Model: username: DEV attempt to login
+2022-08-11 21:21:05:215 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:21:05:215 info: App started,listening on port 8000
+2022-08-11 21:21:38:2138 info: Model: username: DEV attempt to login
+2022-08-11 21:21:38:2138 info: client.query() COMMIT row count on insert:
+2022-08-11 21:21:39:2139 info: POST /api/v1/invoices/cancel 200 948.742 ms - 226
+2022-08-11 21:24:26:2426 info: Model: username: DEV attempt to login
+2022-08-11 21:24:27:2427 info: GET /api/v1/payments/byDay/2022-08-11 200 577.053 ms - 1179
+2022-08-11 21:32:35:3235 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:32:35:3235 info: App started,listening on port 8000
+2022-08-11 21:32:36:3236 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:32:36:3236 info: App started,listening on port 8000
+2022-08-11 21:33:09:339 info: Model: username: DEV attempt to login
+2022-08-11 21:33:09:339 info: PUT /api/v1/payments 200 523.955 ms - 54
+2022-08-11 21:33:27:3327 info: Model: username: DEV attempt to login
+2022-08-11 21:33:27:3327 info: PUT /api/v1/payments 200 530.470 ms - 54
+2022-08-11 21:34:55:3455 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:34:55:3455 info: App started,listening on port 8000
+2022-08-11 21:35:03:353 info: Model: username: DEV attempt to login
+2022-08-11 21:35:03:353 info: PUT /api/v1/payments 200 515.425 ms - 44
+2022-08-11 21:35:40:3540 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:35:40:3540 info: App started,listening on port 8000
+2022-08-11 21:35:44:3544 info: Model: username: DEV attempt to login
+2022-08-11 21:35:44:3544 info: PUT /api/v1/payments 200 520.438 ms - 44
+2022-08-11 21:44:59:4459 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:44:59:4459 info: App started,listening on port 8000
+2022-08-11 21:45:07:457 info: Model: username: DEV attempt to login
+2022-08-11 21:45:07:457 info: PUT /api/v1/payments 200 487.008 ms - 44
+2022-08-11 21:49:57:4957 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:49:57:4957 info: App started,listening on port 8000
+2022-08-12 08:37:49:3749 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:37:49:3749 info: App started,listening on port 8000
+2022-08-12 08:38:08:388 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:38:08:388 info: App started,listening on port 8000
+2022-08-12 08:38:18:3818 info: Model: username: DEV attempt to login
+2022-08-12 08:38:18:3818 info: PUT /api/v1/payments 200 527.068 ms - 54
+2022-08-12 08:38:54:3854 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:38:54:3854 info: App started,listening on port 8000
+2022-08-12 08:39:18:3918 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:39:18:3918 info: App started,listening on port 8000
+2022-08-12 08:39:20:3920 info: Model: username: DEV attempt to login
+2022-08-12 08:39:21:3921 info: PUT /api/v1/payments 200 529.467 ms - 44
+2022-08-12 08:40:15:4015 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:40:15:4015 info: App started,listening on port 8000
+2022-08-12 08:40:17:4017 info: Model: username: DEV attempt to login
+2022-08-12 08:40:18:4018 info: PUT /api/v1/payments 200 619.519 ms - 44
+2022-08-12 08:41:33:4133 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:41:33:4133 info: App started,listening on port 8000
+2022-08-12 08:41:42:4142 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:41:42:4142 info: App started,listening on port 8000
+2022-08-12 08:41:59:4159 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:41:59:4159 info: App started,listening on port 8000
+2022-08-12 08:42:02:422 info: Model: username: DEV attempt to login
+2022-08-12 08:42:03:423 info: PUT /api/v1/payments 200 601.511 ms - 44
+2022-08-12 08:42:29:4229 info: Model: username: DEV attempt to login
+2022-08-12 08:42:29:4229 info: PUT /api/v1/payments 200 271.148 ms - 87
+2022-08-12 08:47:42:4742 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:47:42:4742 info: App started,listening on port 8000
+2022-08-12 08:47:49:4749 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:47:49:4749 info: App started,listening on port 8000
+2022-08-12 08:47:51:4751 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:47:51:4751 info: App started,listening on port 8000
+2022-08-12 08:47:54:4754 info: Model: username: DEV attempt to login
+2022-08-12 08:47:55:4755 info: PUT /api/v1/payments 200 1332.661 ms - 121
+2022-08-12 08:48:02:482 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:02:482 info: App started,listening on port 8000
+2022-08-12 08:48:07:487 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:07:487 info: App started,listening on port 8000
+2022-08-12 08:48:31:4831 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:31:4831 info: App started,listening on port 8000
+2022-08-12 08:48:32:4832 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:32:4832 info: App started,listening on port 8000
+2022-08-12 08:48:38:4838 info: Model: username: DEV attempt to login
+2022-08-12 08:48:38:4838 info: PUT /api/v1/payments 200 613.423 ms - 121
+2022-08-12 08:48:43:4843 info: Model: username: DEV attempt to login
+2022-08-12 08:48:43:4843 info: PUT /api/v1/payments 200 268.828 ms - 87
+2022-08-12 08:51:42:5142 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:51:42:5142 info: App started,listening on port 8000
+2022-08-12 08:54:47:5447 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:54:47:5447 info: App started,listening on port 8000
+2022-08-12 08:54:58:5458 info: Model: username: DEV attempt to login
+2022-08-12 08:54:59:5459 info: MODEL: validating if the : k6767676 exist
+2022-08-12 08:54:59:5459 info: MODEL: updating printted ticket: true and text ticket: test from dev and logger
+2022-08-12 08:54:59:5459 info: PUT /api/v1/payments 200 697.558 ms - 87
+2022-08-12 08:58:13:5813 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:58:13:5813 info: App started,listening on port 8000
+2022-08-12 08:58:18:5818 info: Model: username: DEV attempt to login
+2022-08-12 08:58:18:5818 info: MODEL: validating if the : k676767 exist
+2022-08-12 08:58:18:5818 warn: MODEL: id Parment: k676767 not found
+2022-08-12 08:58:18:5818 info: PUT /api/v1/payments 200 612.495 ms - 121

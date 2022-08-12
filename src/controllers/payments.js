@@ -49,6 +49,7 @@ export const addPaymentUpdateRemainingPayment = async (req, res) => {
     comments,
     textTicket,
     printedTicket,
+    idPayment,
   } = req.body;
   const moment = req.timestamp;
   const timestamp = moment
@@ -63,7 +64,8 @@ export const addPaymentUpdateRemainingPayment = async (req, res) => {
       comments,
       timestamp,
       textTicket,
-      printedTicket
+      printedTicket,
+      idPayment
     )
     .then((sqlTransaction) => {
       if (sqlTransaction) {
@@ -115,13 +117,11 @@ export const updateTicket = (req, res) => {
   paymentsModel
     .updateTicket(idPayment, textTicket, printedTicket)
     .then((sqlResults) => {
-      // if (sqlResults) {
       res.json({
         statusCode: 200,
         statusMessage: "success",
         result: sqlResults,
       });
-      // }
     })
     .catch((error) => {
       res.json({

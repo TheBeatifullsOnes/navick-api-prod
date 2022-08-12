@@ -130,12 +130,14 @@ export const insertInvoiceAndDetailTransaction = async (
   }
   return executed;
 };
+
 export const getInvoicesByCurrentDay = async (idInvoice) => {
   const result = await connexion.query(qrys.getIvoicesByCurrentDay, [
     idInvoice,
   ]);
   return result.rows;
 };
+
 export const cancelInvoices = async (
   idInvoice,
   idUser,
@@ -144,7 +146,8 @@ export const cancelInvoices = async (
   comments,
   textTicket,
   printedTicket,
-  timestamp
+  timestamp,
+  idPayment
 ) => {
   const client = await connexion.connect();
 
@@ -159,9 +162,6 @@ export const cancelInvoices = async (
       idInvoice,
     ]);
     const { remaining_payment, status } = result.rows[0];
-    console.log(
-      `Valido que si hay un pago restante existe la factura ${idInvoice} ${remaining_payment}`
-    );
     // if remaining_payment the invoice exist
     if (remaining_payment) {
       // if an ammount exist create a payment
@@ -196,9 +196,6 @@ export const cancelInvoices = async (
           }
         );
         if (amount !== 0) {
-          console.log(
-            `El amount es mayor que 0 y hago una insercion de un abono: ${amount} status:${status}`
-          );
           await client.query(
             qrys.insertPaymentInCancel,
             [
@@ -210,6 +207,7 @@ export const cancelInvoices = async (
               textTicket,
               printedTicket,
               timestamp,
+              idPayment,
             ],
             (err, result) => {
               if (err) {
@@ -222,7 +220,7 @@ export const cancelInvoices = async (
               queryPayment = {
                 result: result.rows[0],
               };
-              console.log(
+              logger.info(
                 "client.query() COMMIT row count on insert:",
                 result.rowCount
               );

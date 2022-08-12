@@ -2,16 +2,25 @@ export const getPayments = `
       SELECT 
         *
       FROM 
-        public.payments 
+        public.payments_test
       ORDER BY 
-        id_abono`;
+        id_payment`;
 export const getPaymentsByInvoiceId = `
       SELECT 
           *
       FROM 
-          public.payments
+          public.payments_test
       WHERE 
           id_invoice =$1
+        `;
+
+export const getPaymentsByPaymentId = `
+      SELECT 
+          *
+      FROM 
+          public.payments_test
+      WHERE 
+          id_payment =$1
         `;
 export const queryTextGetInvoiceId = `
       SELECT 
@@ -30,15 +39,16 @@ export const queryTextUpdateInvoiceRP = `
       `;
 export const queryTextInsertPayment = `
       INSERT INTO
-        public.payments
+        public.payments_test
         (
+          id_payment,
           type_serial, id_invoice, id_user,
           created_at, total_payment, status,
           updated_at, gps_location, comments,
           text_ticket, printed_ticket
         )
       VALUES
-        (3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_abono, created_at at time zone 'UTC' as created_at;
+        ($9,3,$1, $2, $6, $3, 1, null, $4, $5, $7, $8) returning id_payment, created_at at time zone 'UTC' as created_at;
     `;
 
 export const queryTextUpdateInvoiceStatus = `
@@ -50,9 +60,9 @@ export const queryTextUpdateInvoiceStatus = `
         id_invoice =$1`;
 export const queryStringPaymentsByRoute = `
       SELECT 
-        p.id_abono, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
+        p.id_payment, p.created_at, p.total_payment, p.id_invoice, p.text_ticket, p.printed_ticket
       FROM 
-        payments p
+        public.payments_test p
       INNER JOIN 
         users u
       ON
@@ -72,7 +82,7 @@ export const queryTextGetPaymentsByDay2 = `
       SELECT 
         p.* , c.name as client_name, c.latitude, c.longitude
       FROM 
-        payments p
+        public.payments_test p
       INNER JOIN
         invoices i
       ON
@@ -87,7 +97,7 @@ export const queryTextGetPaymentsByDay = `
       SELECT 
         p.* , c.name
       FROM 
-        payments p
+        public.payments_test p
       INNER JOIN
         invoices i
       ON
@@ -105,8 +115,8 @@ export const fnGetPaymentsByWeek = `
       public.fn_payments_by_week($1, $2)`;
 export const queryTextUpdatePayment = `
     UPDATE 
-      PUBLIC.payments
+      PUBLIC.payments_test
     SET 
       text_ticket=$2, printed_ticket=$3
     WHERE 
-      id_abono=$1`;
+      id_payment=$1`;
