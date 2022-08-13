@@ -30,19 +30,55 @@ export const addPaymentUpdateRemainingPayment = async (
     // Transaction start
     await client.query("BEGIN");
     logger.info("Begin transaction");
-    // Getting remainingPayment FROM invoice
-    logger.info(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
-    const getRemaningPaymentByInvoiceId = await client.query(
-      qrys.queryTextGetInvoiceId,
-      [idInvoice]
-    );
-    const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
-    if (remaining_payment) {
-      logger.info("if exist Remaining Payment: ", remaining_payment);
-      if (remaining_payment - amount === 0) {
+
+    logger.info(`MODEL: validating if the : ${idPayment} exist`);
+    const paymentExist = await connexion.query(qrys.getPaymentsByPaymentId, [
+      idPayment,
+    ]);
+    const { rowCount } = paymentExist;
+    if (rowCount === 0) {
+      // Getting remainingPayment FROM invoice
+      logger.info(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
+      const getRemaningPaymentByInvoiceId = await client.query(
+        qrys.queryTextGetInvoiceId,
+        [idInvoice]
+      );
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
+
+      if (remaining_payment) {
+        logger.info("if exist Remaining Payment: ", remaining_payment);
+        if (remaining_payment - amount === 0) {
+          await client.query(
+            qrys.queryTextUpdateInvoiceStatus,
+            [idInvoice],
+            (err, result) => {
+              if (err) {
+                executed = false;
+                logger.info("\nclient.query():", err);
+                // Rollback before executing another transaction
+                client.query("ROLLBACK");
+              }
+              logger.info(
+                "client.query() COMMIT row count on update:",
+                result.rowCount
+              );
+            }
+          );
+        }
+        //insert payment row
         await client.query(
-          qrys.queryTextUpdateInvoiceStatus,
-          [idInvoice],
+          qrys.queryTextInsertPayment,
+          [
+            idInvoice,
+            idUser,
+            amount,
+            locationGPS,
+            comments,
+            timestamp,
+            textTicket,
+            printedTicket,
+            idPayment,
+          ],
           (err, result) => {
             if (err) {
               executed = false;
@@ -50,62 +86,37 @@ export const addPaymentUpdateRemainingPayment = async (
               // Rollback before executing another transaction
               client.query("ROLLBACK");
             }
+            executed = true;
+            sqlResult = result.rows[0];
             logger.info(
+              "client.query() COMMIT row count on insert:",
+              result.rowCount
+            );
+          }
+        );
+
+        // Update the remaining payment
+        await client.query(
+          qrys.queryTextUpdateInvoiceRP,
+          [idInvoice, remaining_payment - amount],
+          (err, result) => {
+            if (err) {
+              executed = false;
+              console.log("\nclient.query():", err);
+              // Rollback before executing another transaction
+              client.query("ROLLBACK");
+              console.log("Transaction ROLLBACK called");
+            }
+            executed = true;
+            console.log(
               "client.query() COMMIT row count on update:",
               result.rowCount
             );
           }
         );
       }
-      //insert payment row
-      await client.query(
-        qrys.queryTextInsertPayment,
-        [
-          idInvoice,
-          idUser,
-          amount,
-          locationGPS,
-          comments,
-          timestamp,
-          textTicket,
-          printedTicket,
-          idPayment,
-        ],
-        (err, result) => {
-          if (err) {
-            executed = false;
-            logger.info("\nclient.query():", err);
-            // Rollback before executing another transaction
-            client.query("ROLLBACK");
-          }
-          executed = true;
-          sqlResult = result.rows[0];
-          logger.info(
-            "client.query() COMMIT row count on insert:",
-            result.rowCount
-          );
-        }
-      );
-
-      // Update the remaining payment
-      await client.query(
-        qrys.queryTextUpdateInvoiceRP,
-        [idInvoice, remaining_payment - amount],
-        (err, result) => {
-          if (err) {
-            executed = false;
-            console.log("\nclient.query():", err);
-            // Rollback before executing another transaction
-            client.query("ROLLBACK");
-            console.log("Transaction ROLLBACK called");
-          }
-          executed = true;
-          console.log(
-            "client.query() COMMIT row count on update:",
-            result.rowCount
-          );
-        }
-      );
+    } else {
+      executed = false;
     }
     await client.query("COMMIT");
     await client.release(true);

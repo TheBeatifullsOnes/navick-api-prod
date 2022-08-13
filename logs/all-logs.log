@@ -2465,3 +2465,83 @@ client.query():
 2022-08-12 11:16:48:1648 info: App started,listening on port 8000
 2022-08-12 11:16:54:1654 info: Se establecio la conexion a la base de datos 
 2022-08-12 11:16:54:1654 info: App started,listening on port 8000
+2022-08-13 10:38:12:3812 info: Model: username: DEV attempt to login
+2022-08-13 10:38:13:3813 info: POST /login 200 699.601 ms - 461
+2022-08-13 10:39:19:3919 info: Model: username: DEV attempt to login
+2022-08-13 10:39:20:3920 info: Begin transaction
+2022-08-13 10:39:20:3920 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 10:39:20:3920 info: if exist Remaining Payment: 
+2022-08-13 10:39:20:3920 info: 
+client.query(): duplicate key value violates unique constraint "payments_pkey"
+2022-08-13 10:41:48:4148 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:41:48:4148 info: App started,listening on port 8000
+2022-08-13 10:43:16:4316 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:43:16:4316 info: App started,listening on port 8000
+2022-08-13 10:43:20:4320 info: Model: username: DEV attempt to login
+2022-08-13 10:43:21:4321 info: Begin transaction
+2022-08-13 10:43:21:4321 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:43:22:4322 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 10:43:22:4322 info: if exist Remaining Payment: 
+2022-08-13 10:43:22:4322 info: 
+client.query(): duplicate key value violates unique constraint "payments_pkey"
+2022-08-13 10:43:35:4335 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:43:35:4335 info: App started,listening on port 8000
+2022-08-13 10:43:38:4338 info: Model: username: DEV attempt to login
+2022-08-13 10:43:38:4338 info: Begin transaction
+2022-08-13 10:43:38:4338 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:43:39:4339 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 10:43:39:4339 info: if exist Remaining Payment: 
+2022-08-13 10:43:39:4339 info: 
+client.query(): duplicate key value violates unique constraint "payments_pkey"
+2022-08-13 10:45:46:4546 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:45:46:4546 info: App started,listening on port 8000
+2022-08-13 10:45:56:4556 info: Model: username: DEV attempt to login
+2022-08-13 10:45:56:4556 info: Begin transaction
+2022-08-13 10:45:56:4556 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:45:57:4557 info: POST /api/v1/payments 200 1221.394 ms - 149
+2022-08-13 10:47:51:4751 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:47:51:4751 info: App started,listening on port 8000
+2022-08-13 10:48:17:4817 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:48:17:4817 info: App started,listening on port 8000
+2022-08-13 10:48:29:4829 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:48:29:4829 info: App started,listening on port 8000
+2022-08-13 10:49:23:4923 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:49:23:4923 info: App started,listening on port 8000
+2022-08-13 10:49:25:4925 info: Model: username: DEV attempt to login
+2022-08-13 10:49:25:4925 info: Begin transaction
+2022-08-13 10:49:25:4925 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:49:26:4926 info: POST /api/v1/payments 200 1190.000 ms - 54
+2022-08-13 10:49:43:4943 info: Model: username: DEV attempt to login
+2022-08-13 10:49:43:4943 info: Begin transaction
+2022-08-13 10:49:43:4943 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:49:44:4944 info: POST /api/v1/payments 200 777.254 ms - 54
+2022-08-13 10:50:34:5034 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:50:34:5034 info: App started,listening on port 8000
+2022-08-13 10:50:37:5037 info: Model: username: DEV attempt to login
+2022-08-13 10:50:38:5038 info: Begin transaction
+2022-08-13 10:50:38:5038 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:50:38:5038 info: POST /api/v1/payments 200 1190.437 ms - 54
+2022-08-13 10:51:39:5139 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:51:39:5139 info: App started,listening on port 8000
+2022-08-13 10:51:41:5141 info: Model: username: DEV attempt to login
+2022-08-13 10:51:41:5141 info: Begin transaction
+2022-08-13 10:51:41:5141 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:51:42:5142 info: POST /api/v1/payments 200 1193.502 ms - 149
+2022-08-13 10:52:26:5226 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:52:26:5226 info: App started,listening on port 8000
+2022-08-13 10:52:33:5233 info: Model: username: DEV attempt to login
+2022-08-13 10:52:33:5233 info: Begin transaction
+2022-08-13 10:52:33:5233 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:52:34:5234 info: POST /api/v1/payments 200 1186.091 ms - 188
+2022-08-13 10:52:56:5256 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:52:56:5256 info: App started,listening on port 8000
+2022-08-13 10:52:57:5257 info: Model: username: DEV attempt to login
+2022-08-13 10:52:58:5258 info: Begin transaction
+2022-08-13 10:52:58:5258 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:52:58:5258 info: POST /api/v1/payments 200 1209.662 ms - 158
+2022-08-13 10:53:07:537 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:53:07:537 info: App started,listening on port 8000
+2022-08-13 10:53:10:5310 info: Model: username: DEV attempt to login
+2022-08-13 10:53:11:5311 info: Begin transaction
+2022-08-13 10:53:11:5311 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:53:11:5311 info: POST /api/v1/payments 200 1182.717 ms - 141

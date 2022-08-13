@@ -68,17 +68,19 @@ export const addPaymentUpdateRemainingPayment = async (req, res) => {
       idPayment
     )
     .then((sqlTransaction) => {
-      if (sqlTransaction) {
+      const { executed } = sqlTransaction;
+      console.log(executed);
+
+      if (executed) {
         res.json({
           statusCode: 200,
           statusMessage: "success",
           result: { message: "Abono agregado correctamente", sqlTransaction },
         });
-      } else if (!sqlTransaction) {
+      } else {
         res.json({
-          statusCode: 500,
+          statusCode: 400,
           statusMessage: "error",
-          executed: sqlTransaction,
           result: { message: "Error al agregar abono", sqlTransaction },
         });
       }
