@@ -44,10 +44,16 @@ export const addPaymentUpdateRemainingPayment = async (
         [idInvoice]
       );
       const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
-
+      /*
+      TODO 
+      refactorizar el update para cuando se salda la factura 
+      A)
+      */
       if (remaining_payment) {
+        // agregar validacion para que el saldo sea positivo
         logger.info("if exist Remaining Payment: ", remaining_payment);
         if (remaining_payment - amount === 0) {
+          // validar que la resta no sea negativa
           await client.query(
             qrys.queryTextUpdateInvoiceStatus,
             [idInvoice],
@@ -65,7 +71,7 @@ export const addPaymentUpdateRemainingPayment = async (
             }
           );
         }
-        //insert payment row
+        //insert payment row b)
         await client.query(
           qrys.queryTextInsertPayment,
           [
@@ -102,13 +108,13 @@ export const addPaymentUpdateRemainingPayment = async (
           (err, result) => {
             if (err) {
               executed = false;
-              console.log("\nclient.query():", err);
+              logger.info("\nclient.query():", err);
               // Rollback before executing another transaction
               client.query("ROLLBACK");
-              console.log("Transaction ROLLBACK called");
+              logger.info("Transaction ROLLBACK called");
             }
             executed = true;
-            console.log(
+            logger.info(
               "client.query() COMMIT row count on update:",
               result.rowCount
             );

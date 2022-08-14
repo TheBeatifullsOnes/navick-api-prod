@@ -69,8 +69,6 @@ export const addPaymentUpdateRemainingPayment = async (req, res) => {
     )
     .then((sqlTransaction) => {
       const { executed } = sqlTransaction;
-      console.log(executed);
-
       if (executed) {
         res.json({
           statusCode: 200,
@@ -156,7 +154,6 @@ export const getPaymentsByDay = (req, res) => {
 
 export const getPaymentsByWeek = (req, res) => {
   const { startDate, endDate } = req.body;
-  console.log(startDate, endDate);
   paymentsModel
     .getPaymentsByWeek(startDate, endDate)
     .then((sqlResult) => {

@@ -2545,3 +2545,119 @@ client.query(): duplicate key value violates unique constraint "payments_pkey"
 2022-08-13 10:53:11:5311 info: Begin transaction
 2022-08-13 10:53:11:5311 info: MODEL: validating if the : L2525259 exist
 2022-08-13 10:53:11:5311 info: POST /api/v1/payments 200 1182.717 ms - 141
+2022-08-13 20:02:48:248 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:02:48:248 info: App started,listening on port 8000
+2022-08-13 20:03:07:37 info: Model: username: DEV attempt to login
+2022-08-13 20:03:08:38 info: Begin transaction
+2022-08-13 20:03:08:38 info: MODEL: validating if the : L2525259 exist
+2022-08-13 20:03:08:38 info: POST /api/v1/payments 200 1166.209 ms - 141
+2022-08-13 20:03:17:317 info: Model: username: DEV attempt to login
+2022-08-13 20:03:17:317 info: Begin transaction
+2022-08-13 20:03:17:317 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:03:18:318 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 20:03:18:318 info: if exist Remaining Payment: 
+2022-08-13 20:03:18:318 info: client.query() COMMIT row count on insert:
+2022-08-13 20:03:18:318 info: POST /api/v1/payments 200 1003.395 ms - 209
+2022-08-13 20:09:12:912 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:09:12:912 info: App started,listening on port 8000
+2022-08-13 20:28:12:2812 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:12:2812 info: App started,listening on port 8000
+2022-08-13 20:28:12:2812 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:12:2812 info: App started,listening on port 8000
+2022-08-13 20:28:14:2814 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:14:2814 info: App started,listening on port 8000
+2022-08-13 20:28:35:2835 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:35:2835 info: App started,listening on port 8000
+2022-08-13 20:29:00:290 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:00:290 info: App started,listening on port 8000
+2022-08-13 20:29:22:2922 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:22:2922 info: App started,listening on port 8000
+2022-08-13 20:29:29:2929 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:29:2929 info: App started,listening on port 8000
+2022-08-13 20:29:35:2935 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:35:2935 info: App started,listening on port 8000
+2022-08-13 20:30:04:304 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:30:04:304 info: App started,listening on port 8000
+2022-08-13 20:30:09:309 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:30:09:309 info: App started,listening on port 8000
+2022-08-13 20:31:28:3128 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:31:28:3128 info: App started,listening on port 8000
+2022-08-13 20:32:34:3234 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:32:34:3234 info: App started,listening on port 8000
+2022-08-13 20:32:40:3240 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:32:40:3240 info: App started,listening on port 8000
+2022-08-13 20:33:17:3317 info: Model: username: DEV attempt to login
+2022-08-13 20:33:18:3318 info: Begin transaction
+2022-08-13 20:33:18:3318 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:34:53:3453 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:34:53:3453 info: App started,listening on port 8000
+2022-08-13 20:35:06:356 info: Model: username: DEV attempt to login
+2022-08-13 20:35:07:357 info: Begin transaction
+2022-08-13 20:35:07:357 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:35:07:357 info: POST /api/v1/invoices/cancel 200 1182.765 ms - 126
+2022-08-13 20:36:44:3644 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:36:44:3644 info: App started,listening on port 8000
+2022-08-13 20:36:47:3647 info: Model: username: DEV attempt to login
+2022-08-13 20:36:47:3647 info: Begin transaction
+2022-08-13 20:36:47:3647 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:36:48:3648 info: POST /api/v1/invoices/cancel 500 1173.790 ms - 83
+2022-08-13 20:37:17:3717 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:37:17:3717 info: App started,listening on port 8000
+2022-08-13 20:37:42:3742 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:37:42:3742 info: App started,listening on port 8000
+2022-08-13 20:38:10:3810 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:38:10:3810 info: App started,listening on port 8000
+2022-08-13 20:38:12:3812 info: Model: username: DEV attempt to login
+2022-08-13 20:38:13:3813 info: Begin transaction
+2022-08-13 20:38:13:3813 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:38:14:3814 info: POST /api/v1/invoices/cancel 500 1163.264 ms - 83
+2022-08-13 20:39:21:3921 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:39:21:3921 info: App started,listening on port 8000
+2022-08-13 20:39:24:3924 info: Model: username: DEV attempt to login
+2022-08-13 20:39:24:3924 info: Begin transaction
+2022-08-13 20:39:24:3924 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:39:25:3925 info: POST /api/v1/invoices/cancel 500 1182.505 ms - 83
+2022-08-13 20:40:14:4014 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:40:14:4014 info: App started,listening on port 8000
+2022-08-13 20:41:24:4124 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:41:24:4124 info: App started,listening on port 8000
+2022-08-13 20:41:25:4125 info: Model: username: DEV attempt to login
+2022-08-13 20:41:26:4126 info: Begin transaction
+2022-08-13 20:41:26:4126 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:41:26:4126 info: POST /api/v1/invoices/cancel 500 1200.543 ms - 83
+2022-08-13 20:41:58:4158 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:41:58:4158 info: App started,listening on port 8000
+2022-08-13 20:42:01:421 info: Model: username: DEV attempt to login
+2022-08-13 20:42:02:422 info: Begin transaction
+2022-08-13 20:42:02:422 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:42:02:422 info: POST /api/v1/invoices/cancel 500 1195.789 ms - 83
+2022-08-13 20:44:15:4415 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:44:15:4415 info: App started,listening on port 8000
+2022-08-13 20:44:21:4421 info: Model: username: DEV attempt to login
+2022-08-13 20:44:22:4422 info: Begin transaction
+2022-08-13 20:44:22:4422 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:44:22:4422 info: POST /api/v1/invoices/cancel 500 1191.260 ms - 83
+2022-08-13 20:44:59:4459 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:44:59:4459 info: App started,listening on port 8000
+2022-08-13 20:45:01:451 info: Model: username: DEV attempt to login
+2022-08-13 20:45:02:452 info: Begin transaction
+2022-08-13 20:45:02:452 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:45:02:452 info: POST /api/v1/invoices/cancel 400 1184.836 ms - 83
+2022-08-13 20:46:55:4655 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:46:55:4655 info: App started,listening on port 8000
+2022-08-13 20:47:01:471 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:47:01:471 info: App started,listening on port 8000
+2022-08-13 20:47:15:4715 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:47:15:4715 info: App started,listening on port 8000
+2022-08-13 20:47:47:4747 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:47:47:4747 info: App started,listening on port 8000
+2022-08-13 20:47:50:4750 info: Model: username: DEV attempt to login
+2022-08-13 20:47:51:4751 info: Begin transaction
+2022-08-13 20:47:51:4751 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:47:52:4752 info: POST /api/v1/invoices/cancel 500 1216.612 ms - 90
+2022-08-13 20:50:45:5045 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:50:45:5045 info: App started,listening on port 8000
+2022-08-13 20:50:48:5048 info: Model: username: DEV attempt to login
+2022-08-13 20:50:49:5049 info: Begin transaction
+2022-08-13 20:50:49:5049 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:50:49:5049 info: POST /api/v1/invoices/cancel 400 1171.660 ms - 105

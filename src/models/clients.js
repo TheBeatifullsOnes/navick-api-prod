@@ -152,7 +152,7 @@ export const deleteClient = async (idClient) => {
       await client.query(qrys.deleteClient, [idClient], (err, result) => {
         if (err) {
           executed = false;
-          console.log("\nclient.query():", err);
+          logger.info("\nclient.query():", err);
           // Rollback before executing another transaction
           client.query("ROLLBACK");
           logger.info("Transaction ROLLBACK called");

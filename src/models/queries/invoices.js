@@ -151,3 +151,11 @@ export const insertPaymentInCancel = `
         VALUES
           ($9 ,3 , $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_payment, created_at at time zone 'UTC' as created_at;
       `;
+export const getPaymentsByPaymentId = `
+      SELECT 
+          *
+      FROM 
+          public.payments
+      WHERE 
+          id_payment =$1
+        `;

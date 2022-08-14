@@ -218,19 +218,21 @@ export const cancelInvoices = async (req, res) => {
       timestamp,
       idPayment
     )
-    .then((sqlResult) => {
-      if (!sqlResult) {
-        res.status(500).json({
-          statusCode: 500,
+    .then((sqlResultPayload) => {
+      const { executed, sqlResult } = sqlResultPayload;
+      if (executed) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: sqlResult,
+        });
+      } else {
+        res.status(400).json({
+          statusCode: 400,
           statusMessage: "error",
-          result: "algo salio mal en la consulta",
+          result: sqlResult.queryPayment.message,
         });
       }
-      res.status(200).json({
-        statusCode: 200,
-        statusMessage: "success",
-        result: sqlResult,
-      });
     })
     .catch((error) => {
       res.status(500).json({

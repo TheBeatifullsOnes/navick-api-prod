@@ -36,7 +36,6 @@ export const insertVisits = (req, res) => {
   const timestamp = moment
     .tz("America/Mexico_City")
     .format("YYYY-MM-DD HH:mm:ss");
-  console.log(timestamp, "soy la insercion del tmstp");
   model
     .insertVisits(
       idClient,
