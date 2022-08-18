@@ -2661,3 +2661,29 @@ client.query(): duplicate key value violates unique constraint "payments_pkey"
 2022-08-13 20:50:49:5049 info: Begin transaction
 2022-08-13 20:50:49:5049 info: MODEL: validating if the : L2525258 exist
 2022-08-13 20:50:49:5049 info: POST /api/v1/invoices/cancel 400 1171.660 ms - 105
+2022-08-18 10:50:29:5029 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:50:29:5029 info: App started,listening on port 8000
+2022-08-18 10:51:24:5124 info: Model: username: DEV attempt to login
+2022-08-18 10:51:24:5124 info: PUT /api/v1/usuarios 401 505.799 ms - 28
+2022-08-18 10:51:32:5132 info: Model: username: DEV attempt to login
+2022-08-18 10:51:32:5132 info: POST /login 200 194.788 ms - 480
+2022-08-18 10:51:48:5148 info: Model: username: DEV attempt to login
+2022-08-18 10:51:48:5148 info: PUT /api/v1/usuarios 200 169.891 ms - 87
+2022-08-18 10:56:22:5622 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:56:22:5622 info: App started,listening on port 8000
+2022-08-18 10:56:35:5635 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:56:35:5635 info: App started,listening on port 8000
+2022-08-18 10:56:39:5639 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:56:39:5639 info: App started,listening on port 8000
+2022-08-18 10:57:05:575 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:57:05:575 info: App started,listening on port 8000
+2022-08-18 10:57:55:5755 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:57:55:5755 info: App started,listening on port 8000
+2022-08-18 10:58:06:586 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:58:06:586 info: App started,listening on port 8000
+2022-08-18 11:02:35:235 info: Model: username: DEV attempt to login
+2022-08-18 11:02:35:235 info: PUT /api/v1/usuarios 200 736.041 ms - 87
+2022-08-18 11:03:48:348 info: Se establecio la conexion a la base de datos 
+2022-08-18 11:03:48:348 info: App started,listening on port 8000
+2022-08-18 11:03:54:354 info: Model: username: DEV attempt to login
+2022-08-18 11:03:54:354 info: PUT /api/v1/usuarios 200 618.928 ms - 87
