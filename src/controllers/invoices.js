@@ -1,7 +1,7 @@
-const invoiceModel = require("../models/invoices");
-const logger = require("../utils/logger");
+import * as invoiceModel from "../models/invoices.js";
+import logger from "../utils/logger.js";
 
-exports.getInvoices = (req, res) => {
+export const getInvoices = (req, res) => {
   invoiceModel
     .getInvoices()
     .then((response) => {
@@ -24,7 +24,7 @@ exports.getInvoices = (req, res) => {
     });
 };
 
-exports.getInvoice = (req, res) => {
+export const getInvoice = (req, res) => {
   const { idInvoice } = req.params;
   invoiceModel
     .getInvoice(idInvoice)
@@ -48,7 +48,7 @@ exports.getInvoice = (req, res) => {
     });
 };
 
-exports.getInvoicesByRoute = (req, res) => {
+export const getInvoicesByRoute = (req, res) => {
   const { idRoute } = req.params;
   invoiceModel
     .getInvoicesByRoute(idRoute)
@@ -68,7 +68,7 @@ exports.getInvoicesByRoute = (req, res) => {
     });
 };
 
-exports.addInvoice = (req, res) => {
+export const addInvoice = (req, res) => {
   const {
     idClient,
     typePayment,
@@ -77,7 +77,10 @@ exports.addInvoice = (req, res) => {
     discount,
     detailInvoice,
   } = req.body;
-
+  const moment = req.timestamp;
+  const timestamp = moment
+    .tz("America/Mexico_City")
+    .format("YYYY-MM-DD HH:mm:ss");
   invoiceModel
     .insertInvoiceAndDetailTransaction(
       idClient,
@@ -85,7 +88,8 @@ exports.addInvoice = (req, res) => {
       status,
       expirationDate,
       discount,
-      detailInvoice
+      detailInvoice,
+      timestamp
     )
     .then((sqlTransactionResult) => {
       if (sqlTransactionResult) {
@@ -97,23 +101,23 @@ exports.addInvoice = (req, res) => {
         });
       } else if (!sqlTransactionResult) {
         res.json({
-          statusCode: 500,
+          statusCode: 400,
           statusMessage: "error",
           executed: sqlTransactionResult,
-          result: "Error en la transaccion",
+          result: "Error al intentar añadir Factura",
         });
       }
     })
     .catch((error) => {
       res.json({
         statusCode: 500,
-        statusMessage: "Error al intentar añadir Factura",
+        statusMessage: error,
         result: error,
       });
     });
 };
 
-exports.updateInvoice = (req, res) => {
+export const updateInvoice = (req, res) => {
   const {
     idFactura,
     idCliente,
@@ -160,7 +164,7 @@ exports.updateInvoice = (req, res) => {
     });
 };
 
-exports.getInvoicesByCurrentDay = (req, res) => {
+export const getInvoicesByCurrentDay = (req, res) => {
   const { idRoute } = req.params;
   invoiceModel
     .getInvoicesByCurrentDay(idRoute)
@@ -187,7 +191,7 @@ exports.getInvoicesByCurrentDay = (req, res) => {
     });
 };
 
-exports.cancelInvoices = async (req, res) => {
+export const cancelInvoices = async (req, res) => {
   const {
     idInvoice,
     idUser,
@@ -196,6 +200,7 @@ exports.cancelInvoices = async (req, res) => {
     comments,
     textTicket,
     printedTicket,
+    idPayment,
   } = req.body;
   const moment = req.timestamp;
   const timestamp = moment
@@ -210,21 +215,24 @@ exports.cancelInvoices = async (req, res) => {
       comments,
       textTicket,
       printedTicket,
-      timestamp
+      timestamp,
+      idPayment
     )
-    .then((sqlResult) => {
-      if (!sqlResult) {
-        res.status(500).json({
-          statusCode: 500,
+    .then((sqlResultPayload) => {
+      const { executed, sqlResult } = sqlResultPayload;
+      if (executed) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: sqlResult,
+        });
+      } else {
+        res.status(400).json({
+          statusCode: 400,
           statusMessage: "error",
-          result: "algo salio mal en la consulta",
+          result: sqlResult.queryPayment.message,
         });
       }
-      res.status(200).json({
-        statusCode: 200,
-        statusMessage: "success",
-        result: sqlResult,
-      });
     })
     .catch((error) => {
       res.status(500).json({

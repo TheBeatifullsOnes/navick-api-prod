@@ -1,10 +1,17 @@
-const express = require("express");
-const router = express.Router();
-const visitsController = require("../controllers/visits");
+import express from "express";
+import { ensureAuthenticated } from "../middlewares/auth.js";
+import {
+  getVisits,
+  insertVisits,
+  updateVisits,
+  deleteVisits,
+} from "../controllers/visits.js";
 
-router.get("/", visitsController.getVisits);
-router.post("/", visitsController.insertVisits);
-router.put("/", visitsController.updateVisits);
-router.delete("/:idVisit", visitsController.deleteVisits);
+const routesVisits = express.Router();
 
-module.exports = router;
+routesVisits.get("/", ensureAuthenticated, getVisits);
+routesVisits.post("/", ensureAuthenticated, insertVisits);
+routesVisits.put("/", ensureAuthenticated, updateVisits);
+routesVisits.delete("/:idVisit", ensureAuthenticated, deleteVisits);
+
+export default routesVisits;

@@ -1,355 +1,173 @@
-const connexion = require("../config/bdConnexion");
-const logger = require("../utils/logger");
+import connexion from "../config/bdConnexion.js";
+import logger from "../utils/logger.js";
+import * as qrys from "./queries/invoices.js";
 
-module.exports = {
-  async getInvoices() {
-    const result = await connexion.query(
-      `
-      SELECT 
-        ts.name as id_type_serial,
-        i.id_invoice, 
-        c.name as name_client,
-        i.id_client,
-        tp.descripcion as type_payment,
-        i.status, 
-        i.created_at, 
-        i.expiration_date, 
-        i.total_amount, 
-        i.remaining_payment, 
-        i.discount
-      FROM 
-        public.invoices i
-      INNER JOIN
-        public.type_serial ts
-      ON
-        ts.id_type_serial=i.id_type_serial
-      INNER JOIN
-        public.clients c
-      ON 
-        i.id_client= c.id_client
-      INNER JOIN
-        public.tipopedido tp
-      ON 
-        tp.id_tipopedido = i.type_payment
-      WHERE 
-        i.total_amount is not null`
-    );
-    return result.rows;
-  },
-  async getInvoice(idInvoice) {
-    const result = await connexion.query(
-      `SELECT 
-        id_invoice,  id_client,  type_payment, status, created_at, expiration_date, total_amount, remaining_payment, discount
-    	FROM 
-        public.invoices
-      WHERE 
-        id_invoice = $1`,
-      [idInvoice]
-    );
-    return result.rows;
-  },
-  async createInvoice(
+export const getInvoices = async () => {
+  const result = await connexion.query(qrys.getInvoices);
+  return result.rows;
+};
+export const getInvoice = async (idInvoice) => {
+  const result = await connexion.query(qrys.getInvoiceByIdinvoice, [idInvoice]);
+  return result.rows;
+};
+
+export const getInvoicesByRoute = async (idRoute) => {
+  const invoicesByRoute = await connexion.query(qrys.getInvoicesByRoute, [
+    idRoute,
+  ]);
+  return invoicesByRoute.rows;
+};
+
+export const getInvoiceByClientId = async (idClient) => {
+  const facturasByCliente = await connexion.query(qrys.getInvoiceByClientId, [
     idClient,
-    typePayment,
-    status,
-    expirationDate,
-    totalAmount,
-    remainingPaymentg,
-    discount
-  ) {
-    const result = await connexion.query(
-      `
-      INSERT INTO 
-        public.invoices
-        (
-          id_type_serial, id_client, type_payment, 
-          status, created_at, expiration_date, 
-          total_amount, remaining_payment, discount
-        )
-      VALUES 
-        (1, $1, $2, $3, now(), $4, $5, $6, $7) returning id_invoice`,
-      [
-        idClient,
-        typePayment,
-        status,
-        expirationDate,
-        totalAmount,
-        remainingPaymentg,
-        discount,
-      ]
-    );
-    return result.rows;
-  },
-
-  async getInvoicesByRoute(idRoute) {
-    const invoicesByRoute = await connexion.query(
-      `
-      SELECT 
-        i.id_invoice, i.id_type_serial, ts.name as id_type_serial_name, i.id_client, i.type_payment, i.status, i.created_at, i.expiration_date, i.total_amount, i.remaining_payment, i.discount
-      FROM
-        invoices as i
-      INNER JOIN 
-        clients as c 
-      ON 
-        i.id_client=c.id_client
-      INNER JOIN 
-        type_serial as ts
-      ON 
-        ts.id_type_serial= i.id_type_serial
-      WHERE
-        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
-      ORDER BY 
-        i.id_invoice 
-      DESC`,
-      [idRoute]
-    );
-    return invoicesByRoute.rows;
-  },
-
-  async getInvoiceByClientId(idClient) {
-    const facturasByCliente = await connexion.query(
-      `
-      SELECT
-        *
-      FROM
-        public.invoices
-      WHERE
-        id_client = $1`,
-      [idClient]
-    );
-    return facturasByCliente.rows;
-  },
-  async updateInvoice(
+  ]);
+  return facturasByCliente.rows;
+};
+export const updateInvoice = async (
+  idFactura,
+  idCliente,
+  idTipoPedido,
+  estado,
+  fechaVencimiento,
+  importe,
+  saldo,
+  descuento
+) => {
+  const existRegister = connexion.query(qrys.getInvoiceByIdinvoice, [
     idFactura,
-    idCliente,
-    idTipoPedido,
-    estado,
-    fechaVencimiento,
-    importe,
-    saldo,
-    descuento
-  ) {
-    const existRegister = connexion.query(
-      `SELECT * FROM invoices where id_invoice = $1`,
-      [idFactura]
-    );
-    if ((await existRegister).rows.length == 0) {
-      return { error: "No existe la Factura que intentas Actualizar" };
-    } else {
-      const result = await connexion.query(
-        `
-          UPDATE 
-            public.invoices
-        	SET 
-            id_client=$2, type_payment=$3, status=$4, 
-            expiration_date=$5, total_amount=$6, remaining_payment=$7, 
-            discount=$8
-	        WHERE id_invoice=$1`,
-        [
-          idFactura,
-          idCliente,
-          idTipoPedido,
-          estado,
-          fechaVencimiento,
-          importe,
-          saldo,
-          descuento,
-        ]
-      );
-      return result;
-    }
-  },
-  async getSaldoById(idInvoice) {
-    const result = await connexion.query(
-      `
-      SELECT 
-        remaining_payment 
-      FROM 
-        invoices 
-      WHERE 
-        id_invoice = $1
-      `,
-      [idInvoice]
-    );
-    return result.rows;
-  },
-  async updateSaldoById(idInvoice, saldo) {
-    const result = await connexion.query(
-      `
-      UPDATE 
-        public.invoices
-	    SET 
-        remaining_payment=$2
-	    WHERE 
-        id_invoice =$1;
-      `,
-      [idInvoice, saldo]
-    );
-    return result;
-  },
-  async insertInvoiceAndDetailTransaction(
-    idClient,
-    typePayment,
-    status,
-    expirationDate,
-    discount,
-    detailInvoice
-  ) {
-    let executed = false;
-    let totalAmount = 0;
-    await detailInvoice.forEach((element) => {
-      totalAmount += element.price * element.quantity;
-    });
-    const client = await connexion.connect();
-    try {
-      await client.query("BEGIN");
-      const queryInsertInvoice = `
-        INSERT INTO
-          public.invoices
-          (
-            id_type_serial, id_client, type_payment,
-            status, created_at, expiration_date,
-            total_amount, remaining_payment, discount
-          )
-        VALUES
-          (1, $1, $2, $3, now(), $4, $5, $6, $7) returning id_invoice`;
-
-      const queryInsertDetailsInvoices = `
-        INSERT INTO 
-          public.details_invoices
-          (
-	          id_invoice, line, id_product,
-            quantity, price, id_warehouse
-          )
-	      VALUES ($1, $2, $3, $4, $5, $6);`;
-      const queryInvoicesValues = [
-        idClient,
-        typePayment,
-        status,
-        expirationDate,
-        totalAmount,
-        totalAmount,
-        discount,
-      ];
-
-      const insertInvoice = await client.query(
-        queryInsertInvoice,
-        queryInvoicesValues
-      );
-      let line = 0;
-      detailInvoice.forEach(async (element) => {
-        const { idArticle, quantity, price, idWarehouse } = element;
-        line += 1;
-        await client.query(
-          queryInsertDetailsInvoices,
-          [
-            insertInvoice.rows[0].id_invoice,
-            line,
-            idArticle,
-            quantity,
-            price,
-            idWarehouse,
-          ],
-          (err, result) => {
-            if (err) {
-              executed = false;
-              console.log("\nclient.query():", err);
-              // Rollback before executing another transaction
-              client.query("ROLLBACK");
-              console.log("Transaction ROLLBACK called");
-            }
-
-            console.log(
-              "client.query() COMMIT row count:",
-              result.rowCount,
-              result
-            );
-          }
-        );
-        executed = true;
-      });
-      await client.query("COMMIT");
-      client.release(true);
-    } catch (error) {
-      await client.query("ROLLBACK");
-      client.release(true);
-      throw error;
-    }
-    return executed;
-  },
-  async getInvoicesByCurrentDay(idInvoice) {
-    const queryTextGetIvoicesByCurrentDay = `
-      SELECT 
-        i.* 
-      FROM 
-        invoices as i
-      INNER JOIN
-        clients c
-      ON 
-        i.id_client =c.id_client
-      WHERE 
-        date_trunc('day', i.created_at)::date = current_date
-      AND 
-        c.id_route = $1`;
-    const result = await connexion.query(queryTextGetIvoicesByCurrentDay, [
-      idInvoice,
+  ]);
+  if ((await existRegister).rows.length == 0) {
+    return { error: "No existe la Factura que intentas Actualizar" };
+  } else {
+    const result = await connexion.query(qrys.updateInvoiceByIdinvoice, [
+      idFactura,
+      idCliente,
+      idTipoPedido,
+      estado,
+      fechaVencimiento,
+      importe,
+      saldo,
+      descuento,
     ]);
-    return result.rows;
-  },
-  async cancelInvoices(
+    return result;
+  }
+};
+export const getSaldoById = async (idInvoice) => {
+  const result = await connexion.query(qrys.getRemainingPaymentByIdinvoice, [
     idInvoice,
-    idUser,
-    amount,
-    locationGPS,
-    comments,
-    textTicket,
-    printedTicket,
-    timestamp
-  ) {
-    const client = await connexion.connect();
+  ]);
+  return result.rows;
+};
+export const updateSaldoById = async (idInvoice, saldo) => {
+  const result = await connexion.query(qrys.updateRemainingPaymentByIdinvoice, [
+    idInvoice,
+    saldo,
+  ]);
+  return result;
+};
+export const insertInvoiceAndDetailTransaction = async (
+  idClient,
+  typePayment,
+  status,
+  expirationDate,
+  discount,
+  detailInvoice,
+  timestamp
+) => {
+  let executed = false;
+  let totalAmount = 0;
+  await detailInvoice.forEach((element) => {
+    totalAmount += element.price * element.quantity;
+  });
+  const client = await connexion.connect();
+  try {
+    await client.query("BEGIN");
+    const insertInvoice = await client.query(qrys.insertInvoice, [
+      idClient,
+      typePayment,
+      status,
+      timestamp,
+      expirationDate,
+      totalAmount,
+      totalAmount,
+      discount,
+    ]);
+    let line = 0;
+    detailInvoice.forEach(async (element) => {
+      const { idArticle, quantity, price, idWarehouse } = element;
+      line += 1;
+      await client.query(
+        qrys.insertDetailsInvoices,
+        [
+          insertInvoice.rows[0].id_invoice,
+          line,
+          idArticle,
+          quantity,
+          price,
+          idWarehouse,
+        ],
+        (err, result) => {
+          if (err) {
+            executed = false;
+            logger.info("\nclient.query():", err);
+            // Rollback before executing another transaction
+            client.query("ROLLBACK");
+            logger.info("Transaction ROLLBACK called");
+          }
 
-    let executed = false;
-    let queryInvoice = null;
-    let queryPayment = null;
-    try {
-      await client.query("BEGIN");
-      console.log("Begin transaction");
-      // validando que la factura exista
-      const queryTextInvoice = `
-      SELECT 
-        remaining_payment, status
-      FROM 
-        invoices 
-      WHERE 
-        id_invoice = $1`;
-
-      const queryTextUpdateInvoiceStatus = `
-        UPDATE 
-          public.invoices
-        SET 
-          status=3,
-          remaining_payment=$2
-        WHERE 
-          id_invoice =$1`;
-
-      const queryTextInsertPayment = `
-        INSERT INTO
-          public.payments
-          (
-            type_serial, id_invoice, id_user,
-            created_at, total_payment, status,
-            updated_at, gps_location, comments,
-            text_ticket, printed_ticket
-          )
-        VALUES
-          (3, $1, $2, $8, $3, 1, null, $4, $5, $6, $7) returning id_abono, created_at at time zone 'UTC' as created_at;
-      `;
-
-      const result = await client.query(queryTextInvoice, [idInvoice]);
-      const { remaining_payment, status } = result.rows[0];
-      console.log(
-        `Valido que si hay un pago restante existe la factura ${idInvoice} ${remaining_payment}`
+          logger.info(`client.query() COMMIT row count: ${result.rowCount}`);
+        }
       );
+      executed = true;
+    });
+    await client.query("COMMIT");
+    client.release(true);
+  } catch (error) {
+    await client.query("ROLLBACK");
+    client.release(true);
+    throw error;
+  }
+  return executed;
+};
+
+export const getInvoicesByCurrentDay = async (idInvoice) => {
+  const result = await connexion.query(qrys.getIvoicesByCurrentDay, [
+    idInvoice,
+  ]);
+  return result.rows;
+};
+
+export const cancelInvoices = async (
+  idInvoice,
+  idUser,
+  amount,
+  locationGPS,
+  comments,
+  textTicket,
+  printedTicket,
+  timestamp,
+  idPayment
+) => {
+  const client = await connexion.connect();
+
+  let executed = false;
+  let queryInvoice = null;
+  let queryPayment = null;
+  try {
+    await client.query("BEGIN");
+    logger.info("Begin transaction");
+    logger.info(`MODEL: validating if the : ${idPayment} exist`);
+    const paymentExist = await connexion.query(qrys.getPaymentsByPaymentId, [
+      idPayment,
+    ]);
+    const { rowCount } = paymentExist;
+    if (rowCount === 0) {
+      // validando que la factura exista
+      const result = await client.query(qrys.getRemainingPaymentToCancel, [
+        idInvoice,
+      ]);
+      const { remaining_payment, status } = result.rows[0];
       // if remaining_payment the invoice exist
       if (remaining_payment) {
         // if an ammount exist create a payment
@@ -362,12 +180,12 @@ module.exports = {
         } else {
           // updating the invoice
           await client.query(
-            queryTextUpdateInvoiceStatus,
+            qrys.updateInvoiceStatus,
             [idInvoice, remaining_payment - amount],
             (err, result) => {
               if (err) {
                 executed = false;
-                console.log("\nclient.query():", err);
+                logger.info("\nclient.query():", err);
                 // Rollback before executing another transaction
                 client.query("ROLLBACK");
               }
@@ -377,18 +195,15 @@ module.exports = {
                 rowCount: result.rowCount,
               };
 
-              console.log(
+              logger.info(
                 "client.query() COMMIT row count on update:",
                 queryInvoice
               );
             }
           );
           if (amount !== 0) {
-            console.log(
-              `El amount es mayor que 0 y hago una insercion de un abono: ${amount} status:${status}`
-            );
             await client.query(
-              queryTextInsertPayment,
+              qrys.insertPaymentInCancel,
               [
                 idInvoice,
                 idUser,
@@ -398,11 +213,12 @@ module.exports = {
                 textTicket,
                 printedTicket,
                 timestamp,
+                idPayment,
               ],
               (err, result) => {
                 if (err) {
                   executed = false;
-                  console.log("\nclient.query():", err);
+                  logger.info("\nclient.query():", err);
                   // Rollback before executing another transaction
                   client.query("ROLLBACK");
                 }
@@ -410,7 +226,7 @@ module.exports = {
                 queryPayment = {
                   result: result.rows[0],
                 };
-                console.log(
+                logger.info(
                   "client.query() COMMIT row count on insert:",
                   result.rowCount
                 );
@@ -420,13 +236,18 @@ module.exports = {
           queryPayment = { message: "no se hizo ningun abono" };
         }
       }
-      await client.query("COMMIT");
-      await client.release(true);
-    } catch (error) {
-      await client.query("ROLLBACK");
-      await client.release(true);
+    } else {
+      executed = false;
+      queryPayment = {
+        message: "El id del abono ya existe intenta con uno diferente",
+      };
     }
+    await client.query("COMMIT");
+    await client.release(true);
+  } catch (error) {
+    await client.query("ROLLBACK");
+    await client.release(true);
+  }
 
-    return { executed, sqlResult: { queryInvoice, queryPayment } };
-  },
+  return { executed, sqlResult: { queryInvoice, queryPayment } };
 };

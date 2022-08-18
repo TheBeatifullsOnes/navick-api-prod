@@ -1,9 +1,8 @@
-const jwt = require("jsonwebtoken");
-const moment = require("moment");
-const config = require("../config/config");
-const logger = require("../utils/logger");
+import jwt from "jsonwebtoken";
+import moment from "moment";
+import { TOKEN_SECRET } from "../config/config.js";
 
-exports.createToken = (
+export const createToken = (
   username,
   name,
   id_route,
@@ -21,7 +20,7 @@ exports.createToken = (
       status: status,
     },
     iat: Number(moment.unix()),
-    exp: moment().add(30, "minutes").unix(),
+    exp: moment().add(1440, "minutes").unix(),
   };
-  return jwt.sign(payload, config.TOKEN_SECRET);
+  return jwt.sign(payload, TOKEN_SECRET);
 };

@@ -632,7 +632,6 @@
 2022-06-17 22:32:30:3230 info: controller: getting the id_client: 2213 from params
 2022-06-17 22:32:30:3230 info: model: verificating that the client 2213 get pending invoices
 2022-06-17 22:32:30:3230 info: 
-client.query():
 2022-06-17 22:32:30:3230 info: Transaction executed correctly
 2022-06-17 22:33:42:3342 info: Se establecio la conexion a la base de datos 
 2022-06-17 22:33:42:3342 info: App started,listening on port 8000
@@ -1466,8 +1465,3 @@ client.query():
 2022-06-30 23:57:15:5715 info: GET /api/v1/clientes/auditReports/8 500 111.135 ms - 81
 2022-06-30 23:59:06:596 info: Se establecio la conexion a la base de datos 
 2022-06-30 23:59:06:596 info: App started,listening on port 8000
->>>>>>> bb149b8122eb9a9fb572ff52434062da5992e1d9
-2022-07-04 22:52:28:5228 info: Se establecio la conexion a la base de datos 
-2022-07-04 22:52:28:5228 info: App started,listening on port 8000
-2022-07-04 22:52:28:5228 info: Se establecio la conexion a la base de datos 
-2022-07-04 22:52:28:5228 info: App started,listening on port 8000

@@ -1,7 +1,8 @@
-const visitsModel = require("../models/visits");
-const logger = require("../utils/logger");
-exports.getVisits = (req, res) => {
-  visitsModel
+import * as model from "../models/visits.js";
+import logger from "../utils/logger.js";
+
+export const getVisits = (req, res) => {
+  model
     .getVisits()
     .then((sqlResult) => {
       logger.info("Solicitando las visitas en la BD");
@@ -28,15 +29,14 @@ exports.getVisits = (req, res) => {
     });
 };
 
-exports.insertVisits = (req, res) => {
+export const insertVisits = (req, res) => {
   const { idClient, idUser, idInvoice, comments, textTicket, gpsLocation } =
     req.body;
   const moment = req.timestamp;
   const timestamp = moment
     .tz("America/Mexico_City")
     .format("YYYY-MM-DD HH:mm:ss");
-  console.log(timestamp, "soy la insercion del tmstp");
-  visitsModel
+  model
     .insertVisits(
       idClient,
       idUser,
@@ -69,9 +69,9 @@ exports.insertVisits = (req, res) => {
     });
 };
 
-exports.updateVisits = (req, res) => {
+export const updateVisits = (req, res) => {
   const { comments, textTicket, printedTicket, idVisit } = req.body;
-  visitsModel
+  model
     .updateVisits(comments, textTicket, printedTicket, idVisit)
     .then((sqlResult) => {
       if (!sqlResult) {
@@ -96,9 +96,9 @@ exports.updateVisits = (req, res) => {
     });
 };
 
-exports.deleteVisits = (req, res) => {
+export const deleteVisits = (req, res) => {
   const { idVisit } = req.params;
-  visitsModel
+  model
     .deleteVisits(idVisit)
     .then((sqlResult) => {
       if (sqlResult.rowCount === 0) {

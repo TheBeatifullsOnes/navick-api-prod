@@ -1,7 +1,7 @@
-const categoryModel = require("../models/category");
-const logger = require("../utils/logger");
+import * as categoryModel from "../models/category.js";
+import logger from "../utils/logger.js";
 
-exports.getCategories = (req, res) => {
+export const getCategories = (req, res) => {
   categoryModel
     .getCategories()
     .then((response) => {
@@ -28,7 +28,7 @@ exports.getCategories = (req, res) => {
     });
 };
 
-exports.getCategory = (req, res) => {
+export const getCategory = (req, res) => {
   const { idCategory } = req.params;
   categoryModel
     .getCategory(idCategory)
@@ -56,7 +56,7 @@ exports.getCategory = (req, res) => {
     });
 };
 
-exports.updateCategory = (req, res) => {
+export const updateCategory = (req, res) => {
   const { idCategory, name } = req.body;
 
   categoryModel
@@ -84,7 +84,7 @@ exports.updateCategory = (req, res) => {
       });
     });
 };
-exports.insertCategory = (req, res) => {
+export const insertCategory = (req, res) => {
   const { idCategory, name } = req.body;
 
   categoryModel
@@ -113,7 +113,7 @@ exports.insertCategory = (req, res) => {
     });
 };
 
-exports.deleteCategory = (req, res) => {
+export const deleteCategory = (req, res) => {
   const { idCategory } = req.params;
   categoryModel
     .deleteCategory(idCategory)
