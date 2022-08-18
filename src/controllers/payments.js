@@ -49,6 +49,7 @@ export const addPaymentUpdateRemainingPayment = async (req, res) => {
     comments,
     textTicket,
     printedTicket,
+    idPayment,
   } = req.body;
   const moment = req.timestamp;
   const timestamp = moment
@@ -63,20 +64,21 @@ export const addPaymentUpdateRemainingPayment = async (req, res) => {
       comments,
       timestamp,
       textTicket,
-      printedTicket
+      printedTicket,
+      idPayment
     )
     .then((sqlTransaction) => {
-      if (sqlTransaction) {
+      const { executed } = sqlTransaction;
+      if (executed) {
         res.json({
           statusCode: 200,
           statusMessage: "success",
           result: { message: "Abono agregado correctamente", sqlTransaction },
         });
-      } else if (!sqlTransaction) {
+      } else {
         res.json({
-          statusCode: 500,
+          statusCode: 400,
           statusMessage: "error",
-          executed: sqlTransaction,
           result: { message: "Error al agregar abono", sqlTransaction },
         });
       }
@@ -115,13 +117,11 @@ export const updateTicket = (req, res) => {
   paymentsModel
     .updateTicket(idPayment, textTicket, printedTicket)
     .then((sqlResults) => {
-      // if (sqlResults) {
       res.json({
         statusCode: 200,
         statusMessage: "success",
         result: sqlResults,
       });
-      // }
     })
     .catch((error) => {
       res.json({
@@ -154,7 +154,6 @@ export const getPaymentsByDay = (req, res) => {
 
 export const getPaymentsByWeek = (req, res) => {
   const { startDate, endDate } = req.body;
-  console.log(startDate, endDate);
   paymentsModel
     .getPaymentsByWeek(startDate, endDate)
     .then((sqlResult) => {

@@ -110,7 +110,7 @@ export const insertInvoiceAndDetailTransaction = async (
         (err, result) => {
           if (err) {
             executed = false;
-            console.log("\nclient.query():", err);
+            logger.info("\nclient.query():", err);
             // Rollback before executing another transaction
             client.query("ROLLBACK");
             logger.info("Transaction ROLLBACK called");
@@ -130,12 +130,14 @@ export const insertInvoiceAndDetailTransaction = async (
   }
   return executed;
 };
+
 export const getInvoicesByCurrentDay = async (idInvoice) => {
   const result = await connexion.query(qrys.getIvoicesByCurrentDay, [
     idInvoice,
   ]);
   return result.rows;
 };
+
 export const cancelInvoices = async (
   idInvoice,
   idUser,
@@ -144,7 +146,8 @@ export const cancelInvoices = async (
   comments,
   textTicket,
   printedTicket,
-  timestamp
+  timestamp,
+  idPayment
 ) => {
   const client = await connexion.connect();
 
@@ -153,84 +156,91 @@ export const cancelInvoices = async (
   let queryPayment = null;
   try {
     await client.query("BEGIN");
-    console.log("Begin transaction");
-    // validando que la factura exista
-    const result = await client.query(qrys.getRemainingPaymentToCancel, [
-      idInvoice,
+    logger.info("Begin transaction");
+    logger.info(`MODEL: validating if the : ${idPayment} exist`);
+    const paymentExist = await connexion.query(qrys.getPaymentsByPaymentId, [
+      idPayment,
     ]);
-    const { remaining_payment, status } = result.rows[0];
-    console.log(
-      `Valido que si hay un pago restante existe la factura ${idInvoice} ${remaining_payment}`
-    );
-    // if remaining_payment the invoice exist
-    if (remaining_payment) {
-      // if an ammount exist create a payment
-      if (status === 3) {
-        client.query("ROLLBACK");
-        queryInvoice = { error: "la factura ya se encuentra cancelada" };
-        queryPayment = {
-          error: "No se inserto nada por que la factura ya esta cancelada",
-        };
-      } else {
-        // updating the invoice
-        await client.query(
-          qrys.updateInvoiceStatus,
-          [idInvoice, remaining_payment - amount],
-          (err, result) => {
-            if (err) {
-              executed = false;
-              console.log("\nclient.query():", err);
-              // Rollback before executing another transaction
-              client.query("ROLLBACK");
-            }
-            executed = true;
-            queryInvoice = {
-              command: result.command,
-              rowCount: result.rowCount,
-            };
-
-            console.log(
-              "client.query() COMMIT row count on update:",
-              queryInvoice
-            );
-          }
-        );
-        if (amount !== 0) {
-          console.log(
-            `El amount es mayor que 0 y hago una insercion de un abono: ${amount} status:${status}`
-          );
+    const { rowCount } = paymentExist;
+    if (rowCount === 0) {
+      // validando que la factura exista
+      const result = await client.query(qrys.getRemainingPaymentToCancel, [
+        idInvoice,
+      ]);
+      const { remaining_payment, status } = result.rows[0];
+      // if remaining_payment the invoice exist
+      if (remaining_payment) {
+        // if an ammount exist create a payment
+        if (status === 3) {
+          client.query("ROLLBACK");
+          queryInvoice = { error: "la factura ya se encuentra cancelada" };
+          queryPayment = {
+            error: "No se inserto nada por que la factura ya esta cancelada",
+          };
+        } else {
+          // updating the invoice
           await client.query(
-            qrys.insertPaymentInCancel,
-            [
-              idInvoice,
-              idUser,
-              amount,
-              locationGPS,
-              comments,
-              textTicket,
-              printedTicket,
-              timestamp,
-            ],
+            qrys.updateInvoiceStatus,
+            [idInvoice, remaining_payment - amount],
             (err, result) => {
               if (err) {
                 executed = false;
-                console.log("\nclient.query():", err);
+                logger.info("\nclient.query():", err);
                 // Rollback before executing another transaction
                 client.query("ROLLBACK");
               }
               executed = true;
-              queryPayment = {
-                result: result.rows[0],
+              queryInvoice = {
+                command: result.command,
+                rowCount: result.rowCount,
               };
-              console.log(
-                "client.query() COMMIT row count on insert:",
-                result.rowCount
+
+              logger.info(
+                "client.query() COMMIT row count on update:",
+                queryInvoice
               );
             }
           );
+          if (amount !== 0) {
+            await client.query(
+              qrys.insertPaymentInCancel,
+              [
+                idInvoice,
+                idUser,
+                amount,
+                locationGPS,
+                comments,
+                textTicket,
+                printedTicket,
+                timestamp,
+                idPayment,
+              ],
+              (err, result) => {
+                if (err) {
+                  executed = false;
+                  logger.info("\nclient.query():", err);
+                  // Rollback before executing another transaction
+                  client.query("ROLLBACK");
+                }
+                executed = true;
+                queryPayment = {
+                  result: result.rows[0],
+                };
+                logger.info(
+                  "client.query() COMMIT row count on insert:",
+                  result.rowCount
+                );
+              }
+            );
+          }
+          queryPayment = { message: "no se hizo ningun abono" };
         }
-        queryPayment = { message: "no se hizo ningun abono" };
       }
+    } else {
+      executed = false;
+      queryPayment = {
+        message: "El id del abono ya existe intenta con uno diferente",
+      };
     }
     await client.query("COMMIT");
     await client.release(true);

@@ -20,7 +20,8 @@ export const addPaymentUpdateRemainingPayment = async (
   comments,
   timestamp,
   textTicket,
-  printedTicket
+  printedTicket,
+  idPayment
 ) => {
   const client = await connexion.connect();
   let executed = false;
@@ -29,19 +30,61 @@ export const addPaymentUpdateRemainingPayment = async (
     // Transaction start
     await client.query("BEGIN");
     logger.info("Begin transaction");
-    // Getting remainingPayment FROM invoice
-    logger.info(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
-    const getRemaningPaymentByInvoiceId = await client.query(
-      qrys.queryTextGetInvoiceId,
-      [idInvoice]
-    );
-    const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
-    if (remaining_payment) {
-      logger.info("if exist Remaining Payment: ", remaining_payment);
-      if (remaining_payment - amount === 0) {
+
+    logger.info(`MODEL: validating if the : ${idPayment} exist`);
+    const paymentExist = await connexion.query(qrys.getPaymentsByPaymentId, [
+      idPayment,
+    ]);
+    const { rowCount } = paymentExist;
+    if (rowCount === 0) {
+      // Getting remainingPayment FROM invoice
+      logger.info(`Getting remainingPayment FROM InvoiceId: ${idInvoice}`);
+      const getRemaningPaymentByInvoiceId = await client.query(
+        qrys.queryTextGetInvoiceId,
+        [idInvoice]
+      );
+      const { remaining_payment } = getRemaningPaymentByInvoiceId.rows[0];
+      /*
+      TODO 
+      refactorizar el update para cuando se salda la factura 
+      A)
+      */
+      if (remaining_payment) {
+        // agregar validacion para que el saldo sea positivo
+        logger.info("if exist Remaining Payment: ", remaining_payment);
+        if (remaining_payment - amount === 0) {
+          // validar que la resta no sea negativa
+          await client.query(
+            qrys.queryTextUpdateInvoiceStatus,
+            [idInvoice],
+            (err, result) => {
+              if (err) {
+                executed = false;
+                logger.info("\nclient.query():", err);
+                // Rollback before executing another transaction
+                client.query("ROLLBACK");
+              }
+              logger.info(
+                "client.query() COMMIT row count on update:",
+                result.rowCount
+              );
+            }
+          );
+        }
+        //insert payment row b)
         await client.query(
-          qrys.queryTextUpdateInvoiceStatus,
-          [idInvoice],
+          qrys.queryTextInsertPayment,
+          [
+            idInvoice,
+            idUser,
+            amount,
+            locationGPS,
+            comments,
+            timestamp,
+            textTicket,
+            printedTicket,
+            idPayment,
+          ],
           (err, result) => {
             if (err) {
               executed = false;
@@ -49,6 +92,28 @@ export const addPaymentUpdateRemainingPayment = async (
               // Rollback before executing another transaction
               client.query("ROLLBACK");
             }
+            executed = true;
+            sqlResult = result.rows[0];
+            logger.info(
+              "client.query() COMMIT row count on insert:",
+              result.rowCount
+            );
+          }
+        );
+
+        // Update the remaining payment
+        await client.query(
+          qrys.queryTextUpdateInvoiceRP,
+          [idInvoice, remaining_payment - amount],
+          (err, result) => {
+            if (err) {
+              executed = false;
+              logger.info("\nclient.query():", err);
+              // Rollback before executing another transaction
+              client.query("ROLLBACK");
+              logger.info("Transaction ROLLBACK called");
+            }
+            executed = true;
             logger.info(
               "client.query() COMMIT row count on update:",
               result.rowCount
@@ -56,54 +121,8 @@ export const addPaymentUpdateRemainingPayment = async (
           }
         );
       }
-      //insert payment row
-      await client.query(
-        qrys.queryTextInsertPayment,
-        [
-          idInvoice,
-          idUser,
-          amount,
-          locationGPS,
-          comments,
-          timestamp,
-          textTicket,
-          printedTicket,
-        ],
-        (err, result) => {
-          if (err) {
-            executed = false;
-            logger.info("\nclient.query():", err);
-            // Rollback before executing another transaction
-            client.query("ROLLBACK");
-          }
-          executed = true;
-          sqlResult = result.rows[0];
-          logger.info(
-            "client.query() COMMIT row count on insert:",
-            result.rowCount
-          );
-        }
-      );
-
-      // Update the remaining payment
-      await client.query(
-        qrys.queryTextUpdateInvoiceRP,
-        [idInvoice, remaining_payment - amount],
-        (err, result) => {
-          if (err) {
-            executed = false;
-            console.log("\nclient.query():", err);
-            // Rollback before executing another transaction
-            client.query("ROLLBACK");
-            console.log("Transaction ROLLBACK called");
-          }
-          executed = true;
-          console.log(
-            "client.query() COMMIT row count on update:",
-            result.rowCount
-          );
-        }
-      );
+    } else {
+      executed = false;
     }
     await client.query("COMMIT");
     await client.release(true);
@@ -121,14 +140,28 @@ export const getPaymentsByRoute = async (idRoute) => {
   return result.rows;
 };
 export const updateTicket = async (idPayment, textTicket, printedTicket) => {
-  const result = await connexion.query(qrys.queryTextUpdatePayment, [
+  logger.info(`MODEL: validating if the : ${idPayment} exist`);
+  const paymentExist = await connexion.query(qrys.getPaymentsByPaymentId, [
     idPayment,
-    textTicket,
-    printedTicket,
   ]);
+  const { rowCount } = paymentExist;
+  if (rowCount > 0) {
+    const result = await connexion.query(qrys.queryTextUpdatePayment, [
+      idPayment,
+      textTicket,
+      printedTicket,
+    ]);
+    logger.info(
+      `MODEL: updating printted ticket: ${printedTicket} and text ticket: ${textTicket}`
+    );
+    return {
+      command: result.command,
+      rowCount: result.rowCount,
+    };
+  }
+  logger.warn(`MODEL: id Parment: ${idPayment} not found`);
   return {
-    command: result.command,
-    rowCount: result.rowCount,
+    errorMsg: "Error el pago no esta registrado en la base de datos",
   };
 };
 export const getPaymentsByDay = async (selectedDate) => {

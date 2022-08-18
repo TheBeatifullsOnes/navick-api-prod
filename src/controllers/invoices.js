@@ -101,17 +101,17 @@ export const addInvoice = (req, res) => {
         });
       } else if (!sqlTransactionResult) {
         res.json({
-          statusCode: 500,
+          statusCode: 400,
           statusMessage: "error",
           executed: sqlTransactionResult,
-          result: "Error en la transaccion",
+          result: "Error al intentar añadir Factura",
         });
       }
     })
     .catch((error) => {
       res.json({
         statusCode: 500,
-        statusMessage: "Error al intentar añadir Factura",
+        statusMessage: error,
         result: error,
       });
     });
@@ -200,6 +200,7 @@ export const cancelInvoices = async (req, res) => {
     comments,
     textTicket,
     printedTicket,
+    idPayment,
   } = req.body;
   const moment = req.timestamp;
   const timestamp = moment
@@ -214,21 +215,24 @@ export const cancelInvoices = async (req, res) => {
       comments,
       textTicket,
       printedTicket,
-      timestamp
+      timestamp,
+      idPayment
     )
-    .then((sqlResult) => {
-      if (!sqlResult) {
-        res.status(500).json({
-          statusCode: 500,
+    .then((sqlResultPayload) => {
+      const { executed, sqlResult } = sqlResultPayload;
+      if (executed) {
+        res.status(200).json({
+          statusCode: 200,
+          statusMessage: "success",
+          result: sqlResult,
+        });
+      } else {
+        res.status(400).json({
+          statusCode: 400,
           statusMessage: "error",
-          result: "algo salio mal en la consulta",
+          result: sqlResult.queryPayment.message,
         });
       }
-      res.status(200).json({
-        statusCode: 200,
-        statusMessage: "success",
-        result: sqlResult,
-      });
     })
     .catch((error) => {
       res.status(500).json({
