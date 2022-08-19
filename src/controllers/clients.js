@@ -231,8 +231,8 @@ export const insertaCliente = (req, res) => {
     )
     .then((response) => {
       if (response.executed) {
-        res.status(201).json({
-          statusCode: 201,
+        res.status(200).json({
+          statusCode: 200,
           statusMessage: "success",
           result: "cliente insertado correctamente",
         });
