@@ -199,16 +199,6 @@
 2022-06-05 14:23:47:2347 info: PUT /api/v1/clientes/ 500 68.120 ms - 84
 2022-06-05 14:32:42:3242 info: Se establecio la conexion a la base de datos 
 2022-06-05 14:32:42:3242 info: App started,listening on port 8000
-<<<<<<< HEAD
-2022-06-08 13:09:04:94 info: Se establecio la conexion a la base de datos 
-2022-06-08 13:09:04:94 info: App started,listening on port 8000
-2022-06-08 13:09:09:99 info: GET /api/v1/clientes/only/33 500 373.590 ms - 168
-2022-06-08 13:09:29:929 info: Se establecio la conexion a la base de datos 
-2022-06-08 13:09:29:929 info: App started,listening on port 8000
-2022-06-08 13:09:32:932 info: Se establecio la conexion a la base de datos 
-2022-06-08 13:09:32:932 info: App started,listening on port 8000
-2022-06-08 13:09:35:935 info: GET /api/v1/clientes/only/33 500 464.870 ms - 54
-=======
 2022-06-08 13:11:12:1112 info: Se establecio la conexion a la base de datos 
 2022-06-08 13:11:12:1112 info: App started,listening on port 8000
 2022-06-08 13:11:52:1152 info: Se establecio la conexion a la base de datos 
@@ -632,6 +622,7 @@
 2022-06-17 22:32:30:3230 info: controller: getting the id_client: 2213 from params
 2022-06-17 22:32:30:3230 info: model: verificating that the client 2213 get pending invoices
 2022-06-17 22:32:30:3230 info: 
+client.query():
 2022-06-17 22:32:30:3230 info: Transaction executed correctly
 2022-06-17 22:33:42:3342 info: Se establecio la conexion a la base de datos 
 2022-06-17 22:33:42:3342 info: App started,listening on port 8000
@@ -1465,3 +1456,1284 @@
 2022-06-30 23:57:15:5715 info: GET /api/v1/clientes/auditReports/8 500 111.135 ms - 81
 2022-06-30 23:59:06:596 info: Se establecio la conexion a la base de datos 
 2022-06-30 23:59:06:596 info: App started,listening on port 8000
+2022-07-11 08:56:47:5647 info: Se establecio la conexion a la base de datos 
+2022-07-11 08:56:47:5647 info: App started,listening on port 8000
+2022-07-11 09:00:44:044 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:00:44:044 info: App started,listening on port 8000
+2022-07-11 09:00:45:045 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:00:45:045 info: App started,listening on port 8000
+2022-07-11 09:06:08:68 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:06:08:68 info: App started,listening on port 8000
+2022-07-11 09:06:29:629 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:06:29:629 info: App started,listening on port 8000
+2022-07-11 09:06:36:636 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:06:36:636 info: App started,listening on port 8000
+2022-07-11 09:08:17:817 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:08:17:817 info: App started,listening on port 8000
+2022-07-11 09:09:20:920 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:09:20:920 info: App started,listening on port 8000
+2022-07-11 09:11:21:1121 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:11:21:1121 info: App started,listening on port 8000
+2022-07-11 09:11:47:1147 info: POST /login 200 582.413 ms - 461
+2022-07-11 09:12:09:129 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:12:09:129 info: App started,listening on port 8000
+2022-07-11 09:12:51:1251 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:12:51:1251 info: App started,listening on port 8000
+2022-07-11 09:13:26:1326 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:13:26:1326 info: App started,listening on port 8000
+2022-07-11 09:13:41:1341 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:13:41:1341 info: App started,listening on port 8000
+2022-07-11 09:14:07:147 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:14:07:147 info: App started,listening on port 8000
+2022-07-11 09:14:14:1414 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:14:14:1414 info: App started,listening on port 8000
+2022-07-11 09:14:27:1427 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:14:27:1427 info: App started,listening on port 8000
+2022-07-11 09:17:30:1730 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:17:30:1730 info: App started,listening on port 8000
+2022-07-11 09:17:31:1731 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:17:32:1732 info: App started,listening on port 8000
+2022-07-11 09:18:24:1824 info: Se establecio la conexion a la base de datos 
+2022-07-11 09:18:24:1824 info: App started,listening on port 8000
+2022-07-11 11:31:30:3130 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:31:30:3130 info: App started,listening on port 8000
+2022-07-11 11:32:34:3234 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:32:34:3234 info: App started,listening on port 8000
+2022-07-11 11:33:11:3311 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:33:11:3311 info: App started,listening on port 8000
+2022-07-11 11:33:26:3326 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:33:26:3326 info: App started,listening on port 8000
+2022-07-11 11:34:42:3442 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:34:42:3442 info: App started,listening on port 8000
+2022-07-11 11:34:46:3446 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:34:46:3446 info: App started,listening on port 8000
+2022-07-11 11:34:47:3447 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:34:47:3447 info: App started,listening on port 8000
+2022-07-11 11:35:35:3535 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:35:35:3535 info: App started,listening on port 8000
+2022-07-11 11:37:51:3751 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:37:51:3751 info: App started,listening on port 8000
+2022-07-11 11:37:58:3758 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:37:58:3758 info: App started,listening on port 8000
+2022-07-11 11:42:51:4251 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:42:51:4251 info: App started,listening on port 8000
+2022-07-11 11:43:19:4319 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:43:19:4319 info: App started,listening on port 8000
+2022-07-11 11:43:54:4354 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:43:54:4354 info: App started,listening on port 8000
+2022-07-11 11:44:13:4413 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:44:13:4413 info: App started,listening on port 8000
+2022-07-11 11:44:20:4420 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:44:20:4420 info: App started,listening on port 8000
+2022-07-11 11:44:53:4453 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:44:53:4453 info: App started,listening on port 8000
+2022-07-11 11:44:58:4458 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:44:58:4458 info: App started,listening on port 8000
+2022-07-11 11:44:59:4459 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:44:59:4459 info: App started,listening on port 8000
+2022-07-11 11:56:03:563 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:56:03:563 info: App started,listening on port 8000
+2022-07-11 11:56:23:5623 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:56:23:5623 info: App started,listening on port 8000
+2022-07-11 11:57:49:5749 info: Se establecio la conexion a la base de datos 
+2022-07-11 11:57:49:5749 info: App started,listening on port 8000
+2022-07-11 12:02:12:212 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:02:12:212 info: App started,listening on port 8000
+2022-07-11 12:02:35:235 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:02:35:235 info: App started,listening on port 8000
+2022-07-11 12:03:03:33 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:03:03:33 info: App started,listening on port 8000
+2022-07-11 12:03:16:316 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:03:16:316 info: App started,listening on port 8000
+2022-07-11 12:03:56:356 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:03:56:356 info: App started,listening on port 8000
+2022-07-11 12:07:03:73 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:07:03:73 info: App started,listening on port 8000
+2022-07-11 12:07:03:73 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:07:03:73 info: App started,listening on port 8000
+2022-07-11 12:08:54:854 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:08:54:854 info: App started,listening on port 8000
+2022-07-11 12:09:22:922 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:09:22:922 info: App started,listening on port 8000
+2022-07-11 12:09:25:925 info: POST /login 200 596.830 ms - 461
+2022-07-11 12:09:54:954 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:09:54:954 info: App started,listening on port 8000
+2022-07-11 12:09:58:958 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:09:58:958 info: App started,listening on port 8000
+2022-07-11 12:10:12:1012 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:10:12:1012 info: App started,listening on port 8000
+2022-07-11 12:10:34:1034 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:10:34:1034 info: App started,listening on port 8000
+2022-07-11 12:10:34:1034 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:10:34:1034 info: App started,listening on port 8000
+2022-07-11 12:12:12:1212 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:12:12:1212 info: App started,listening on port 8000
+2022-07-11 12:12:40:1240 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:12:40:1240 info: App started,listening on port 8000
+2022-07-11 12:14:57:1457 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:14:57:1457 info: App started,listening on port 8000
+2022-07-11 12:15:32:1532 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:15:32:1532 info: App started,listening on port 8000
+2022-07-11 12:15:34:1534 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:15:34:1534 info: App started,listening on port 8000
+2022-07-11 12:15:35:1535 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:15:35:1535 info: App started,listening on port 8000
+2022-07-11 12:15:53:1553 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:15:53:1553 info: App started,listening on port 8000
+2022-07-11 12:16:49:1649 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:16:49:1649 info: App started,listening on port 8000
+2022-07-11 12:17:05:175 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:17:05:175 info: App started,listening on port 8000
+2022-07-11 12:17:54:1754 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:17:54:1754 info: App started,listening on port 8000
+2022-07-11 12:17:56:1756 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:17:56:1756 info: App started,listening on port 8000
+2022-07-11 12:18:57:1857 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:18:57:1857 info: App started,listening on port 8000
+2022-07-11 12:19:31:1931 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:19:31:1931 info: App started,listening on port 8000
+2022-07-11 12:19:32:1932 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:19:32:1932 info: App started,listening on port 8000
+2022-07-11 12:21:03:213 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:21:03:213 info: App started,listening on port 8000
+2022-07-11 12:21:23:2123 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:21:23:2123 info: App started,listening on port 8000
+2022-07-11 12:22:10:2210 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:22:10:2210 info: App started,listening on port 8000
+2022-07-11 12:22:48:2248 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:22:48:2248 info: App started,listening on port 8000
+2022-07-11 12:23:49:2349 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:23:49:2349 info: App started,listening on port 8000
+2022-07-11 12:23:57:2357 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:23:57:2357 info: App started,listening on port 8000
+2022-07-11 12:25:53:2553 info: GET /api/v1/clientes/auditReports/6 200 922.930 ms - 49503
+2022-07-11 12:25:59:2559 info: GET /api/v1/clientes/auditReports/5 200 521.892 ms - 72462
+2022-07-11 12:27:33:2733 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:27:33:2733 info: App started,listening on port 8000
+2022-07-11 12:27:43:2743 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:27:43:2743 info: App started,listening on port 8000
+2022-07-11 12:28:29:2829 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:28:29:2829 info: App started,listening on port 8000
+2022-07-11 12:28:36:2836 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:28:36:2836 info: App started,listening on port 8000
+2022-07-11 12:29:56:2956 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:29:56:2956 info: App started,listening on port 8000
+2022-07-11 12:30:28:3028 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:30:28:3028 info: App started,listening on port 8000
+2022-07-11 12:30:34:3034 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:30:34:3034 info: App started,listening on port 8000
+2022-07-11 12:31:00:310 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:31:00:310 info: App started,listening on port 8000
+2022-07-11 12:31:07:317 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:31:07:317 info: App started,listening on port 8000
+2022-07-11 12:32:18:3218 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:32:18:3218 info: App started,listening on port 8000
+2022-07-11 12:32:53:3253 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:32:53:3253 info: App started,listening on port 8000
+2022-07-11 12:33:17:3317 info: GET /api/v1/clientes/only/6 200 690.036 ms - 183911
+2022-07-11 12:38:01:381 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:38:01:381 info: App started,listening on port 8000
+2022-07-11 12:38:32:3832 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:38:32:3832 info: App started,listening on port 8000
+2022-07-11 12:38:48:3848 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:38:48:3848 info: App started,listening on port 8000
+2022-07-11 12:39:03:393 info: GET /api/v1/clientes/2201 200 1033.192 ms - 3611
+2022-07-11 12:39:16:3916 info: POST /api/v1/clientes 404 175.253 ms - 87
+2022-07-11 12:39:25:3925 info: POST /api/v1/clientes 404 155.702 ms - 87
+2022-07-11 12:39:59:3959 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:39:59:3959 info: App started,listening on port 8000
+2022-07-11 12:40:02:402 info: POST /api/v1/clientes 201 1080.970 ms - 87
+2022-07-11 12:40:05:405 info: POST /api/v1/clientes 404 234.805 ms - 137
+2022-07-11 12:40:09:409 info: POST /api/v1/clientes 404 609.809 ms - 137
+2022-07-11 12:42:03:423 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:42:03:423 info: App started,listening on port 8000
+2022-07-11 12:42:13:4213 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:42:13:4213 info: App started,listening on port 8000
+2022-07-11 12:43:12:4312 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:43:12:4312 info: App started,listening on port 8000
+2022-07-11 12:43:28:4328 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:43:28:4328 info: App started,listening on port 8000
+2022-07-11 12:44:23:4423 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:44:23:4423 info: App started,listening on port 8000
+2022-07-11 12:44:47:4447 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:44:47:4447 info: App started,listening on port 8000
+2022-07-11 12:46:19:4619 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:46:19:4619 info: App started,listening on port 8000
+2022-07-11 12:47:17:4717 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:47:17:4717 info: App started,listening on port 8000
+2022-07-11 12:47:42:4742 info: POST /api/v1/clientes 404 542.168 ms - 87
+2022-07-11 12:47:44:4744 info: POST /api/v1/clientes 404 525.477 ms - 87
+2022-07-11 12:48:04:484 info: POST /api/v1/clientes 404 639.102 ms - 87
+2022-07-11 12:48:55:4855 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:48:55:4855 info: App started,listening on port 8000
+2022-07-11 12:48:56:4856 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:48:56:4856 info: App started,listening on port 8000
+2022-07-11 12:48:57:4857 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:48:57:4857 info: App started,listening on port 8000
+2022-07-11 12:49:03:493 info: POST /api/v1/clientes 201 1059.792 ms - 87
+2022-07-11 12:49:05:495 info: POST /api/v1/clientes 404 235.798 ms - 137
+2022-07-11 12:52:49:5249 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:52:49:5249 info: App started,listening on port 8000
+2022-07-11 12:53:08:538 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:53:08:538 info: App started,listening on port 8000
+2022-07-11 12:53:10:5310 info: Se establecio la conexion a la base de datos 
+2022-07-11 12:53:10:5310 info: App started,listening on port 8000
+2022-07-11 13:03:49:349 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:03:49:349 info: App started,listening on port 8000
+2022-07-11 13:04:15:415 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:04:15:415 info: App started,listening on port 8000
+2022-07-11 13:04:21:421 info: GET /api/v1/payments/byWeek 200 470.945 ms - 1151
+2022-07-11 13:05:04:54 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:05:04:54 info: App started,listening on port 8000
+2022-07-11 13:05:05:55 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:05:05:55 info: App started,listening on port 8000
+2022-07-11 13:07:12:712 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:07:12:712 info: App started,listening on port 8000
+2022-07-11 13:07:21:721 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:07:21:721 info: App started,listening on port 8000
+2022-07-11 13:07:40:740 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:07:40:740 info: App started,listening on port 8000
+2022-07-11 13:07:54:754 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:07:54:754 info: App started,listening on port 8000
+2022-07-11 13:08:12:812 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:08:12:812 info: App started,listening on port 8000
+2022-07-11 13:08:24:824 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:08:24:824 info: App started,listening on port 8000
+2022-07-11 13:08:25:825 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:08:25:825 info: App started,listening on port 8000
+2022-07-11 13:10:10:1010 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:10:10:1010 info: App started,listening on port 8000
+2022-07-11 13:10:24:1024 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:10:24:1024 info: App started,listening on port 8000
+2022-07-11 13:11:13:1113 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:11:13:1113 info: App started,listening on port 8000
+2022-07-11 13:11:26:1126 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:11:26:1126 info: App started,listening on port 8000
+2022-07-11 13:12:06:126 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:12:06:126 info: App started,listening on port 8000
+2022-07-11 13:13:01:131 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:13:01:131 info: App started,listening on port 8000
+2022-07-11 13:13:37:1337 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:13:37:1337 info: App started,listening on port 8000
+2022-07-11 13:13:44:1344 info: Se establecio la conexion a la base de datos 
+2022-07-11 13:13:44:1344 info: App started,listening on port 8000
+2022-07-12 13:42:33:4233 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:42:33:4233 info: App started,listening on port 8000
+2022-07-12 13:42:37:4237 info: POST /api/v1/invoices 200 540.562 ms - 82
+2022-07-12 13:42:54:4254 info: POST /api/v1/invoices 200 522.003 ms - 82
+2022-07-12 13:44:22:4422 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:44:23:4423 info: App started,listening on port 8000
+2022-07-12 13:44:26:4426 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:44:26:4426 info: App started,listening on port 8000
+2022-07-12 13:44:29:4429 info: POST /api/v1/invoices 200 549.687 ms - 82
+2022-07-12 13:45:11:4511 info: POST /api/v1/invoices 200 529.147 ms - 82
+2022-07-12 13:46:48:4648 info: GET /api/v1/payments/byDay/2022-06-09 200 455.705 ms - 6871
+2022-07-12 13:47:00:470 info: GET /api/v1/clientes/auditReports/5 200 648.230 ms - 72462
+2022-07-12 13:48:02:482 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:48:02:482 info: App started,listening on port 8000
+2022-07-12 13:48:06:486 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:48:06:486 info: App started,listening on port 8000
+2022-07-12 13:48:09:489 info: POST /api/v1/invoices 200 759.372 ms - 114
+2022-07-12 13:49:00:490 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:49:00:490 info: App started,listening on port 8000
+2022-07-12 13:49:11:4911 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:49:11:4911 info: App started,listening on port 8000
+2022-07-12 13:49:19:4919 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:49:19:4919 info: App started,listening on port 8000
+2022-07-12 13:49:24:4924 info: client.query() COMMIT row count:
+2022-07-12 13:49:24:4924 info: client.query() COMMIT row count:
+2022-07-12 13:49:24:4924 info: POST /api/v1/invoices 200 774.581 ms - 114
+2022-07-12 13:50:19:5019 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:50:19:5019 info: App started,listening on port 8000
+2022-07-12 13:50:22:5022 info: client.query() COMMIT row count: 1
+2022-07-12 13:50:22:5022 info: client.query() COMMIT row count: 1
+2022-07-12 13:50:22:5022 info: POST /api/v1/invoices 200 780.133 ms - 114
+2022-07-12 13:51:35:5135 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:51:35:5135 info: App started,listening on port 8000
+2022-07-12 13:52:07:527 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:52:07:527 info: App started,listening on port 8000
+2022-07-12 13:53:34:5334 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:53:34:5334 info: App started,listening on port 8000
+2022-07-12 13:53:43:5343 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:53:43:5343 info: App started,listening on port 8000
+2022-07-12 13:54:10:5410 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:54:10:5410 info: App started,listening on port 8000
+2022-07-12 13:54:50:5450 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:54:50:5450 info: App started,listening on port 8000
+2022-07-12 13:55:14:5514 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:55:14:5514 info: App started,listening on port 8000
+2022-07-12 13:55:26:5526 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:55:26:5526 info: App started,listening on port 8000
+2022-07-12 13:55:30:5530 info: Se establecio la conexion a la base de datos 
+2022-07-12 13:55:30:5530 info: App started,listening on port 8000
+2022-07-12 14:39:47:3947 info: GET /api/v1/clientes/auditReports/5 200 1137.725 ms - 72462
+2022-07-12 14:40:39:4039 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:40:39:4039 info: App started,listening on port 8000
+2022-07-12 14:40:57:4057 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:40:57:4057 info: App started,listening on port 8000
+2022-07-12 14:40:59:4059 info: GET /api/v1/clientes/auditReports/5 403 5.214 ms - 53
+2022-07-12 14:42:04:424 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:42:04:424 info: App started,listening on port 8000
+2022-07-12 14:42:29:4229 info: GET /api/v1/clientes/auditReports/5 401 3.962 ms - 34
+2022-07-12 14:42:41:4241 info: Se establecio la conexion a la base de datos 
+2022-07-12 14:42:41:4241 info: App started,listening on port 8000
+2022-07-12 14:42:48:4248 info: POST /login 200 587.182 ms - 461
+2022-07-12 14:43:02:432 info: GET /api/v1/clientes/auditReports/5 200 813.389 ms - 72462
+2022-07-12 14:47:14:4714 info: GET /api/v1/clientes/auditReports/5 403 9.943 ms - 53
+2022-07-12 14:47:20:4720 info: GET /api/v1/clientes/auditReports/5 403 0.807 ms - 53
+2022-07-12 14:47:32:4732 info: GET /api/v1/clientes/auditReports/5 401 7.375 ms - 30
+2022-07-12 14:47:54:4754 info: POST /login 200 571.597 ms - 461
+2022-07-12 14:48:05:485 info: GET /api/v1/clientes/auditReports/5 200 537.785 ms - 72462
+2022-07-12 15:03:00:30 info: GET /api/v1/clientes/auditReports/5 401 9.347 ms - 30
+2022-07-12 15:03:39:339 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:03:39:339 info: App started,listening on port 8000
+2022-07-12 15:04:58:458 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:04:58:458 info: App started,listening on port 8000
+2022-07-12 15:05:20:520 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:05:20:520 info: App started,listening on port 8000
+2022-07-12 15:07:45:745 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:07:45:745 info: App started,listening on port 8000
+2022-07-12 15:09:44:944 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:09:44:944 info: App started,listening on port 8000
+2022-07-12 15:10:02:102 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:10:02:102 info: App started,listening on port 8000
+2022-07-12 15:10:40:1040 info: GET /api/v1/clientes/auditReports/5 401 18.135 ms - 30
+2022-07-12 15:11:20:1120 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:11:20:1120 info: App started,listening on port 8000
+2022-07-12 15:11:33:1133 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:11:33:1133 info: App started,listening on port 8000
+2022-07-12 15:11:35:1135 info: GET /api/v1/clientes/auditReports/5 401 8.160 ms - 30
+2022-07-12 15:11:59:1159 info: GET /api/v1/clientes/auditReports/5 401 2.810 ms - 30
+2022-07-12 15:12:04:124 info: POST /login 200 596.790 ms - 461
+2022-07-12 15:12:21:1221 info: GET /api/v1/clientes/auditReports/5 200 784.350 ms - 72462
+2022-07-12 15:17:25:1725 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:17:25:1725 info: App started,listening on port 8000
+2022-07-12 15:17:41:1741 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:17:41:1741 info: App started,listening on port 8000
+2022-07-12 15:17:51:1751 info: POST /api/v1/usuarios 201 643.872 ms - 86
+2022-07-12 15:18:06:186 info: POST /login 200 192.914 ms - 459
+2022-07-12 15:18:19:1819 info: GET /api/v1/clientes/auditReports/5 401 77.613 ms - 30
+2022-07-12 15:19:19:1919 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:19:19:1919 info: App started,listening on port 8000
+2022-07-12 15:19:24:1924 info: GET /api/v1/clientes/auditReports/5 200 1232.496 ms - 72462
+2022-07-12 15:19:35:1935 info: GET /api/v1/clientes/auditReports/5 200 697.477 ms - 72462
+2022-07-12 15:19:39:1939 info: GET /api/v1/clientes/auditReports/5 401 80.107 ms - 30
+2022-07-12 15:19:50:1950 info: GET /api/v1/usuarios 200 79.030 ms - 3593
+2022-07-12 15:19:58:1958 info: DELETE /api/v1/usuarios/20 200 79.641 ms - 86
+2022-07-12 15:20:09:209 info: GET /api/v1/clientes/auditReports/5 401 76.213 ms - 30
+2022-07-12 15:20:22:2022 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:20:22:2022 info: App started,listening on port 8000
+2022-07-12 15:20:25:2025 info: GET /api/v1/clientes/auditReports/5 401 462.755 ms - 34
+2022-07-12 15:20:35:2035 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:20:35:2035 info: App started,listening on port 8000
+2022-07-12 15:20:44:2044 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:20:44:2044 info: App started,listening on port 8000
+2022-07-12 15:23:27:2327 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:23:27:2327 info: App started,listening on port 8000
+2022-07-12 15:23:51:2351 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:23:51:2351 info: App started,listening on port 8000
+2022-07-12 15:24:07:247 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:07:247 info: App started,listening on port 8000
+2022-07-12 15:24:14:2414 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:14:2414 info: App started,listening on port 8000
+2022-07-12 15:24:25:2425 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:25:2425 info: App started,listening on port 8000
+2022-07-12 15:24:35:2435 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:35:2435 info: App started,listening on port 8000
+2022-07-12 15:24:49:2449 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:24:49:2449 info: App started,listening on port 8000
+2022-07-12 15:25:02:252 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:25:02:252 info: App started,listening on port 8000
+2022-07-12 15:29:32:2932 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:29:32:2932 info: App started,listening on port 8000
+2022-07-12 15:35:06:356 info: Se establecio la conexion a la base de datos 
+2022-07-12 15:35:06:356 info: App started,listening on port 8000
+2022-07-12 15:35:18:3518 info: POST /login 200 598.190 ms - 461
+2022-07-12 15:35:31:3531 info: GET /api/v1/usuarios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcm5hbWUiOiJERVYiLCJub21icmUiOiJNQU5URU5JTUlFTlRPIDIiLCJpZFJ1dGEiOjEsImlkVXN1YXJpbyI6IjE2IiwiaWRVc2VyVHlwZSI6Miwic3RhdHVzIjoxfSwiaWF0IjoxNjU3NjU4MTE4LCJleHAiOjE2NTc2NTgxNzh9.j_m4NHRLbZJeuR8TUnc-d9n_tuuUMUeLkiGp3ZzK3fA 401 80.990 ms - 34
+2022-07-12 15:35:39:3539 info: POST /login 200 189.670 ms - 461
+2022-07-12 15:35:52:3552 info: GET /api/v1/usuarios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcm5hbWUiOiJERVYiLCJub21icmUiOiJNQU5URU5JTUlFTlRPIDIiLCJpZFJ1dGEiOjEsImlkVXN1YXJpbyI6IjE2IiwiaWRVc2VyVHlwZSI6Miwic3RhdHVzIjoxfSwiaWF0IjoxNjU3NjU4MTM5LCJleHAiOjE2NTc2NTgxOTl9.mqSNa0Oq5-Xh05fueuEX9TXYf8h4lU3bojuKyXDI4_M 401 78.517 ms - 34
+2022-07-12 15:37:13:3713 info: GET /api/v1/usuarios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcm5hbWUiOiJERVYiLCJub21icmUiOiJNQU5URU5JTUlFTlRPIDIiLCJpZFJ1dGEiOjEsImlkVXN1YXJpbyI6IjE2IiwiaWRVc2VyVHlwZSI6Miwic3RhdHVzIjoxfSwiaWF0IjoxNjU3NjU4MTM5LCJleHAiOjE2NTc2NTgxOTl9.mqSNa0Oq5-Xh05fueuEX9TXYf8h4lU3bojuKyXDI4_M 401 451.709 ms - 34
+2022-07-12 16:36:47:3647 info: GET /api/v1/usuarios 200 555.143 ms - 3330
+2022-07-12 16:36:48:3648 info: GET /api/v1/usuarios 200 154.866 ms - 3330
+2022-07-12 16:36:50:3650 info: GET /api/v1/usuarios 200 156.169 ms - 3330
+2022-07-12 16:36:51:3651 info: GET /api/v1/usuarios 200 157.157 ms - 3330
+2022-07-12 16:37:06:376 info: POST /api/v1/usuarios 403 4.213 ms - 53
+2022-07-12 16:37:25:3725 info: POST /login 200 529.704 ms - 461
+2022-07-12 16:37:37:3737 info: POST /api/v1/usuarios 201 342.546 ms - 86
+2022-07-12 16:37:48:3748 info: POST /login 200 188.366 ms - 459
+2022-07-12 16:38:07:387 info: GET /api/v1/clientes/only/6 200 398.660 ms - 183911
+2022-07-12 16:38:12:3812 info: GET /api/v1/clientes/only/6 403 0.884 ms - 53
+2022-07-12 16:38:16:3816 info: GET /api/v1/clientes/only/6 200 390.601 ms - 183911
+2022-07-12 16:38:44:3844 info: GET /api/v1/usuarios 200 157.851 ms - 3593
+2022-07-12 16:38:52:3852 info: GET /api/v1/clientes/auditReports/5 401 75.809 ms - 28
+2022-07-12 16:41:45:4145 info: GET /api/v1/clientes/auditReports/5 200 1035.266 ms - 72462
+2022-07-12 16:41:53:4153 info: GET /api/v1/clientes/only/6 200 392.961 ms - 183911
+2022-07-12 16:41:58:4158 info: GET /api/v1/usuarios 200 156.204 ms - 3593
+2022-07-12 16:42:04:424 info: GET /api/v1/usuarios 200 154.712 ms - 3593
+2022-07-12 16:42:15:4215 info: GET /api/v1/invoices/getInvoicesByCurrentDay/19 403 1.249 ms - 53
+2022-07-12 16:42:33:4233 info: GET /api/v1/invoices/getInvoicesByCurrentDay/19 200 160.356 ms - 56
+2022-07-12 16:42:44:4244 info: GET /api/v1/invoices/getInvoicesByCurrentDay/6 200 155.689 ms - 56
+2022-07-12 16:43:28:4328 info: GET /api/v1/clientes/2201 200 1077.517 ms - 3611
+2022-07-12 16:43:30:4330 info: GET /api/v1/clientes/2201 200 388.316 ms - 3611
+2022-07-12 16:44:05:445 info: GET /api/v1/clientes/2201 200 1072.706 ms - 3611
+2022-07-12 16:44:07:447 info: GET /api/v1/clientes/2201 200 385.647 ms - 3611
+2022-07-12 16:44:08:448 info: GET /api/v1/clientes/2201 200 390.239 ms - 3611
+2022-07-12 16:44:47:4447 info: GET /api/v1/clientes/2201 200 1066.694 ms - 3611
+2022-07-12 16:44:51:4451 info: GET /api/v1/clientes/2201 200 387.362 ms - 3611
+2022-07-12 16:44:53:4453 info: GET /api/v1/clientes/2201 200 384.570 ms - 3611
+2022-07-12 16:44:54:4454 info: GET /api/v1/clientes/2201 200 386.833 ms - 3611
+2022-07-12 16:44:56:4456 info: GET /api/v1/clientes/2201 200 387.864 ms - 3611
+2022-07-12 16:45:01:451 info: GET /api/v1/clientes/2201 200 381.999 ms - 3611
+2022-07-12 16:45:07:457 info: GET /api/v1/clientes/2201 200 385.031 ms - 3611
+2022-07-12 16:45:31:4531 info: GET /api/v1/usuarios 200 161.254 ms - 3593
+2022-07-12 16:45:41:4541 info: DELETE /api/v1/usuarios/21 403 0.391 ms - 53
+2022-07-12 16:45:55:4555 info: DELETE /api/v1/usuarios/21 200 153.833 ms - 86
+2022-07-12 16:45:59:4559 info: GET /api/v1/usuarios 401 77.456 ms - 34
+2022-07-12 16:46:39:4639 info: Se establecio la conexion a la base de datos 
+2022-07-12 16:46:39:4639 info: App started,listening on port 8000
+2022-07-12 16:46:52:4652 info: POST /api/v1/usuarios 401 479.633 ms - 34
+2022-07-12 16:46:59:4659 info: POST /login 500 79.941 ms - 66
+2022-07-12 16:47:05:475 info: POST /login 200 200.986 ms - 461
+2022-07-12 16:47:25:4725 info: POST /api/v1/usuarios 201 315.794 ms - 86
+2022-07-12 16:47:31:4731 info: GET /api/v1/usuarios 200 158.923 ms - 3593
+2022-07-12 21:20:14:2014 info: Se establecio la conexion a la base de datos 
+2022-07-12 21:20:14:2014 info: App started,listening on port 8000
+2022-07-12 21:23:34:2334 info: Se establecio la conexion a la base de datos 
+2022-07-12 21:23:34:2334 info: App started,listening on port 8000
+2022-07-13 11:20:48:2048 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:24:55:2455 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:26:57:2657 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:27:02:272 info: POST /login 200 649.568 ms - 461
+2022-07-13 11:44:28:4428 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:45:49:4549 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:46:52:4652 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:46:52:4652 info: App started,listening on port 8000
+2022-07-13 11:49:14:4914 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:49:14:4914 info: App started,listening on port 8000
+2022-07-13 11:49:24:4924 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:49:24:4924 info: App started,listening on port 8000
+2022-07-13 11:49:52:4952 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:49:52:4952 info: App started,listening on port 8000
+2022-07-13 11:50:28:5028 info: POST /login 200 660.909 ms - 461
+2022-07-13 11:50:43:5043 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:50:43:5043 info: App started,listening on port 8000
+2022-07-13 11:50:45:5045 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:50:45:5045 info: App started,listening on port 8000
+2022-07-13 11:50:57:5057 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:50:57:5057 info: App started,listening on port 8000
+2022-07-13 11:51:17:5117 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:51:17:5117 info: App started,listening on port 8000
+2022-07-13 11:51:18:5118 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:51:18:5118 info: App started,listening on port 8000
+2022-07-13 11:52:16:5216 info: Se establecio la conexion a la base de datos 
+2022-07-13 11:52:16:5216 info: App started,listening on port 8000
+2022-07-13 12:32:19:3219 info: Se establecio la conexion a la base de datos 
+2022-07-13 12:32:19:3219 info: App started,listening on port 8000
+2022-07-13 12:33:22:3322 info: Se establecio la conexion a la base de datos 
+2022-07-13 12:33:22:3322 info: App started,listening on port 8000
+2022-07-13 12:52:47:5247 info: POST /logi 404 15.271 ms - 1512
+2022-07-13 12:59:23:5923 info: Se establecio la conexion a la base de datos 
+2022-07-13 12:59:23:5923 info: App started,listening on port 8000
+2022-07-13 12:59:39:5939 info: Se establecio la conexion a la base de datos 
+2022-07-13 12:59:39:5939 info: App started,listening on port 8000
+2022-07-13 13:00:05:05 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:00:05:05 info: App started,listening on port 8000
+2022-07-13 13:02:04:24 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:02:04:24 info: App started,listening on port 8000
+2022-07-13 13:05:26:526 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:05:26:526 info: App started,listening on port 8000
+2022-07-13 13:08:15:815 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:08:15:815 info: App started,listening on port 8000
+2022-07-13 13:10:05:105 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:10:05:105 info: App started,listening on port 8000
+2022-07-13 13:10:08:108 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:10:08:108 info: App started,listening on port 8000
+2022-07-13 13:11:09:119 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:11:09:119 info: App started,listening on port 8000
+2022-07-13 13:11:12:1112 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:11:12:1112 info: App started,listening on port 8000
+2022-07-13 13:12:48:1248 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:12:48:1248 info: App started,listening on port 8000
+2022-07-13 13:26:25:2625 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:26:25:2625 info: App started,listening on port 8000
+2022-07-13 13:26:30:2630 info: GET /api/v1/categories 403 4.874 ms - 53
+2022-07-13 13:26:50:2650 info: GET /api/v1/categories?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsidXNlcm5hbWUiOiJERVYiLCJub21icmUiOiJNQU5URU5JTUlFTlRPIDIiLCJpZFJ1dGEiOjEsImlkVXN1YXJpbyI6IjE2IiwiaWRVc2VyVHlwZSI6Miwic3RhdHVzIjoxfSwiaWF0IjoxNjU3NjYyNDI1LCJleHAiOjE2NTc3NDg4MjV9.2n923zGi7CDK6kTkg89trbft9YG_-ngh1FE_wdnlrs4 403 1.212 ms - 53
+2022-07-13 13:27:15:2715 info: GET /api/v1/categories 200 598.051 ms - 139
+2022-07-13 13:34:02:342 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:34:02:342 info: App started,listening on port 8000
+2022-07-13 13:35:11:3511 info: Se establecio la conexion a la base de datos 
+2022-07-13 13:35:11:3511 info: App started,listening on port 8000
+2022-07-13 16:21:27:2127 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:21:27:2127 info: App started,listening on port 8000
+2022-07-13 16:22:26:2226 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:22:26:2226 info: App started,listening on port 8000
+2022-07-13 16:23:15:2315 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:23:15:2315 info: App started,listening on port 8000
+2022-07-13 16:23:21:2321 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:23:21:2321 info: App started,listening on port 8000
+2022-07-13 16:23:31:2331 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:23:31:2331 info: App started,listening on port 8000
+2022-07-13 16:23:44:2344 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:23:44:2344 info: App started,listening on port 8000
+2022-07-13 16:24:42:2442 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:24:42:2442 info: App started,listening on port 8000
+2022-07-13 16:25:05:255 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:25:05:255 info: App started,listening on port 8000
+2022-07-13 16:25:43:2543 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:25:43:2543 info: App started,listening on port 8000
+2022-07-13 16:30:21:3021 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:30:21:3021 info: App started,listening on port 8000
+2022-07-13 16:30:37:3037 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:30:37:3037 info: App started,listening on port 8000
+2022-07-13 16:34:14:3414 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:34:14:3414 info: App started,listening on port 8000
+2022-07-13 16:34:21:3421 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:34:22:3422 info: App started,listening on port 8000
+2022-07-13 16:36:49:3649 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:36:49:3649 info: App started,listening on port 8000
+2022-07-13 16:37:51:3751 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:37:51:3751 info: App started,listening on port 8000
+2022-07-13 16:40:51:4051 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:40:51:4051 info: App started,listening on port 8000
+2022-07-13 16:42:34:4234 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:42:34:4234 info: App started,listening on port 8000
+2022-07-13 16:42:47:4247 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:42:47:4247 info: App started,listening on port 8000
+2022-07-13 16:43:31:4331 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:43:31:4331 info: App started,listening on port 8000
+2022-07-13 16:44:17:4417 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:44:17:4417 info: App started,listening on port 8000
+2022-07-13 16:48:01:481 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:48:01:481 info: App started,listening on port 8000
+2022-07-13 16:48:48:4848 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:48:48:4848 info: App started,listening on port 8000
+2022-07-13 16:49:07:497 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:49:07:497 info: App started,listening on port 8000
+2022-07-13 16:49:19:4919 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:49:19:4919 info: App started,listening on port 8000
+2022-07-13 16:50:53:5053 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:50:53:5053 info: App started,listening on port 8000
+2022-07-13 16:50:58:5058 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:50:58:5058 info: App started,listening on port 8000
+2022-07-13 16:51:18:5118 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:51:18:5118 info: App started,listening on port 8000
+2022-07-13 16:51:25:5125 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:51:25:5125 info: App started,listening on port 8000
+2022-07-13 16:52:04:524 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:52:04:524 info: App started,listening on port 8000
+2022-07-13 16:52:16:5216 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:52:16:5216 info: App started,listening on port 8000
+2022-07-13 16:53:06:536 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:53:06:536 info: App started,listening on port 8000
+2022-07-13 16:53:13:5313 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:53:13:5313 info: App started,listening on port 8000
+2022-07-13 16:53:43:5343 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:53:43:5343 info: App started,listening on port 8000
+2022-07-13 16:54:11:5411 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:54:12:5412 info: App started,listening on port 8000
+2022-07-13 16:54:26:5426 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:54:26:5426 info: App started,listening on port 8000
+2022-07-13 16:54:27:5427 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:54:27:5427 info: App started,listening on port 8000
+2022-07-13 16:54:27:5427 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:54:27:5427 info: App started,listening on port 8000
+2022-07-13 16:54:28:5428 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:54:28:5428 info: App started,listening on port 8000
+2022-07-13 16:54:56:5456 info: Se establecio la conexion a la base de datos 
+2022-07-13 16:54:56:5456 info: App started,listening on port 8000
+2022-07-13 17:00:37:037 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:00:37:037 info: App started,listening on port 8000
+2022-07-13 17:00:54:054 info: GET /api/v1/clientes/only/6 401 526.687 ms - 28
+2022-07-13 17:01:06:16 info: POST /logi 404 21.593 ms - 1512
+2022-07-13 17:01:19:119 info: POST /login 200 215.781 ms - 461
+2022-07-13 17:01:59:159 info: GET /api/v1/clientes/only/6 200 862.087 ms - 183911
+2022-07-13 17:02:14:214 info: GET /api/v1/payments/byWeek 404 1.139 ms - 1512
+2022-07-13 17:03:39:339 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:03:39:339 info: App started,listening on port 8000
+2022-07-13 17:03:57:357 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:03:57:357 info: App started,listening on port 8000
+2022-07-13 17:05:37:537 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:05:37:537 info: App started,listening on port 8000
+2022-07-13 17:06:44:644 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:06:44:644 info: App started,listening on port 8000
+2022-07-13 17:07:25:725 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:07:25:725 info: App started,listening on port 8000
+2022-07-13 17:07:46:746 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:07:46:746 info: App started,listening on port 8000
+2022-07-13 17:07:57:757 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:07:57:757 info: App started,listening on port 8000
+2022-07-13 17:07:59:759 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:07:59:759 info: App started,listening on port 8000
+2022-07-13 17:08:08:88 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:08:08:88 info: App started,listening on port 8000
+2022-07-13 17:10:07:107 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:10:07:107 info: App started,listening on port 8000
+2022-07-13 17:10:25:1025 info: GET /api/v1/clientes/2201 200 1240.284 ms - 3611
+2022-07-13 17:10:37:1037 info: GET /api/v1/invoices/ 403 0.906 ms - 53
+2022-07-13 17:10:52:1052 info: GET /api/v1/invoices/ 200 562.499 ms - 674333
+2022-07-13 17:11:48:1148 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:11:48:1148 info: App started,listening on port 8000
+2022-07-13 17:12:01:121 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:12:01:121 info: App started,listening on port 8000
+2022-07-13 17:13:09:139 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:13:09:139 info: App started,listening on port 8000
+2022-07-13 17:13:13:1313 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:13:13:1313 info: App started,listening on port 8000
+2022-07-13 17:14:49:1449 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:14:49:1449 info: App started,listening on port 8000
+2022-07-13 17:14:58:1458 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:14:58:1458 info: App started,listening on port 8000
+2022-07-13 17:15:42:1542 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:15:42:1542 info: App started,listening on port 8000
+2022-07-13 17:16:55:1655 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:16:55:1655 info: App started,listening on port 8000
+2022-07-13 17:18:17:1817 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:18:17:1817 info: App started,listening on port 8000
+2022-07-13 17:18:48:1848 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:18:48:1848 info: App started,listening on port 8000
+2022-07-13 17:19:12:1912 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:19:12:1912 info: App started,listening on port 8000
+2022-07-13 17:19:31:1931 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:19:31:1931 info: App started,listening on port 8000
+2022-07-13 17:20:18:2018 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:20:18:2018 info: App started,listening on port 8000
+2022-07-13 17:20:56:2056 info: GET /api/v1/payments 404 6.134 ms - 1512
+2022-07-13 17:22:41:2241 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:22:41:2241 info: App started,listening on port 8000
+2022-07-13 17:22:44:2244 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:22:44:2244 info: App started,listening on port 8000
+2022-07-13 17:22:47:2247 info: GET /api/v1/payments 500 508.366 ms - 1561
+2022-07-13 17:23:45:2345 info: GET /api/v1/categories/2 200 597.966 ms - 102
+2022-07-13 17:23:51:2351 info: GET /api/v1/payments 500 90.747 ms - 1561
+2022-07-13 17:24:23:2423 info: GET /api/v1/payments/byDay/2022-06-09 403 1.077 ms - 53
+2022-07-13 17:24:38:2438 info: GET /api/v1/payments/byDay/2022-06-09 200 587.759 ms - 6871
+2022-07-13 17:27:27:2727 info: GET /api/v1/invoices/ 200 965.809 ms - 674333
+2022-07-13 17:27:51:2751 info: POST /login 200 232.370 ms - 461
+2022-07-13 17:45:15:4515 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:45:15:4515 info: App started,listening on port 8000
+2022-07-13 17:45:20:4520 info: Se establecio la conexion a la base de datos 
+2022-07-13 17:45:20:4520 info: App started,listening on port 8000
+2022-07-14 08:14:43:1443 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:14:43:1443 info: App started,listening on port 8000
+2022-07-14 08:16:58:1658 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:16:58:1658 info: App started,listening on port 8000
+2022-07-14 08:18:02:182 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:18:02:182 info: App started,listening on port 8000
+2022-07-14 08:18:38:1838 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:18:38:1838 info: App started,listening on port 8000
+2022-07-14 08:18:45:1845 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:18:45:1845 info: App started,listening on port 8000
+2022-07-14 08:19:12:1912 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:19:12:1912 info: App started,listening on port 8000
+2022-07-14 08:19:28:1928 info: Se establecio la conexion a la base de datos 
+2022-07-14 08:19:28:1928 info: App started,listening on port 8000
+2022-07-15 08:51:24:5124 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:51:24:5124 info: App started,listening on port 8000
+2022-07-15 08:54:04:544 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:54:04:544 info: App started,listening on port 8000
+2022-07-15 08:54:40:5440 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:54:40:5440 info: App started,listening on port 8000
+2022-07-15 08:54:55:5455 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:54:55:5455 info: App started,listening on port 8000
+2022-07-15 08:55:54:5554 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:55:54:5554 info: App started,listening on port 8000
+2022-07-15 08:55:55:5555 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:55:55:5555 info: App started,listening on port 8000
+2022-07-15 08:56:29:5629 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:56:29:5629 info: App started,listening on port 8000
+2022-07-15 08:56:45:5645 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:56:46:5646 info: App started,listening on port 8000
+2022-07-15 08:57:30:5730 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:57:30:5730 info: App started,listening on port 8000
+2022-07-15 08:57:32:5732 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:57:32:5732 info: App started,listening on port 8000
+2022-07-15 08:57:46:5746 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:57:46:5746 info: App started,listening on port 8000
+2022-07-15 08:58:54:5854 info: Se establecio la conexion a la base de datos 
+2022-07-15 08:58:54:5854 info: App started,listening on port 8000
+2022-07-15 09:01:41:141 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:01:41:141 info: App started,listening on port 8000
+2022-07-15 09:01:45:145 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:01:45:145 info: App started,listening on port 8000
+2022-07-15 09:03:03:33 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:03:03:33 info: App started,listening on port 8000
+2022-07-15 09:03:47:347 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:03:47:347 info: App started,listening on port 8000
+2022-07-15 09:04:01:41 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:04:01:41 info: App started,listening on port 8000
+2022-07-15 09:04:22:422 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:04:22:422 info: App started,listening on port 8000
+2022-07-15 09:06:13:613 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:06:13:613 info: App started,listening on port 8000
+2022-07-15 09:06:45:645 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:06:45:645 info: App started,listening on port 8000
+2022-07-15 09:07:55:755 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:07:55:755 info: App started,listening on port 8000
+2022-07-15 09:08:25:825 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:08:25:825 info: App started,listening on port 8000
+2022-07-15 09:09:41:941 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:09:41:941 info: App started,listening on port 8000
+2022-07-15 09:09:48:948 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:09:48:948 info: App started,listening on port 8000
+2022-07-15 09:09:54:954 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:09:54:954 info: App started,listening on port 8000
+2022-07-15 09:19:01:191 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:19:01:191 info: App started,listening on port 8000
+2022-07-15 09:20:21:2021 info: Se establecio la conexion a la base de datos 
+2022-07-15 09:20:21:2021 info: App started,listening on port 8000
+2022-07-18 09:05:47:547 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:05:47:547 info: App started,listening on port 8000
+2022-07-18 09:08:22:822 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:08:22:822 info: App started,listening on port 8000
+2022-07-18 09:08:32:832 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:08:32:832 info: App started,listening on port 8000
+2022-07-18 09:08:47:847 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:08:47:847 info: App started,listening on port 8000
+2022-07-18 09:08:47:847 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:08:47:847 info: App started,listening on port 8000
+2022-07-18 09:10:42:1042 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:10:42:1042 info: App started,listening on port 8000
+2022-07-18 09:10:46:1046 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:10:46:1046 info: App started,listening on port 8000
+2022-07-18 09:10:48:1048 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:10:48:1048 info: App started,listening on port 8000
+2022-07-18 09:11:10:1110 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:11:10:1110 info: App started,listening on port 8000
+2022-07-18 09:13:16:1316 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:13:16:1316 info: App started,listening on port 8000
+2022-07-18 09:13:31:1331 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:13:31:1331 info: App started,listening on port 8000
+2022-07-18 09:13:40:1340 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:13:40:1340 info: App started,listening on port 8000
+2022-07-18 09:18:11:1811 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:18:11:1811 info: App started,listening on port 8000
+2022-07-18 09:18:28:1828 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:18:28:1828 info: App started,listening on port 8000
+2022-07-18 09:18:55:1855 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:18:55:1855 info: App started,listening on port 8000
+2022-07-18 09:19:46:1946 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:19:46:1946 info: App started,listening on port 8000
+2022-07-18 09:19:52:1952 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:19:52:1952 info: App started,listening on port 8000
+2022-07-18 09:20:40:2040 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:20:40:2040 info: App started,listening on port 8000
+2022-07-18 09:20:44:2044 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:20:44:2044 info: App started,listening on port 8000
+2022-07-18 09:22:03:223 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:22:03:223 info: App started,listening on port 8000
+2022-07-18 09:22:45:2245 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:22:45:2245 info: App started,listening on port 8000
+2022-07-18 09:23:15:2315 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:23:15:2315 info: App started,listening on port 8000
+2022-07-18 09:23:36:2336 info: GET /api/v1/rutas 403 5.314 ms - 53
+2022-07-18 09:24:01:241 info: POST /login 200 617.184 ms - 461
+2022-07-18 09:24:28:2428 info: GET /api/v1/rutas 200 172.087 ms - 1751
+2022-07-18 09:25:38:2538 warn: Visits Model getting a list of the data query
+2022-07-18 09:25:38:2538 info: Solicitando las visitas en la BD
+2022-07-18 09:25:38:2538 info: GET /api/v1/visits 200 533.823 ms - 15957
+2022-07-18 09:26:04:264 info: POST /login 200 165.990 ms - 461
+2022-07-18 09:28:34:2834 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:28:34:2834 info: App started,listening on port 8000
+2022-07-18 09:28:45:2845 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:28:45:2845 info: App started,listening on port 8000
+2022-07-18 09:29:32:2932 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:29:32:2932 info: App started,listening on port 8000
+2022-07-18 09:32:47:3247 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:32:47:3247 info: App started,listening on port 8000
+2022-07-18 09:33:08:338 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:33:08:338 info: App started,listening on port 8000
+2022-07-18 09:34:54:3454 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:34:54:3454 info: App started,listening on port 8000
+2022-07-18 09:36:35:3635 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:36:35:3635 info: App started,listening on port 8000
+2022-07-18 09:36:39:3639 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:36:39:3639 info: App started,listening on port 8000
+2022-07-18 09:40:14:4014 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:40:14:4014 info: App started,listening on port 8000
+2022-07-18 09:40:14:4014 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:40:14:4014 info: App started,listening on port 8000
+2022-07-18 09:43:06:436 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:43:06:436 info: App started,listening on port 8000
+2022-07-18 09:43:57:4357 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:43:57:4357 info: App started,listening on port 8000
+2022-07-18 09:44:06:446 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:44:06:446 info: App started,listening on port 8000
+2022-07-18 09:44:17:4417 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:44:17:4417 info: App started,listening on port 8000
+2022-07-18 09:45:11:4511 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:45:11:4511 info: App started,listening on port 8000
+2022-07-18 09:45:57:4557 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:45:57:4557 info: App started,listening on port 8000
+2022-07-18 09:46:04:464 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:46:04:464 info: App started,listening on port 8000
+2022-07-18 09:47:18:4718 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:47:18:4718 info: App started,listening on port 8000
+2022-07-18 09:47:24:4724 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:47:24:4724 info: App started,listening on port 8000
+2022-07-18 09:50:26:5026 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:50:26:5026 info: App started,listening on port 8000
+2022-07-18 09:50:50:5050 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:50:50:5050 info: App started,listening on port 8000
+2022-07-18 09:51:07:517 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:51:07:517 info: App started,listening on port 8000
+2022-07-18 09:51:10:5110 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:51:10:5110 info: App started,listening on port 8000
+2022-07-18 09:55:09:559 info: Se establecio la conexion a la base de datos 
+2022-07-18 09:55:09:559 info: App started,listening on port 8000
+2022-07-18 09:55:17:5517 info: GET /api/v1/rutas 200 563.453 ms - 1751
+2022-07-18 09:55:24:5524 info: GET /api/v1/products 403 0.880 ms - 53
+2022-07-18 09:55:35:5535 info: GET /api/v1/products 200 179.591 ms - 2768
+2022-08-10 13:44:02:442 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:44:02:442 info: App started,listening on port 8000
+2022-08-10 13:44:22:4422 info: POST /login 500 525.839 ms - 66
+2022-08-10 13:45:24:4524 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:45:24:4524 info: App started,listening on port 8000
+2022-08-10 13:46:20:4620 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:46:20:4620 info: App started,listening on port 8000
+2022-08-10 13:46:26:4626 info: Model: username: ' having 1=1
+2022-08-10 13:46:26:4626 info: POST /login 500 514.678 ms - 66
+2022-08-10 13:46:38:4638 info: Model: username: ' having 1=1--
+2022-08-10 13:46:39:4639 info: POST /login 500 90.880 ms - 66
+2022-08-10 13:48:07:487 info: Model: username: '' having 1=1--
+2022-08-10 13:48:08:488 info: POST /login 500 480.580 ms - 66
+2022-08-10 13:48:42:4842 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:48:42:4842 info: App started,listening on port 8000
+2022-08-10 13:48:46:4846 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:48:46:4846 info: App started,listening on port 8000
+2022-08-10 13:49:04:494 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:49:04:494 info: App started,listening on port 8000
+2022-08-10 13:49:07:497 info: Model: username: '' having 1=1--
+2022-08-10 13:49:08:498 info: POST /login 500 530.958 ms - 66
+2022-08-10 13:49:26:4926 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:49:26:4926 info: App started,listening on port 8000
+2022-08-10 13:49:29:4929 info: Model: username: '' having 1=1--
+2022-08-10 13:49:29:4929 info: POST /login 500 530.835 ms - 66
+2022-08-10 13:52:27:5227 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:52:27:5227 info: App started,listening on port 8000
+2022-08-10 13:52:38:5238 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:52:38:5238 info: App started,listening on port 8000
+2022-08-10 13:52:53:5253 info: Model: username: DEV attempt to login
+2022-08-10 13:52:53:5253 info: POST /login 200 651.088 ms - 461
+2022-08-10 13:55:32:5532 info: Se establecio la conexion a la base de datos 
+2022-08-10 13:55:32:5532 info: App started,listening on port 8000
+2022-08-11 09:15:41:1541 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:15:41:1541 info: App started,listening on port 8000
+2022-08-11 09:15:50:1550 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:15:50:1550 info: App started,listening on port 8000
+2022-08-11 09:15:51:1551 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:15:51:1551 info: App started,listening on port 8000
+2022-08-11 09:22:57:2257 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:22:57:2257 info: App started,listening on port 8000
+2022-08-11 09:23:40:2340 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:23:40:2340 info: App started,listening on port 8000
+2022-08-11 09:24:00:240 info: Se establecio la conexion a la base de datos 
+2022-08-11 09:24:00:240 info: App started,listening on port 8000
+2022-08-11 09:24:27:2427 info: Model: username: DEV attempt to login
+2022-08-11 09:24:28:2428 info: POST /api/v1/payments 401 541.632 ms - 28
+2022-08-11 09:24:33:2433 info: Model: username: DEV attempt to login
+2022-08-11 09:24:33:2433 info: POST /login 200 203.727 ms - 461
+2022-08-11 09:25:15:2515 info: Model: username: DEV attempt to login
+2022-08-11 09:25:16:2516 info: Begin transaction
+2022-08-11 09:25:16:2516 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-11 09:25:16:2516 info: if exist Remaining Payment: 
+2022-08-11 09:25:16:2516 info: client.query() COMMIT row count on insert:
+2022-08-11 09:25:16:2516 info: POST /api/v1/payments 200 952.176 ms - 210
+2022-08-11 09:25:46:2546 info: Model: username: DEV attempt to login
+2022-08-11 09:25:46:2546 info: GET /api/v1/payments/byDay/2022-08-11 200 567.470 ms - 430
+2022-08-11 21:00:20:020 info: Model: username: DEV attempt to login
+2022-08-11 21:00:21:021 info: Begin transaction
+2022-08-11 21:00:21:021 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-11 21:00:21:021 info: if exist Remaining Payment: 
+2022-08-11 21:00:21:021 info: client.query() COMMIT row count on insert:
+2022-08-11 21:00:21:021 info: POST /api/v1/payments 200 988.998 ms - 209
+2022-08-11 21:00:30:030 info: Model: username: DEV attempt to login
+2022-08-11 21:00:31:031 info: GET /api/v1/payments/byDay/2022-08-11 200 582.859 ms - 804
+2022-08-11 21:01:54:154 info: Model: username: DEV attempt to login
+2022-08-11 21:01:54:154 info: GET /api/v1/payments/byWeek 200 576.417 ms - 3379
+2022-08-11 21:03:41:341 info: Model: username: DEV attempt to login
+2022-08-11 21:03:41:341 info: GET /api/v1/payments/byWeek 200 574.433 ms - 3379
+2022-08-11 21:05:42:542 info: Model: username: DEV attempt to login
+2022-08-11 21:05:43:543 info: GET /api/v1/usuarios 200 583.422 ms - 3323
+2022-08-11 21:06:15:615 info: Model: username: DEV attempt to login
+2022-08-11 21:06:15:615 info: GET /api/v1/clientes/auditReports/1 200 562.665 ms - 194
+2022-08-11 21:14:38:1438 info: Model: username: DEV attempt to login
+2022-08-11 21:14:39:1439 info: client.query() COMMIT row count: 1
+2022-08-11 21:14:39:1439 info: client.query() COMMIT row count: 1
+2022-08-11 21:14:39:1439 info: POST /api/v1/invoices 200 1008.141 ms - 114
+2022-08-11 21:18:07:187 info: POST /api/v1/invoices/cancel 403 18.494 ms - 53
+2022-08-11 21:18:35:1835 info: Model: username: DEV attempt to login
+2022-08-11 21:21:05:215 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:21:05:215 info: App started,listening on port 8000
+2022-08-11 21:21:38:2138 info: Model: username: DEV attempt to login
+2022-08-11 21:21:38:2138 info: client.query() COMMIT row count on insert:
+2022-08-11 21:21:39:2139 info: POST /api/v1/invoices/cancel 200 948.742 ms - 226
+2022-08-11 21:24:26:2426 info: Model: username: DEV attempt to login
+2022-08-11 21:24:27:2427 info: GET /api/v1/payments/byDay/2022-08-11 200 577.053 ms - 1179
+2022-08-11 21:32:35:3235 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:32:35:3235 info: App started,listening on port 8000
+2022-08-11 21:32:36:3236 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:32:36:3236 info: App started,listening on port 8000
+2022-08-11 21:33:09:339 info: Model: username: DEV attempt to login
+2022-08-11 21:33:09:339 info: PUT /api/v1/payments 200 523.955 ms - 54
+2022-08-11 21:33:27:3327 info: Model: username: DEV attempt to login
+2022-08-11 21:33:27:3327 info: PUT /api/v1/payments 200 530.470 ms - 54
+2022-08-11 21:34:55:3455 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:34:55:3455 info: App started,listening on port 8000
+2022-08-11 21:35:03:353 info: Model: username: DEV attempt to login
+2022-08-11 21:35:03:353 info: PUT /api/v1/payments 200 515.425 ms - 44
+2022-08-11 21:35:40:3540 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:35:40:3540 info: App started,listening on port 8000
+2022-08-11 21:35:44:3544 info: Model: username: DEV attempt to login
+2022-08-11 21:35:44:3544 info: PUT /api/v1/payments 200 520.438 ms - 44
+2022-08-11 21:44:59:4459 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:44:59:4459 info: App started,listening on port 8000
+2022-08-11 21:45:07:457 info: Model: username: DEV attempt to login
+2022-08-11 21:45:07:457 info: PUT /api/v1/payments 200 487.008 ms - 44
+2022-08-11 21:49:57:4957 info: Se establecio la conexion a la base de datos 
+2022-08-11 21:49:57:4957 info: App started,listening on port 8000
+2022-08-12 08:37:49:3749 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:37:49:3749 info: App started,listening on port 8000
+2022-08-12 08:38:08:388 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:38:08:388 info: App started,listening on port 8000
+2022-08-12 08:38:18:3818 info: Model: username: DEV attempt to login
+2022-08-12 08:38:18:3818 info: PUT /api/v1/payments 200 527.068 ms - 54
+2022-08-12 08:38:54:3854 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:38:54:3854 info: App started,listening on port 8000
+2022-08-12 08:39:18:3918 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:39:18:3918 info: App started,listening on port 8000
+2022-08-12 08:39:20:3920 info: Model: username: DEV attempt to login
+2022-08-12 08:39:21:3921 info: PUT /api/v1/payments 200 529.467 ms - 44
+2022-08-12 08:40:15:4015 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:40:15:4015 info: App started,listening on port 8000
+2022-08-12 08:40:17:4017 info: Model: username: DEV attempt to login
+2022-08-12 08:40:18:4018 info: PUT /api/v1/payments 200 619.519 ms - 44
+2022-08-12 08:41:33:4133 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:41:33:4133 info: App started,listening on port 8000
+2022-08-12 08:41:42:4142 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:41:42:4142 info: App started,listening on port 8000
+2022-08-12 08:41:59:4159 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:41:59:4159 info: App started,listening on port 8000
+2022-08-12 08:42:02:422 info: Model: username: DEV attempt to login
+2022-08-12 08:42:03:423 info: PUT /api/v1/payments 200 601.511 ms - 44
+2022-08-12 08:42:29:4229 info: Model: username: DEV attempt to login
+2022-08-12 08:42:29:4229 info: PUT /api/v1/payments 200 271.148 ms - 87
+2022-08-12 08:47:42:4742 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:47:42:4742 info: App started,listening on port 8000
+2022-08-12 08:47:49:4749 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:47:49:4749 info: App started,listening on port 8000
+2022-08-12 08:47:51:4751 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:47:51:4751 info: App started,listening on port 8000
+2022-08-12 08:47:54:4754 info: Model: username: DEV attempt to login
+2022-08-12 08:47:55:4755 info: PUT /api/v1/payments 200 1332.661 ms - 121
+2022-08-12 08:48:02:482 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:02:482 info: App started,listening on port 8000
+2022-08-12 08:48:07:487 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:07:487 info: App started,listening on port 8000
+2022-08-12 08:48:31:4831 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:31:4831 info: App started,listening on port 8000
+2022-08-12 08:48:32:4832 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:48:32:4832 info: App started,listening on port 8000
+2022-08-12 08:48:38:4838 info: Model: username: DEV attempt to login
+2022-08-12 08:48:38:4838 info: PUT /api/v1/payments 200 613.423 ms - 121
+2022-08-12 08:48:43:4843 info: Model: username: DEV attempt to login
+2022-08-12 08:48:43:4843 info: PUT /api/v1/payments 200 268.828 ms - 87
+2022-08-12 08:51:42:5142 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:51:42:5142 info: App started,listening on port 8000
+2022-08-12 08:54:47:5447 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:54:47:5447 info: App started,listening on port 8000
+2022-08-12 08:54:58:5458 info: Model: username: DEV attempt to login
+2022-08-12 08:54:59:5459 info: MODEL: validating if the : k6767676 exist
+2022-08-12 08:54:59:5459 info: MODEL: updating printted ticket: true and text ticket: test from dev and logger
+2022-08-12 08:54:59:5459 info: PUT /api/v1/payments 200 697.558 ms - 87
+2022-08-12 08:58:13:5813 info: Se establecio la conexion a la base de datos 
+2022-08-12 08:58:13:5813 info: App started,listening on port 8000
+2022-08-12 08:58:18:5818 info: Model: username: DEV attempt to login
+2022-08-12 08:58:18:5818 info: MODEL: validating if the : k676767 exist
+2022-08-12 08:58:18:5818 warn: MODEL: id Parment: k676767 not found
+2022-08-12 08:58:18:5818 info: PUT /api/v1/payments 200 612.495 ms - 121
+2022-08-12 11:16:12:1612 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:12:1612 info: App started,listening on port 8000
+2022-08-12 11:16:15:1615 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:15:1615 info: App started,listening on port 8000
+2022-08-12 11:16:24:1624 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:24:1624 info: App started,listening on port 8000
+2022-08-12 11:16:30:1630 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:30:1630 info: App started,listening on port 8000
+2022-08-12 11:16:41:1641 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:41:1641 info: App started,listening on port 8000
+2022-08-12 11:16:48:1648 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:48:1648 info: App started,listening on port 8000
+2022-08-12 11:16:54:1654 info: Se establecio la conexion a la base de datos 
+2022-08-12 11:16:54:1654 info: App started,listening on port 8000
+2022-08-13 10:38:12:3812 info: Model: username: DEV attempt to login
+2022-08-13 10:38:13:3813 info: POST /login 200 699.601 ms - 461
+2022-08-13 10:39:19:3919 info: Model: username: DEV attempt to login
+2022-08-13 10:39:20:3920 info: Begin transaction
+2022-08-13 10:39:20:3920 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 10:39:20:3920 info: if exist Remaining Payment: 
+2022-08-13 10:39:20:3920 info: 
+client.query(): duplicate key value violates unique constraint "payments_pkey"
+2022-08-13 10:41:48:4148 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:41:48:4148 info: App started,listening on port 8000
+2022-08-13 10:43:16:4316 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:43:16:4316 info: App started,listening on port 8000
+2022-08-13 10:43:20:4320 info: Model: username: DEV attempt to login
+2022-08-13 10:43:21:4321 info: Begin transaction
+2022-08-13 10:43:21:4321 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:43:22:4322 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 10:43:22:4322 info: if exist Remaining Payment: 
+2022-08-13 10:43:22:4322 info: 
+client.query(): duplicate key value violates unique constraint "payments_pkey"
+2022-08-13 10:43:35:4335 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:43:35:4335 info: App started,listening on port 8000
+2022-08-13 10:43:38:4338 info: Model: username: DEV attempt to login
+2022-08-13 10:43:38:4338 info: Begin transaction
+2022-08-13 10:43:38:4338 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:43:39:4339 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 10:43:39:4339 info: if exist Remaining Payment: 
+2022-08-13 10:43:39:4339 info: 
+client.query(): duplicate key value violates unique constraint "payments_pkey"
+2022-08-13 10:45:46:4546 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:45:46:4546 info: App started,listening on port 8000
+2022-08-13 10:45:56:4556 info: Model: username: DEV attempt to login
+2022-08-13 10:45:56:4556 info: Begin transaction
+2022-08-13 10:45:56:4556 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:45:57:4557 info: POST /api/v1/payments 200 1221.394 ms - 149
+2022-08-13 10:47:51:4751 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:47:51:4751 info: App started,listening on port 8000
+2022-08-13 10:48:17:4817 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:48:17:4817 info: App started,listening on port 8000
+2022-08-13 10:48:29:4829 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:48:29:4829 info: App started,listening on port 8000
+2022-08-13 10:49:23:4923 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:49:23:4923 info: App started,listening on port 8000
+2022-08-13 10:49:25:4925 info: Model: username: DEV attempt to login
+2022-08-13 10:49:25:4925 info: Begin transaction
+2022-08-13 10:49:25:4925 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:49:26:4926 info: POST /api/v1/payments 200 1190.000 ms - 54
+2022-08-13 10:49:43:4943 info: Model: username: DEV attempt to login
+2022-08-13 10:49:43:4943 info: Begin transaction
+2022-08-13 10:49:43:4943 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:49:44:4944 info: POST /api/v1/payments 200 777.254 ms - 54
+2022-08-13 10:50:34:5034 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:50:34:5034 info: App started,listening on port 8000
+2022-08-13 10:50:37:5037 info: Model: username: DEV attempt to login
+2022-08-13 10:50:38:5038 info: Begin transaction
+2022-08-13 10:50:38:5038 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:50:38:5038 info: POST /api/v1/payments 200 1190.437 ms - 54
+2022-08-13 10:51:39:5139 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:51:39:5139 info: App started,listening on port 8000
+2022-08-13 10:51:41:5141 info: Model: username: DEV attempt to login
+2022-08-13 10:51:41:5141 info: Begin transaction
+2022-08-13 10:51:41:5141 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:51:42:5142 info: POST /api/v1/payments 200 1193.502 ms - 149
+2022-08-13 10:52:26:5226 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:52:26:5226 info: App started,listening on port 8000
+2022-08-13 10:52:33:5233 info: Model: username: DEV attempt to login
+2022-08-13 10:52:33:5233 info: Begin transaction
+2022-08-13 10:52:33:5233 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:52:34:5234 info: POST /api/v1/payments 200 1186.091 ms - 188
+2022-08-13 10:52:56:5256 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:52:56:5256 info: App started,listening on port 8000
+2022-08-13 10:52:57:5257 info: Model: username: DEV attempt to login
+2022-08-13 10:52:58:5258 info: Begin transaction
+2022-08-13 10:52:58:5258 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:52:58:5258 info: POST /api/v1/payments 200 1209.662 ms - 158
+2022-08-13 10:53:07:537 info: Se establecio la conexion a la base de datos 
+2022-08-13 10:53:07:537 info: App started,listening on port 8000
+2022-08-13 10:53:10:5310 info: Model: username: DEV attempt to login
+2022-08-13 10:53:11:5311 info: Begin transaction
+2022-08-13 10:53:11:5311 info: MODEL: validating if the : L2525259 exist
+2022-08-13 10:53:11:5311 info: POST /api/v1/payments 200 1182.717 ms - 141
+2022-08-13 20:02:48:248 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:02:48:248 info: App started,listening on port 8000
+2022-08-13 20:03:07:37 info: Model: username: DEV attempt to login
+2022-08-13 20:03:08:38 info: Begin transaction
+2022-08-13 20:03:08:38 info: MODEL: validating if the : L2525259 exist
+2022-08-13 20:03:08:38 info: POST /api/v1/payments 200 1166.209 ms - 141
+2022-08-13 20:03:17:317 info: Model: username: DEV attempt to login
+2022-08-13 20:03:17:317 info: Begin transaction
+2022-08-13 20:03:17:317 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:03:18:318 info: Getting remainingPayment FROM InvoiceId: 2310
+2022-08-13 20:03:18:318 info: if exist Remaining Payment: 
+2022-08-13 20:03:18:318 info: client.query() COMMIT row count on insert:
+2022-08-13 20:03:18:318 info: POST /api/v1/payments 200 1003.395 ms - 209
+2022-08-13 20:09:12:912 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:09:12:912 info: App started,listening on port 8000
+2022-08-13 20:28:12:2812 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:12:2812 info: App started,listening on port 8000
+2022-08-13 20:28:12:2812 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:12:2812 info: App started,listening on port 8000
+2022-08-13 20:28:14:2814 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:14:2814 info: App started,listening on port 8000
+2022-08-13 20:28:35:2835 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:28:35:2835 info: App started,listening on port 8000
+2022-08-13 20:29:00:290 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:00:290 info: App started,listening on port 8000
+2022-08-13 20:29:22:2922 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:22:2922 info: App started,listening on port 8000
+2022-08-13 20:29:29:2929 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:29:2929 info: App started,listening on port 8000
+2022-08-13 20:29:35:2935 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:29:35:2935 info: App started,listening on port 8000
+2022-08-13 20:30:04:304 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:30:04:304 info: App started,listening on port 8000
+2022-08-13 20:30:09:309 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:30:09:309 info: App started,listening on port 8000
+2022-08-13 20:31:28:3128 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:31:28:3128 info: App started,listening on port 8000
+2022-08-13 20:32:34:3234 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:32:34:3234 info: App started,listening on port 8000
+2022-08-13 20:32:40:3240 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:32:40:3240 info: App started,listening on port 8000
+2022-08-13 20:33:17:3317 info: Model: username: DEV attempt to login
+2022-08-13 20:33:18:3318 info: Begin transaction
+2022-08-13 20:33:18:3318 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:34:53:3453 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:34:53:3453 info: App started,listening on port 8000
+2022-08-13 20:35:06:356 info: Model: username: DEV attempt to login
+2022-08-13 20:35:07:357 info: Begin transaction
+2022-08-13 20:35:07:357 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:35:07:357 info: POST /api/v1/invoices/cancel 200 1182.765 ms - 126
+2022-08-13 20:36:44:3644 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:36:44:3644 info: App started,listening on port 8000
+2022-08-13 20:36:47:3647 info: Model: username: DEV attempt to login
+2022-08-13 20:36:47:3647 info: Begin transaction
+2022-08-13 20:36:47:3647 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:36:48:3648 info: POST /api/v1/invoices/cancel 500 1173.790 ms - 83
+2022-08-13 20:37:17:3717 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:37:17:3717 info: App started,listening on port 8000
+2022-08-13 20:37:42:3742 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:37:42:3742 info: App started,listening on port 8000
+2022-08-13 20:38:10:3810 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:38:10:3810 info: App started,listening on port 8000
+2022-08-13 20:38:12:3812 info: Model: username: DEV attempt to login
+2022-08-13 20:38:13:3813 info: Begin transaction
+2022-08-13 20:38:13:3813 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:38:14:3814 info: POST /api/v1/invoices/cancel 500 1163.264 ms - 83
+2022-08-13 20:39:21:3921 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:39:21:3921 info: App started,listening on port 8000
+2022-08-13 20:39:24:3924 info: Model: username: DEV attempt to login
+2022-08-13 20:39:24:3924 info: Begin transaction
+2022-08-13 20:39:24:3924 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:39:25:3925 info: POST /api/v1/invoices/cancel 500 1182.505 ms - 83
+2022-08-13 20:40:14:4014 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:40:14:4014 info: App started,listening on port 8000
+2022-08-13 20:41:24:4124 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:41:24:4124 info: App started,listening on port 8000
+2022-08-13 20:41:25:4125 info: Model: username: DEV attempt to login
+2022-08-13 20:41:26:4126 info: Begin transaction
+2022-08-13 20:41:26:4126 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:41:26:4126 info: POST /api/v1/invoices/cancel 500 1200.543 ms - 83
+2022-08-13 20:41:58:4158 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:41:58:4158 info: App started,listening on port 8000
+2022-08-13 20:42:01:421 info: Model: username: DEV attempt to login
+2022-08-13 20:42:02:422 info: Begin transaction
+2022-08-13 20:42:02:422 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:42:02:422 info: POST /api/v1/invoices/cancel 500 1195.789 ms - 83
+2022-08-13 20:44:15:4415 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:44:15:4415 info: App started,listening on port 8000
+2022-08-13 20:44:21:4421 info: Model: username: DEV attempt to login
+2022-08-13 20:44:22:4422 info: Begin transaction
+2022-08-13 20:44:22:4422 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:44:22:4422 info: POST /api/v1/invoices/cancel 500 1191.260 ms - 83
+2022-08-13 20:44:59:4459 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:44:59:4459 info: App started,listening on port 8000
+2022-08-13 20:45:01:451 info: Model: username: DEV attempt to login
+2022-08-13 20:45:02:452 info: Begin transaction
+2022-08-13 20:45:02:452 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:45:02:452 info: POST /api/v1/invoices/cancel 400 1184.836 ms - 83
+2022-08-13 20:46:55:4655 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:46:55:4655 info: App started,listening on port 8000
+2022-08-13 20:47:01:471 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:47:01:471 info: App started,listening on port 8000
+2022-08-13 20:47:15:4715 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:47:15:4715 info: App started,listening on port 8000
+2022-08-13 20:47:47:4747 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:47:47:4747 info: App started,listening on port 8000
+2022-08-13 20:47:50:4750 info: Model: username: DEV attempt to login
+2022-08-13 20:47:51:4751 info: Begin transaction
+2022-08-13 20:47:51:4751 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:47:52:4752 info: POST /api/v1/invoices/cancel 500 1216.612 ms - 90
+2022-08-13 20:50:45:5045 info: Se establecio la conexion a la base de datos 
+2022-08-13 20:50:45:5045 info: App started,listening on port 8000
+2022-08-13 20:50:48:5048 info: Model: username: DEV attempt to login
+2022-08-13 20:50:49:5049 info: Begin transaction
+2022-08-13 20:50:49:5049 info: MODEL: validating if the : L2525258 exist
+2022-08-13 20:50:49:5049 info: POST /api/v1/invoices/cancel 400 1171.660 ms - 105
+2022-08-18 10:50:29:5029 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:50:29:5029 info: App started,listening on port 8000
+2022-08-18 10:51:24:5124 info: Model: username: DEV attempt to login
+2022-08-18 10:51:24:5124 info: PUT /api/v1/usuarios 401 505.799 ms - 28
+2022-08-18 10:51:32:5132 info: Model: username: DEV attempt to login
+2022-08-18 10:51:32:5132 info: POST /login 200 194.788 ms - 480
+2022-08-18 10:51:48:5148 info: Model: username: DEV attempt to login
+2022-08-18 10:51:48:5148 info: PUT /api/v1/usuarios 200 169.891 ms - 87
+2022-08-18 10:56:22:5622 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:56:22:5622 info: App started,listening on port 8000
+2022-08-18 10:56:35:5635 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:56:35:5635 info: App started,listening on port 8000
+2022-08-18 10:56:39:5639 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:56:39:5639 info: App started,listening on port 8000
+2022-08-18 10:57:05:575 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:57:05:575 info: App started,listening on port 8000
+2022-08-18 10:57:55:5755 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:57:55:5755 info: App started,listening on port 8000
+2022-08-18 10:58:06:586 info: Se establecio la conexion a la base de datos 
+2022-08-18 10:58:06:586 info: App started,listening on port 8000
+2022-08-18 11:02:35:235 info: Model: username: DEV attempt to login
+2022-08-18 11:02:35:235 info: PUT /api/v1/usuarios 200 736.041 ms - 87
+2022-08-18 11:03:48:348 info: Se establecio la conexion a la base de datos 
+2022-08-18 11:03:48:348 info: App started,listening on port 8000
+2022-08-18 11:03:54:354 info: Model: username: DEV attempt to login
+2022-08-18 11:03:54:354 info: PUT /api/v1/usuarios 200 618.928 ms - 87
+2022-08-18 11:09:33:933 info: Se establecio la conexion a la base de datos 
+2022-08-18 11:09:33:933 info: App started,listening on port 8000
+2022-08-18 12:18:53:1853 info: Model: username: DEV attempt to login
+2022-08-18 12:18:54:1854 info: PUT /api/v1/usuarios 200 752.277 ms - 87
+2022-08-18 12:19:02:192 info: Model: username: DEV attempt to login
+2022-08-18 12:19:02:192 info: PUT /api/v1/usuarios 200 278.854 ms - 87
+2022-08-18 12:19:03:193 info: Model: username: DEV attempt to login
+2022-08-18 12:19:03:193 info: PUT /api/v1/usuarios 200 293.727 ms - 87
+2022-08-18 12:19:05:195 info: Model: username: DEV attempt to login
+2022-08-18 12:19:05:195 info: PUT /api/v1/usuarios 200 268.612 ms - 87
+2022-08-18 12:19:18:1918 info: PUT /api/v1/usuarios 403 3.574 ms - 53
+2022-08-18 12:19:22:1922 info: Model: username: DEV attempt to login
+2022-08-18 12:19:23:1923 info: PUT /api/v1/usuarios 200 298.528 ms - 87
+2022-08-18 12:19:24:1924 info: Model: username: DEV attempt to login
+2022-08-18 12:19:24:1924 info: PUT /api/v1/usuarios 200 328.625 ms - 87
+2022-08-18 12:19:25:1925 info: Model: username: DEV attempt to login
+2022-08-18 12:19:25:1925 info: PUT /api/v1/usuarios 200 256.336 ms - 87
+2022-08-18 12:19:29:1929 info: PUT /api/v1/usuarios 403 1.353 ms - 53
+2022-08-18 12:19:32:1932 info: Model: username: DEV attempt to login
+2022-08-18 12:19:32:1932 info: PUT /api/v1/usuarios 200 273.485 ms - 87
+2022-08-18 12:19:41:1941 info: PUT /api/v1/usuarios 500 33.444 ms - 12
+2022-08-18 12:22:47:2247 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:22:47:2247 info: App started,listening on port 8000
+2022-08-18 12:22:56:2256 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:22:56:2256 info: App started,listening on port 8000
+2022-08-18 12:23:37:2337 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:23:37:2337 info: App started,listening on port 8000
+2022-08-18 12:23:43:2343 info: PUT /api/v1/usuarios 200 11.862 ms - 12
+2022-08-18 12:23:55:2355 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:23:55:2355 info: App started,listening on port 8000
+2022-08-18 12:23:58:2358 info: PUT /api/v1/usuarios 200 21.541 ms - 12
+2022-08-18 12:24:20:2420 info: Model: username: DEV attempt to login
+2022-08-18 12:24:21:2421 info: PUT /api/v1/usuarios 200 679.866 ms - 87
+2022-08-18 12:24:52:2452 info: Model: username: DEV attempt to login
+2022-08-18 12:24:53:2453 info: PUT /api/v1/usuarios 401 535.563 ms - 30
+2022-08-18 12:25:09:259 info: PUT /api/v1/usuarios 403 3.374 ms - 53
+2022-08-18 12:25:15:2515 info: Model: username: DEV attempt to login
+2022-08-18 12:25:15:2515 info: PUT /api/v1/usuarios 401 104.275 ms - 30
+2022-08-18 12:26:12:2612 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:26:12:2612 info: App started,listening on port 8000
+2022-08-18 12:26:54:2654 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:26:54:2654 info: App started,listening on port 8000
+2022-08-18 12:27:08:278 info: Model: username: DEV attempt to login
+2022-08-18 12:27:08:278 info: PUT /api/v1/usuarios 401 465.179 ms - 30
+2022-08-18 12:27:14:2714 info: Model: username: DEV attempt to login
+2022-08-18 12:27:15:2715 info: PUT /api/v1/usuarios 200 283.339 ms - 87
+2022-08-18 12:36:51:3651 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:36:51:3651 info: App started,listening on port 8000
+2022-08-18 12:37:01:371 info: Se establecio la conexion a la base de datos 
+2022-08-18 12:37:01:371 info: App started,listening on port 8000
