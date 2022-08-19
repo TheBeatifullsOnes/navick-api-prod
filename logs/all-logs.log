@@ -2837,3 +2837,5 @@ client.query(): duplicate key value violates unique constraint "payments_pkey"
 2022-08-18 22:33:41:3341 info: POST /api/v1/clientes 200 1159.889 ms - 87
 2022-08-18 22:33:41:3341 info: Model: username: DEV attempt to login
 2022-08-18 22:33:41:3341 info: GET /api/v1/clientes 200 632.336 ms - 1161447
+2022-08-18 22:33:58:3358 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:33:59:3359 info: App started,listening on port 8000
