@@ -275,8 +275,9 @@ export const actualizaCliente = (req, res) => {
     longitude,
     comments,
   } = req.body;
+  console.log("entro al controller");
   clientModel
-    .actualizarCliente(
+    .updateClient(
       idClient,
       name,
       idRoute,

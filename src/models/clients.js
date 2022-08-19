@@ -106,7 +106,7 @@ export const updateClient = async (
   longitude,
   comments
 ) => {
-  let resultados = connexion.query(qrys.updateClient, [
+  let resultados = await connexion.query(qrys.updateClient, [
     idClient,
     name,
     idRoute,
