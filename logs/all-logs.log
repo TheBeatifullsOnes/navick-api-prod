@@ -2737,3 +2737,103 @@ client.query(): duplicate key value violates unique constraint "payments_pkey"
 2022-08-18 12:36:51:3651 info: App started,listening on port 8000
 2022-08-18 12:37:01:371 info: Se establecio la conexion a la base de datos 
 2022-08-18 12:37:01:371 info: App started,listening on port 8000
+2022-08-18 21:56:34:5634 info: Se establecio la conexion a la base de datos 
+2022-08-18 21:56:34:5634 info: App started,listening on port 8000
+2022-08-18 22:03:07:37 info: Model: username: DEV attempt to login
+2022-08-18 22:03:08:38 info: POST /login 200 802.135 ms - 461
+2022-08-18 22:03:13:313 info: Model: username: DEV attempt to login
+2022-08-18 22:03:14:314 info: GET /api/v1/clientes 200 553.426 ms - 1160489
+2022-08-18 22:03:25:325 info: Model: username: DEV attempt to login
+2022-08-18 22:03:25:325 info: GET /api/v1/clientes 200 540.253 ms - 1160489
+2022-08-18 22:03:38:338 info: Model: username: DEV attempt to login
+2022-08-18 22:03:38:338 info: GET /api/v1/clientes 200 555.690 ms - 1160489
+2022-08-18 22:04:28:428 info: Model: username: DEV attempt to login
+2022-08-18 22:04:29:429 info: GET /api/v1/rutas 200 464.832 ms - 1751
+2022-08-18 22:04:43:443 info: Model: username: DEV attempt to login
+2022-08-18 22:04:44:444 info: GET /api/v1/clientes 200 566.254 ms - 1160489
+2022-08-18 22:05:23:523 info: Model: username: DEV attempt to login
+2022-08-18 22:05:24:524 info: POST /api/v1/clientes 404 525.882 ms - 87
+2022-08-18 22:06:54:654 info: Model: username: DEV attempt to login
+2022-08-18 22:06:55:655 info: GET /api/v1/clientes 200 935.539 ms - 1160489
+2022-08-18 22:07:20:720 info: Model: username: DEV attempt to login
+2022-08-18 22:07:20:720 info: POST /api/v1/clientes 404 202.577 ms - 87
+2022-08-18 22:09:57:957 info: Model: username: DEV attempt to login
+2022-08-18 22:09:57:957 info: POST /login 200 512.477 ms - 461
+2022-08-18 22:10:26:1026 info: POST /api/v1/clientes 403 1.354 ms - 53
+2022-08-18 22:10:47:1047 info: POST /api/v1/clientes 403 0.920 ms - 53
+2022-08-18 22:11:03:113 info: Model: username: DEV attempt to login
+2022-08-18 22:11:04:114 info: POST /api/v1/clientes 404 601.639 ms - 87
+2022-08-18 22:11:50:1150 info: POST /api/v1/clientes 500 2.369 ms - 1339
+2022-08-18 22:13:22:1322 info: Model: username: DEV attempt to login
+2022-08-18 22:13:23:1323 info: POST /api/v1/clientes 404 498.251 ms - 87
+2022-08-18 22:13:58:1358 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:13:58:1358 info: App started,listening on port 8000
+2022-08-18 22:14:08:148 info: POST /api/v1/clientes 404 488.088 ms - 87
+2022-08-18 22:14:37:1437 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:14:37:1437 info: App started,listening on port 8000
+2022-08-18 22:14:47:1447 info: POST /api/v1/clientes 404 503.413 ms - 87
+2022-08-18 22:15:54:1554 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:15:54:1554 info: App started,listening on port 8000
+2022-08-18 22:16:04:164 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:16:04:164 info: App started,listening on port 8000
+2022-08-18 22:16:25:1625 info: POST /api/v1/clientes 500 26.442 ms - 33
+2022-08-18 22:16:33:1633 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:16:34:1634 info: App started,listening on port 8000
+2022-08-18 22:17:22:1722 info: POST /api/v1/clientes/ 404 521.946 ms - 87
+2022-08-18 22:17:26:1726 info: POST /api/v1/clientes/ 404 444.283 ms - 87
+2022-08-18 22:18:23:1823 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:18:23:1823 info: App started,listening on port 8000
+2022-08-18 22:18:42:1842 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:18:42:1842 info: App started,listening on port 8000
+2022-08-18 22:18:50:1850 info: POST /api/v1/clientes/ 404 517.209 ms - 87
+2022-08-18 22:19:23:1923 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:19:23:1923 info: App started,listening on port 8000
+2022-08-18 22:19:38:1938 info: POST /api/v1/clientes/ 404 487.335 ms - 87
+2022-08-18 22:20:27:2027 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:20:27:2027 info: App started,listening on port 8000
+2022-08-18 22:20:37:2037 info: POST /api/v1/clientes 404 490.552 ms - 87
+2022-08-18 22:21:19:2119 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:21:19:2119 info: App started,listening on port 8000
+2022-08-18 22:21:23:2123 info: POST /api/v1/clientes 404 487.548 ms - 87
+2022-08-18 22:21:44:2144 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:21:44:2144 info: App started,listening on port 8000
+2022-08-18 22:21:49:2149 info: POST /api/v1/clientes 404 470.240 ms - 87
+2022-08-18 22:24:40:2440 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:24:40:2440 info: App started,listening on port 8000
+2022-08-18 22:24:58:2458 info: Model: username: DEV attempt to login
+2022-08-18 22:24:59:2459 info: GET /api/v1/clientes 200 1042.412 ms - 1160489
+2022-08-18 22:25:22:2522 info: POST /api/v1/clientes 404 148.514 ms - 87
+2022-08-18 22:25:38:2538 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:25:38:2538 info: App started,listening on port 8000
+2022-08-18 22:25:42:2542 info: POST /api/v1/clientes 404 553.329 ms - 87
+2022-08-18 22:26:43:2643 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:26:43:2643 info: App started,listening on port 8000
+2022-08-18 22:26:46:2646 info: POST /api/v1/clientes 201 943.885 ms - 87
+2022-08-18 22:27:23:2723 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:27:23:2723 info: App started,listening on port 8000
+2022-08-18 22:27:40:2740 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:27:40:2740 info: App started,listening on port 8000
+2022-08-18 22:28:41:2841 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:28:41:2841 info: App started,listening on port 8000
+2022-08-18 22:29:23:2923 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:29:23:2923 info: App started,listening on port 8000
+2022-08-18 22:29:33:2933 info: Model: username: DEV attempt to login
+2022-08-18 22:29:33:2933 info: POST /api/v1/clientes 404 649.189 ms - 137
+2022-08-18 22:30:01:301 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:30:01:301 info: App started,listening on port 8000
+2022-08-18 22:30:51:3051 info: Model: username: DEV attempt to login
+2022-08-18 22:30:52:3052 info: GET /api/v1/clientes 200 987.823 ms - 1160963
+2022-08-18 22:31:12:3112 info: Model: username: DEV attempt to login
+2022-08-18 22:31:12:3112 info: POST /api/v1/clientes 404 287.974 ms - 136
+2022-08-18 22:31:51:3151 info: Model: username: DEV attempt to login
+2022-08-18 22:31:52:3152 info: GET /api/v1/clientes 200 899.939 ms - 1160963
+2022-08-18 22:32:58:3258 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:32:58:3258 info: App started,listening on port 8000
+2022-08-18 22:33:01:331 info: Se establecio la conexion a la base de datos 
+2022-08-18 22:33:01:331 info: App started,listening on port 8000
+2022-08-18 22:33:18:3318 info: Model: username: DEV attempt to login
+2022-08-18 22:33:18:3318 info: POST /api/v1/clientes 404 614.286 ms - 136
+2022-08-18 22:33:40:3340 info: Model: username: DEV attempt to login
+2022-08-18 22:33:41:3341 info: POST /api/v1/clientes 200 1159.889 ms - 87
+2022-08-18 22:33:41:3341 info: Model: username: DEV attempt to login
+2022-08-18 22:33:41:3341 info: GET /api/v1/clientes 200 632.336 ms - 1161447
