@@ -36,12 +36,14 @@ export const addClient = async (
   comments
 ) => {
   const client = await connexion.connect();
+
   let executed = false;
   let sqlResult = null;
+
   try {
     await client.query("BEGIN");
     // name to upperCase
-    nameToUppercase = upperCaseAndTrimString(name);
+    const nameToUppercase = upperCaseAndTrimString(name);
     const existClient = await client.query(
       qrys.searchClientByNameAndZipcode(nameToUppercase),
       [zipCode]
@@ -72,7 +74,7 @@ export const addClient = async (
       sqlResult = { resultados };
     } else {
       executed = false;
-      sqlResult = { message: "el usuario ya esxiste intenta nuevamente" };
+      sqlResult = { message: "el usuario ya existe intenta nuevamente" };
     }
     // return resultados;
     await client.query("COMMIT");
