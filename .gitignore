@@ -1,4 +1,5 @@
 # library folder ignore
 /node_modules
-/logs/*
+/logs/*.log
 .env
+*.log/logs/all-logs.log
