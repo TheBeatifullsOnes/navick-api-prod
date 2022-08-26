@@ -78,7 +78,7 @@ export const searchClientByNameAndZipcode = (nameToUppercase) => {
   FROM
     clients_name 
   WHERE 
-    UPPER(REPLACE(name,' ','')) LIKE '%${nameToUppercase}%'
+    UPPER(REPLACE(name,' ','')) = '${nameToUppercase}'
   AND 
     zip_code=$1`;
 };
