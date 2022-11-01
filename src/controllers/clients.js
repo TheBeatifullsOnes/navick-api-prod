@@ -3,6 +3,24 @@ import { getInvoiceByClientId } from "../models/invoices.js"; //*as invoicesMode
 import { getdetailsInvoicesById } from "../models/detailsInvoices.js";
 import logger from "../utils/logger.js";
 
+export const getBillsWeekly = (req, res) => {
+  clientModel.getBillsWeekly().then((response) => {
+    if (response) {
+      res.status(200).json({
+        statusCode: 200,
+        statusMessage: "success",
+        result: response,
+      });
+    } else {
+      res.status(500).json({
+        statusCode: 500,
+        statusMessage: "error",
+        result: "Something went wrong",
+      });
+    }
+  });
+};
+
 export const obtenerClientes = (req, res) => {
   clientModel
     .getClients()
@@ -275,7 +293,6 @@ export const actualizaCliente = (req, res) => {
     longitude,
     comments,
   } = req.body;
-  console.log("entro al controller");
   clientModel
     .updateClient(
       idClient,

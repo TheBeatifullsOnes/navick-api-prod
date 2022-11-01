@@ -4,6 +4,12 @@ import { ensureAuthenticated } from "../middlewares/auth.js";
 const routesClients = express.Router();
 
 routesClients.get(
+  "/billsWeekly",
+  ensureAuthenticated,
+  clientController.getBillsWeekly
+);
+
+routesClients.get(
   "/auditReports/:idRoute",
   ensureAuthenticated,
   clientController.getAuditReportByRoute
