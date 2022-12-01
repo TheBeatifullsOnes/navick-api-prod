@@ -78,7 +78,7 @@ export const searchClientByNameAndZipcode = (nameToUppercase) => {
   FROM
     clients_name 
   WHERE 
-    UPPER(REPLACE(name,' ','')) LIKE '%${nameToUppercase}%'
+    UPPER(REPLACE(name,' ','')) = '${nameToUppercase}'
   AND 
     zip_code=$1`;
 };
@@ -110,3 +110,10 @@ export const queryUpdateClientsRoute = `
     id_route=$1
   WHERE 
     id_client=$2;`;
+
+export const queryGetBillsWeekly = `
+  SELECT 
+    *
+	FROM 
+    public.vt_get_bills_weekly;
+`;

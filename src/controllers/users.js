@@ -108,15 +108,6 @@ export const actualizaUsuario = async (req, res) => {
   if (password !== "") {
     hashPassword = await bcrypt.hash(password, 10);
   }
-  console.log(
-    "desde el controller",
-    username,
-    name,
-    idUserType,
-    hashPassword,
-    status,
-    idRoute
-  );
   model
     .actualizarUsuario(
       username,

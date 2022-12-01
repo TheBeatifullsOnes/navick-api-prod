@@ -1,8 +1,8 @@
 import connexion from "../config/bdConnexion.js";
 import logger from "../utils/logger.js";
 import * as qrys from "./queries/clients.js";
+import { upperCaseAndTrimString } from "../utils/helpFunctions.js";
 
-// module.exports = {
 export const getClients = async () => {
   const resultados = await connexion.query(qrys.getClients);
   return resultados.rows;
@@ -48,7 +48,6 @@ export const addClient = async (
       qrys.searchClientByNameAndZipcode(nameToUppercase),
       [zipCode]
     );
-
     if (existClient.rowCount === 0) {
       const resultados = await connexion.query(qrys.insertClient, [
         name,
@@ -130,7 +129,7 @@ export const updateClient = async (
   return resultados;
 };
 export const updateClientStatus = async (idCliente, status) => {
-  let resultado = await connexion.query(qrys.updateClientStatus, [
+  const resultado = await connexion.query(qrys.updateClientStatus, [
     idCliente,
     status,
   ]);
@@ -235,8 +234,7 @@ export const massiveUpdateClientsRoutes = async (clients) => {
   return { executed, sqlResult };
 };
 
-//pending to move to another file
-
-function upperCaseAndTrimString(str) {
-  return str.toUpperCase().replace(" ", "").replace("  ", "").replace(" ", "");
-}
+export const getBillsWeekly = async () => {
+  const response = await connexion.query(qrys.queryGetBillsWeekly);
+  return response.rows;
+};

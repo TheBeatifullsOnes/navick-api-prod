@@ -71,15 +71,6 @@ export const actualizarUsuario = async (
   idRoute
 ) => {
   let result;
-  console.log(
-    username,
-    name,
-    idUserType,
-    hashPassword,
-    status,
-    idRoute,
-    "<---------"
-  );
   if (hashPassword !== "") {
     result = await connexion.query(
       `
@@ -91,7 +82,6 @@ export const actualizarUsuario = async (
       `,
       [username, name, idUserType, hashPassword, status, idRoute]
     );
-    console.log(result, "con contraseña");
   } else {
     result = await connexion.query(
       `
@@ -103,7 +93,6 @@ export const actualizarUsuario = async (
       `,
       [username, name, idUserType, status, idRoute]
     );
-    console.log(result, "sin contraseña");
   }
 
   return result;

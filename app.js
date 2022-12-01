@@ -1,7 +1,6 @@
 import createError from "http-errors";
 import express from "express";
-//var path = require("path");
-// import path from "path";
+
 import cookieParser from "cookie-parser";
 // const logger = require("morgan");
 import cors from "cors";
@@ -49,7 +48,6 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 
-console.log("antes del error");
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -57,10 +55,7 @@ app.use(function (err, req, res, next) {
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
-  // res.status(err.status || 500);
-  res.status(500).json({ error: err });
+  res.status(500).json({ error: "err" });
 });
-
-console.log("despues del error");
 
 export default app;
