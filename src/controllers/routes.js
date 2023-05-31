@@ -1,5 +1,5 @@
 import * as rutasModel from "../models/routes.js";
-// import logger from "../utils/logger.js";
+import logger from "../utils/logger.js";
 
 export const listaRutas = function (req, res) {
   rutasModel
@@ -11,6 +11,7 @@ export const listaRutas = function (req, res) {
           statusMessage: "success",
           result: response,
         });
+        logger.info(`${res}`);
       } else {
         res.status(404).json({
           statusCode: 404,

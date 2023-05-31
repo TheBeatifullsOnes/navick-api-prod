@@ -15,7 +15,7 @@ export const q_listRoutesWithClientsCount = `
           SELECT r.id_route, r.description, r.status, r.created_at, r.updated_at, count(id_client) as clientsCount 
             FROM routes as r
           LEFT JOIN clients as c on c.id_route=r.id_route
-          GROUP BY r.id_route;`;
+          GROUP BY r.id_route, r.description,r.status, r.created_at, r.updated_at`;
 export const q_getRouteByDescription = `
       SELECT 1 
       FROM
