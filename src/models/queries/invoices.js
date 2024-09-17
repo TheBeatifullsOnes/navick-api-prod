@@ -48,19 +48,10 @@ export const insertInvoice = `
         (1, $1, $2, $3, $4, $5, $6, $7, $8) returning id_invoice`;
 
 export const getInvoicesByRoute = `
-      SELECT 
-        i.* 
-      FROM
-        invoices as i
-      INNER JOIN 
-        clients as c 
-      ON 
-        i.id_client=c.id_client
+      SELECT *
+      FROM public.vt_get_all_pending_invoices
       WHERE
-        c.id_route=$1 and (i.status = 1 or (select  p.printed_ticket from payments p where id_invoice = i.id_invoice and p.printed_ticket = false limit 1) = false)
-      ORDER BY 
-        i.id_invoice 
-      DESC`;
+      id_route = $1`;
 
 export const getInvoiceByClientId = `
     SELECT
